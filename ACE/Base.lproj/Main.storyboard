@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FQh-GS-zzB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="HomeViewController" customModule="ACE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,141 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Addiction " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg4-NR-GTk">
+                                <rect key="frame" x="16" y="72" width="568" height="71"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                <color key="textColor" red="0.32941176470588235" green="0.41176470588235292" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Companion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4P3-ri-GTV">
+                                <rect key="frame" x="16" y="151" width="568" height="71"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                <color key="textColor" red="0.3294117647" green="0.41176470590000003" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edinburgh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlI-Ah-BnF">
+                                <rect key="frame" x="16" y="230" width="568" height="71"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                <color key="textColor" red="0.3294117647" green="0.41176470590000003" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVQ-GE-ZyZ">
+                                <rect key="frame" x="16" y="532" width="568" height="60"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AIr-lN-EoY">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Services">
+                                    <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ugO-bI-KqC" kind="show" id="OQ5-8z-jEw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UlI-Ah-BnF" firstAttribute="top" secondItem="4P3-ri-GTV" secondAttribute="bottom" constant="8" id="0I0-vY-XUv"/>
+                            <constraint firstItem="gg4-NR-GTk" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="32" id="6Pk-Kb-a8u"/>
+                            <constraint firstItem="qVQ-GE-ZyZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ARL-UZ-nDY"/>
+                            <constraint firstItem="UlI-Ah-BnF" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="J2h-FW-lZz"/>
+                            <constraint firstItem="4P3-ri-GTV" firstAttribute="top" secondItem="gg4-NR-GTk" secondAttribute="bottom" constant="8" id="JjA-gi-w44"/>
+                            <constraint firstItem="qVQ-GE-ZyZ" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="LXR-3i-pdq"/>
+                            <constraint firstItem="gg4-NR-GTk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="NtM-hZ-Poe"/>
+                            <constraint firstItem="gg4-NR-GTk" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="OCl-pT-6zp"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="qVQ-GE-ZyZ" secondAttribute="bottom" constant="20" id="PIX-ib-MA5">
+                                <variation key="heightClass=regular-widthClass=compact" constant="14"/>
+                            </constraint>
+                            <constraint firstItem="4P3-ri-GTV" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="SW0-E2-qys"/>
+                            <constraint firstItem="4P3-ri-GTV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Zhx-WZ-kmY"/>
+                            <constraint firstItem="UlI-Ah-BnF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="mlT-Ky-j3L"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ux3-db-FeA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1074" y="312.75"/>
+        </scene>
+        <!--Services-->
+        <scene sceneID="wfm-3H-v3J">
+            <objects>
+                <viewController title="Services" id="ugO-bI-KqC" customClass="ServicesMapViewController" customModule="ACE" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aGK-Gt-F1n"/>
+                        <viewControllerLayoutGuide type="bottom" id="wkP-M3-NqY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w4e-An-01R">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="839-xc-DhM">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="839-xc-DhM" secondAttribute="bottom" constant="64" id="3It-C5-nm0"/>
+                            <constraint firstItem="839-xc-DhM" firstAttribute="leading" secondItem="w4e-An-01R" secondAttribute="leading" id="Lwn-Eg-lWB"/>
+                            <constraint firstAttribute="trailing" secondItem="839-xc-DhM" secondAttribute="trailing" id="SDj-jF-wSZ"/>
+                            <constraint firstAttribute="bottom" secondItem="839-xc-DhM" secondAttribute="bottom" id="oJ2-6g-pF0"/>
+                            <constraint firstItem="839-xc-DhM" firstAttribute="top" secondItem="aGK-Gt-F1n" secondAttribute="bottom" id="tlD-Ez-LuM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="839-xc-DhM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3It-C5-nm0"/>
+                                <exclude reference="Lwn-Eg-lWB"/>
+                                <exclude reference="SDj-jF-wSZ"/>
+                                <exclude reference="oJ2-6g-pF0"/>
+                                <exclude reference="tlD-Ez-LuM"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="839-xc-DhM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3It-C5-nm0"/>
+                                <include reference="Lwn-Eg-lWB"/>
+                                <include reference="SDj-jF-wSZ"/>
+                                <include reference="oJ2-6g-pF0"/>
+                                <include reference="tlD-Ez-LuM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="839-xc-DhM" id="yn1-ZI-25O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btf-4D-d7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1819" y="313"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="thF-nc-vZZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FQh-GS-zzB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="erh-0K-zzg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="mqu-cO-H8g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YhX-ax-Rmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="291" y="974"/>
         </scene>
     </scenes>
 </document>
