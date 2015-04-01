@@ -15,6 +15,8 @@
 		FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20F10C1ABB8216009CDF4D /* HomeViewController.swift */; };
 		FF20F10F1ABB855D009CDF4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF20F10E1ABB855D009CDF4D /* MapKit.framework */; };
 		FF20F1121ABB8687009CDF4D /* ServicesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20F1111ABB8687009CDF4D /* ServicesMapViewController.swift */; };
+		FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */; };
+		FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB301ACC9D0400EA1954 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		FF20F10C1ABB8216009CDF4D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FF20F10E1ABB855D009CDF4D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FF20F1111ABB8687009CDF4D /* ServicesMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesMapViewController.swift; sourceTree = "<group>"; };
+		FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		FF44EB301ACC9D0400EA1954 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		FF20F0E91ABAFE79009CDF4D /* ACE */ = {
 			isa = PBXGroup;
 			children = (
+				FF44EB2D1ACC9C7A00EA1954 /* Model */,
 				FF20F0EC1ABAFE79009CDF4D /* AppDelegate.swift */,
 				FF20F0F01ABAFE79009CDF4D /* Main.storyboard */,
 				FF20F0F31ABAFE79009CDF4D /* Images.xcassets */,
@@ -117,6 +122,15 @@
 				FF20F1011ABAFE79009CDF4D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF44EB2D1ACC9C7A00EA1954 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */,
+				FF44EB301ACC9D0400EA1954 /* Service.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */,
+				FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */,
+				FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */,
 				FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */,
 				FF20F1121ABB8687009CDF4D /* ServicesMapViewController.swift in Sources */,
 			);
@@ -413,6 +429,7 @@
 				FF20F1081ABAFE79009CDF4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF20F1091ABAFE79009CDF4D /* Build configuration list for PBXNativeTarget "ACETests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +438,7 @@
 				FF20F10B1ABAFE79009CDF4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
