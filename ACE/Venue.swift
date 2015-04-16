@@ -30,14 +30,14 @@ struct Venue {
     }
     
     init(dict: NSDictionary) {
-        self.name = dict["name"] as String
-        self.address = dict["address"] as String
-        self.city = dict["city"] as String
-        self.postcode = dict["postcode"] as String
+        self.name = dict["name"] as! String
+        self.address = dict["address"] as! String
+        self.city = dict["city"] as! String
+        self.postcode = dict["postcode"] as! String
         self.telephone = ""
         self.website = ""
-        let latitude = dict["latitude"] as Double
-        let longitude = dict["longitude"] as Double
+        let latitude = dict["latitude"] as! Double
+        let longitude = dict["longitude"] as! Double
         self.location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }
