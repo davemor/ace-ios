@@ -17,6 +17,12 @@
 		FF20F1121ABB8687009CDF4D /* ServicesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20F1111ABB8687009CDF4D /* ServicesMapViewController.swift */; };
 		FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */; };
 		FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB301ACC9D0400EA1954 /* Service.swift */; };
+		FFC486D51ADFC4D10045C9CE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486D41ADFC4D10045C9CE /* Model.swift */; };
+		FFC486DE1AE045930045C9CE /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486DD1AE045930045C9CE /* QuotesViewController.swift */; };
+		FFC486E01AE04ADD0045C9CE /* QuotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486DF1AE04ADD0045C9CE /* QuotesTableViewCell.swift */; };
+		FFC486E21AE04CE30045C9CE /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486E11AE04CE30045C9CE /* Quote.swift */; };
+		FFC486E41AE058A80045C9CE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486E31AE058A80045C9CE /* Colors.swift */; };
+		FFC486E71AE0DF0D0045C9CE /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486E61AE0DF0D0045C9CE /* ActivitiesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		FF20F1111ABB8687009CDF4D /* ServicesMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesMapViewController.swift; sourceTree = "<group>"; };
 		FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		FF44EB301ACC9D0400EA1954 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		FFC486D41ADFC4D10045C9CE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FFC486DD1AE045930045C9CE /* QuotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
+		FFC486DF1AE04ADD0045C9CE /* QuotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesTableViewCell.swift; sourceTree = "<group>"; };
+		FFC486E11AE04CE30045C9CE /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		FFC486E31AE058A80045C9CE /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FFC486E61AE0DF0D0045C9CE /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,7 @@
 		FF20F0E91ABAFE79009CDF4D /* ACE */ = {
 			isa = PBXGroup;
 			children = (
+				FFC486D81AE029360045C9CE /* Mood */,
 				FF44EB2D1ACC9C7A00EA1954 /* Model */,
 				FF20F0EC1ABAFE79009CDF4D /* AppDelegate.swift */,
 				FF20F0F01ABAFE79009CDF4D /* Main.storyboard */,
@@ -129,8 +142,21 @@
 			children = (
 				FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */,
 				FF44EB301ACC9D0400EA1954 /* Service.swift */,
+				FFC486D41ADFC4D10045C9CE /* Model.swift */,
+				FFC486E31AE058A80045C9CE /* Colors.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		FFC486D81AE029360045C9CE /* Mood */ = {
+			isa = PBXGroup;
+			children = (
+				FFC486DD1AE045930045C9CE /* QuotesViewController.swift */,
+				FFC486DF1AE04ADD0045C9CE /* QuotesTableViewCell.swift */,
+				FFC486E11AE04CE30045C9CE /* Quote.swift */,
+				FFC486E61AE0DF0D0045C9CE /* ActivitiesViewController.swift */,
+			);
+			name = Mood;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,11 +259,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC486E01AE04ADD0045C9CE /* QuotesTableViewCell.swift in Sources */,
+				FFC486E41AE058A80045C9CE /* Colors.swift in Sources */,
 				FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */,
+				FFC486E71AE0DF0D0045C9CE /* ActivitiesViewController.swift in Sources */,
 				FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */,
 				FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */,
+				FFC486E21AE04CE30045C9CE /* Quote.swift in Sources */,
+				FFC486D51ADFC4D10045C9CE /* Model.swift in Sources */,
 				FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */,
 				FF20F1121ABB8687009CDF4D /* ServicesMapViewController.swift in Sources */,
+				FFC486DE1AE045930045C9CE /* QuotesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

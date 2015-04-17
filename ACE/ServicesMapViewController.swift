@@ -13,7 +13,8 @@ class ServicesMapViewController: UIViewController {
 
     @IBOutlet weak var map: MKMapView!
     
-    let baseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")
+    // let baseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")
+    let baseUrl = NSURL(string: "http://localhost:3000/api/")
     
     var venues:[Venue] = [Venue]()
     
