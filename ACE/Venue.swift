@@ -8,7 +8,7 @@
 
 import MapKit
 
-struct Venue : Printable {
+struct Venue {
     var id: Int
     var name: String
     var address: String

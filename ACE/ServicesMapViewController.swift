@@ -23,35 +23,15 @@ class ServicesMapViewController: UIViewController {
 
         // zoom to show Edinburgh
         setMapLocation(CLLocationCoordinate2D(latitude: 55.9410655, longitude: -3.2053836), delta: 0.05)
-    
-        // get the venue locations
-        let venuesUrl = NSURL(string: "venues", relativeToURL: baseUrl)
-        let sharedSession = NSURLSession.sharedSession()
-        let downloadTask: NSURLSessionDownloadTask = sharedSession.downloadTaskWithURL(venuesUrl!, completionHandler: { (location: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
-            
-            if (error == nil) {
-                let dataObject = NSData(contentsOfURL: location)
-                let venuesArr: NSArray = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as! NSArray
-                
-                for venueDict in venuesArr {
-                    let dict = venueDict as! NSDictionary
-                    let venue = Venue(dict: dict)
-                    
-                    // add it to the model
-                    self.venues.append(venue)
-                    
-                    // add it to the map
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = venue.location
-                    annotation.title = venue.name
-                    self.map.addAnnotation(annotation)
-                }
-                
-            } else {
 
-            }
-        })
-        downloadTask.resume()
+        // add all the venues to the map
+        for (id,venue) in Venue.all {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = venue.location
+            annotation.title = venue.name
+            self.map.addAnnotation(annotation)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

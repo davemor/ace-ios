@@ -11,28 +11,22 @@ import Foundation
 // Model is a singleton that manages access to all the data in the app.
 // Responsible for loading it from a source and caching.
 class Model {
+    let supportDirectoryFilename = "support_directory"
+    
     // shared singleton instance
     class var sharedInstance: Model {
         struct Static {
             static var instance: Model?
             static var token: dispatch_once_t = 0
         }
-        
         dispatch_once(&Static.token) {
             Static.instance = Model()
         }
-        
         return Static.instance!
     }
     
     // let baseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")
     let baseUrl = NSURL(string: "http://localhost:3000/api/")
-    
-    // load support directory from file
-    func loadSupportDirectory(filename:String) {
-        // load the NSData
-        // refreash the model from the data
-    }
     
     // download a new JSON file from the server
     func downloadSupportDirectory() {
@@ -44,6 +38,7 @@ class Model {
                     self.refreashSupportDirectoryModel(dataObject)
                     
                     // save the model somewhere
+                    // self.saveJSONData(dataObject, fileName: self.supportDirectoryFilename)
                 }
             } else {
                 
@@ -51,6 +46,20 @@ class Model {
         })
         downloadTask.resume()
     }
+    
+    func saveJSONData(data:NSData, fileName:String) {
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        var path = paths.stringByAppendingPathComponent(fileName + ".json")
+        var fileManager = NSFileManager.defaultManager()
+        data.writeToFile(path, atomically: true)
+    }
+    
+    // load support directory from file
+    func loadSupportDirectory() {
+        // load the NSData
+        // refreash the model from the data
+    }
+    
     
     // refreash support directory model from NSData
     func refreashSupportDirectoryModel(dataObject: NSData) {
