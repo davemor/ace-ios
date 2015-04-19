@@ -8,7 +8,7 @@
 
 import MapKit
 
-struct Venue: Printable {
+struct Venue : Printable {
     var id: Int
     var name: String
     var address: String
@@ -32,44 +32,18 @@ struct Venue: Printable {
     }
     
     init(dict: NSDictionary) {
-        self.id         = getInt("id", dict, 0)
-        self.name       = getString("name", dict, "")
-        self.address    = getString("address", dict, "")
-        self.city       = getString("city", dict, "")
-        self.postcode   = getString("postcode", dict, "")
-        self.telephone  = getString("telephone", dict, "")
-        self.website    = getString("website", dict, "")
-        let latitude    = getDouble("latitude", dict, 0.0)
-        let longitude   = getDouble("longitude", dict, 0.0)
+        self.id         = read("id", dict, 0)
+        self.name       = read("name", dict, "")
+        self.address    = read("address", dict, "")
+        self.city       = read("city", dict, "")
+        self.postcode   = read("postcode", dict, "")
+        self.telephone  = read("telephone", dict, "")
+        self.website    = read("website", dict, "")
+        let latitude    = read("latitude", dict, 0.0)
+        let longitude   = read("longitude", dict, 0.0)
         self.location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
-    var description: String {
-        return " { \(id), \(name)}"
-    }
-}
-
-// TODO: Move these over to generic methods
-func getString(key: String, dict:NSDictionary, alt:String) -> String {
-    if let obj = dict.objectForKey(key) as? String {
-        return obj
-    } else {
-        return alt
-    }
-}
-
-func getDouble(key: String, dict:NSDictionary, alt:Double) -> Double {
-    if let obj = dict.objectForKey(key) as? Double {
-        return obj
-    } else {
-        return alt
-    }
-}
-
-func getInt(key: String, dict:NSDictionary, alt:Int) -> Int {
-    if let obj = dict.objectForKey(key) as? Int {
-        return obj
-    } else {
-        return alt
-    }
+    // access to the collection of all venues
+    static var all:[Int:Venue]  = [Int:Venue]()
 }

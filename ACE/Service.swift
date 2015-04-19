@@ -8,55 +8,68 @@
 
 import Foundation
 
-/*
-id: 1,
-name: "Aberlour Family Outreach Edinburgh",
-description: "Aberlour Family Outreach Edinburgh works with ...",
-telephone: "0131 659 2942",
-venue_id: 107,
-created_at: "2015-04-16T09:38:08.171Z",
-updated_at: "2015-04-16T09:38:08.171Z",
-email: "edinburgh.outreach@aberlour.org.uk",
-mobile: null,
-fax: "0131 659 2947",
-website: "http://www.aberlour.org.uk/outreachedinburgh.aspx",
-support_options: "Intensive family support programme. Parenting skills training.",
-referral_method: "By telephone.",
-recovery_hubs: null,
-business_times_extra_info: "Enquiries can be made during normal office hours."
-*/
-
-struct Service: Printable {
-    var id:Int
-    var name:String
-    var description:String
-    var telephone:String
-    var venueId:Int
-    var email:String
-    var mobile:String
-    var fax:String
-    var website:String
-    var supportOptions:String
-    var referralMethod:String
-    var recoveryHubs:String
-    var businessTimesExtraInfo:String
-    /*
-    init(dict: NSDictionary) {
-        /*
-        self.id:Int
-        self.name:String
-        self.description:String
-        self.telephone:String
-        self.venueId:Int
-        self.email:String
-        self.mobile:String
-        self.fax:String
-        self.website:String
-        self.supportOptions:String
-        self.referralMethod:String
-        self.recoveryHubs:String
-        self.businessTimesExtraInfo:String
-        */
+struct Service : Printable {
+    
+    let id:Int
+    let name:String
+    let description:String
+    let telephone:String
+    let venueId:Int
+    let email:String
+    let mobile:String
+    let fax:String
+    let website:String
+    let supportOptions:String
+    let referralMethod:String
+    let recoveryHubs:String
+    let businessTimesExtraInfo:String
+    let businessTimes:[BusinessTime]
+    
+    struct BusinessTime {
+        let open:NSDate
+        let close:NSDate
+        let monday, tuesday, wednesday,
+            thursday, friday, saturday,
+            sunday:Bool
+        
+        init(dict: NSDictionary) {
+            open = readDate("opening_time", dict)
+            close = readDate("closing_time", dict)
+            monday = read("monday", dict, false)
+            tuesday = read("tuesday", dict, false)
+            wednesday = read("wednesday", dict, false)
+            thursday = read("thursday", dict, false)
+            friday = read("friday", dict, false)
+            saturday = read("saturday", dict, false)
+            sunday = read("sunday", dict, false)
+        }
     }
-    */
+    
+    init(dict: NSDictionary) {
+        self.id = read("id", dict, 0)
+        self.name = read("name", dict, "missing")
+        self.description = read("description", dict, "missing")
+        self.telephone = read("telephone", dict, "missing")
+        self.venueId = read("venue_id", dict, 0)
+        self.email = read("emain", dict, "missing")
+        self.mobile = read("mobile", dict, "missing")
+        self.fax = read("fax", dict, "missing")
+        self.website = read("website", dict, "missing")
+        self.supportOptions = read("support_options", dict, "missing")
+        self.referralMethod = read("referral_method", dict, "missing")
+        self.recoveryHubs = read("recovery_hubs", dict, "missing")
+        self.businessTimesExtraInfo = read("business_times_extra_info", dict, "missing")
+        if let times = dict.objectForKey("business_times") as? NSArray {
+            var ts = [BusinessTime]()
+            for time in times {
+                ts.append(BusinessTime(dict: time as! NSDictionary))
+            }
+            businessTimes = ts
+        } else {
+            businessTimes = []
+        }
+    }
+    
+    // access to the collection of all venues
+    static var all:[Int:Service]  = [Int:Service]()
 }
