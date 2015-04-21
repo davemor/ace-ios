@@ -17,6 +17,11 @@
 		FF20F1121ABB8687009CDF4D /* ServicesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20F1111ABB8687009CDF4D /* ServicesMapViewController.swift */; };
 		FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */; };
 		FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB301ACC9D0400EA1954 /* Service.swift */; };
+		FF54C2D51AE6827D00943B41 /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2D41AE6827D00943B41 /* VenueDetailViewController.swift */; };
+		FF54C2D71AE682B900943B41 /* VenueDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2D61AE682B900943B41 /* VenueDetailsCell.swift */; };
+		FF54C2D91AE6832A00943B41 /* EventLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2D81AE6832A00943B41 /* EventLinkCell.swift */; };
+		FF54C2DB1AE6937800943B41 /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DA1AE6937800943B41 /* Annotations.swift */; };
+		FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DC1AE6A2ED00943B41 /* Strings.swift */; };
 		FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F901AE3E66C00F3516C /* Group.swift */; };
 		FF9E9F931AE3EAE800F3516C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F921AE3EAE800F3516C /* Event.swift */; };
 		FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F951AE400F200F3516C /* Reachability.swift */; };
@@ -53,6 +58,11 @@
 		FF20F1111ABB8687009CDF4D /* ServicesMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesMapViewController.swift; sourceTree = "<group>"; };
 		FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		FF44EB301ACC9D0400EA1954 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		FF54C2D41AE6827D00943B41 /* VenueDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
+		FF54C2D61AE682B900943B41 /* VenueDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailsCell.swift; sourceTree = "<group>"; };
+		FF54C2D81AE6832A00943B41 /* EventLinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLinkCell.swift; sourceTree = "<group>"; };
+		FF54C2DA1AE6937800943B41 /* Annotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotations.swift; sourceTree = "<group>"; };
+		FF54C2DC1AE6A2ED00943B41 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FF9E9F901AE3E66C00F3516C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FF9E9F921AE3EAE800F3516C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FF9E9F951AE400F200F3516C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -83,6 +93,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF1B1C4A1AE5458D0081257B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FF20F1111ABB8687009CDF4D /* ServicesMapViewController.swift */,
+				FF54C2D41AE6827D00943B41 /* VenueDetailViewController.swift */,
+				FF54C2D61AE682B900943B41 /* VenueDetailsCell.swift */,
+				FF54C2D81AE6832A00943B41 /* EventLinkCell.swift */,
+				FF54C2DA1AE6937800943B41 /* Annotations.swift */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		FF20F0DE1ABAFE79009CDF4D = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +127,7 @@
 		FF20F0E91ABAFE79009CDF4D /* ACE */ = {
 			isa = PBXGroup;
 			children = (
+				FF1B1C4A1AE5458D0081257B /* Support */,
 				FF9E9F941AE400D700F3516C /* Util */,
 				FFC486D81AE029360045C9CE /* Mood */,
 				FF44EB2D1ACC9C7A00EA1954 /* Model */,
@@ -114,7 +137,6 @@
 				FF20F0F51ABAFE79009CDF4D /* LaunchScreen.xib */,
 				FF20F0EA1ABAFE79009CDF4D /* Supporting Files */,
 				FF20F10C1ABB8216009CDF4D /* HomeViewController.swift */,
-				FF20F1111ABB8687009CDF4D /* ServicesMapViewController.swift */,
 			);
 			path = ACE;
 			sourceTree = "<group>";
@@ -161,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9E9F951AE400F200F3516C /* Reachability.swift */,
+				FF54C2DC1AE6A2ED00943B41 /* Strings.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -278,10 +301,15 @@
 			files = (
 				FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */,
 				FFC486E01AE04ADD0045C9CE /* QuotesTableViewCell.swift in Sources */,
+				FF54C2D71AE682B900943B41 /* VenueDetailsCell.swift in Sources */,
 				FFC486E41AE058A80045C9CE /* Colors.swift in Sources */,
+				FF54C2D91AE6832A00943B41 /* EventLinkCell.swift in Sources */,
+				FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */,
+				FF54C2DB1AE6937800943B41 /* Annotations.swift in Sources */,
 				FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */,
 				FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */,
 				FFC486E71AE0DF0D0045C9CE /* ActivitiesViewController.swift in Sources */,
+				FF54C2D51AE6827D00943B41 /* VenueDetailViewController.swift in Sources */,
 				FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */,
 				FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */,
 				FFC486E21AE04CE30045C9CE /* Quote.swift in Sources */,

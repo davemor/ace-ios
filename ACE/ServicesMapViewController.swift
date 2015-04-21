@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ServicesMapViewController: UIViewController {
+class ServicesMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var map: MKMapView!
     
@@ -21,17 +21,16 @@ class ServicesMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        map.delegate = self
+        
         // zoom to show Edinburgh
         setMapLocation(CLLocationCoordinate2D(latitude: 55.9410655, longitude: -3.2053836), delta: 0.05)
 
         // add all the venues to the map
         for (id,venue) in Venue.all {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = venue.location
-            annotation.title = venue.name
+            let annotation = VenueAnnotation(venue: venue)
             self.map.addAnnotation(annotation)
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,15 +44,37 @@ class ServicesMapViewController: UIViewController {
         let region = MKCoordinateRegion(center: location, span: span)
         map.setRegion(region, animated: true)
     }
-
-    /*
+    
+    // MARK: - MKMapViewDelegate implementation
+    let reuseId = "annotationViewReuseId"
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        var view = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if view == nil {
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            view.canShowCallout = true
+            view.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIView
+            view.image = (annotation as? VenueAnnotation)?.pin
+        }
+        // configure the annotation
+        view.annotation = annotation
+        return view
+    }
+    
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        self.performSegueWithIdentifier("venueDetailsSegue", sender: view.annotation)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let annotation = sender as? VenueAnnotation
+        if let dest = segue.destinationViewController as? VenueDetailViewController {
+            dest.venueId = annotation?.venueId
+        }
+        
     }
-    */
-
 }

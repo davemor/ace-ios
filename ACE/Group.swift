@@ -17,10 +17,10 @@ struct Group {
     
     init(dict: NSDictionary) {
         id = read("id", dict, 0)
-        name = read("name", dict, "missing")
-        description = read("description", dict, "missing")
-        contactName = read("contact_name", dict, "missing")
-        telephone = read("telephone", dict, "missing")
+        name = read("name", dict, "")
+        description = read("description", dict, "")
+        contactName = read("contact_name", dict, "")
+        telephone = read("telephone", dict, "")
     }
     
     static var all:[Int:Group]  = [Int:Group]()

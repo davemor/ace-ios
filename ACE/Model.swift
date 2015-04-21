@@ -65,7 +65,8 @@ class Model {
     func refreashSupportDirectoryModel(dataObject: NSData) {
         // deserialise the JSON object
         if let dict: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject, options: nil, error: nil) as? NSDictionary {
-            // read in the groups
+            // read in the object, note - the order is important because the services and events will try and add themselves to
+            // the correct venues and group when they are constructed and this will fail if the group or venue has not been loaded yet.
             readArray("groups", dict, loadGroups)
             readArray("venues", dict, loadVenues)
             readArray("services", dict, loadServices)

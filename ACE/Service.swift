@@ -47,18 +47,18 @@ struct Service : Printable {
     
     init(dict: NSDictionary) {
         self.id = read("id", dict, 0)
-        self.name = read("name", dict, "missing")
-        self.description = read("description", dict, "missing")
-        self.telephone = read("telephone", dict, "missing")
+        self.name = read("name", dict, "")
+        self.description = read("description", dict, "")
+        self.telephone = read("telephone", dict, "")
         self.venueId = read("venue_id", dict, 0)
-        self.email = read("emain", dict, "missing")
-        self.mobile = read("mobile", dict, "missing")
-        self.fax = read("fax", dict, "missing")
-        self.website = read("website", dict, "missing")
-        self.supportOptions = read("support_options", dict, "missing")
-        self.referralMethod = read("referral_method", dict, "missing")
-        self.recoveryHubs = read("recovery_hubs", dict, "missing")
-        self.businessTimesExtraInfo = read("business_times_extra_info", dict, "missing")
+        self.email = read("emain", dict, "")
+        self.mobile = read("mobile", dict, "")
+        self.fax = read("fax", dict, "")
+        self.website = read("website", dict, "")
+        self.supportOptions = read("support_options", dict, "")
+        self.referralMethod = read("referral_method", dict, "")
+        self.recoveryHubs = read("recovery_hubs", dict, "")
+        self.businessTimesExtraInfo = read("business_times_extra_info", dict, "")
         if let times = dict.objectForKey("business_times") as? NSArray {
             var ts = [BusinessTime]()
             for time in times {
@@ -68,8 +68,15 @@ struct Service : Printable {
         } else {
             businessTimes = []
         }
+        // add to venue
+        Venue.all[self.venueId]?.services.append(self)
     }
     
     // access to the collection of all venues
     static var all:[Int:Service]  = [Int:Service]()
+    
+    // helper functions
+    var displayName: String {
+        return name
+    }
 }

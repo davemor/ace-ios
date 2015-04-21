@@ -18,6 +18,7 @@ struct Venue {
     var website: String
     var location: CLLocationCoordinate2D
     var services: [Service] = [Service]()
+    var events: [Event] = [Event]()
     
     init(id:Int, name:String, address:String, city:String, postcode:String,
         telephone:String, website:String, latitude: Double, longitude: Double ) {
@@ -46,4 +47,32 @@ struct Venue {
     
     // access to the collection of all venues
     static var all:[Int:Venue]  = [Int:Venue]()
+    
+    // some helper functions for working out how best to display stuff
+    enum Style {
+        case Venue
+        case OneService
+        case OneEvent
+        case ManyServices
+        case ManyEvents
+    }
+    
+    func getStyle() -> Style {
+        switch (self.services.count, self.events.count) {
+        case (0, 0): return .Venue
+        case (0, 1): return .OneEvent
+        case (0, _): return .ManyEvents
+        case (1, 0): return .OneService
+        case (_, 0): return .ManyServices
+        case (_, _): return .Venue
+        }
+    }
+    
+    var displayName: String {
+        switch getStyle() {
+        case .OneService: return services[0].displayName
+        case .OneEvent: return events[0].displayName
+        default: return name
+        }
+    }
 }

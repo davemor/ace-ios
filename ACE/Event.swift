@@ -36,35 +36,50 @@ struct Event {
     }
     
     init(dict: NSDictionary) {
-        id = read("id", dict, 0)
-        name = read("name", dict, "missing")
-        description = read("description", dict, "missing")
-        contactName = read("contact_name", dict, "missing")
-        contactPhone = read("contact_phone", dict, "missing")
-        dateTime = readDate("date_time", dict)
-        venueId = read("venue_id", dict, 0)
-        groupId = read("group_id", dict, 0)
+        self.id = read("id", dict, 0)
+        self.name = read("name", dict, "")
+        self.description = read("description", dict, "")
+        self.contactName = read("contact_name", dict, "")
+        self.contactPhone = read("contact_phone", dict, "")
+        self.dateTime = readDate("date_time", dict)
+        self.venueId = read("venue_id", dict, 0)
+        self.groupId = read("group_id", dict, 0)
         
         // repeat
-        switch read("repeat", dict, "missing") {
-            case "none": repeat = .none
-            case "weekly": repeat = .weekly
-            case "monthly": repeat = .monthly
-            default: repeat = .none
+        switch read("repeat", dict, "") {
+            case "none": self.repeat = .none
+            case "weekly": self.repeat = .weekly
+            case "monthly": self.repeat = .monthly
+            default: self.repeat = .none
         }
         
         // day
-        switch read("repeat", dict, "missing") {
-            case "monday": day = .monday
-            case "tuesday": day = .tuesday
-            case "wednesday": day = .wednesday
-            case "thursday": day = .thursday
-            case "friday": day = .friday
-            case "saturday": day = .saturday
-            case "sunday": day = .sunday
-            default: day = .monday
+        switch read("repeat", dict, "") {
+            case "monday": self.day = .monday
+            case "tuesday": self.day = .tuesday
+            case "wednesday": self.day = .wednesday
+            case "thursday": self.day = .thursday
+            case "friday": self.day = .friday
+            case "saturday": self.day = .saturday
+            case "sunday": self.day = .sunday
+            default: self.day = .monday
         }
+        
+        // add to the venue and group
+        Venue.all[self.venueId]?.events.append(self)
     }
     
     static var all:[Int:Event]  = [Int:Event]()
+    
+    var displayName: String {
+        if name.isEmpty {
+            if let group = Group.all[groupId] {
+                return group.name
+            } else {
+                return "unknown"
+            }
+        } else {
+            return name
+        }
+    }
 }
