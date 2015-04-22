@@ -25,7 +25,7 @@ struct Event {
         case weekly
         case monthly
     }
-    enum Day {
+    enum Day: Printable {
         case monday
         case tuesday
         case wednesday
@@ -33,6 +33,18 @@ struct Event {
         case friday
         case saturday
         case sunday
+        
+        var description : String {
+            switch self {
+            case .monday: return "Monday"
+            case .tuesday: return "Tuesday"
+            case .wednesday: return "Wednesday"
+            case .thursday: return "Thursday"
+            case .friday: return "Friday"
+            case .saturday: return "Saturday"
+            case .sunday: return "Sunday"
+            }
+        }
     }
     
     init(dict: NSDictionary) {
@@ -82,4 +94,72 @@ struct Event {
             return name
         }
     }
+    
+    var displayDescription: String {
+        if description.isEmpty {
+            if let group = Group.all[groupId] {
+                return group.description
+            } else {
+                return "unknown"
+            }
+        } else {
+            return description
+        }
+    }
+    
+    var displayTime: String {
+        var format = NSDateFormatter()
+        format.timeZone = NSTimeZone.localTimeZone()
+        
+        let rtn: String
+        switch repeat {
+        case .none:
+            format.dateFormat = "MMM dd, yyyy HH:mm a"
+            rtn = format.stringFromDate(self.dateTime)
+        case .weekly:
+            format.dateFormat = "HH:mm a"
+            rtn = "Every \(self.day) at \(format.stringFromDate(self.dateTime))"
+        case .monthly:
+            format.dateFormat = "dd, HH:mm a"
+            rtn = "Every month on the \(format.stringFromDate(self.dateTime))"
+        }
+        return rtn
+    }
+    
+    // let contactName:String
+    // let contactPhone:String
+    
+    var displayContactName: String {
+        if contactName.isEmpty {
+            if let group = Group.all[groupId] {
+                return group.contactName
+            } else {
+                return "unknown"
+            }
+        } else {
+            return contactName
+        }
+    }
+    var displayContactPhone: String {
+        if contactPhone.isEmpty {
+            if let group = Group.all[groupId] {
+                return group.telephone
+            } else {
+                return "unknown"
+            }
+        } else {
+            return contactPhone
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -35,7 +35,7 @@ class VenueDetailsCell: UITableViewCell, MKMapViewDelegate {
     
         // set the information about the venue
         title.text = venue.name
-        address.text = "\(venue.address),\n\(venue.city),\n\(venue.postcode)"
+        address.text = venue.fullAddress
         let addressViewSize = address.contentSize
     }
 

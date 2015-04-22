@@ -75,4 +75,8 @@ struct Venue {
         default: return name
         }
     }
+    
+    var fullAddress: String {
+        return "\(self.address),\n\(self.city),\n\(self.postcode)"
+    }
 }

@@ -8,13 +8,12 @@
 
 import UIKit
 
-class EventLinkCell: UITableViewCell {
+class LinkCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -22,5 +21,4 @@ class EventLinkCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

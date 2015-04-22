@@ -16,7 +16,7 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
     // let baseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")
     let baseUrl = NSURL(string: "http://localhost:3000/api/")
     
-    var venues:[Venue] = [Venue]()
+    //var venues:[Venue] = [Venue]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +73,7 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
         // Pass the selected object to the new view controller.
         let annotation = sender as? VenueAnnotation
         if let dest = segue.destinationViewController as? VenueDetailViewController {
-            dest.venueId = annotation?.venueId
+            dest.venue = Venue.all[annotation!.venueId]!
         }
-        
     }
 }
