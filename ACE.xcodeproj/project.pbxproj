@@ -24,6 +24,7 @@
 		FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DC1AE6A2ED00943B41 /* Strings.swift */; };
 		FF648C861AE74ECF00889EA0 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C851AE74ECF00889EA0 /* EventDetailViewController.swift */; };
 		FF648C881AE791F200889EA0 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C871AE791F200889EA0 /* ServiceDetailViewController.swift */; };
+		FF648C8A1AE7A8B300889EA0 /* SupportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C891AE7A8B300889EA0 /* SupportTableViewController.swift */; };
 		FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F901AE3E66C00F3516C /* Group.swift */; };
 		FF9E9F931AE3EAE800F3516C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F921AE3EAE800F3516C /* Event.swift */; };
 		FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F951AE400F200F3516C /* Reachability.swift */; };
@@ -67,6 +68,7 @@
 		FF54C2DC1AE6A2ED00943B41 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FF648C851AE74ECF00889EA0 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		FF648C871AE791F200889EA0 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
+		FF648C891AE7A8B300889EA0 /* SupportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportTableViewController.swift; sourceTree = "<group>"; };
 		FF9E9F901AE3E66C00F3516C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FF9E9F921AE3EAE800F3516C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FF9E9F951AE400F200F3516C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				FF54C2DA1AE6937800943B41 /* Annotations.swift */,
 				FF648C851AE74ECF00889EA0 /* EventDetailViewController.swift */,
 				FF648C871AE791F200889EA0 /* ServiceDetailViewController.swift */,
+				FF648C891AE7A8B300889EA0 /* SupportTableViewController.swift */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				TargetAttributes = {
 					FF20F0E61ABAFE79009CDF4D = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = DUAC26JHWC;
 					};
 					FF20F0FB1ABAFE79009CDF4D = {
 						CreatedOnToolsVersion = 6.2;
@@ -319,6 +323,7 @@
 				FF54C2D51AE6827D00943B41 /* VenueDetailViewController.swift in Sources */,
 				FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */,
 				FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */,
+				FF648C8A1AE7A8B300889EA0 /* SupportTableViewController.swift in Sources */,
 				FFC486E21AE04CE30045C9CE /* Quote.swift in Sources */,
 				FFC486D51ADFC4D10045C9CE /* Model.swift in Sources */,
 				FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */,
@@ -448,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ACE/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -458,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ACE/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
