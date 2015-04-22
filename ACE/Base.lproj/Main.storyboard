@@ -2198,7 +2198,121 @@ G11 5QP</string>
                     <view key="view" contentMode="scaleToFill" id="YP2-DX-Gfv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's great!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACW-uY-qsc">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="tXT-oS-w64">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="83"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="42"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tXT-oS-w64"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="tXT-oS-w64"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's record it for later ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vk-bL-9Wn">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="008-ig-4Sn"/>
+                                    <constraint firstAttribute="height" constant="31" id="Kaf-jv-SGH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="008-ig-4Sn"/>
+                                        <exclude reference="Kaf-jv-SGH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="008-ig-4Sn"/>
+                                        <include reference="Kaf-jv-SGH"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epl-EC-3bD">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="zwf-HQ-yRE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                <state key="normal" title="Add to Diary">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="zwf-HQ-yRE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="zwf-HQ-yRE"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.1176470588" green="0.71764705880000002" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Vk-bL-9Wn" firstAttribute="leading" secondItem="YP2-DX-Gfv" secondAttribute="leadingMargin" id="0c6-Iu-CYM"/>
+                            <constraint firstItem="Epl-EC-3bD" firstAttribute="trailing" secondItem="YP2-DX-Gfv" secondAttribute="trailingMargin" id="1yp-V8-iCH"/>
+                            <constraint firstItem="ACW-uY-qsc" firstAttribute="trailing" secondItem="YP2-DX-Gfv" secondAttribute="trailingMargin" id="9cz-Kw-7Rd"/>
+                            <constraint firstItem="Epl-EC-3bD" firstAttribute="leading" secondItem="YP2-DX-Gfv" secondAttribute="leadingMargin" id="ESe-b2-PcG"/>
+                            <constraint firstItem="6Vk-bL-9Wn" firstAttribute="top" secondItem="ACW-uY-qsc" secondAttribute="bottom" constant="8" id="G3f-ka-P1d"/>
+                            <constraint firstItem="ACW-uY-qsc" firstAttribute="leading" secondItem="YP2-DX-Gfv" secondAttribute="leadingMargin" id="M8q-pY-c9F"/>
+                            <constraint firstItem="wt0-9N-phT" firstAttribute="top" secondItem="Epl-EC-3bD" secondAttribute="bottom" constant="20" id="Psa-7V-ltJ"/>
+                            <constraint firstItem="6Vk-bL-9Wn" firstAttribute="trailing" secondItem="YP2-DX-Gfv" secondAttribute="trailingMargin" id="Wsk-Lv-dM8"/>
+                            <constraint firstItem="ACW-uY-qsc" firstAttribute="top" secondItem="gm2-Oo-ETl" secondAttribute="bottom" constant="20" id="oig-av-K1O"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ACW-uY-qsc"/>
+                                <exclude reference="6Vk-bL-9Wn"/>
+                                <exclude reference="Epl-EC-3bD"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="9cz-Kw-7Rd"/>
+                                <exclude reference="M8q-pY-c9F"/>
+                                <exclude reference="oig-av-K1O"/>
+                                <exclude reference="0c6-Iu-CYM"/>
+                                <exclude reference="G3f-ka-P1d"/>
+                                <exclude reference="Wsk-Lv-dM8"/>
+                                <exclude reference="1yp-V8-iCH"/>
+                                <exclude reference="ESe-b2-PcG"/>
+                                <exclude reference="Psa-7V-ltJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ACW-uY-qsc"/>
+                                <include reference="6Vk-bL-9Wn"/>
+                                <include reference="Epl-EC-3bD"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="9cz-Kw-7Rd"/>
+                                <include reference="M8q-pY-c9F"/>
+                                <include reference="oig-av-K1O"/>
+                                <include reference="0c6-Iu-CYM"/>
+                                <include reference="G3f-ka-P1d"/>
+                                <include reference="Wsk-Lv-dM8"/>
+                                <include reference="1yp-V8-iCH"/>
+                                <include reference="ESe-b2-PcG"/>
+                                <include reference="Psa-7V-ltJ"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gye-AT-R4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
