@@ -23,6 +23,7 @@
 		FF54C2DB1AE6937800943B41 /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DA1AE6937800943B41 /* Annotations.swift */; };
 		FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DC1AE6A2ED00943B41 /* Strings.swift */; };
 		FF648C861AE74ECF00889EA0 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C851AE74ECF00889EA0 /* EventDetailViewController.swift */; };
+		FF648C881AE791F200889EA0 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C871AE791F200889EA0 /* ServiceDetailViewController.swift */; };
 		FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F901AE3E66C00F3516C /* Group.swift */; };
 		FF9E9F931AE3EAE800F3516C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F921AE3EAE800F3516C /* Event.swift */; };
 		FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F951AE400F200F3516C /* Reachability.swift */; };
@@ -65,6 +66,7 @@
 		FF54C2DA1AE6937800943B41 /* Annotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotations.swift; sourceTree = "<group>"; };
 		FF54C2DC1AE6A2ED00943B41 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FF648C851AE74ECF00889EA0 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		FF648C871AE791F200889EA0 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
 		FF9E9F901AE3E66C00F3516C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FF9E9F921AE3EAE800F3516C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FF9E9F951AE400F200F3516C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				FF54C2D81AE6832A00943B41 /* LinkCell.swift */,
 				FF54C2DA1AE6937800943B41 /* Annotations.swift */,
 				FF648C851AE74ECF00889EA0 /* EventDetailViewController.swift */,
+				FF648C871AE791F200889EA0 /* ServiceDetailViewController.swift */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				FF20F1121ABB8687009CDF4D /* ServicesMapViewController.swift in Sources */,
 				FFC486DE1AE045930045C9CE /* QuotesViewController.swift in Sources */,
 				FF9E9F931AE3EAE800F3516C /* Event.swift in Sources */,
+				FF648C881AE791F200889EA0 /* ServiceDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

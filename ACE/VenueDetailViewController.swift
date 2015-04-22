@@ -106,6 +106,9 @@ class VenueDetailViewController: UITableViewController {
                 let dest = segue.destinationViewController as? EventDetailViewController
                 dest?.venue = venue
                 dest?.event = venue?.events[indexPath.row]
+            } else if segue.identifier == "showServiceSegue" {
+                let dest = segue.destinationViewController as? ServiceDetailViewController
+                dest?.service = venue?.services[indexPath.row]
             }
         }
     }
