@@ -47,6 +47,9 @@ struct Venue {
     
     // access to the collection of all venues
     static var all:[Int:Venue]  = [Int:Venue]()
+    static func find(id:Int) -> Venue? {
+        return all[id]
+    }
     
     // some helper functions for working out how best to display stuff
     enum Style {

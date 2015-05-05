@@ -13,11 +13,6 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var map: MKMapView!
     
-    // let baseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")
-    let baseUrl = NSURL(string: "http://localhost:3000/api/")
-    
-    //var venues:[Venue] = [Venue]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,8 +22,8 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
         setMapLocation(CLLocationCoordinate2D(latitude: 55.9410655, longitude: -3.2053836), delta: 0.05)
 
         // add all the venues to the map
-        for (id,venue) in Venue.all {
-            let annotation = VenueAnnotation(venue: venue)
+        for (id,event) in Event.all {
+            let annotation = EventAnnotation(event: event)
             self.map.addAnnotation(annotation)
         }
     }
@@ -54,7 +49,7 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             view.canShowCallout = true
             view.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIView
-            view.image = (annotation as? VenueAnnotation)?.pin
+            view.image = (annotation as? EventAnnotation)?.pin
         }
         // configure the annotation
         view.annotation = annotation

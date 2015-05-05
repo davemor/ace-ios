@@ -38,3 +38,20 @@ class VenueAnnotation : NSObject, MKAnnotation {
         self.pin = getPin(venue)
     }
 }
+
+class EventAnnotation : NSObject, MKAnnotation {
+    let eventId:Int
+    let pin:UIImage
+    
+    // implement the MKAnnotation protocol
+    var coordinate:CLLocationCoordinate2D
+    var title:String!
+    var subtitle:String!
+    
+    init(event: Event) {
+        self.eventId = event.id
+        self.coordinate = Venue.find(event.venueId)!.location
+        self.title = event.name
+        self.pin = UIImage(named: "EventMapPin")! // TODO: Fix this so it's selecting a pin
+    }
+}

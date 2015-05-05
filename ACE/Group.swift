@@ -24,4 +24,7 @@ struct Group {
     }
     
     static var all:[Int:Group]  = [Int:Group]()
+    static func find(id:Int) -> Group? {
+        return all[id]
+    }
 }

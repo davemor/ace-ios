@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */; };
 		FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20F0EC1ABAFE79009CDF4D /* AppDelegate.swift */; };
 		FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF20F0F01ABAFE79009CDF4D /* Main.storyboard */; };
 		FF20F0F41ABAFE79009CDF4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF20F0F31ABAFE79009CDF4D /* Images.xcassets */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsMapViewController.swift; sourceTree = "<group>"; };
 		FF20F0E71ABAFE79009CDF4D /* ACE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF20F0EB1ABAFE79009CDF4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF20F0EC1ABAFE79009CDF4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF0E8C271AF91BF500B7EC68 /* Meetings */ = {
+			isa = PBXGroup;
+			children = (
+				FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */,
+			);
+			name = Meetings;
+			sourceTree = "<group>";
+		};
 		FF1B1C4A1AE5458D0081257B /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 		FF20F0E91ABAFE79009CDF4D /* ACE */ = {
 			isa = PBXGroup;
 			children = (
+				FF0E8C271AF91BF500B7EC68 /* Meetings */,
 				FF1B1C4A1AE5458D0081257B /* Support */,
 				FF9E9F941AE400D700F3516C /* Util */,
 				FFC486D81AE029360045C9CE /* Mood */,
@@ -331,6 +342,7 @@
 				FF648C861AE74ECF00889EA0 /* EventDetailViewController.swift in Sources */,
 				FF54C2DB1AE6937800943B41 /* Annotations.swift in Sources */,
 				FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */,
+				FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */,
 				FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */,
 				FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */,
 				FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */,
@@ -471,6 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ACE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -482,6 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ACE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

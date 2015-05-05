@@ -25,8 +25,8 @@ class Model {
         return Static.instance!
     }
     
-    // let baseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")
-    let baseUrl = NSURL(string: "http://localhost:3000/api/")
+    let baseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")
+    // let baseUrl = NSURL(string: "http://localhost:3000/api/")
     
     // download a new JSON file from the server
     func downloadSupportDirectory() {
