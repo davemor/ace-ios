@@ -18,16 +18,11 @@ class AboutViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // load the values of the switches
         let defaults = NSUserDefaults.standardUserDefaults()
         let date = loadDateFromUserDefaults(defaults)
+        datePicker.date = date
         setLabelToDate(date)
         daysSwitch.on = defaults.boolForKey("show_days_in_recovery")
         badgesSwitch.on = defaults.boolForKey("show_milestone_badges")

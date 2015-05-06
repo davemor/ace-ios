@@ -55,5 +55,18 @@ class HomeViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         daysInRecoveryView.hidden = !defaults.boolForKey("show_days_in_recovery")
         meetingsAttendedView.hidden = !defaults.boolForKey("show_days_in_recovery")
+        
+        // set the values of the view
+        if let dateStr = defaults.stringForKey("recovery_start_date") {
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd MMMM yyyy"
+            if let date = dateFormatter.dateFromString(dateStr) {
+                daysInRecoveryView.text = "Days \(daysBetweenDates(date, NSDate()))"
+            } else {
+                daysInRecoveryView.text = "Days 0"
+            }
+        } else {
+            daysInRecoveryView.text = "Days 0"
+        }
     }
 }
