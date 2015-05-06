@@ -10,11 +10,17 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var daysInRecoveryView: UILabel!
+    @IBOutlet weak var meetingsAttendedView: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // load up the model
         Model.sharedInstance.downloadSupportDirectory()
+        
+        // set up the view
+        refreshView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +31,8 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
+        
+        refreshView()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -41,5 +49,11 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func refreshView() {
+        // set up the view
+        let defaults = NSUserDefaults.standardUserDefaults()
+        daysInRecoveryView.hidden = !defaults.boolForKey("show_days_in_recovery")
+        meetingsAttendedView.hidden = !defaults.boolForKey("show_days_in_recovery")
+    }
 }

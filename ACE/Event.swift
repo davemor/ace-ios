@@ -151,6 +151,14 @@ struct Event {
             return contactPhone
         }
     }
+    
+    var venue: Venue {
+        return Venue.find(self.venueId)!
+    }
+    
+    var group: Group {
+        return Group.find(self.groupId)!
+    }
 }
 
 

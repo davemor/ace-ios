@@ -30,6 +30,8 @@
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
 		FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */; };
+		FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */; };
+		FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */; };
 		FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F901AE3E66C00F3516C /* Group.swift */; };
 		FF9E9F931AE3EAE800F3516C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F921AE3EAE800F3516C /* Event.swift */; };
 		FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F951AE400F200F3516C /* Reachability.swift */; };
@@ -79,6 +81,8 @@
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
+		FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FF9E9F901AE3E66C00F3516C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FF9E9F921AE3EAE800F3516C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FF9E9F951AE400F200F3516C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */,
+				FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */,
 			);
 			name = Meetings;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 		FF20F0E91ABAFE79009CDF4D /* ACE */ = {
 			isa = PBXGroup;
 			children = (
+				FF8596411AFA1C670099DFF8 /* About */,
 				FF0E8C271AF91BF500B7EC68 /* Meetings */,
 				FF1B1C4A1AE5458D0081257B /* Support */,
 				FF9E9F941AE400D700F3516C /* Util */,
@@ -205,6 +211,14 @@
 				FF9E9F921AE3EAE800F3516C /* Event.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		FF8596411AFA1C670099DFF8 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */,
+			);
+			name = About;
 			sourceTree = "<group>";
 		};
 		FF9E9F941AE400D700F3516C /* Util */ = {
@@ -335,6 +349,7 @@
 				FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */,
 				FFC486E01AE04ADD0045C9CE /* QuotesTableViewCell.swift in Sources */,
 				FF54C2D71AE682B900943B41 /* VenueDetailsCell.swift in Sources */,
+				FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */,
 				FFC486E41AE058A80045C9CE /* Colors.swift in Sources */,
 				FF54C2D91AE6832A00943B41 /* LinkCell.swift in Sources */,
 				FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */,
@@ -357,6 +372,7 @@
 				FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */,
 				FF20F1121ABB8687009CDF4D /* ServicesMapViewController.swift in Sources */,
 				FFC486DE1AE045930045C9CE /* QuotesViewController.swift in Sources */,
+				FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */,
 				FF9E9F931AE3EAE800F3516C /* Event.swift in Sources */,
 				FF648C881AE791F200889EA0 /* ServiceDetailViewController.swift in Sources */,
 			);

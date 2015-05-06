@@ -64,7 +64,9 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "meetingDetailSegue" {
-            
+            let annotation = sender?.annotation as! MeetingAnnotation // if not then crash!
+            let dest = segue.destinationViewController as! MeetingsDetailViewController
+            dest.meeting = Event.all[annotation.eventId]
         }
     }
 
@@ -82,7 +84,7 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
 let knownGroupsPins = [
     "Cocaine Anonymous" : UIImage(named: "OrangeMapPin"),
     "Narcotics Anonymous" : UIImage(named: "BlueMapPin"),
-    "SMART Recovery Groups" : UIImage(named: "BlueMapPin"), // TODO: Change to Pink
+    "SMART Recovery Groups" : UIImage(named: "PinkMapPin"),
     "Alcoholics Anonymous" : UIImage(named: "PurpleMapPin")
 ]
 
