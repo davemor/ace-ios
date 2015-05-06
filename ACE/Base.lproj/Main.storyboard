@@ -2489,12 +2489,14 @@ G11 5QP</string>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In recovery since" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyg-bW-MR0">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKb-ys-myt">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKb-ys-myt">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <gestureRecognizers/>
                                                     <state key="normal" title="4 Februray 2015">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -2537,6 +2539,10 @@ G11 5QP</string>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="m0t-fI-Wle" appends="YES" id="gzC-x5-ecX"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="U6B-RF-Xzy">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -2597,7 +2603,7 @@ G11 5QP</string>
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="ozV-aV-HdD">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5AF-sh-BTl">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="5AF-sh-BTl">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5AF-sh-BTl" id="6zu-cD-ggJ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -2656,7 +2662,7 @@ G11 5QP</string>
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GRI-Dp-2Fn">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="GRI-Dp-2Fn">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GRI-Dp-2Fn" id="mpa-Hh-oJG">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -2784,6 +2790,11 @@ G11 5QP</string>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QR8-wN-6Lv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="m0t-fI-Wle">
+                    <connections>
+                        <action selector="dateCellTapped:" destination="rQc-or-Hpz" id="oCT-ds-pRE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="231" y="1104"/>
         </scene>

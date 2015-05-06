@@ -9,7 +9,6 @@
 import UIKit
 
 class AboutViewController: UITableViewController {
-
     
     @IBOutlet weak var recoveryStartDateButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -28,8 +27,8 @@ class AboutViewController: UITableViewController {
         
         // load the values of the switches
         let defaults = NSUserDefaults.standardUserDefaults()
-       // let startDate =
-        // recoveryStartDateButton.setTitle(<#title: String?#>, forState: .Normal)
+        let date = loadDateFromUserDefaults(defaults)
+        setLabelToDate(date)
         daysSwitch.on = defaults.boolForKey("show_days_in_recovery")
         badgesSwitch.on = defaults.boolForKey("show_milestone_badges")
     }
@@ -58,28 +57,11 @@ class AboutViewController: UITableViewController {
     // MARK: Expanding date picker stuff
     var isEditingDate = false
     
-    @IBAction func toggleEditDate(sender: UIButton) {
+    @IBAction func dateCellTapped(sender: AnyObject) {
+        toggleEditDate()
+    }
+    func toggleEditDate() {
         isEditingDate = !isEditingDate
-        
-        // animate the cell open/close
-        
-        /*
-        UIView.animateWithDuration(2.0, animations: {
-            let pathOfPickerCell = NSIndexPath(forRow: 1, inSection: 0)
-            self.tableView.reloadRowsAtIndexPaths([pathOfPickerCell], withRowAnimation: UITableViewRowAnimation.Fade)
-            
-            //self.tableView.reloadSections(NSIndexSet(indexesInRange: NSRange(location: 0, length: 3)), withRowAnimation: .Automatic)
-            
-            self.tableView.reloadData()
-            
-            let alpha = self.isEditingDate ? CGFloat(1.0) : CGFloat(0.0)
-            self.datePicker.alpha = alpha
-            
-            let targetColor = self.isEditingDate ? UIColor.redColor() : UIColor.blackColor()
-            self.recoveryStartDateButton.setTitleColor(targetColor, forState: .Normal)
-        })
-        */
-        
         UIView.animateWithDuration(2.0, animations: {
             let targetColor = self.isEditingDate ? UIColor.redColor() : UIColor.blackColor()
             self.recoveryStartDateButton.setTitleColor(targetColor, forState: .Normal)
@@ -87,19 +69,39 @@ class AboutViewController: UITableViewController {
         self.tableView.beginUpdates()
         self.tableView.reloadData()
         self.tableView.endUpdates()
-
     }
     
     // MARK: - Date picker
+    // TODO: Perhaps move the NSDateFormatter out somewhere and reuse it.
     @IBAction func datePickerValueChanged(sender: UIDatePicker) {
         setLabelToDate(sender.date)
+        saveDateToUserDefaults(sender.date)
     }
-    
     func setLabelToDate(date: NSDate) {
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd MMMM yyyy"
         let dateStr = dateFormatter.stringFromDate(date)
         recoveryStartDateButton.setTitle(dateStr, forState: .Normal)
+    }
+    func loadDateFromUserDefaults(defaults: NSUserDefaults) -> NSDate {
+        if let dateStr = defaults.stringForKey("recovery_start_date") {
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd MMMM yyyy"
+            if let rtn = dateFormatter.dateFromString(dateStr) {
+                return rtn
+            } else {
+                return NSDate() // now
+            }
+        } else {
+            return NSDate() // now
+        }
+    }
+    func saveDateToUserDefaults(date: NSDate) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        let dateStr = dateFormatter.stringFromDate(date)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(dateStr, forKey: "recovery_start_date")
     }
     
     // MARK: - Table view data source
@@ -116,66 +118,6 @@ class AboutViewController: UITableViewController {
         }
     }
     
-    /*
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 3
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 2
-    }
-    */
-
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     /*
     // MARK: - Navigation
 
