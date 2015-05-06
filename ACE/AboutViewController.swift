@@ -10,6 +10,10 @@ import UIKit
 
 class AboutViewController: UITableViewController {
 
+    
+    @IBOutlet weak var recoveryStartDateButton: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     @IBOutlet weak var daysSwitch: UISwitch!
     @IBOutlet weak var badgesSwitch: UISwitch!
     
@@ -24,6 +28,8 @@ class AboutViewController: UITableViewController {
         
         // load the values of the switches
         let defaults = NSUserDefaults.standardUserDefaults()
+       // let startDate =
+        // recoveryStartDateButton.setTitle(<#title: String?#>, forState: .Normal)
         daysSwitch.on = defaults.boolForKey("show_days_in_recovery")
         badgesSwitch.on = defaults.boolForKey("show_milestone_badges")
     }
@@ -49,23 +55,81 @@ class AboutViewController: UITableViewController {
         defaults.setBool(sender.on, forKey: "show_milestone_badges")
     }
     
+    // MARK: Expanding date picker stuff
+    var isEditingDate = false
     
+    @IBAction func toggleEditDate(sender: UIButton) {
+        isEditingDate = !isEditingDate
+        
+        // animate the cell open/close
+        
+        /*
+        UIView.animateWithDuration(2.0, animations: {
+            let pathOfPickerCell = NSIndexPath(forRow: 1, inSection: 0)
+            self.tableView.reloadRowsAtIndexPaths([pathOfPickerCell], withRowAnimation: UITableViewRowAnimation.Fade)
+            
+            //self.tableView.reloadSections(NSIndexSet(indexesInRange: NSRange(location: 0, length: 3)), withRowAnimation: .Automatic)
+            
+            self.tableView.reloadData()
+            
+            let alpha = self.isEditingDate ? CGFloat(1.0) : CGFloat(0.0)
+            self.datePicker.alpha = alpha
+            
+            let targetColor = self.isEditingDate ? UIColor.redColor() : UIColor.blackColor()
+            self.recoveryStartDateButton.setTitleColor(targetColor, forState: .Normal)
+        })
+        */
+        
+        UIView.animateWithDuration(2.0, animations: {
+            let targetColor = self.isEditingDate ? UIColor.redColor() : UIColor.blackColor()
+            self.recoveryStartDateButton.setTitleColor(targetColor, forState: .Normal)
+        })
+        self.tableView.beginUpdates()
+        self.tableView.reloadData()
+        self.tableView.endUpdates()
+
+    }
+    
+    // MARK: - Date picker
+    @IBAction func datePickerValueChanged(sender: UIDatePicker) {
+        setLabelToDate(sender.date)
+    }
+    
+    func setLabelToDate(date: NSDate) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        let dateStr = dateFormatter.stringFromDate(date)
+        recoveryStartDateButton.setTitle(dateStr, forState: .Normal)
+    }
     
     // MARK: - Table view data source
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            if isEditingDate {
+                return 162.0
+            } else {
+                return 0.0
+            }
+        } else {
+            return 44.0
+        }
+    }
+    
     /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 3
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return 2
     }
     */
+
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
