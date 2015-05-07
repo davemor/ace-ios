@@ -57,13 +57,13 @@ class AboutViewController: UITableViewController {
     }
     func toggleEditDate() {
         isEditingDate = !isEditingDate
-        UIView.animateWithDuration(2.0, animations: {
+        UIView.animateWithDuration(1.0, animations: {
             let targetColor = self.isEditingDate ? UIColor.redColor() : UIColor.blackColor()
             self.recoveryStartDateButton.setTitleColor(targetColor, forState: .Normal)
         })
-        self.tableView.beginUpdates()
+        // self.tableView.beginUpdates()
         self.tableView.reloadData()
-        self.tableView.endUpdates()
+        //self.tableView.endUpdates()
     }
     
     // MARK: - Date picker
