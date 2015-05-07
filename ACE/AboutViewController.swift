@@ -69,8 +69,25 @@ class AboutViewController: UITableViewController {
     // MARK: - Date picker
     // TODO: Perhaps move the NSDateFormatter out somewhere and reuse it.
     @IBAction func datePickerValueChanged(sender: UIDatePicker) {
-        setLabelToDate(sender.date)
-        saveDateToUserDefaults(sender.date)
+        if isInPast(sender.date) {
+            setLabelToDate(sender.date)
+            saveDateToUserDefaults(sender.date)
+        } else {
+            // show an alert
+            var alert = UIAlertController(title: "Alert", message: "Your recovery should not start in the future.  Let's do it now!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: {
+                // reset the picker
+                let defaults = NSUserDefaults.standardUserDefaults()
+                let oldDate = self.loadDateFromUserDefaults(defaults)
+                self.datePicker.setDate(oldDate, animated: true)
+            })
+        }
+    }
+    func isInPast(date:NSDate) -> Bool {
+        let difference = daysBetweenDates(date, NSDate())
+        println("\(difference)")
+        return difference >= 0
     }
     func setLabelToDate(date: NSDate) {
         var dateFormatter = NSDateFormatter()
