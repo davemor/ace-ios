@@ -30,9 +30,25 @@
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
 		FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */; };
+		FF7D49DB1AFB949000D5BC3B /* MeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7D49DA1AFB949000D5BC3B /* MeetingCell.swift */; };
 		FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */; };
 		FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */; };
 		FF8596451AFAA8920099DFF8 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596441AFAA8920099DFF8 /* Dates.swift */; };
+		FF8596471AFB87320099DFF8 /* MeetingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596461AFB87320099DFF8 /* MeetingsListViewController.swift */; };
+		FF85965E1AFB8AAB0099DFF8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85964F1AFB8AAB0099DFF8 /* Array.swift */; };
+		FF85965F1AFB8AAB0099DFF8 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596501AFB8AAB0099DFF8 /* Bool.swift */; };
+		FF8596601AFB8AAB0099DFF8 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596511AFB8AAB0099DFF8 /* Character.swift */; };
+		FF8596611AFB8AAB0099DFF8 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596521AFB8AAB0099DFF8 /* Dictionary.swift */; };
+		FF8596621AFB8AAB0099DFF8 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596531AFB8AAB0099DFF8 /* Double.swift */; };
+		FF8596631AFB8AAB0099DFF8 /* ExSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596551AFB8AAB0099DFF8 /* ExSwift.swift */; };
+		FF8596641AFB8AAB0099DFF8 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596561AFB8AAB0099DFF8 /* Float.swift */; };
+		FF8596651AFB8AAB0099DFF8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF8596571AFB8AAB0099DFF8 /* Info.plist */; };
+		FF8596661AFB8AAB0099DFF8 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596581AFB8AAB0099DFF8 /* Int.swift */; };
+		FF8596671AFB8AAB0099DFF8 /* NSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596591AFB8AAB0099DFF8 /* NSArray.swift */; };
+		FF8596681AFB8AAB0099DFF8 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85965A1AFB8AAB0099DFF8 /* NSDate.swift */; };
+		FF8596691AFB8AAB0099DFF8 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85965B1AFB8AAB0099DFF8 /* Range.swift */; };
+		FF85966A1AFB8AAB0099DFF8 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85965C1AFB8AAB0099DFF8 /* Sequence.swift */; };
+		FF85966B1AFB8AAB0099DFF8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85965D1AFB8AAB0099DFF8 /* String.swift */; };
 		FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F901AE3E66C00F3516C /* Group.swift */; };
 		FF9E9F931AE3EAE800F3516C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F921AE3EAE800F3516C /* Event.swift */; };
 		FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F951AE400F200F3516C /* Reachability.swift */; };
@@ -82,9 +98,26 @@
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		FF7D49DA1AFB949000D5BC3B /* MeetingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingCell.swift; sourceTree = "<group>"; };
 		FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
 		FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FF8596441AFAA8920099DFF8 /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
+		FF8596461AFB87320099DFF8 /* MeetingsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsListViewController.swift; sourceTree = "<group>"; };
+		FF85964F1AFB8AAB0099DFF8 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		FF8596501AFB8AAB0099DFF8 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
+		FF8596511AFB8AAB0099DFF8 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		FF8596521AFB8AAB0099DFF8 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		FF8596531AFB8AAB0099DFF8 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		FF8596541AFB8AAB0099DFF8 /* ExSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExSwift.h; sourceTree = "<group>"; };
+		FF8596551AFB8AAB0099DFF8 /* ExSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExSwift.swift; sourceTree = "<group>"; };
+		FF8596561AFB8AAB0099DFF8 /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
+		FF8596571AFB8AAB0099DFF8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF8596581AFB8AAB0099DFF8 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		FF8596591AFB8AAB0099DFF8 /* NSArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSArray.swift; sourceTree = "<group>"; };
+		FF85965A1AFB8AAB0099DFF8 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		FF85965B1AFB8AAB0099DFF8 /* Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
+		FF85965C1AFB8AAB0099DFF8 /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		FF85965D1AFB8AAB0099DFF8 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FF9E9F901AE3E66C00F3516C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FF9E9F921AE3EAE800F3516C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FF9E9F951AE400F200F3516C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -120,6 +153,8 @@
 			children = (
 				FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */,
 				FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */,
+				FF8596461AFB87320099DFF8 /* MeetingsListViewController.swift */,
+				FF7D49DA1AFB949000D5BC3B /* MeetingCell.swift */,
 			);
 			name = Meetings;
 			sourceTree = "<group>";
@@ -223,9 +258,32 @@
 			name = About;
 			sourceTree = "<group>";
 		};
+		FF85964E1AFB8AAB0099DFF8 /* ExSwift */ = {
+			isa = PBXGroup;
+			children = (
+				FF85964F1AFB8AAB0099DFF8 /* Array.swift */,
+				FF8596501AFB8AAB0099DFF8 /* Bool.swift */,
+				FF8596511AFB8AAB0099DFF8 /* Character.swift */,
+				FF8596521AFB8AAB0099DFF8 /* Dictionary.swift */,
+				FF8596531AFB8AAB0099DFF8 /* Double.swift */,
+				FF8596541AFB8AAB0099DFF8 /* ExSwift.h */,
+				FF8596551AFB8AAB0099DFF8 /* ExSwift.swift */,
+				FF8596561AFB8AAB0099DFF8 /* Float.swift */,
+				FF8596571AFB8AAB0099DFF8 /* Info.plist */,
+				FF8596581AFB8AAB0099DFF8 /* Int.swift */,
+				FF8596591AFB8AAB0099DFF8 /* NSArray.swift */,
+				FF85965A1AFB8AAB0099DFF8 /* NSDate.swift */,
+				FF85965B1AFB8AAB0099DFF8 /* Range.swift */,
+				FF85965C1AFB8AAB0099DFF8 /* Sequence.swift */,
+				FF85965D1AFB8AAB0099DFF8 /* String.swift */,
+			);
+			path = ExSwift;
+			sourceTree = "<group>";
+		};
 		FF9E9F941AE400D700F3516C /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				FF85964E1AFB8AAB0099DFF8 /* ExSwift */,
 				FF9E9F951AE400F200F3516C /* Reachability.swift */,
 				FF54C2DC1AE6A2ED00943B41 /* Strings.swift */,
 				FF8596441AFAA8920099DFF8 /* Dates.swift */,
@@ -329,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8596651AFB8AAB0099DFF8 /* Info.plist in Resources */,
 				FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */,
 				FF20F0F71ABAFE79009CDF4D /* LaunchScreen.xib in Resources */,
 				FF20F0F41ABAFE79009CDF4D /* Images.xcassets in Resources */,
@@ -349,35 +408,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8596671AFB8AAB0099DFF8 /* NSArray.swift in Sources */,
 				FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */,
 				FFC486E01AE04ADD0045C9CE /* QuotesTableViewCell.swift in Sources */,
 				FF54C2D71AE682B900943B41 /* VenueDetailsCell.swift in Sources */,
+				FF7D49DB1AFB949000D5BC3B /* MeetingCell.swift in Sources */,
+				FF8596631AFB8AAB0099DFF8 /* ExSwift.swift in Sources */,
 				FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */,
 				FFC486E41AE058A80045C9CE /* Colors.swift in Sources */,
+				FF85965E1AFB8AAB0099DFF8 /* Array.swift in Sources */,
 				FF54C2D91AE6832A00943B41 /* LinkCell.swift in Sources */,
 				FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */,
 				FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */,
+				FF8596471AFB87320099DFF8 /* MeetingsListViewController.swift in Sources */,
 				FF648C861AE74ECF00889EA0 /* EventDetailViewController.swift in Sources */,
+				FF8596611AFB8AAB0099DFF8 /* Dictionary.swift in Sources */,
 				FF54C2DB1AE6937800943B41 /* Annotations.swift in Sources */,
 				FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */,
 				FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */,
 				FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */,
+				FF8596601AFB8AAB0099DFF8 /* Character.swift in Sources */,
 				FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */,
 				FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */,
 				FFC486E71AE0DF0D0045C9CE /* ActivitiesViewController.swift in Sources */,
 				FF54C2D51AE6827D00943B41 /* VenueDetailViewController.swift in Sources */,
 				FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */,
+				FF85966A1AFB8AAB0099DFF8 /* Sequence.swift in Sources */,
 				FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */,
 				FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */,
+				FF8596681AFB8AAB0099DFF8 /* NSDate.swift in Sources */,
+				FF8596691AFB8AAB0099DFF8 /* Range.swift in Sources */,
 				FF648C8A1AE7A8B300889EA0 /* SupportTableViewController.swift in Sources */,
 				FF8596451AFAA8920099DFF8 /* Dates.swift in Sources */,
+				FF8596661AFB8AAB0099DFF8 /* Int.swift in Sources */,
 				FFC486E21AE04CE30045C9CE /* Quote.swift in Sources */,
 				FFC486D51ADFC4D10045C9CE /* Model.swift in Sources */,
+				FF85966B1AFB8AAB0099DFF8 /* String.swift in Sources */,
+				FF85965F1AFB8AAB0099DFF8 /* Bool.swift in Sources */,
 				FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */,
 				FF20F1121ABB8687009CDF4D /* ServicesMapViewController.swift in Sources */,
+				FF8596641AFB8AAB0099DFF8 /* Float.swift in Sources */,
 				FFC486DE1AE045930045C9CE /* QuotesViewController.swift in Sources */,
 				FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */,
 				FF9E9F931AE3EAE800F3516C /* Event.swift in Sources */,
+				FF8596621AFB8AAB0099DFF8 /* Double.swift in Sources */,
 				FF648C881AE791F200889EA0 /* ServiceDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

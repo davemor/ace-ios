@@ -25,14 +25,14 @@ struct Event {
         case weekly
         case monthly
     }
-    enum Day: Printable {
-        case monday
-        case tuesday
-        case wednesday
-        case thursday
-        case friday
-        case saturday
-        case sunday
+    enum Day: Int, Printable {
+        case monday = 0
+        case tuesday = 1
+        case wednesday = 2
+        case thursday = 3
+        case friday = 4
+        case saturday = 5
+        case sunday = 6
         
         var description : String {
             switch self {
@@ -66,7 +66,8 @@ struct Event {
         }
         
         // day
-        switch read("repeat", dict, "") {
+        let day = read("day_of_week", dict, "")
+        switch day {
             case "monday": self.day = .monday
             case "tuesday": self.day = .tuesday
             case "wednesday": self.day = .wednesday
@@ -74,7 +75,9 @@ struct Event {
             case "friday": self.day = .friday
             case "saturday": self.day = .saturday
             case "sunday": self.day = .sunday
-            default: self.day = .monday
+            default:
+                print("unknown day \(day)")
+                self.day = .monday
         }
         
         // add to the venue and group
