@@ -52,7 +52,7 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
         
         let phoneNumbers: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue()
         let firstName: ABMultiValueRef = ABRecordCopyValue(person, kABPersonFirstNameProperty).takeRetainedValue() as! String
-        let secondName: ABMultiValueRef = ABRecordCopyValue(person, kABPersonFirstNameProperty).takeRetainedValue() as! String
+        let secondName: ABMultiValueRef = ABRecordCopyValue(person, kABPersonLastNameProperty).takeRetainedValue() as! String
         if (ABMultiValueGetCount(phoneNumbers) > 0) {
             let index = 0 as CFIndex
             let phone = ABMultiValueCopyValueAtIndex(phoneNumbers, index).takeRetainedValue() as! String
