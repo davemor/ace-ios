@@ -61,8 +61,9 @@ class AboutViewController: UITableViewController {
             let targetColor = self.isEditingDate ? UIColor.redColor() : UIColor.blackColor()
             self.recoveryStartDateButton.setTitleColor(targetColor, forState: .Normal)
         })
-        // self.tableView.beginUpdates()
+        //self.tableView.beginUpdates()
         self.tableView.reloadData()
+        //self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 3)) , withRowAnimation: UITableViewRowAnimation.None)
         //self.tableView.endUpdates()
     }
     

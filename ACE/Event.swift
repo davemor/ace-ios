@@ -112,7 +112,7 @@ struct Event {
     
     var displayTime: String {
         var format = NSDateFormatter()
-        format.timeZone = NSTimeZone.localTimeZone()
+        // format.timeZone = NSTimeZone.localTimeZone()
         
         let rtn: String
         switch repeat {
@@ -127,6 +127,12 @@ struct Event {
             rtn = "Every month on the \(format.stringFromDate(self.dateTime))"
         }
         return rtn
+    }
+    
+    var displayTimeOfDay: String {
+        var format = NSDateFormatter()
+        format.dateFormat = "HH:mm a"
+        return format.stringFromDate(self.dateTime)
     }
     
     // let contactName:String

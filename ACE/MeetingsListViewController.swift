@@ -34,6 +34,12 @@ class MeetingsListViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Actions
+    
+    @IBAction func back(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -58,7 +64,9 @@ class MeetingsListViewController: UITableViewController {
         let day = Event.Day(rawValue: indexPath.section)!
         if let meetings = orderedMeetings[day] {
             let meeting = meetings[indexPath.row]
-            cell.title.text = meeting.displayName
+            cell.title.text = meeting.displayTimeOfDay
+            cell.subtitle.text = meeting.displayName
+            cell.meeting = meeting // TODO: bit of a hack perhaps?
         }
         return cell
     }
@@ -68,14 +76,17 @@ class MeetingsListViewController: UITableViewController {
         return day?.description
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue.identifier == "meetingDetailSegue" {
+            let cell = sender as? MeetingCell
+            let dest = segue.destinationViewController as? MeetingsDetailViewController
+            dest?.meeting = cell?.meeting
+        }
     }
-    */
-
 }

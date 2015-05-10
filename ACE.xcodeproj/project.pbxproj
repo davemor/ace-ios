@@ -52,6 +52,9 @@
 		FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F901AE3E66C00F3516C /* Group.swift */; };
 		FF9E9F931AE3EAE800F3516C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F921AE3EAE800F3516C /* Event.swift */; };
 		FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F951AE400F200F3516C /* Reachability.swift */; };
+		FFC2E1B41AFE737700D11DF5 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2E1B31AFE737700D11DF5 /* ContactListViewController.swift */; };
+		FFC2E1B61AFE773900D11DF5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2E1B51AFE773900D11DF5 /* Contact.swift */; };
+		FFC2E1BA1AFF88F300D11DF5 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2E1B91AFF88F300D11DF5 /* ContactDetailsViewController.swift */; };
 		FFC486D51ADFC4D10045C9CE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486D41ADFC4D10045C9CE /* Model.swift */; };
 		FFC486DE1AE045930045C9CE /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486DD1AE045930045C9CE /* QuotesViewController.swift */; };
 		FFC486E01AE04ADD0045C9CE /* QuotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486DF1AE04ADD0045C9CE /* QuotesTableViewCell.swift */; };
@@ -121,6 +124,9 @@
 		FF9E9F901AE3E66C00F3516C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FF9E9F921AE3EAE800F3516C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FF9E9F951AE400F200F3516C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		FFC2E1B31AFE737700D11DF5 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		FFC2E1B51AFE773900D11DF5 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		FFC2E1B91AFF88F300D11DF5 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		FFC486D41ADFC4D10045C9CE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FFC486DD1AE045930045C9CE /* QuotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		FFC486DF1AE04ADD0045C9CE /* QuotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesTableViewCell.swift; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 				FFC486E31AE058A80045C9CE /* Colors.swift */,
 				FF9E9F901AE3E66C00F3516C /* Group.swift */,
 				FF9E9F921AE3EAE800F3516C /* Event.swift */,
+				FFC2E1B51AFE773900D11DF5 /* Contact.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -254,6 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */,
+				FFC2E1B31AFE737700D11DF5 /* ContactListViewController.swift */,
+				FFC2E1B91AFF88F300D11DF5 /* ContactDetailsViewController.swift */,
 			);
 			name = About;
 			sourceTree = "<group>";
@@ -409,10 +418,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF8596671AFB8AAB0099DFF8 /* NSArray.swift in Sources */,
+				FFC2E1B61AFE773900D11DF5 /* Contact.swift in Sources */,
 				FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */,
 				FFC486E01AE04ADD0045C9CE /* QuotesTableViewCell.swift in Sources */,
 				FF54C2D71AE682B900943B41 /* VenueDetailsCell.swift in Sources */,
 				FF7D49DB1AFB949000D5BC3B /* MeetingCell.swift in Sources */,
+				FFC2E1B41AFE737700D11DF5 /* ContactListViewController.swift in Sources */,
 				FF8596631AFB8AAB0099DFF8 /* ExSwift.swift in Sources */,
 				FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */,
 				FFC486E41AE058A80045C9CE /* Colors.swift in Sources */,
@@ -444,6 +455,7 @@
 				FFC486E21AE04CE30045C9CE /* Quote.swift in Sources */,
 				FFC486D51ADFC4D10045C9CE /* Model.swift in Sources */,
 				FF85966B1AFB8AAB0099DFF8 /* String.swift in Sources */,
+				FFC2E1BA1AFF88F300D11DF5 /* ContactDetailsViewController.swift in Sources */,
 				FF85965F1AFB8AAB0099DFF8 /* Bool.swift in Sources */,
 				FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */,
 				FF20F1121ABB8687009CDF4D /* ServicesMapViewController.swift in Sources */,

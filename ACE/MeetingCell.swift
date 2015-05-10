@@ -11,7 +11,9 @@ import UIKit
 class MeetingCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var subtitle: UILabel!
     
+    var meeting:Event!
     
     override func awakeFromNib() {
         super.awakeFromNib()
