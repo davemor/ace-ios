@@ -23,6 +23,7 @@
 		FF54C2D91AE6832A00943B41 /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2D81AE6832A00943B41 /* LinkCell.swift */; };
 		FF54C2DB1AE6937800943B41 /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DA1AE6937800943B41 /* Annotations.swift */; };
 		FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DC1AE6A2ED00943B41 /* Strings.swift */; };
+		FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5803DD1B04BCAD0030B109 /* MoodMenuViewController.swift */; };
 		FF648C861AE74ECF00889EA0 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C851AE74ECF00889EA0 /* EventDetailViewController.swift */; };
 		FF648C881AE791F200889EA0 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C871AE791F200889EA0 /* ServiceDetailViewController.swift */; };
 		FF648C8A1AE7A8B300889EA0 /* SupportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C891AE7A8B300889EA0 /* SupportTableViewController.swift */; };
@@ -94,6 +95,7 @@
 		FF54C2D81AE6832A00943B41 /* LinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCell.swift; sourceTree = "<group>"; };
 		FF54C2DA1AE6937800943B41 /* Annotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotations.swift; sourceTree = "<group>"; };
 		FF54C2DC1AE6A2ED00943B41 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		FF5803DD1B04BCAD0030B109 /* MoodMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodMenuViewController.swift; sourceTree = "<group>"; };
 		FF648C851AE74ECF00889EA0 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		FF648C871AE791F200889EA0 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
 		FF648C891AE7A8B300889EA0 /* SupportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportTableViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC95499243A72577CEB33F0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF0E8C271AF91BF500B7EC68 /* Meetings */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +196,7 @@
 				FF20F0E91ABAFE79009CDF4D /* ACE */,
 				FF20F0FF1ABAFE79009CDF4D /* ACETests */,
 				FF20F0E81ABAFE79009CDF4D /* Products */,
+				EC95499243A72577CEB33F0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,6 +321,7 @@
 				FF648C8D1AE8CC8500889EA0 /* Exercise.swift */,
 				FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */,
 				FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */,
+				FF5803DD1B04BCAD0030B109 /* MoodMenuViewController.swift */,
 			);
 			name = Mood;
 			sourceTree = "<group>";
@@ -427,6 +438,7 @@
 				FF8596631AFB8AAB0099DFF8 /* ExSwift.swift in Sources */,
 				FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */,
 				FFC486E41AE058A80045C9CE /* Colors.swift in Sources */,
+				FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */,
 				FF85965E1AFB8AAB0099DFF8 /* Array.swift in Sources */,
 				FF54C2D91AE6832A00943B41 /* LinkCell.swift in Sources */,
 				FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */,

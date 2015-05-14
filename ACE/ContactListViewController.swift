@@ -67,8 +67,7 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
             performSegueWithIdentifier("contactDetailsSegue", sender: id)
             
         } else {
-            // no phone number, show alert
-            
+            // TODO: Add Alert, no phone number, show alert
         }
     }
     

@@ -22,8 +22,11 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         setMapLocation(CLLocationCoordinate2D(latitude: 55.9410655, longitude: -3.2053836), delta: 0.05)
         
         // add all the events to the list
-        for (id,event) in Event.all {
-            let annotation = MeetingAnnotation(event: event)
+        let groupedMeetings = Event.all.groupBy { (id:Int, event:Event) -> Int in
+            return event.venue.id
+        }
+        for (id, events) in groupedMeetings {
+            let annotation = MeetingAnnotation(events: events)
             self.mapView.addAnnotation(annotation)
         }
     }
@@ -97,22 +100,28 @@ class MeetingAnnotation : NSObject, MKAnnotation {
     var title:String!
     var subtitle:String!
     
-    init(event: Event) {
-        self.eventId = event.id
-        self.coordinate = Venue.find(event.venueId)!.location
-        self.title = event.displayName
-        
-        // select a pin
-        if let group = Group.find(event.groupId) {
-            if let p = knownGroupsPins[group.name]! {
-                self.pin = p
+    init(events: [Event]) {
+        let event = events[0]
+            self.eventId = event.id
+            self.coordinate = Venue.find(event.venueId)!.location
+            self.title = event.displayName
+            
+            // select a pin
+            if events.count == 1 {
+                if let group = Group.find(event.groupId) {
+                    if let p = knownGroupsPins[group.name]! {
+                        self.pin = p
+                    } else {
+                        print("Missing pin on \(group.name)")
+                        self.pin = UIImage()
+                    }
+                } else {
+                    // no group
+                    self.pin = UIImage()
+                }
             } else {
-                print("Missing pin on \(group.name)")
-                self.pin = UIImage()
+                self.pin = UIImage(named: "LargeBlueMapPin")!
             }
-        } else {
-            // no group
-            self.pin = UIImage()
-        }
+        
     }
 }

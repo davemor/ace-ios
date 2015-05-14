@@ -44,12 +44,6 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         mapView.delegate = self
         
@@ -60,7 +54,7 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
         
         // finding us
         setMapLocation(meeting.venue.location, delta: 0.025)
-        let annotation = MeetingAnnotation(event: meeting)
+        let annotation = MeetingAnnotation(events: [meeting])
         mapView.addAnnotation(annotation)
         mapView.selectAnnotation(annotation, animated: true)
         addressView.text = meeting.venue.fullAddress
