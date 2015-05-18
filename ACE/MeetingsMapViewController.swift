@@ -12,6 +12,8 @@ import MapKit
 class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var filterView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,30 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
 
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         performSegueWithIdentifier("meetingDetailSegue", sender: view)
+    }
+    
+    // MARK: - Actions
+    @IBAction func toggleFilter(sender: UIBarButtonItem) {
+        UIView.transitionWithView(filterView,
+            duration: NSTimeInterval(0.2),
+            options: UIViewAnimationOptions.TransitionCrossDissolve,
+            animations: {},
+            completion: nil)
+        
+        filterView.hidden = !filterView.hidden
+    }
+    
+    @IBAction func caSwitchValueChanged(sender: UISwitch) {
+        
+    }
+
+    @IBAction func naSwitchValueChanged(sender: UISwitch) {
+    }
+    
+    @IBAction func smartSwitchValueChanged(sender: UISwitch) {
+    }
+    
+    @IBAction func aaSwitchValueChanged(sender: UISwitch) {
     }
     
     // MARK: - Navigation
