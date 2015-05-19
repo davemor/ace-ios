@@ -1895,7 +1895,7 @@ G11 5QP</string>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WJG-HL-wdp">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1904,7 +1904,7 @@ G11 5QP</string>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h5g-1h-kEq">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -2309,6 +2309,7 @@ G11 5QP</string>
             <objects>
                 <tableViewController id="g1J-iu-XUh" customClass="MeetingPickerViewController" customModule="ACE" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eiK-I5-bPN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -2320,7 +2321,7 @@ G11 5QP</string>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fuA-gt-06d">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -2329,7 +2330,7 @@ G11 5QP</string>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XtP-hP-qT6">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -2401,53 +2402,6 @@ G11 5QP</string>
                                                     <include reference="XhL-gx-K3b"/>
                                                     <include reference="ngj-x5-711"/>
                                                     <include reference="qux-zh-SZh"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="180" id="FJ1-VU-EHD">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FJ1-VU-EHD" id="X7d-D9-h9A">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2j-Ai-fj5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="h2j-Ai-fj5" secondAttribute="bottom" constant="-8" id="NTS-1D-wpc"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="h2j-Ai-fj5" secondAttribute="trailing" constant="-8" id="OCt-70-Joh">
-                                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                                                </constraint>
-                                                <constraint firstItem="h2j-Ai-fj5" firstAttribute="top" secondItem="X7d-D9-h9A" secondAttribute="topMargin" constant="-8" id="Zdn-5Y-NSi"/>
-                                                <constraint firstItem="h2j-Ai-fj5" firstAttribute="leading" secondItem="X7d-D9-h9A" secondAttribute="leadingMargin" constant="-8" id="rHg-Ig-yPZ">
-                                                    <variation key="heightClass=regular-widthClass=compact" constant="-8"/>
-                                                </constraint>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="h2j-Ai-fj5"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="NTS-1D-wpc"/>
-                                                    <exclude reference="OCt-70-Joh"/>
-                                                    <exclude reference="Zdn-5Y-NSi"/>
-                                                    <exclude reference="rHg-Ig-yPZ"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="h2j-Ai-fj5"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="NTS-1D-wpc"/>
-                                                    <include reference="OCt-70-Joh"/>
-                                                    <include reference="Zdn-5Y-NSi"/>
-                                                    <include reference="rHg-Ig-yPZ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -2659,6 +2613,57 @@ G11 5QP</string>
                                                     <include reference="kvX-dM-ki8"/>
                                                     <include reference="s34-M4-qI4"/>
                                                     <include reference="xfO-xN-rWc"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Description" id="sYP-WM-NdN">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="180" id="FJ1-VU-EHD">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FJ1-VU-EHD" id="X7d-D9-h9A">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2j-Ai-fj5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="h2j-Ai-fj5" secondAttribute="bottom" constant="-8" id="NTS-1D-wpc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="h2j-Ai-fj5" secondAttribute="trailing" constant="-8" id="OCt-70-Joh">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                                </constraint>
+                                                <constraint firstItem="h2j-Ai-fj5" firstAttribute="top" secondItem="X7d-D9-h9A" secondAttribute="topMargin" constant="-8" id="Zdn-5Y-NSi"/>
+                                                <constraint firstItem="h2j-Ai-fj5" firstAttribute="leading" secondItem="X7d-D9-h9A" secondAttribute="leadingMargin" constant="-8" id="rHg-Ig-yPZ">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="-8"/>
+                                                </constraint>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="h2j-Ai-fj5"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="NTS-1D-wpc"/>
+                                                    <exclude reference="OCt-70-Joh"/>
+                                                    <exclude reference="Zdn-5Y-NSi"/>
+                                                    <exclude reference="rHg-Ig-yPZ"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="h2j-Ai-fj5"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="NTS-1D-wpc"/>
+                                                    <include reference="OCt-70-Joh"/>
+                                                    <include reference="Zdn-5Y-NSi"/>
+                                                    <include reference="rHg-Ig-yPZ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -4492,7 +4497,7 @@ G11 5QP</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Yf8-NT-bbB"/>
-        <segue reference="zPf-Uh-1cr"/>
+        <segue reference="aFm-e2-cT4"/>
         <segue reference="IUu-qJ-yDK"/>
     </inferredMetricsTieBreakers>
 </document>

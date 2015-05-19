@@ -29,9 +29,9 @@ class MeetingsListViewController: UITableViewController {
     }
     
     func refresh() {
-        orderedMeetings = Array(meetings.generate()).groupBy { Meeting.Day(rawValue: $0.day)! }.mapValues({ (day:Meeting.Day, meetings:Array<Meeting>) -> Array<Meeting> in
+        orderedMeetings = Array(meetings.generate()).groupBy { Meeting.Day(rawValue: $0.day)! }.mapValues { (day:Meeting.Day, meetings:Array<Meeting>) -> Array<Meeting> in
             meetings.sortUsing { $0.dateTime }
-        })
+        }
         tableView.reloadData()
     }
 

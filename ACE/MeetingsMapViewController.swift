@@ -220,12 +220,15 @@ class MeetingAnnotation : NSObject, MKAnnotation {
         self.coordinate = venue.coordinate
         self.pin = knownGroupPins["Many"]!
         
-        let grouped = meetings.groupBy(groupingFunction: {$0.group!.name})
+        let grouped = meetings.groupBy {$0.group!}
         if grouped.count == 1 {
             if let group = grouped.keys.first {
-                self.title = group
-                self.pin = knownGroupPins[group]
+                self.title = group.name
+                self.pin = knownGroupPins[group.name]
             }
+        } else {
+            self.title = venue.name
+            self.pin = knownGroupPins["Many"]
         }
     }
 }
