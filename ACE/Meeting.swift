@@ -125,7 +125,7 @@ class Meeting: Object {
             rtn = format.stringFromDate(self.dateTime)
         case .weekly:
             format.dateFormat = "HH:mm a"
-            rtn = "Every \(self.day) at \(format.stringFromDate(self.dateTime))"
+            rtn = "Every \(self.dayOfWeek.description.capitalizedString) at \(format.stringFromDate(self.dateTime))"
         case .monthly:
             format.dateFormat = "dd, HH:mm a"
             rtn = "Every month on the \(format.stringFromDate(self.dateTime))"
