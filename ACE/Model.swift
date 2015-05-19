@@ -79,7 +79,7 @@ class Model {
                             meeting.contactPhone = dict.read("contactPhone", alt: "")
                             meeting.dateTime = dict.readDateTime("date_time")
                             meeting.repeat = Meeting.Repeat.strToRaw(dict.read("repeat", alt: "none"))
-                            meeting.day = Meeting.Day.strToRaw(dict.read("day", alt: "none"))
+                            meeting.day = Meeting.Day.strToRaw(dict.read("day_of_week", alt: "none"))
                             
                             // find the venue if it exists
                             let venueId = dict.read("venue_id", alt: 0)
@@ -167,7 +167,9 @@ extension NSDictionary {
         var rtn = NSDate()
         if let str = objectForKey(key) as? String {
             var formatter = NSDateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
+            let format = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
+            // formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
+            formatter.dateFormat = format
             if let date = formatter.dateFromString(str) {
                 rtn = date
             }
