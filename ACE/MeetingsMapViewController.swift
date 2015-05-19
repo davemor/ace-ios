@@ -121,7 +121,13 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
     }
 
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
-        performSegueWithIdentifier("meetingDetailSegue", sender: view)
+        if let meetings = (view.annotation as? MeetingAnnotation)?.meetings {
+            if meetings.count == 1 {
+                performSegueWithIdentifier("meetingDetailSegue", sender: view)
+            } else {
+                performSegueWithIdentifier("meetingPickerSegue", sender: view)
+            }
+        }
     }
     
     // MARK: - Actions
@@ -169,6 +175,11 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
             let annotation = sender?.annotation as! MeetingAnnotation // if not then crash!
             let dest = segue.destinationViewController as! MeetingsDetailViewController
             dest.meeting = annotation.meetings.first
+            dest.venue = annotation.venue
+        } else if segue.identifier == "meetingPickerSegue" {
+            let annotation = sender?.annotation as! MeetingAnnotation // if not then crash!
+            let dest = segue.destinationViewController as! MeetingPickerViewController
+            dest.meetings = annotation.meetings
             dest.venue = annotation.venue
         }
     }
