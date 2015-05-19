@@ -1,30 +1,26 @@
 //
 //  Group.swift
-//  ACE
+//  ace-model
 //
-//  Created by David Morrison on 19/04/2015.
+//  Created by David Morrison on 18/05/2015.
 //  Copyright (c) 2015 David Morrison. All rights reserved.
 //
 
 import Foundation
+import RealmSwift
 
-struct Group {
-    let id:Int
-    let name:String
-    let description:String
-    let contactName:String
-    let telephone:String
+class Group: Object {
+    dynamic var id = 0
+    dynamic var name = ""
+    dynamic var desc = ""
+    dynamic var contactName = ""
+    dynamic var telephone = ""
     
-    init(dict: NSDictionary) {
-        id = read("id", dict, 0)
-        name = read("name", dict, "")
-        description = read("description", dict, "")
-        contactName = read("contact_name", dict, "")
-        telephone = read("telephone", dict, "")
+    static override func primaryKey() -> String? {
+        return "id"
     }
     
-    static var all:[Int:Group]  = [Int:Group]()
-    static func find(id:Int) -> Group? {
-        return all[id]
+    var meetings: [Meeting] {
+        return linkingObjects(Meeting.self, forProperty: "group")
     }
 }

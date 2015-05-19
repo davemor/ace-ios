@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // load up the model
-        Model.sharedInstance.downloadSupportDirectory()
+        Model.sharedInstance.updateFromServer()
         
         // set up the view
         refreshView()

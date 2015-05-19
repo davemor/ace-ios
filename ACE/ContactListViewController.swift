@@ -9,17 +9,21 @@
 import UIKit
 import AddressBook
 import AddressBookUI
+import RealmSwift
 
 class ContactListViewController: UITableViewController, ABPeoplePickerNavigationControllerDelegate {
 
+    // setup realm with a notification for changes
+    let contacts = Realm().objects(Contact)
+    var notificationToken: NotificationToken?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Set realm notification block
+        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,21 +54,29 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
     
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!) {
         
+        // TODO: This is crashing when some of the fields are missing.
+        // Work out how to handle this - perhaps make the second name optional and check for it's presence.
+        
         let phoneNumbers: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue()
         let firstName: ABMultiValueRef = ABRecordCopyValue(person, kABPersonFirstNameProperty).takeRetainedValue() as! String
         let secondName: ABMultiValueRef = ABRecordCopyValue(person, kABPersonLastNameProperty).takeRetainedValue() as! String
         if (ABMultiValueGetCount(phoneNumbers) > 0) {
             let index = 0 as CFIndex
             let phone = ABMultiValueCopyValueAtIndex(phoneNumbers, index).takeRetainedValue() as! String
-            
-            
-            println("first phone for selected contact = \(phone)")
+
+            let name = "\(firstName) \(secondName)"
             
             // create a new contact
-            let id = Contact.create("\(firstName) \(secondName)", phone: phone)
+            let realm = Realm()
+            realm.write {
+                let contact = Contact()
+                contact.name = name
+                contact.phone = phone
+                realm.add(contact, update: true)
+            }
             
             // segue to the new screen
-            performSegueWithIdentifier("contactDetailsSegue", sender: id)
+            performSegueWithIdentifier("contactDetailsSegue", sender: name)
             
         } else {
             // TODO: Add Alert, no phone number, show alert
@@ -92,21 +104,21 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return Contact.all.count
+        return contacts.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("contactReuseId", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = Contact.all[indexPath.row].name
+        cell.textLabel?.text = contacts[indexPath.row].name
 
         return cell
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let id = Contact.all[indexPath.row].id
-        performSegueWithIdentifier("contactDetailsSegue", sender: id)
+        let name = contacts[indexPath.row].name
+        performSegueWithIdentifier("contactDetailsSegue", sender: name)
     }
 
 
@@ -115,8 +127,8 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destination = segue.destinationViewController as? ContactDetailsViewController {
-            let id = sender as! Int
-            destination.contact = Contact.find(id)
+            let name = sender as! String
+            destination.contact = contacts.filter("name = %d", name).first
         }
     }
 }

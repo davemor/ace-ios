@@ -11,7 +11,8 @@ import MapKit
 
 class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
 
-    var meeting: Event!
+    var meeting: Meeting!
+    var venue: Venue!
     
     // bindings for views
     @IBOutlet weak var nameOfGroupView: UILabel!
@@ -30,7 +31,7 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
     // MARK: - Actions
     
     @IBAction func getDirections(sender: AnyObject) {
-        let placemark = MKPlacemark(coordinate: meeting.venue.location, addressDictionary: nil)
+        let placemark = MKPlacemark(coordinate: venue.coordinate, addressDictionary: nil)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = meeting.displayName
         mapItem.openInMapsWithLaunchOptions(nil)
@@ -53,11 +54,11 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
         timeOfMeetingView.text = meeting.displayTime
         
         // finding us
-        setMapLocation(meeting.venue.location, delta: 0.025)
-        let annotation = MeetingAnnotation(events: [meeting])
+        setMapLocation(meeting.venue!.coordinate, delta: 0.025)
+        let annotation = MeetingAnnotation(meetings: [meeting], venue: meeting.venue!)
         mapView.addAnnotation(annotation)
         mapView.selectAnnotation(annotation, animated: true)
-        addressView.text = meeting.venue.fullAddress
+        addressView.text = meeting.venue!.fullAddress
         
         // getting touch
         contactView.text = meeting.displayContactName
@@ -118,5 +119,4 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)
     }
-    
 }

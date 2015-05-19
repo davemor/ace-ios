@@ -8,12 +8,20 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var filterView: UIView!
     
+    // hold onto this in the instance the instance is always notified
+    var notificationToken: NotificationToken?
+    let groups = Realm().objects(Group)
+    let meetings = Realm().objects(Meeting)
+    
+    // model for the filters
+    var groupFlags = [String:Bool]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +31,12 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         // move focus the map on Edinburgh
         setMapLocation(CLLocationCoordinate2D(latitude: 55.9410655, longitude: -3.2053836), delta: 0.05)
         
-        // add all the events to the list
-        let groupedMeetings = Event.all.groupBy { (id:Int, event:Event) -> Int in
-            return event.venue.id
-        }
-        for (id, events) in groupedMeetings {
-            let annotation = MeetingAnnotation(events: events)
-            self.mapView.addAnnotation(annotation)
+        // populate the map
+        refresh()
+        
+        // Set realm notification block
+        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+            self.refresh()
         }
     }
 
@@ -37,6 +44,64 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func refresh() {
+        // refresh the filter view
+        refreshGroupFlags()
+        
+        // refresh the annotations
+        refreshAnnotations()
+    }
+    
+    func refreshGroupFlags() {
+        // we want a group flag for each group
+        // for each group
+        for group in groups {
+            if !groupFlags.has(group.name) {
+                groupFlags[group.name] = true
+            }
+        }
+        // remove all group in the flags array that are not in the results
+        var keysToDelete:[String] = []
+        for name in groupFlags.keys {
+            if groups.filter("name = '\(name)'").count == 0 {
+                keysToDelete.append(name)
+            }
+        }
+        for key in keysToDelete {
+            groupFlags.removeValueForKey(key)
+        }
+    }
+    
+    func refreshAnnotations() {
+        // remove the old ones
+        let allAnnotations = self.mapView.annotations
+        self.mapView.removeAnnotations(allAnnotations)
+        
+        let query = queryFromGroupFlags()
+        
+        // add the new ones
+        let filteredMeetings = meetings.filter(query)
+        if filteredMeetings.count > 0 {
+            let arrayOfMeetings = Array(filteredMeetings.generate())
+            let groupedMeetings = arrayOfMeetings.groupBy(groupingFunction: {$0.venue!} )
+            for (venue, meetings) in groupedMeetings {
+                let annotation = MeetingAnnotation(meetings: meetings, venue: venue)
+                mapView.addAnnotation(annotation)
+            }
+        }
+    }
+    
+    func queryFromGroupFlags() -> NSPredicate {
+        let elements = groupFlags.toArray { (key:String, val:Bool) -> String in
+            return val ? "group.name = '\(key)'" : ""
+            }.reject {$0.isEmpty}
+        let query = " OR ".join(elements)
+        if query.isEmpty {
+            return NSPredicate(format: "group == nil")
+        }
+        return NSPredicate(format: query, "")
+    }    
     
     // MARK: - MKMapViewDelegate implementation
     let reuseId = "annotationViewReuseId"
@@ -47,10 +112,11 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             view.canShowCallout = true
             view.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIView
-            view.image = (annotation as? MeetingAnnotation)?.pin
         }
         // configure the annotation
         view.annotation = annotation
+        view.image = (annotation as? MeetingAnnotation)?.pin
+
         return view
     }
 
@@ -70,16 +136,23 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func caSwitchValueChanged(sender: UISwitch) {
-        
+        groupFlags["Cocaine Anonymous"] = sender.on
+        refreshAnnotations()
     }
 
     @IBAction func naSwitchValueChanged(sender: UISwitch) {
+        groupFlags["Narcotics Anonymous"] = sender.on
+        refreshAnnotations()
     }
     
     @IBAction func smartSwitchValueChanged(sender: UISwitch) {
+        groupFlags["SMART Recovery Groups"] = sender.on
+        refreshAnnotations()
     }
     
     @IBAction func aaSwitchValueChanged(sender: UISwitch) {
+        groupFlags["Alcoholics Anonymous"] = sender.on
+        refreshAnnotations()
     }
     
     // MARK: - Navigation
@@ -95,7 +168,8 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         if segue.identifier == "meetingDetailSegue" {
             let annotation = sender?.annotation as! MeetingAnnotation // if not then crash!
             let dest = segue.destinationViewController as! MeetingsDetailViewController
-            dest.meeting = Event.all[annotation.eventId]
+            dest.meeting = annotation.meetings.first
+            dest.venue = annotation.venue
         }
     }
 
@@ -110,44 +184,42 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
 }
 
 // TODO: This should be more data driven - tight coupling :(
-let knownGroupsPins = [
-    "Cocaine Anonymous" : UIImage(named: "OrangeMapPin"),
-    "Narcotics Anonymous" : UIImage(named: "BlueMapPin"),
-    "SMART Recovery Groups" : UIImage(named: "PinkMapPin"),
-    "Alcoholics Anonymous" : UIImage(named: "PurpleMapPin")
+let knownGroupPins = [
+    "Cocaine Anonymous" : UIImage(named: "OrangeMapPin")!,
+    "Narcotics Anonymous" : UIImage(named: "BlueMapPin")!,
+    "SMART Recovery Groups" : UIImage(named: "PinkMapPin")!,
+    "Alcoholics Anonymous" : UIImage(named: "PurpleMapPin")!,
+    "Many": UIImage(named: "ManyPin")!
 ]
 
 class MeetingAnnotation : NSObject, MKAnnotation {
-    let eventId:Int
-    let pin:UIImage
+    let meetings: [Meeting]
+    let venue: Venue
+    var pin: UIImage?
     
     // implement the MKAnnotation protocol
     var coordinate:CLLocationCoordinate2D
     var title:String!
     var subtitle:String!
     
-    init(events: [Event]) {
-        let event = events[0]
-            self.eventId = event.id
-            self.coordinate = Venue.find(event.venueId)!.location
-            self.title = event.displayName
-            
-            // select a pin
-            if events.count == 1 {
-                if let group = Group.find(event.groupId) {
-                    if let p = knownGroupsPins[group.name]! {
-                        self.pin = p
-                    } else {
-                        print("Missing pin on \(group.name)")
-                        self.pin = UIImage()
-                    }
-                } else {
-                    // no group
-                    self.pin = UIImage()
-                }
-            } else {
-                self.pin = UIImage(named: "LargeBlueMapPin")!
-            }
+    init(meetings: [Meeting], venue: Venue) {
+        self.meetings = meetings
+        self.venue = venue
         
+        self.coordinate = venue.coordinate
+        self.pin = knownGroupPins["Many"]!
+        
+        let grouped = meetings.groupBy(groupingFunction: {$0.group!.name})
+        if grouped.count == 1 {
+            if let group = grouped.keys.first {
+                self.title = group
+                self.pin = knownGroupPins[group]
+            }
+        }
     }
 }
+
+
+
+
+

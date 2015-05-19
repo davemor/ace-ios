@@ -144,6 +144,9 @@
                                         <include reference="dNO-3V-Qsl"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="85W-bM-2ov" kind="show" id="nzp-Fa-BpY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sF-fe-fpW">
                                 <rect key="frame" x="16" y="532" width="568" height="60"/>
@@ -2045,7 +2048,7 @@ G11 5QP</string>
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="caSwitchValueChanged:" destination="eIs-L6-Neb" eventType="valueChanged" id="DJ6-Tx-2VI"/>
+                                            <action selector="caSwitchValueChanged:" destination="eIs-L6-Neb" eventType="valueChanged" id="7ja-oB-RVf"/>
                                         </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4z-Fj-N19">
@@ -2064,7 +2067,7 @@ G11 5QP</string>
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="naSwitchValueChanged:" destination="eIs-L6-Neb" eventType="valueChanged" id="hZQ-k2-4Hc"/>
+                                            <action selector="naSwitchValueChanged:" destination="eIs-L6-Neb" eventType="valueChanged" id="oH7-RU-cqY"/>
                                         </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y10-ng-Yv0">
@@ -2083,7 +2086,7 @@ G11 5QP</string>
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="smartSwitchValueChanged:" destination="eIs-L6-Neb" eventType="valueChanged" id="Qrm-q2-Jf7"/>
+                                            <action selector="smartSwitchValueChanged:" destination="eIs-L6-Neb" eventType="valueChanged" id="J2v-hh-SFl"/>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Narcotics Anonymous" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glc-5l-X93">
@@ -2140,7 +2143,7 @@ G11 5QP</string>
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="aaSwitchValueChanged:" destination="eIs-L6-Neb" eventType="valueChanged" id="DDi-SM-4fy"/>
+                                            <action selector="aaSwitchValueChanged:" destination="eIs-L6-Neb" eventType="valueChanged" id="O9Q-y2-TSk"/>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcoholics Anonymous" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqI-13-qQs">
@@ -2769,6 +2772,49 @@ G11 5QP</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gd4-TL-aSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="720" y="-2105.25"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="CGF-jx-sQ5">
+            <objects>
+                <tableViewController id="21w-QO-oqb" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GLP-RF-ZeW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pfF-Ad-8gS">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pfF-Ad-8gS" id="dgj-rF-hnT">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="21w-QO-oqb" id="m7c-VK-48C"/>
+                            <outlet property="delegate" destination="21w-QO-oqb" id="Y5b-GX-b28"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="IdU-NQ-teL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btZ-bU-qOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939.5" y="290.25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Irp-wm-evE">
+            <objects>
+                <navigationController id="85W-bM-2ov" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ng2-bG-ePj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="21w-QO-oqb" kind="relationship" relationship="rootViewController" id="g1B-7C-69l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZk-ol-oaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009.5" y="290.25"/>
         </scene>
         <!--Support-->
         <scene sceneID="XqV-wa-3tw">
@@ -4432,38 +4478,13 @@ G11 5QP</string>
             </objects>
             <point key="canvasLocation" x="1846.5" y="624.75"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Qft-O7-gsk">
-            <objects>
-                <tableViewController id="izF-WN-02v" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RJi-ZS-EtK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JeH-Bz-3Ac">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JeH-Bz-3Ac" id="0V9-Rs-7IW">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="izF-WN-02v" id="d0B-fx-iwy"/>
-                            <outlet property="delegate" destination="izF-WN-02v" id="qJp-A3-La2"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B3d-bS-Ch2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="ListIcon" width="32" height="32"/>
         <image name="MapIcon" width="35" height="34"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SPR-8N-j7L"/>
+        <segue reference="Yf8-NT-bbB"/>
         <segue reference="ZFW-0F-rPk"/>
         <segue reference="IUu-qJ-yDK"/>
     </inferredMetricsTieBreakers>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ContactDetailsViewController: UITableViewController {
 
@@ -43,7 +44,10 @@ class ContactDetailsViewController: UITableViewController {
     }
     
     @IBAction func removeContact(sender: UIButton) {
-        Contact.remove(contact.id)
+        let realm = Realm()
+        realm.write {
+            realm.delete(self.contact)
+        }
         navigationController?.popViewControllerAnimated(true)
     }
     

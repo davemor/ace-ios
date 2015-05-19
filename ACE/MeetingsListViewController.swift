@@ -10,6 +10,7 @@ import UIKit
 
 class MeetingsListViewController: UITableViewController {
 
+    /*
     // array of event lists ordered by day then ordered by time
     var orderedMeetings:[Event.Day:[Event]]!
     
@@ -89,4 +90,5 @@ class MeetingsListViewController: UITableViewController {
             dest?.meeting = cell?.meeting
         }
     }
+    */
 }

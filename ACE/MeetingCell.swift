@@ -13,7 +13,7 @@ class MeetingCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
     
-    var meeting:Event!
+    var meeting:Meeting!
     
     override func awakeFromNib() {
         super.awakeFromNib()
