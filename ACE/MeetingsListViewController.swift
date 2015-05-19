@@ -29,7 +29,9 @@ class MeetingsListViewController: UITableViewController {
     }
     
     func refresh() {
-        orderedMeetings = Array(meetings.generate()).groupBy { Meeting.Day(rawValue: $0.day)! }
+        orderedMeetings = Array(meetings.generate()).groupBy { Meeting.Day(rawValue: $0.day)! }.mapValues({ (day:Meeting.Day, meetings:Array<Meeting>) -> Array<Meeting> in
+            meetings.sortUsing { $0.dateTime }
+        })
         tableView.reloadData()
     }
 
@@ -73,7 +75,7 @@ class MeetingsListViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let day = Meeting.Day(rawValue: section)!
-        return day.description
+        return day.description.capitalized
     }
     
     // MARK: - Navigation
