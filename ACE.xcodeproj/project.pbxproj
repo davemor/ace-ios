@@ -26,7 +26,6 @@
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
 		FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */; };
-		FF7D49DB1AFB949000D5BC3B /* MeetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7D49DA1AFB949000D5BC3B /* MeetingCell.swift */; };
 		FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */; };
 		FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */; };
 		FF8596451AFAA8920099DFF8 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596441AFAA8920099DFF8 /* Dates.swift */; };
@@ -98,7 +97,6 @@
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
-		FF7D49DA1AFB949000D5BC3B /* MeetingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingCell.swift; sourceTree = "<group>"; };
 		FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
 		FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FF8596441AFAA8920099DFF8 /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 				FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */,
 				FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */,
 				FF8596461AFB87320099DFF8 /* MeetingsListViewController.swift */,
-				FF7D49DA1AFB949000D5BC3B /* MeetingCell.swift */,
 				FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */,
 			);
 			name = Meetings;
@@ -539,7 +536,6 @@
 				FFC2E1B61AFE773900D11DF5 /* Contact.swift in Sources */,
 				FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */,
 				FFC486E01AE04ADD0045C9CE /* QuotesTableViewCell.swift in Sources */,
-				FF7D49DB1AFB949000D5BC3B /* MeetingCell.swift in Sources */,
 				FFC2E1B41AFE737700D11DF5 /* ContactListViewController.swift in Sources */,
 				FF8596631AFB8AAB0099DFF8 /* ExSwift.swift in Sources */,
 				FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */,

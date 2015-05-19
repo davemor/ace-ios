@@ -7,27 +7,30 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MeetingsListViewController: UITableViewController {
 
-    /*
     // array of event lists ordered by day then ordered by time
-    var orderedMeetings:[Event.Day:[Event]]!
+    var orderedMeetings:[Meeting.Day:[Meeting]]!
+    
+    var notificationToken: NotificationToken?
+    let groups = Realm().objects(Group)
+    let meetings = Realm().objects(Meeting)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let events = Event.all
         
-        // group the meetings by day then order lists by time
-        orderedMeetings = events.groupBy({ (id:Int, event:Event) -> Event.Day in
-            event.day
-        })
-            /*
-            .mapValues { (_, meetings:[Event]) -> [Event] in
-            meetings.sortUsing({ (event:Event) in event.dateTime })
+        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+            self.refresh()
         }
-        */
+        
+        self.refresh()
+    }
+    
+    func refresh() {
+        orderedMeetings = Array(meetings.generate()).groupBy { Meeting.Day(rawValue: $0.day)! }
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,14 +47,11 @@ class MeetingsListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // one section for each day, event when there are not meetings on that day
-        // that allows the section indexes to map to the day keys in the orderedMeetings
-        // list.
         return 7
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let day = Event.Day(rawValue: section)!
+        let day = Meeting.Day(rawValue: section)!
         if let count = orderedMeetings[day]?.count {
             return count
         } else {
@@ -60,23 +60,21 @@ class MeetingsListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("meetingsListReuseIdentifier", forIndexPath: indexPath) as! MeetingCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("meetingsListReuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
-        let day = Event.Day(rawValue: indexPath.section)!
+        let day = Meeting.Day(rawValue: indexPath.section)!
         if let meetings = orderedMeetings[day] {
             let meeting = meetings[indexPath.row]
-            cell.title.text = meeting.displayTimeOfDay
-            cell.subtitle.text = meeting.displayName
-            cell.meeting = meeting // TODO: bit of a hack perhaps?
+            cell.textLabel?.text = meeting.displayTimeOfDay
+            cell.detailTextLabel?.text = meeting.displayName
         }
         return cell
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let day = Event.Day(rawValue: section)
-        return day?.description
+        let day = Meeting.Day(rawValue: section)!
+        return day.description
     }
-    
     
     // MARK: - Navigation
 
@@ -85,10 +83,12 @@ class MeetingsListViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if segue.identifier == "meetingDetailSegue" {
-            let cell = sender as? MeetingCell
             let dest = segue.destinationViewController as? MeetingsDetailViewController
-            dest?.meeting = cell?.meeting
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+            let day = Meeting.Day(rawValue: indexPath.section)!
+            let meeting = orderedMeetings[day]![indexPath.row]
+            dest?.meeting = meeting
+            dest?.venue = meeting.venue
         }
     }
-    */
 }
