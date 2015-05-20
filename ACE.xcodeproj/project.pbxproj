@@ -26,6 +26,7 @@
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
 		FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */; };
+		FF73950C1B0B7B0200972F67 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73950B1B0B7B0200972F67 /* File.swift */; };
 		FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */; };
 		FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */; };
 		FF8596451AFAA8920099DFF8 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596441AFAA8920099DFF8 /* Dates.swift */; };
@@ -97,6 +98,7 @@
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		FF73950B1B0B7B0200972F67 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
 		FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FF8596441AFAA8920099DFF8 /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
@@ -251,15 +253,32 @@
 		FF44EB2D1ACC9C7A00EA1954 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FFA45D591B09F62E00D05C80 /* Meeting.swift */,
-				FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */,
-				FF44EB301ACC9D0400EA1954 /* Service.swift */,
+				FF73950A1B0B7AF400972F67 /* Calendar */,
+				FF7395091B0B7ADF00972F67 /* Support */,
 				FFC486D41ADFC4D10045C9CE /* Model.swift */,
 				FFC486E31AE058A80045C9CE /* Colors.swift */,
-				FF9E9F901AE3E66C00F3516C /* Group.swift */,
 				FFC2E1B51AFE773900D11DF5 /* Contact.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		FF7395091B0B7ADF00972F67 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FF9E9F901AE3E66C00F3516C /* Group.swift */,
+				FFA45D591B09F62E00D05C80 /* Meeting.swift */,
+				FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */,
+				FF44EB301ACC9D0400EA1954 /* Service.swift */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		FF73950A1B0B7AF400972F67 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				FF73950B1B0B7B0200972F67 /* File.swift */,
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 		FF8596411AFA1C670099DFF8 /* About */ = {
@@ -567,6 +586,7 @@
 				FF85966B1AFB8AAB0099DFF8 /* String.swift in Sources */,
 				FFC2E1BA1AFF88F300D11DF5 /* ContactDetailsViewController.swift in Sources */,
 				FF85965F1AFB8AAB0099DFF8 /* Bool.swift in Sources */,
+				FF73950C1B0B7B0200972F67 /* File.swift in Sources */,
 				FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */,
 				FF8596641AFB8AAB0099DFF8 /* Float.swift in Sources */,
 				FFC486DE1AE045930045C9CE /* QuotesViewController.swift in Sources */,
