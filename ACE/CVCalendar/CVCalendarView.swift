@@ -187,8 +187,8 @@ extension CVCalendarView {
                         height = (selfSize.height / countOfWeeks) - (vSpace * countOfWeeks)
                     }
                     
-                    weekViewSize = CGSizeMake(width, height / 1.5 )
-                    dayViewSize = CGSizeMake((width / 7.0) - hSpace, height / 1.5)
+                    weekViewSize = CGSizeMake(width, height)
+                    dayViewSize = CGSizeMake((width / 7.0) - hSpace, height)
                     validated = true
                     
                     contentController.updateFrames(selfSize != contentViewSize ? bounds : CGRectZero)
