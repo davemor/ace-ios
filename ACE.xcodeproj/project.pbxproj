@@ -21,6 +21,7 @@
 		FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB301ACC9D0400EA1954 /* Service.swift */; };
 		FF47006B1B0B391A004528EB /* MeetingPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */; };
 		FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DC1AE6A2ED00943B41 /* Strings.swift */; };
+		FF569F9D1B0E25CA00E26D16 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF569F9C1B0E25CA00E26D16 /* Activity.swift */; };
 		FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5803DD1B04BCAD0030B109 /* MoodMenuViewController.swift */; };
 		FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8B1AE8CB2400889EA0 /* ExerciseDetailViewController.swift */; };
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
@@ -118,6 +119,7 @@
 		FF44EB301ACC9D0400EA1954 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingPickerViewController.swift; sourceTree = "<group>"; };
 		FF54C2DC1AE6A2ED00943B41 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		FF569F9C1B0E25CA00E26D16 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		FF5803DD1B04BCAD0030B109 /* MoodMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodMenuViewController.swift; sourceTree = "<group>"; };
 		FF648C8B1AE8CB2400889EA0 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		FF73950A1B0B7AF400972F67 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				FF569F9C1B0E25CA00E26D16 /* Activity.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				FF7395291B0C6C0B00972F67 /* CVCalendarContentViewController.swift in Sources */,
 				FF7395331B0C6C0B00972F67 /* CVCalendarViewAnimator.swift in Sources */,
 				FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */,
+				FF569F9D1B0E25CA00E26D16 /* Activity.swift in Sources */,
 				FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */,
 				FF8596681AFB8AAB0099DFF8 /* NSDate.swift in Sources */,
 				FF8596691AFB8AAB0099DFF8 /* Range.swift in Sources */,

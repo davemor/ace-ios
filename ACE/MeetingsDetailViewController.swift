@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
 
@@ -27,7 +28,6 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
     @IBOutlet weak var contactView: UILabel!
     @IBOutlet weak var contectNumber: UIButton!
 
-    
     // MARK: - Actions
     
     @IBAction func getDirections(sender: AnyObject) {
@@ -42,6 +42,20 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
         println(phoneNumber)
         UIApplication.sharedApplication().openURL(NSURL(string: phoneNumber)!)
     }
+    
+    @IBAction func add(sender: AnyObject) {
+        let realm = Realm()
+        realm.write {
+            let activity = Activity()
+            activity.meeting = self.meeting
+            realm.add(activity, update: true)
+        }
+        var alert = UIAlertController(title: "Added", message: "Meeting added to your calendar", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

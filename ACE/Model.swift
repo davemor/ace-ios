@@ -25,10 +25,11 @@ class Model {
         return Static.instance!
     }
     
-    // let baseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")!
-    let baseUrl = NSURL(string: "http://localhost:3000/api/")!
+    let baseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")!
+    // let baseUrl = NSURL(string: "http://localhost:3000/api/")!
     
     func updateFromServer() {
+        
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         dispatch_async(queue) {
             if let response = NSData(contentsOfURL: self.baseUrl) {
@@ -157,6 +158,21 @@ class Model {
                 println("Cannot Reach server")
             }
         }
+        
+        /*
+        Some test data
+        */
+        
+        let realm = Realm()
+        realm.write {
+            let activity = Activity();
+            activity.meeting = realm.objectForPrimaryKey(Meeting.self, key: 2)
+            realm.add(activity, update: true)
+        }
+        
+        // end test data
+        
+        
     }
 }
 

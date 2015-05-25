@@ -1,20 +1,75 @@
 
 import UIKit
+import RealmSwift
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, UITableViewDelegate {
     // MARK: - Properties
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var daysOutSwitch: UISwitch!
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var shouldShowDaysOut = true
     var animationFinished = true
+    
+    // model
+    // each day is a section
+    struct DayInMonth {
+        var day: Meeting.Day = .monday
+        var dayNumber: Int = 0
+        var formattedDate = ""
+        var activities = [Activity]()
+    }
+    var currentDate = CVDate(date: NSDate())
+    var daysInMonth = [DayInMonth]()
+    
+    func populateMonth() {
+        let activities = Realm().objects(Activity.self)
+        let arrayOfActivities = Array(activities.generate())
+        let groupedActivities = arrayOfActivities.groupBy { $0.meeting!.day }
+        
+        let date = currentDate.date
+        let weeks = calendarView.manager.weeksWithWeekdaysForMonthDate(date).weeksIn
+        
+        // [[Int : [Int]]]
+        daysInMonth.removeAll(keepCapacity: true)
+        
+        for week in weeks {
+            for (day, date) in week {
+                let d = dayToDay[day]!
+                if let acts = groupedActivities[d.rawValue] {
+                    let dayInMonth = DayInMonth(day: d, dayNumber: date.first!, formattedDate: "\(d.description.capitalized), \(date.first!)", activities: acts)
+                    daysInMonth.append(dayInMonth)
+                } else {
+                    let dayInMonth = DayInMonth(day: d, dayNumber: date.first!, formattedDate: "\(date.first!) \(d.description.capitalized)", activities: [])
+                    daysInMonth.append(dayInMonth)
+                }
+                
+                // TODO: This code is really bad :(
+            }
+        }
+        daysInMonth = daysInMonth.sortUsing { $0.dayNumber }
+    }
+    
+    var dayToDay = [
+        1: Meeting.Day.sunday,
+        2: Meeting.Day.monday,
+        3: Meeting.Day.tuesday,
+        4: Meeting.Day.wednesday,
+        5: Meeting.Day.thursday,
+        6: Meeting.Day.friday,
+        7: Meeting.Day.saturday,
+    ]
     
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         monthLabel.text = CVDate(date: NSDate()).globalDescription
     }
@@ -27,7 +82,24 @@ class CalendarViewController: UIViewController {
         
         calendarView.changeDaysOutShowingState(true)
         shouldShowDaysOut = false
+        
+        populateMonth()
+        tableView.reloadData()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "showMeetingDetails" {
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+            let day = daysInMonth[indexPath.section].activities[indexPath.row]
+            
+            let dest = segue.destinationViewController as! MeetingsDetailViewController
+            dest.meeting = day.meeting
+            dest.venue = day.meeting?.venue
+        }
+    }
+
 }
 
 // MARK: - CVCalendarViewDelegate
@@ -74,10 +146,13 @@ extension CalendarViewController: CVCalendarViewDelegate
     
     func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool
     {
+        // TODO: Override this later
+        /*
         if (Int(arc4random_uniform(3)) == 1)
         {
             return true
         }
+        */
         return false
     }
 }
@@ -97,8 +172,9 @@ extension CalendarViewController: CVCalendarViewDelegate {
     }
     
     func didSelectDayView(dayView: CVCalendarDayView) {
-        let date = dayView.date
+        currentDate = dayView.date
         println("\(calendarView.presentedDate.commonDescription) is selected!")
+        populateMonth()
     }
     
     func presentedDateUpdated(date: CVDate) {
@@ -144,12 +220,13 @@ extension CalendarViewController: CVCalendarViewDelegate {
     }
     
     func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
+        /*
         let day = dayView.date.day
         let randomDay = Int(arc4random_uniform(31))
         if day == randomDay {
             return true
         }
-        
+        */
         return false
     }
     
@@ -190,7 +267,13 @@ extension CalendarViewController: CVCalendarMenuViewDelegate {
 
 // MARK: - IB Actions
 
+
+
 extension CalendarViewController {
+    @IBAction func close(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
+    }
+    
     @IBAction func switchChanged(sender: UISwitch) {
         if sender.on {
             calendarView.changeDaysOutShowingState(false)
@@ -206,13 +289,17 @@ extension CalendarViewController {
     }
     
     /// Switch to WeekView mode.
-    @IBAction func toWeekView(sender: AnyObject) {
-        calendarView.changeMode(.WeekView)
-    }
+    //@IBAction func toWeekView(sender: AnyObject) {
+    //    calendarView.changeMode(.WeekView)
+    //}
     
     /// Switch to MonthView mode.
     @IBAction func toMonthView(sender: AnyObject) {
-        calendarView.changeMode(.MonthView)
+        if calendarView.calendarMode == CalendarMode.WeekView {
+            calendarView.changeMode(.MonthView)
+        } else {
+            calendarView.changeMode(.WeekView)
+        }
     }
     
     @IBAction func loadPrevious(sender: AnyObject) {
@@ -240,3 +327,48 @@ extension CalendarViewController {
         self.calendarView.toggleViewWithDate(resultDate)
     }
 }
+
+// MARK: - UITableViewDataSource
+
+extension CalendarViewController: UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return daysInMonth.count
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return daysInMonth[section].activities.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("calendarReuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        
+        cell.textLabel?.text = daysInMonth[indexPath.section].activities[indexPath.row].meeting?.displayName
+        
+        return cell
+    }
+}
+
+extension CalendarViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return daysInMonth[section].formattedDate
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

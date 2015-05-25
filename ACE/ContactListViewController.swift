@@ -14,7 +14,7 @@ import RealmSwift
 class ContactListViewController: UITableViewController, ABPeoplePickerNavigationControllerDelegate {
 
     // setup realm with a notification for changes
-    let contacts = Realm().objects(Contact)
+    let contacts = Realm().objects(Contact.self)
     var notificationToken: NotificationToken?
     
     override func viewDidLoad() {
@@ -74,7 +74,7 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
                 contact.phone = phone
                 realm.add(contact, update: true)
             }
-            
+
             // segue to the new screen
             performSegueWithIdentifier("contactDetailsSegue", sender: name)
             
@@ -128,7 +128,9 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destination = segue.destinationViewController as? ContactDetailsViewController {
             let name = sender as! String
-            destination.contact = contacts.filter("name = %d", name).first
+            let query = "name = '\(name)'"
+            let contact = contacts.filter(query).first
+            destination.contact = contact
         }
     }
 }

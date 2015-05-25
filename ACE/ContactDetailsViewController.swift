@@ -22,7 +22,7 @@ class ContactDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // bind the viewsr
+        // bind the views
         nameView.text = contact.name
         phoneView.text = contact.phone
         textInEmergencySwitch.setOn(contact.textInEmergency, animated: false)
