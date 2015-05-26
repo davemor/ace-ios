@@ -39,11 +39,12 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         for week in weeks {
             for (day, date) in week {
                 let d = dayToDay[day]!
+                let formattedDate = "\(d.description.capitalized) \(ordinalNumberFormat(date.first!))"
                 if let acts = groupedActivities[d.rawValue] {
-                    let dayInMonth = DayInMonth(day: d, dayNumber: date.first!, formattedDate: "\(d.description.capitalized), \(date.first!)", activities: acts)
+                    let dayInMonth = DayInMonth(day: d, dayNumber: date.first!, formattedDate: formattedDate, activities: acts)
                     daysInMonth.append(dayInMonth)
                 } else {
-                    let dayInMonth = DayInMonth(day: d, dayNumber: date.first!, formattedDate: "\(date.first!) \(d.description.capitalized)", activities: [])
+                    let dayInMonth = DayInMonth(day: d, dayNumber: date.first!, formattedDate: formattedDate, activities: [])
                     daysInMonth.append(dayInMonth)
                 }
                 
