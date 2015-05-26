@@ -25,14 +25,23 @@ class Model {
         return Static.instance!
     }
     
-    let baseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")!
-    // let baseUrl = NSURL(string: "http://localhost:3000/api/")!
+    let serverBaseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")!
+    // let serverBaseUrl = NSURL(string: "http://localhost:3000/api/")!
+    
+    let communityCalendarUrl = NSURL(string: "https://recoverycommunitycalendar.hasacalendar.co.uk/api1/events.json")!
+    
+    func deleteAll() {
+        let realm = Realm()
+        Realm().write {
+           realm.0deleteAll()
+        }
+    }
     
     func updateFromServer() {
         
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         dispatch_async(queue) {
-            if let response = NSData(contentsOfURL: self.baseUrl) {
+            if let response = NSData(contentsOfURL: self.serverBaseUrl) {
                 
                 // De-serialize the response to JSON
                 let json = NSJSONSerialization.JSONObjectWithData(response,
@@ -41,8 +50,6 @@ class Model {
                 
                 let realm = Realm()
                 realm.write {
-                    // drop
-                    realm.deleteAll()
                     // read in the venues
                     if let venues = json["venues"] as? NSArray {
                         for data in venues {
@@ -62,7 +69,7 @@ class Model {
                                 group.contactName = dict.read("contact_name", alt: "")
                                 group.telephone = dict.read("telephone", alt: "")
                                 println(group)
-                                realm.add(group)
+                                realm.add(group, update:true)
                             }
                         }
                     }
@@ -159,6 +166,54 @@ class Model {
             }
         }
     }
+
+    let rfc2882utcFormat = "ddd, dd MMM yyyy HH:mm:ss K"
+    
+    func updateFromCommunityCalendar() {
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        dispatch_async(queue) {
+            if let response = NSData(contentsOfURL: self.communityCalendarUrl) {
+                
+                // De-serialize the response to JSON
+                let json = NSJSONSerialization.JSONObjectWithData(response,
+                    options: NSJSONReadingOptions(0),
+                    error: nil) as! NSDictionary
+                
+                let realm = Realm()
+                realm.write {
+                    if let events = json["data"] as? NSArray {
+                        for data in events {
+                            if let event = data as? NSDictionary {
+                                let activity = CommunityActivity()
+                                activity.slug = event.read("slug", alt: 0)
+                                activity.summary = event.read("summary", alt: "")
+                                activity.aDescription = event.read("description", alt: "")
+                                if let start = event["start"] as? NSDictionary {
+                                    activity.startDate = start.readDateTime("rfc2882utc", format: self.rfc2882utcFormat)
+                                }
+                                if let end = event["end"] as? NSDictionary {
+                                    activity.endDate = end.readDateTime("rfc2882utc", format: self.rfc2882utcFormat)
+                                }
+                                activity.aURL = event.read("url", alt: "")
+                                if let venue = event["venue"] as? NSDictionary {
+                                    let v = Venue()
+                                    v.id = venue.read("slug", alt: 0)
+                                    v.name = venue.read("title", alt: "")
+                                    v.address = venue.read("address", alt: "")
+                                    // v.city = this is missing or rather part of the address.
+                                    v.postcode = venue.read("addresscode", alt: "")
+                                    v.latitude = venue.read("lat", alt: 0.0)
+                                    v.longitude = venue.read("lng", alt: 0.0)
+                                    activity.aVenue = v
+                                }
+                                realm.add(activity, update: true)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension NSDictionary {
@@ -169,11 +224,11 @@ extension NSDictionary {
             return alt
         }
     }
-    func readDateTime(key:String) -> NSDate {
+    func readDateTime(key:String, format:String = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z") -> NSDate {
         var rtn = NSDate()
         if let str = objectForKey(key) as? String {
             var formatter = NSDateFormatter()
-            let format = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
+            let format = format
             // formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
             formatter.dateFormat = format
             if let date = formatter.dateFromString(str) {

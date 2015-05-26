@@ -87,6 +87,7 @@
 		FFDAF6FA1B146B6800BC4589 /* MeetingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6F91B146B6800BC4589 /* MeetingActivity.swift */; };
 		FFDAF6FC1B14713300BC4589 /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */; };
 		FFDAF6FE1B147A5000BC4589 /* CommunityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */; };
+		FFDAF7001B14883300BC4589 /* PersonalActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6FF1B14883300BC4589 /* PersonalActivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		FFDAF6F91B146B6800BC4589 /* MeetingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingActivity.swift; sourceTree = "<group>"; };
 		FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
 		FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityEvent.swift; sourceTree = "<group>"; };
+		FFDAF6FF1B14883300BC4589 /* PersonalActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 				FF569F9C1B0E25CA00E26D16 /* Activity.swift */,
 				FFDAF6F91B146B6800BC4589 /* MeetingActivity.swift */,
 				FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */,
+				FFDAF6FF1B14883300BC4589 /* PersonalActivity.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */,
 				FFC486E41AE058A80045C9CE /* Colors.swift in Sources */,
 				FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */,
+				FFDAF7001B14883300BC4589 /* PersonalActivity.swift in Sources */,
 				FF7395381B0C6C0B00972F67 /* CVCalendarViewPresentationMode.swift in Sources */,
 				FF85965E1AFB8AAB0099DFF8 /* Array.swift in Sources */,
 				FF7395351B0C6C0B00972F67 /* CVCalendarViewAppearance.swift in Sources */,
