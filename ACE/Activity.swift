@@ -7,16 +7,17 @@
 //
 
 import Foundation
-import RealmSwift
 
-class Activity: Object {
-    dynamic var id = 0
+protocol Activity {
+    var name: String { get }
+    var desc: String { get }
     
-    // activities point at meetings
-    // when you add a meeting to a calendar
-    dynamic var meeting: Meeting?
+    var start: NSDate { get }
+    var end: NSDate { get }
+    var repeat: Repeat { get }
     
-    override static func primaryKey() -> String? {
-        return "id"
-    }
+    var url: String? { get }
+    var venue: Venue { get }
+    
+    var attending: Bool { get }
 }

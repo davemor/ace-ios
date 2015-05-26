@@ -46,7 +46,7 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
     @IBAction func add(sender: AnyObject) {
         let realm = Realm()
         realm.write {
-            let activity = Activity()
+            let activity = MeetingActivity()
             activity.meeting = self.meeting
             realm.add(activity, update: true)
         }

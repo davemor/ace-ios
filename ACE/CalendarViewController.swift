@@ -26,7 +26,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     var daysInMonth = [DayInMonth]()
     
     func populateMonth() {
-        let activities = Realm().objects(Activity.self)
+        let activities = Realm().objects(MeetingActivity.self)
+        
+        /*
         let arrayOfActivities = Array(activities.generate())
         let groupedActivities = arrayOfActivities.groupBy { $0.meeting!.day }
         
@@ -52,6 +54,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
             }
         }
         daysInMonth = daysInMonth.sortUsing { $0.dayNumber }
+    
+        */
     }
     
     var dayToDay = [
@@ -95,9 +99,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
             let day = daysInMonth[indexPath.section].activities[indexPath.row]
             
-            let dest = segue.destinationViewController as! MeetingsDetailViewController
-            dest.meeting = day.meeting
-            dest.venue = day.meeting?.venue
+            let dest = segue.destinationViewController as! ActivityDetailsViewController
+            
+            
         }
     }
 
@@ -347,7 +351,7 @@ extension CalendarViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("calendarReuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
         
-        cell.textLabel?.text = daysInMonth[indexPath.section].activities[indexPath.row].meeting?.displayName
+        cell.textLabel?.text = daysInMonth[indexPath.section].activities[indexPath.row].name
         
         return cell
     }

@@ -84,6 +84,9 @@
 		FFC486E21AE04CE30045C9CE /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486E11AE04CE30045C9CE /* Quote.swift */; };
 		FFC486E41AE058A80045C9CE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486E31AE058A80045C9CE /* Colors.swift */; };
 		FFC486E71AE0DF0D0045C9CE /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486E61AE0DF0D0045C9CE /* ActivitiesViewController.swift */; };
+		FFDAF6FA1B146B6800BC4589 /* MeetingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6F91B146B6800BC4589 /* MeetingActivity.swift */; };
+		FFDAF6FC1B14713300BC4589 /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */; };
+		FFDAF6FE1B147A5000BC4589 /* CommunityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +186,9 @@
 		FFC486E11AE04CE30045C9CE /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		FFC486E31AE058A80045C9CE /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FFC486E61AE0DF0D0045C9CE /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		FFDAF6F91B146B6800BC4589 /* MeetingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingActivity.swift; sourceTree = "<group>"; };
+		FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
+		FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +336,8 @@
 			isa = PBXGroup;
 			children = (
 				FF569F9C1B0E25CA00E26D16 /* Activity.swift */,
+				FFDAF6F91B146B6800BC4589 /* MeetingActivity.swift */,
+				FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -438,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				FF7395431B0C70E000972F67 /* CalendarViewController.swift */,
+				FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -671,6 +680,7 @@
 				FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */,
 				FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */,
 				FF73953A1B0C6C0B00972F67 /* CVCalendarWeekday.swift in Sources */,
+				FFDAF6FA1B146B6800BC4589 /* MeetingActivity.swift in Sources */,
 				FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */,
 				FF73952A1B0C6C0B00972F67 /* CVCalendarDayView.swift in Sources */,
 				FF8596601AFB8AAB0099DFF8 /* Character.swift in Sources */,
@@ -680,6 +690,7 @@
 				FF73953F1B0C6C0B00972F67 /* CVSelectionType.swift in Sources */,
 				FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */,
 				FF7395441B0C70E000972F67 /* CalendarViewController.swift in Sources */,
+				FFDAF6FC1B14713300BC4589 /* ActivityDetailsViewController.swift in Sources */,
 				FF73953B1B0C6C0B00972F67 /* CVCalendarWeekView.swift in Sources */,
 				FFC486E71AE0DF0D0045C9CE /* ActivitiesViewController.swift in Sources */,
 				FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */,
@@ -703,6 +714,7 @@
 				FF7395281B0C6C0B00972F67 /* CVAuxiliaryView.swift in Sources */,
 				FF73952C1B0C6C0B00972F67 /* CVCalendarManager.swift in Sources */,
 				FF73952E1B0C6C0B00972F67 /* CVCalendarMenuViewDelegate.swift in Sources */,
+				FFDAF6FE1B147A5000BC4589 /* CommunityEvent.swift in Sources */,
 				FF85965F1AFB8AAB0099DFF8 /* Bool.swift in Sources */,
 				FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */,
 				FF8596641AFB8AAB0099DFF8 /* Float.swift in Sources */,

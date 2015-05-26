@@ -26,33 +26,6 @@ class Meeting: Object {
     }
     
     // helpers
-    
-    enum Repeat: Int, Printable {
-        case none
-        case weekly
-        case monthly
-        
-        var description : String {
-            switch self {
-            case .none: return "none"
-            case .weekly: return "weekly"
-            case .monthly: return "monthly"
-            }
-        }
-        
-        static func fromString(str: String) -> Repeat {
-            switch str {
-            case "none": return .none
-            case "weekly": return .weekly
-            case "monthly": return .monthly
-            default: return .none
-            }
-        }
-        
-        static func strToRaw(str: String) -> Int {
-            return fromString(str).rawValue
-        }
-    }
     enum Day: Int, Printable {
         case monday = 0
         case tuesday = 1
@@ -168,5 +141,32 @@ class Meeting: Object {
     
     var repeated: Repeat {
         return Repeat(rawValue: self.repeat)!
+    }
+}
+
+enum Repeat: Int, Printable {
+    case none
+    case weekly
+    case monthly
+    
+    var description : String {
+        switch self {
+        case .none: return "none"
+        case .weekly: return "weekly"
+        case .monthly: return "monthly"
+        }
+    }
+    
+    static func fromString(str: String) -> Repeat {
+        switch str {
+        case "none": return .none
+        case "weekly": return .weekly
+        case "monthly": return .monthly
+        default: return .none
+        }
+    }
+    
+    static func strToRaw(str: String) -> Int {
+        return fromString(str).rawValue
     }
 }

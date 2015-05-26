@@ -79,7 +79,7 @@ class Model {
                                 meeting.contactName = dict.read("contact_name", alt: "")
                                 meeting.contactPhone = dict.read("contactPhone", alt: "")
                                 meeting.dateTime = dict.readDateTime("date_time")
-                                meeting.repeat = Meeting.Repeat.strToRaw(dict.read("repeat", alt: "none"))
+                                meeting.repeat = Repeat.strToRaw(dict.read("repeat", alt: "none"))
                                 meeting.day = Meeting.Day.strToRaw(dict.read("day_of_week", alt: "none"))
                                 
                                 // find the venue if it exists
@@ -158,21 +158,6 @@ class Model {
                 println("Cannot Reach server")
             }
         }
-        
-        /*
-        Some test data
-        */
-        
-        let realm = Realm()
-        realm.write {
-            let activity = Activity();
-            activity.meeting = realm.objectForPrimaryKey(Meeting.self, key: 2)
-            realm.add(activity, update: true)
-        }
-        
-        // end test data
-        
-        
     }
 }
 
