@@ -175,6 +175,15 @@ extension CalendarViewController: CVCalendarViewDelegate {
         currentDate = dayView.date
         println("\(calendarView.presentedDate.commonDescription) is selected!")
         populateMonth()
+        scrollToDate(currentDate)
+    }
+    
+    func scrollToDate(date: CVDate) {
+        // the day of the month is the section
+        let section = date.day - 1 // sections are zero indexed, the days of the month are not.
+        var sectionRect = tableView.rectForSection(section)
+        sectionRect.size.height = tableView.frame.size.height;
+        tableView.scrollRectToVisible(sectionRect, animated:true)
     }
     
     func presentedDateUpdated(date: CVDate) {
@@ -288,13 +297,8 @@ extension CalendarViewController {
         calendarView.toggleCurrentDayView()
     }
     
-    /// Switch to WeekView mode.
-    //@IBAction func toWeekView(sender: AnyObject) {
-    //    calendarView.changeMode(.WeekView)
-    //}
-    
     /// Switch to MonthView mode.
-    @IBAction func toMonthView(sender: AnyObject) {
+    @IBAction func toggleCalendarView(sender: AnyObject) {
         if calendarView.calendarMode == CalendarMode.WeekView {
             calendarView.changeMode(.MonthView)
         } else {
