@@ -70,6 +70,10 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         }
     }
     
+    func activityForIndexPath(indexPath: NSIndexPath) -> Activity {
+        return daysForMonth[indexPath.section].activities[indexPath.row]
+    }
+    
     // MARK: - Life cycle
     
     override func viewDidLoad() {
@@ -106,11 +110,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         // Pass the selected object to the new view controller.
         if segue.identifier == "showMeetingDetails" {
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-            let day = daysForMonth[indexPath.section].activities[indexPath.row]
-            
+            let activity = activityForIndexPath(indexPath)
             let dest = segue.destinationViewController as! ActivityDetailsViewController
-            
-            
+            dest.activity = activity
         }
     }
 
@@ -188,7 +190,7 @@ extension CalendarViewController: CVCalendarViewDelegate {
     func didSelectDayView(dayView: CVCalendarDayView) {
         currentDate = dayView.date
         println("\(calendarView.presentedDate.commonDescription) is selected!")
-        populateMonth()
+        refresh()
         scrollToDate(currentDate)
     }
     
@@ -360,7 +362,8 @@ extension CalendarViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("calendarReuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
         
-        cell.textLabel?.text = daysForMonth[indexPath.section].activities[indexPath.row].name
+        let activity = activityForIndexPath(indexPath)
+        cell.textLabel?.text = activity.name
         
         return cell
     }
