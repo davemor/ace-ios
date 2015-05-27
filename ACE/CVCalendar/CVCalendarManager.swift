@@ -86,6 +86,27 @@ class CVCalendarManager {
     
     // MARK: - Analysis sorting
     
+    func datesInMonth(date: NSDate) -> [NSDate] {
+        
+        let countOfWeeks = self.monthDateRange(date).countOfWeeks
+        let totalCountOfDays = countOfWeeks * 7
+        let firstMonthDateIn = self.monthDateRange(date).monthStartDate
+        let lastMonthDateIn = self.monthDateRange(date).monthEndDate
+        let countOfDaysIn = Manager.dateRange(lastMonthDateIn).day
+        let countOfDaysOut = totalCountOfDays - countOfDaysIn
+        
+        // Find all dates in.
+        var datesIn = [NSDate]()
+        for day in 1...countOfDaysIn {
+            let components = Manager.componentsForDate(firstMonthDateIn)
+            components.day = day
+            let date = calendar.dateFromComponents(components)!
+            datesIn.append(date)
+        }
+        
+        return datesIn.sorted { $0.compare($1) == NSComparisonResult.OrderedAscending }
+    }
+    
     func weeksWithWeekdaysForMonthDate(date: NSDate) -> (weeksIn: [[Int : [Int]]], weeksOut: [[Int : [Int]]]) {
         
         let countOfWeeks = self.monthDateRange(date).countOfWeeks

@@ -17,56 +17,58 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     // model
     // each day is a section
     struct DayInMonth {
-        var day: Meeting.Day = .monday
-        var dayNumber: Int = 0
-        var formattedDate = ""
+        var date: CVDate
         var activities = [Activity]()
+        
+        init(date:NSDate) {
+            self.date = CVDate(date: date)
+        }
+        
+        var formattedDate: String {
+            let day = cvDayToDay[date.weekday]!
+            return "\(day.description.capitalized) \(ordinalNumberFormat(date.day))"
+        }
+        
+        // TODO: Would maths be better here?
+        private var cvDayToDay = [
+            1: Meeting.Day.sunday,
+            2: Meeting.Day.monday,
+            3: Meeting.Day.tuesday,
+            4: Meeting.Day.wednesday,
+            5: Meeting.Day.thursday,
+            6: Meeting.Day.friday,
+            7: Meeting.Day.saturday,
+        ]
     }
     var currentDate = CVDate(date: NSDate())
-    var daysInMonth = [DayInMonth]()
+    var daysForMonth = [DayInMonth]()
+    
+    // interface to Realm
+    var notificationToken: NotificationToken?
+    let meetingActivities = Realm().objects(MeetingActivity.self)
+    let communityActivities = Realm().objects(CommunityActivity.self)
     
     func populateMonth() {
-        let activities = Realm().objects(MeetingActivity.self)
+        daysForMonth.removeAll(keepCapacity: true)
         
-        /*
-        let arrayOfActivities = Array(activities.generate())
-        let groupedActivities = arrayOfActivities.groupBy { $0.meeting!.day }
+        println("community activities: \(communityActivities.count)")
         
-        let date = currentDate.date
-        let weeks = calendarView.manager.weeksWithWeekdaysForMonthDate(date).weeksIn
+        // TODO: not sure if this is the most effective way of doing this
+        let meetings = Array(meetingActivities.generate())
+        let community = Array(communityActivities.generate())
         
-        // [[Int : [Int]]]
-        daysInMonth.removeAll(keepCapacity: true)
-        
-        for week in weeks {
-            for (day, date) in week {
-                let d = dayToDay[day]!
-                let formattedDate = "\(d.description.capitalized) \(ordinalNumberFormat(date.first!))"
-                if let acts = groupedActivities[d.rawValue] {
-                    let dayInMonth = DayInMonth(day: d, dayNumber: date.first!, formattedDate: formattedDate, activities: acts)
-                    daysInMonth.append(dayInMonth)
-                } else {
-                    let dayInMonth = DayInMonth(day: d, dayNumber: date.first!, formattedDate: formattedDate, activities: [])
-                    daysInMonth.append(dayInMonth)
-                }
-                
-                // TODO: This code is really bad :(
+        let dates = calendarView.manager.datesInMonth(currentDate.date)
+        for date in dates {
+            var day = DayInMonth(date: date)
+            day.activities += meetings.mapFilter {
+                $0.includeOnDate(date) ? $0 : nil as Activity?
             }
+            day.activities += community.mapFilter {
+                $0.includeOnDate(date) ? $0 : nil as Activity?
+            }
+            daysForMonth.append(day)
         }
-        daysInMonth = daysInMonth.sortUsing { $0.dayNumber }
-    
-        */
     }
-    
-    var dayToDay = [
-        1: Meeting.Day.sunday,
-        2: Meeting.Day.monday,
-        3: Meeting.Day.tuesday,
-        4: Meeting.Day.wednesday,
-        5: Meeting.Day.thursday,
-        6: Meeting.Day.friday,
-        7: Meeting.Day.saturday,
-    ]
     
     // MARK: - Life cycle
     
@@ -77,11 +79,18 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         tableView.dataSource = self
         
         monthLabel.text = CVDate(date: NSDate()).globalDescription
+        
+        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+            self.refresh()
+        }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+        refresh()
+    }
+    
+    func refresh() {
         calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
         
@@ -97,7 +106,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         // Pass the selected object to the new view controller.
         if segue.identifier == "showMeetingDetails" {
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-            let day = daysInMonth[indexPath.section].activities[indexPath.row]
+            let day = daysForMonth[indexPath.section].activities[indexPath.row]
             
             let dest = segue.destinationViewController as! ActivityDetailsViewController
             
@@ -341,17 +350,17 @@ extension CalendarViewController {
 
 extension CalendarViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return daysInMonth.count
+        return daysForMonth.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return daysInMonth[section].activities.count
+        return daysForMonth[section].activities.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("calendarReuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
         
-        cell.textLabel?.text = daysInMonth[indexPath.section].activities[indexPath.row].name
+        cell.textLabel?.text = daysForMonth[indexPath.section].activities[indexPath.row].name
         
         return cell
     }
@@ -359,7 +368,7 @@ extension CalendarViewController: UITableViewDataSource {
 
 extension CalendarViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return daysInMonth[section].formattedDate
+        return daysForMonth[section].formattedDate
     }
 }
 

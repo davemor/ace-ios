@@ -33,7 +33,7 @@ class Model {
     func deleteAll() {
         let realm = Realm()
         Realm().write {
-           realm.0deleteAll()
+           realm.deleteAll()
         }
     }
     
@@ -167,8 +167,6 @@ class Model {
         }
     }
 
-    let rfc2882utcFormat = "ddd, dd MMM yyyy HH:mm:ss K"
-    
     func updateFromCommunityCalendar() {
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         dispatch_async(queue) {
@@ -189,10 +187,10 @@ class Model {
                                 activity.summary = event.read("summary", alt: "")
                                 activity.aDescription = event.read("description", alt: "")
                                 if let start = event["start"] as? NSDictionary {
-                                    activity.startDate = start.readDateTime("rfc2882utc", format: self.rfc2882utcFormat)
+                                    activity.startDate = start.readTimeStamp("timestamp")
                                 }
                                 if let end = event["end"] as? NSDictionary {
-                                    activity.endDate = end.readDateTime("rfc2882utc", format: self.rfc2882utcFormat)
+                                    activity.endDate = end.readTimeStamp("timestamp")
                                 }
                                 activity.aURL = event.read("url", alt: "")
                                 if let venue = event["venue"] as? NSDictionary {
@@ -207,6 +205,8 @@ class Model {
                                     activity.aVenue = v
                                 }
                                 realm.add(activity, update: true)
+                                
+                                // println(activity)
                             }
                         }
                     }
@@ -229,11 +229,17 @@ extension NSDictionary {
         if let str = objectForKey(key) as? String {
             var formatter = NSDateFormatter()
             let format = format
-            // formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
             formatter.dateFormat = format
             if let date = formatter.dateFromString(str) {
                 rtn = date
             }
+        }
+        return rtn
+    }
+    func readTimeStamp(key: String) -> NSDate {
+        var rtn = NSDate(timeIntervalSince1970: 0)
+        if let stamp = objectForKey(key) as? Int {
+            rtn = NSDate(timeIntervalSince1970: NSTimeInterval(stamp))
         }
         return rtn
     }

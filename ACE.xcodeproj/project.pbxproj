@@ -88,6 +88,7 @@
 		FFDAF6FC1B14713300BC4589 /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */; };
 		FFDAF6FE1B147A5000BC4589 /* CommunityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */; };
 		FFDAF7001B14883300BC4589 /* PersonalActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6FF1B14883300BC4589 /* PersonalActivity.swift */; };
+		FFDAF7031B14D61400BC4589 /* AF+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF7021B14D61400BC4589 /* AF+Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +192,7 @@
 		FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
 		FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityEvent.swift; sourceTree = "<group>"; };
 		FFDAF6FF1B14883300BC4589 /* PersonalActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalActivity.swift; sourceTree = "<group>"; };
+		FFDAF7021B14D61400BC4589 /* AF+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AF+Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +383,7 @@
 		FF7395421B0C6C2400972F67 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FFDAF7011B14D60800BC4589 /* AFDateExtension */,
 				FF73950D1B0C6C0B00972F67 /* CVCalendar */,
 				FF85964E1AFB8AAB0099DFF8 /* ExSwift */,
 			);
@@ -452,6 +455,14 @@
 				FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */,
 			);
 			name = Calendar;
+			sourceTree = "<group>";
+		};
+		FFDAF7011B14D60800BC4589 /* AFDateExtension */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAF7021B14D61400BC4589 /* AF+Date+Extension.swift */,
+			);
+			name = AFDateExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -691,6 +702,7 @@
 				FF73952D1B0C6C0B00972F67 /* CVCalendarMenuView.swift in Sources */,
 				FF7395401B0C6C0B00972F67 /* CVSet.swift in Sources */,
 				FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */,
+				FFDAF7031B14D61400BC4589 /* AF+Date+Extension.swift in Sources */,
 				FF73953F1B0C6C0B00972F67 /* CVSelectionType.swift in Sources */,
 				FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */,
 				FF7395441B0C70E000972F67 /* CalendarViewController.swift in Sources */,

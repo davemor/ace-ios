@@ -65,6 +65,20 @@ class Meeting: Object {
         }
     }
     
+    // helper for Calendar
+    func includeOnDate(date: CVDate) -> Bool {
+        let d = CVDate(date: dateTime)
+        switch self.repeated {
+        case .none:
+            // it never repeats so it has to match
+            return d.day == date.day && d.month == date.month && d.year == date.year
+        case .weekly:
+            return d.weekday == date.weekday
+        case .monthly:
+            return d.day == date.day
+        }
+    }
+    
     // computed values for public interface
     
     var displayName: String {

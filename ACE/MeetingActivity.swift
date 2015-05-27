@@ -20,6 +20,10 @@ class MeetingActivity: Object, Activity {
         return "id"
     }
     
+    func includeOnDate(date: NSDate) -> Bool {
+        return meeting!.includeOnDate(CVDate(date: date))
+    }
+    
     // MARK: - Implement the Activity Protocol
     var name: String { return meeting!.displayName }
     var desc: String { return meeting!.displayDescription }

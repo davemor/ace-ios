@@ -24,6 +24,13 @@ class CommunityActivity: Object, Activity {
         return "slug"
     }
 
+    func includeOnDate(date: NSDate) -> Bool {
+        // check if the day falls between the start and end days
+        let start = dateWithTime(startDate, hour: 0, minute: 0, second: 0)
+        let end = dateWithTime(endDate, hour: 23, minute: 59, second: 59)
+        return dateIsBetween(date, start, end)
+    }
+    
     // MARK: - Implement the Activity Protocol
     var name: String { return summary }
     var desc: String { return aDescription }
@@ -33,4 +40,21 @@ class CommunityActivity: Object, Activity {
     var url: String? { return aURL }
     var venue: Venue { return aVenue! }
     var attending: Bool { return isAttending }
+    
+    private func dateWithTime(date:NSDate, hour:Int, minute:Int, second:Int) -> NSDate {
+
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponents = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: date)
+        
+        let components = NSDateComponents()
+        components.year = dateComponents.year
+        components.month = dateComponents.month
+        components.day = dateComponents.day
+        components.hour = hour
+        components.minute = minute
+        components.second = second
+        let rtnDate = calendar.dateFromComponents(components)
+        
+        return rtnDate!
+    }
 }
