@@ -27,5 +27,8 @@ class PersonalActivity: Object, Activity {
     var repeat = Repeat.none
     var url: String?
     var venue = Venue()
-    var attending: Bool { return isAttending }
+    var attending: Bool {
+        get { return isAttending }
+        set { isAttending = newValue }
+    }
 }

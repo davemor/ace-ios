@@ -19,5 +19,5 @@ protocol Activity {
     var url: String? { get }
     var venue: Venue { get }
     
-    var attending: Bool { get }
+    var attending: Bool { get set }
 }

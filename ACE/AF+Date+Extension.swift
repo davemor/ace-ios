@@ -7,8 +7,6 @@
 //  Copyright (c) 2014. All rights reserved.
 //
 
-/*
-
 import Foundation
 
 enum DateFormat {
@@ -332,7 +330,7 @@ extension NSDate {
     func nearestHour () -> Int {
         let halfHour = NSDate.minuteInSeconds() * 30
         var interval = self.timeIntervalSinceReferenceDate
-        if  self.seconds < 30 {
+        if  self.seconds() < 30 {
             interval -= halfHour
         } else {
             interval += halfHour
@@ -486,5 +484,3 @@ extension NSDate {
     
     
 }
-
-*/

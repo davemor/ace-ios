@@ -39,7 +39,10 @@ class CommunityActivity: Object, Activity {
     var repeat: Repeat { return .none }
     var url: String? { return aURL }
     var venue: Venue { return aVenue! }
-    var attending: Bool { return isAttending }
+    var attending: Bool {
+        get { return isAttending }
+        set { isAttending = newValue }
+    }
     
     private func dateWithTime(date:NSDate, hour:Int, minute:Int, second:Int) -> NSDate {
 

@@ -170,6 +170,7 @@ public extension NSDate {
     /**
         Date year
     */
+    /*
     public var year : Int {
         get {
             return getComponent(.CalendarUnitYear)
@@ -254,6 +255,7 @@ public extension NSDate {
 
         return components.valueForComponent(component)
     }
+    */
 }
 
 extension NSDate: Strideable {

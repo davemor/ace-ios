@@ -95,14 +95,14 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     }
     
     func refresh() {
+        populateMonth()
+        tableView.reloadData()
+        
         calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
         
         calendarView.changeDaysOutShowingState(true)
         shouldShowDaysOut = false
-        
-        populateMonth()
-        tableView.reloadData()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -162,13 +162,6 @@ extension CalendarViewController: CVCalendarViewDelegate
     
     func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool
     {
-        // TODO: Override this later
-        /*
-        if (Int(arc4random_uniform(3)) == 1)
-        {
-            return true
-        }
-        */
         return false
     }
 }
@@ -245,26 +238,22 @@ extension CalendarViewController: CVCalendarViewDelegate {
     }
     
     func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
+        // TODO: this condition is only needed because of the setup order of things.
+        // Perhaps it can be removed.
         /*
-        let day = dayView.date.day
-        let randomDay = Int(arc4random_uniform(31))
-        if day == randomDay {
-            return true
+        if daysForMonth.count > 0 && currentDate.month == dayView.date.month {
+            let idx = dayView.date.day - 1
+            let day = daysForMonth[idx]
+            return day.activities.count > 0
+        } else {
+            return false
         }
         */
         return false
     }
     
     func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> UIColor {
-        let day = dayView.date.day
-        
-        let red = CGFloat(arc4random_uniform(600) / 255)
-        let green = CGFloat(arc4random_uniform(600) / 255)
-        let blue = CGFloat(arc4random_uniform(600) / 255)
-        
-        let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
-        
-        return color
+        return aceColors[AceColor.Green]!
     }
     
     func dotMarker(shouldMoveOnHighlightingOnDayView dayView: CVCalendarDayView) -> Bool {
