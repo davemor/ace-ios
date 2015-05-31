@@ -354,6 +354,15 @@ extension CalendarViewController: UITableViewDataSource {
         let activity = activityForIndexPath(indexPath)
         cell.textLabel?.text = activity.name
         
+        // set up the shading
+        if activity.attending {
+           let color = cell.textLabel?.textColor.colorWithAlphaComponent(1.0)
+           cell.textLabel?.textColor = color
+        } else {
+            let color = cell.textLabel?.textColor.colorWithAlphaComponent(0.5)
+            cell.textLabel?.textColor = color
+        }
+        
         return cell
     }
 }
