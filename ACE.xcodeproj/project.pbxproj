@@ -55,6 +55,8 @@
 		FF7395411B0C6C0B00972F67 /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7395271B0C6C0B00972F67 /* CVShape.swift */; };
 		FF7395441B0C70E000972F67 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7395431B0C70E000972F67 /* CalendarViewController.swift */; };
 		FF75EB251B1C686B00B9B969 /* DiaryTextEntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB241B1C686B00B9B969 /* DiaryTextEntryDetailsViewController.swift */; };
+		FF75EB291B1C7AA200B9B969 /* DiaryPictureEntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB281B1C7AA200B9B969 /* DiaryPictureEntryDetailsViewController.swift */; };
+		FF75EB2B1B1C7AF300B9B969 /* PictureDiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB2A1B1C7AF300B9B969 /* PictureDiaryEntry.swift */; };
 		FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */; };
 		FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */; };
 		FF8596451AFAA8920099DFF8 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596441AFAA8920099DFF8 /* Dates.swift */; };
@@ -163,6 +165,8 @@
 		FF7395271B0C6C0B00972F67 /* CVShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVShape.swift; sourceTree = "<group>"; };
 		FF7395431B0C70E000972F67 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		FF75EB241B1C686B00B9B969 /* DiaryTextEntryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTextEntryDetailsViewController.swift; sourceTree = "<group>"; };
+		FF75EB281B1C7AA200B9B969 /* DiaryPictureEntryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryPictureEntryDetailsViewController.swift; sourceTree = "<group>"; };
+		FF75EB2A1B1C7AF300B9B969 /* PictureDiaryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureDiaryEntry.swift; sourceTree = "<group>"; };
 		FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
 		FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FF8596441AFAA8920099DFF8 /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
@@ -465,6 +469,7 @@
 			children = (
 				FFCDAE3B1B1B2E680016614F /* DiaryEntry.swift */,
 				FFCDAE3F1B1B2EEA0016614F /* TextDiaryEntry.swift */,
+				FF75EB2A1B1C7AF300B9B969 /* PictureDiaryEntry.swift */,
 			);
 			name = Diary;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				FFCDAE411B1B68CD0016614F /* DiaryViewController.swift */,
 				FFCDAE441B1B72490016614F /* AddTextEntryViewController.swift */,
 				FF75EB241B1C686B00B9B969 /* DiaryTextEntryDetailsViewController.swift */,
+				FF75EB281B1C7AA200B9B969 /* DiaryPictureEntryDetailsViewController.swift */,
 			);
 			name = Diary;
 			sourceTree = "<group>";
@@ -700,6 +706,7 @@
 				FF73952F1B0C6C0B00972F67 /* CVCalendarMonthContentViewController.swift in Sources */,
 				FFA45D5A1B09F62E00D05C80 /* Meeting.swift in Sources */,
 				FF47006B1B0B391A004528EB /* MeetingPickerViewController.swift in Sources */,
+				FF75EB291B1C7AA200B9B969 /* DiaryPictureEntryDetailsViewController.swift in Sources */,
 				FFCDAE421B1B68CD0016614F /* DiaryViewController.swift in Sources */,
 				FF8596671AFB8AAB0099DFF8 /* NSArray.swift in Sources */,
 				FFC2E1B61AFE773900D11DF5 /* Contact.swift in Sources */,
@@ -722,6 +729,7 @@
 				FF7395371B0C6C0B00972F67 /* CVCalendarViewDelegate.swift in Sources */,
 				FFCDAE451B1B72490016614F /* AddTextEntryViewController.swift in Sources */,
 				FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */,
+				FF75EB2B1B1C7AF300B9B969 /* PictureDiaryEntry.swift in Sources */,
 				FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */,
 				FF8596471AFB87320099DFF8 /* MeetingsListViewController.swift in Sources */,
 				FF8596611AFB8AAB0099DFF8 /* Dictionary.swift in Sources */,

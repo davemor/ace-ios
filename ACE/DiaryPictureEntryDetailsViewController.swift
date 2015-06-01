@@ -1,5 +1,5 @@
 //
-//  DiaryTextEntryDetailsViewController.swift
+//  DiaryPictureEntryDetailsViewController.swift
 //  ACE
 //
 //  Created by David Morrison on 01/06/2015.
@@ -9,24 +9,22 @@
 import UIKit
 import RealmSwift
 
-class DiaryTextEntryDetailsViewController: UIViewController {
+class DiaryPictureEntryDetailsViewController: UIViewController {
 
-    // MARK: - Model
-    var textDiaryEntry: TextDiaryEntry!
+    var entry: PictureDiaryEntry!
     
-    var isInEditMode = false
-    
-    // MARK: - Outlets
+    // MARK: Outlets
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
     
-    // MARK: - Lifecycle
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // set the outlets to the model
-        dateLabel.text = textDiaryEntry.date.toString()
-        textView.text = textDiaryEntry.text
+        // populate the view
+        dateLabel.text = entry.date.toString()
+        imageView.image = loadImage(entry.imagePath)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,21 +32,26 @@ class DiaryTextEntryDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Actions
-    @IBAction func toggleEdit(sender: UIBarButtonItem) {
-        isInEditMode = !isInEditMode
-        if isInEditMode {
-            textView.editable = true
-            textView.becomeFirstResponder()
-            sender.title = "Save"
+    // MARK: - Helper
+    func loadImage(filePath:String) -> UIImage {
+        if let image = UIImage(contentsOfFile: filePath) {
+            return image
         } else {
-            saveUpdates()
-            textView.resignFirstResponder()
-            sender.title = "Edit"
+            return UIImage() // TODO: could use a default image?
         }
     }
-
-    @IBAction func deleteEntry(sender: AnyObject) {
+    
+    func deleteEntry() {
+        let realm = Realm()
+        realm.write {
+            realm.delete(self.entry)
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func deletePhoto(sender: AnyObject) {
+        
         let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this forever?", preferredStyle: .Alert)
         alert.addAction( UIAlertAction(title: "Yes", style: .Default, handler: { (action) in
             self.deleteEntry()
@@ -56,22 +59,6 @@ class DiaryTextEntryDetailsViewController: UIViewController {
         }))
         alert.addAction( UIAlertAction(title: "No", style: .Default, handler: nil) )
         self.presentViewController(alert, animated: true) {}
-    }
-    
-    // MARK: - Updates to model
-    
-    func saveUpdates() {
-        let realm = Realm()
-        realm.write {
-            self.textDiaryEntry.text = self.textView.text
-        }
-    }
-    
-    func deleteEntry() {
-        let realm = Realm()
-        realm.write {
-            realm.delete(self.textDiaryEntry)
-        }
     }
     
     /*
