@@ -59,6 +59,13 @@
 		FF75EB2B1B1C7AF300B9B969 /* PictureDiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB2A1B1C7AF300B9B969 /* PictureDiaryEntry.swift */; };
 		FF75EB2D1B1EF76B00B9B969 /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB2C1B1EF76B00B9B969 /* EmergencyContactViewController.swift */; };
 		FF75EB301B1EFC6A00B9B969 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB2F1B1EFC6A00B9B969 /* ContactCell.swift */; };
+		FF75EB3A1B1F151800B9B969 /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB321B1F151800B9B969 /* Annotations.swift */; };
+		FF75EB3C1B1F151800B9B969 /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB341B1F151800B9B969 /* LinkCell.swift */; };
+		FF75EB3D1B1F151800B9B969 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB351B1F151800B9B969 /* ServiceDetailViewController.swift */; };
+		FF75EB3E1B1F151800B9B969 /* ServicesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB361B1F151800B9B969 /* ServicesMapViewController.swift */; };
+		FF75EB3F1B1F151800B9B969 /* SupportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB371B1F151800B9B969 /* SupportTableViewController.swift */; };
+		FF75EB401B1F151800B9B969 /* VenueDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB381B1F151800B9B969 /* VenueDetailsCell.swift */; };
+		FF75EB411B1F151800B9B969 /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB391B1F151800B9B969 /* VenueDetailViewController.swift */; };
 		FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */; };
 		FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */; };
 		FF8596451AFAA8920099DFF8 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596441AFAA8920099DFF8 /* Dates.swift */; };
@@ -171,6 +178,13 @@
 		FF75EB2A1B1C7AF300B9B969 /* PictureDiaryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureDiaryEntry.swift; sourceTree = "<group>"; };
 		FF75EB2C1B1EF76B00B9B969 /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmergencyContactViewController.swift; path = ../EmergencyContactViewController.swift; sourceTree = "<group>"; };
 		FF75EB2F1B1EFC6A00B9B969 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		FF75EB321B1F151800B9B969 /* Annotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotations.swift; sourceTree = "<group>"; };
+		FF75EB341B1F151800B9B969 /* LinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCell.swift; sourceTree = "<group>"; };
+		FF75EB351B1F151800B9B969 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
+		FF75EB361B1F151800B9B969 /* ServicesMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesMapViewController.swift; sourceTree = "<group>"; };
+		FF75EB371B1F151800B9B969 /* SupportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportTableViewController.swift; sourceTree = "<group>"; };
+		FF75EB381B1F151800B9B969 /* VenueDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailsCell.swift; sourceTree = "<group>"; };
+		FF75EB391B1F151800B9B969 /* VenueDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
 		FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
 		FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FF8596441AFAA8920099DFF8 /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
@@ -289,6 +303,7 @@
 		FF20F0E91ABAFE79009CDF4D /* ACE */ = {
 			isa = PBXGroup;
 			children = (
+				FF75EB311B1F14E500B9B969 /* Support */,
 				FF75EB2E1B1EFC2500B9B969 /* Emergency */,
 				FF7395421B0C6C2400972F67 /* Lib */,
 				FFD93A2F1B0A47A8003534C0 /* Calendar */,
@@ -418,6 +433,20 @@
 				FF75EB2F1B1EFC6A00B9B969 /* ContactCell.swift */,
 			);
 			name = Emergency;
+			sourceTree = "<group>";
+		};
+		FF75EB311B1F14E500B9B969 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FF75EB321B1F151800B9B969 /* Annotations.swift */,
+				FF75EB341B1F151800B9B969 /* LinkCell.swift */,
+				FF75EB351B1F151800B9B969 /* ServiceDetailViewController.swift */,
+				FF75EB361B1F151800B9B969 /* ServicesMapViewController.swift */,
+				FF75EB371B1F151800B9B969 /* SupportTableViewController.swift */,
+				FF75EB381B1F151800B9B969 /* VenueDetailsCell.swift */,
+				FF75EB391B1F151800B9B969 /* VenueDetailViewController.swift */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 		FF8596411AFA1C670099DFF8 /* About */ = {
@@ -726,6 +755,7 @@
 				FFC2E1B61AFE773900D11DF5 /* Contact.swift in Sources */,
 				FF75EB251B1C686B00B9B969 /* DiaryTextEntryDetailsViewController.swift in Sources */,
 				FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */,
+				FF75EB3F1B1F151800B9B969 /* SupportTableViewController.swift in Sources */,
 				FF7395321B0C6C0B00972F67 /* CVCalendarView.swift in Sources */,
 				FFC486E01AE04ADD0045C9CE /* QuotesTableViewCell.swift in Sources */,
 				FFC2E1B41AFE737700D11DF5 /* ContactListViewController.swift in Sources */,
@@ -743,6 +773,7 @@
 				FF7395371B0C6C0B00972F67 /* CVCalendarViewDelegate.swift in Sources */,
 				FFCDAE451B1B72490016614F /* AddTextEntryViewController.swift in Sources */,
 				FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */,
+				FF75EB3A1B1F151800B9B969 /* Annotations.swift in Sources */,
 				FF75EB2B1B1C7AF300B9B969 /* PictureDiaryEntry.swift in Sources */,
 				FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */,
 				FF8596471AFB87320099DFF8 /* MeetingsListViewController.swift in Sources */,
@@ -751,16 +782,20 @@
 				FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */,
 				FFCDAE401B1B2EEA0016614F /* TextDiaryEntry.swift in Sources */,
 				FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */,
+				FF75EB3D1B1F151800B9B969 /* ServiceDetailViewController.swift in Sources */,
 				FF73953A1B0C6C0B00972F67 /* CVCalendarWeekday.swift in Sources */,
 				FFDAF6FA1B146B6800BC4589 /* MeetingActivity.swift in Sources */,
+				FF75EB411B1F151800B9B969 /* VenueDetailViewController.swift in Sources */,
 				FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */,
 				FF73952A1B0C6C0B00972F67 /* CVCalendarDayView.swift in Sources */,
 				FF8596601AFB8AAB0099DFF8 /* Character.swift in Sources */,
 				FF73952D1B0C6C0B00972F67 /* CVCalendarMenuView.swift in Sources */,
 				FF7395401B0C6C0B00972F67 /* CVSet.swift in Sources */,
+				FF75EB3E1B1F151800B9B969 /* ServicesMapViewController.swift in Sources */,
 				FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */,
 				FFDAF7031B14D61400BC4589 /* AF+Date+Extension.swift in Sources */,
 				FF73953F1B0C6C0B00972F67 /* CVSelectionType.swift in Sources */,
+				FF75EB401B1F151800B9B969 /* VenueDetailsCell.swift in Sources */,
 				FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */,
 				FF7395441B0C70E000972F67 /* CalendarViewController.swift in Sources */,
 				FFDAF6FC1B14713300BC4589 /* ActivityDetailsViewController.swift in Sources */,
@@ -798,6 +833,7 @@
 				FF7395301B0C6C0B00972F67 /* CVCalendarMonthView.swift in Sources */,
 				FFC486DE1AE045930045C9CE /* QuotesViewController.swift in Sources */,
 				FF73953C1B0C6C0B00972F67 /* CVDate.swift in Sources */,
+				FF75EB3C1B1F151800B9B969 /* LinkCell.swift in Sources */,
 				FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */,
 				FF8596621AFB8AAB0099DFF8 /* Double.swift in Sources */,
 			);
