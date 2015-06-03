@@ -39,7 +39,7 @@ class DiaryViewController: UITableViewController, UIImagePickerControllerDelegat
         diaryEntries += Array(textEntries.generate()).map { $0 as DiaryEntry }
         diaryEntries += Array(imageEntries.generate()).map { $0 as DiaryEntry }
         // TODO: Add other kinds of diary entries
-        diaryEntries.sortUsing { $0.date }
+        diaryEntries = diaryEntries.sortUsing { $0.date }.reverse()
         tableView.reloadData()
     }
     
