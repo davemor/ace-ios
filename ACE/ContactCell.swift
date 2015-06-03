@@ -28,10 +28,14 @@ class ContactCell: UITableViewCell {
     // MARK: - Actions
     @IBAction func text(sender: UIButton) {
         // [[UIApplication sharedApplication] openURL: @"sms:98765432"];
-        UIApplication.sharedApplication().openURL(NSURL(string:"sms:\(phone)")!)
+        if let url = NSURL(string:"sms:\(phone)") {
+            UIApplication.sharedApplication().openURL(url)
+        }
     }
     
     @IBAction func phone(sender: UIButton) {
-        UIApplication.sharedApplication().openURL(NSURL(string:"tel://\(phone)")!)
+        if let url = NSURL(string: "tel://\(phone)") {
+            UIApplication.sharedApplication().openURL(url)
+        }
     }
 }
