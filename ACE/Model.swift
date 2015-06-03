@@ -25,8 +25,8 @@ class Model {
         return Static.instance!
     }
     
-    let serverBaseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")!
-    // let serverBaseUrl = NSURL(string: "http://localhost:3000/api/")!
+    // let serverBaseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")!
+    let serverBaseUrl = NSURL(string: "http://localhost:3000/api/")!
     
     let communityCalendarUrl = NSURL(string: "https://recoverycommunitycalendar.hasacalendar.co.uk/api1/events.json")!
     
@@ -68,7 +68,7 @@ class Model {
                                 group.desc = dict.read("description", alt: "")
                                 group.contactName = dict.read("contact_name", alt: "")
                                 group.telephone = dict.read("telephone", alt: "")
-                                println(group)
+                                // println(group)
                                 realm.add(group, update:true)
                             }
                         }
@@ -108,11 +108,10 @@ class Model {
                                 
                                 // add the meeting to the realm.
                                 realm.add(meeting, update: true)
-                                print(meeting)
                             }
                         }
                     }
-                } /*
+                }
                 realm.write {
                     // read in the services
                     if let services = json["services"] as? NSArray {
@@ -155,11 +154,13 @@ class Model {
                                         service.businessTimes.append(bt)
                                     }
                                 }
+                                
+                                realm.add(service, update: true)
+                                println(service)
                             }
                         }
                     }
                 }
-                */
             } else {
                 // TODO: Try again later.
                 println("Cannot Reach server")

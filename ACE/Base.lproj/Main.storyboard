@@ -404,13 +404,13 @@
         <!--Diary Entry-->
         <scene sceneID="9EH-kF-IU4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HOe-Jl-8XK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="NZl-rV-yHu" customClass="DiaryTextEntryDetailsViewController" customModule="ACE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6NG-kH-ktx"/>
                         <viewControllerLayoutGuide type="bottom" id="aCT-XW-pyB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vUz-FI-bFZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24/07/2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qA-OB-ReY">
@@ -422,7 +422,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phJ-mN-NLT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -472,13 +472,13 @@
                                 <exclude reference="R18-xj-GGv"/>
                                 <exclude reference="aPd-FH-Xcg"/>
                                 <exclude reference="wOI-I5-JSE"/>
-                                <exclude reference="BeW-NX-fiU"/>
-                                <exclude reference="FNU-W4-bJs"/>
-                                <exclude reference="gVw-xM-fEx"/>
                                 <exclude reference="QZ0-lr-O7M"/>
                                 <exclude reference="SaT-nN-If4"/>
                                 <exclude reference="Zfb-TP-YCt"/>
                                 <exclude reference="Ipx-fO-X2H"/>
+                                <exclude reference="BeW-NX-fiU"/>
+                                <exclude reference="FNU-W4-bJs"/>
+                                <exclude reference="gVw-xM-fEx"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -491,13 +491,13 @@
                                 <include reference="R18-xj-GGv"/>
                                 <include reference="aPd-FH-Xcg"/>
                                 <include reference="wOI-I5-JSE"/>
-                                <include reference="BeW-NX-fiU"/>
-                                <include reference="FNU-W4-bJs"/>
-                                <include reference="gVw-xM-fEx"/>
                                 <include reference="QZ0-lr-O7M"/>
                                 <include reference="SaT-nN-If4"/>
                                 <include reference="Zfb-TP-YCt"/>
                                 <include reference="Ipx-fO-X2H"/>
+                                <include reference="BeW-NX-fiU"/>
+                                <include reference="FNU-W4-bJs"/>
+                                <include reference="gVw-xM-fEx"/>
                             </mask>
                         </variation>
                     </view>
@@ -515,6 +515,7 @@
                         <outlet property="textView" destination="phJ-mN-NLT" id="Qp3-Xs-TjO"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOe-Jl-8XK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2686.5" y="-525.75"/>
         </scene>
@@ -4597,7 +4598,6 @@ G11 5QP</string>
         <!--Emergency-->
         <scene sceneID="pPG-QD-RsM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j4l-XM-8HC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Emergency" id="lGt-Yb-LRk" customClass="EmergencyContactViewController" customModule="ACE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ipo-pA-kcE"/>
@@ -4648,7 +4648,8 @@ G11 5QP</string>
                                                             <exclude reference="PNa-j7-hrc"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="266" y="7" width="44" height="30"/>
                                                         <mask key="constraints">
                                                             <include reference="PNa-j7-hrc"/>
                                                         </mask>
@@ -4662,6 +4663,9 @@ G11 5QP</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="11" width="212" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAF-2X-eot">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -4676,7 +4680,8 @@ G11 5QP</string>
                                                             <exclude reference="MUB-SL-t3P"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="228" y="7" width="30" height="30"/>
                                                         <mask key="constraints">
                                                             <include reference="MUB-SL-t3P"/>
                                                         </mask>
@@ -4705,16 +4710,16 @@ G11 5QP</string>
                                                     <exclude reference="eAF-2X-eot"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="uVw-zt-J3J"/>
                                                     <exclude reference="Kol-i3-epq"/>
                                                     <exclude reference="qZH-Nw-WZI"/>
-                                                    <exclude reference="Tmk-GB-CMV"/>
+                                                    <exclude reference="uVw-zt-J3J"/>
                                                     <exclude reference="7RB-cT-q48"/>
                                                     <exclude reference="RpU-vO-Z7F"/>
-                                                    <exclude reference="v7I-nc-TrR"/>
-                                                    <exclude reference="pDl-dL-4ct"/>
-                                                    <exclude reference="wbh-kh-BPj"/>
+                                                    <exclude reference="Tmk-GB-CMV"/>
                                                     <exclude reference="RNC-tI-ZI7"/>
+                                                    <exclude reference="pDl-dL-4ct"/>
+                                                    <exclude reference="v7I-nc-TrR"/>
+                                                    <exclude reference="wbh-kh-BPj"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -4724,16 +4729,16 @@ G11 5QP</string>
                                                     <include reference="eAF-2X-eot"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="uVw-zt-J3J"/>
                                                     <include reference="Kol-i3-epq"/>
                                                     <include reference="qZH-Nw-WZI"/>
-                                                    <include reference="Tmk-GB-CMV"/>
+                                                    <include reference="uVw-zt-J3J"/>
                                                     <include reference="7RB-cT-q48"/>
                                                     <include reference="RpU-vO-Z7F"/>
-                                                    <include reference="v7I-nc-TrR"/>
-                                                    <include reference="pDl-dL-4ct"/>
-                                                    <include reference="wbh-kh-BPj"/>
+                                                    <include reference="Tmk-GB-CMV"/>
                                                     <include reference="RNC-tI-ZI7"/>
+                                                    <include reference="pDl-dL-4ct"/>
+                                                    <include reference="v7I-nc-TrR"/>
+                                                    <include reference="wbh-kh-BPj"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -4763,10 +4768,10 @@ G11 5QP</string>
                                 <exclude reference="4m5-3U-UaO"/>
                                 <exclude reference="I9P-gB-CyA"/>
                                 <exclude reference="XO6-My-DEC"/>
+                                <exclude reference="qeb-6W-vRj"/>
                                 <exclude reference="7Zl-2d-S7i"/>
                                 <exclude reference="Z0G-c6-YMy"/>
                                 <exclude reference="mqq-ZN-dAu"/>
-                                <exclude reference="qeb-6W-vRj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -4778,10 +4783,10 @@ G11 5QP</string>
                                 <include reference="4m5-3U-UaO"/>
                                 <include reference="I9P-gB-CyA"/>
                                 <include reference="XO6-My-DEC"/>
+                                <include reference="qeb-6W-vRj"/>
                                 <include reference="7Zl-2d-S7i"/>
                                 <include reference="Z0G-c6-YMy"/>
                                 <include reference="mqq-ZN-dAu"/>
-                                <include reference="qeb-6W-vRj"/>
                             </mask>
                         </variation>
                     </view>
@@ -4796,6 +4801,7 @@ G11 5QP</string>
                         <outlet property="tableView" destination="En1-T3-iw7" id="YtE-Z9-3mC"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4l-XM-8HC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1804.5" y="460.5"/>
         </scene>
@@ -5379,13 +5385,13 @@ G11 5QP</string>
         <!--Diary Entry-->
         <scene sceneID="ldF-NC-lWB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="grY-KM-Goi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="c93-EQ-FXk" customClass="DiaryPictureEntryDetailsViewController" customModule="ACE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xrg-kr-gk5"/>
                         <viewControllerLayoutGuide type="bottom" id="xy7-dq-IgT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="l49-LV-5hK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24/07/2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBC-2V-ua8">
@@ -5459,16 +5465,16 @@ G11 5QP</string>
                                 <exclude reference="csQ-yf-pjX"/>
                                 <exclude reference="e6p-yd-gjC"/>
                                 <exclude reference="v5k-bc-3f2"/>
+                                <exclude reference="Gs9-Kc-rwr"/>
+                                <exclude reference="Qeh-Qd-w8M"/>
+                                <exclude reference="cOI-UY-p1e"/>
+                                <exclude reference="kTL-fz-G7c"/>
                                 <exclude reference="FBC-Up-kQI"/>
                                 <exclude reference="Ftm-pk-2gp"/>
                                 <exclude reference="QU0-4a-gmD"/>
                                 <exclude reference="Tw8-Z7-Woc"/>
                                 <exclude reference="dLs-di-DrV"/>
                                 <exclude reference="iZO-IY-AHz"/>
-                                <exclude reference="Gs9-Kc-rwr"/>
-                                <exclude reference="Qeh-Qd-w8M"/>
-                                <exclude reference="cOI-UY-p1e"/>
-                                <exclude reference="kTL-fz-G7c"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -5481,16 +5487,16 @@ G11 5QP</string>
                                 <include reference="csQ-yf-pjX"/>
                                 <include reference="e6p-yd-gjC"/>
                                 <include reference="v5k-bc-3f2"/>
+                                <include reference="Gs9-Kc-rwr"/>
+                                <exclude reference="Qeh-Qd-w8M"/>
+                                <include reference="cOI-UY-p1e"/>
+                                <include reference="kTL-fz-G7c"/>
                                 <include reference="FBC-Up-kQI"/>
                                 <exclude reference="Ftm-pk-2gp"/>
                                 <include reference="QU0-4a-gmD"/>
                                 <exclude reference="Tw8-Z7-Woc"/>
                                 <exclude reference="dLs-di-DrV"/>
                                 <include reference="iZO-IY-AHz"/>
-                                <include reference="Gs9-Kc-rwr"/>
-                                <exclude reference="Qeh-Qd-w8M"/>
-                                <include reference="cOI-UY-p1e"/>
-                                <include reference="kTL-fz-G7c"/>
                             </mask>
                         </variation>
                     </view>
@@ -5502,6 +5508,7 @@ G11 5QP</string>
                         <outlet property="imageView" destination="Qrt-rt-v3c" id="7wx-8i-JhS"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grY-KM-Goi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2686.5" y="164.25"/>
         </scene>

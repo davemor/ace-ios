@@ -30,12 +30,20 @@ class ContactCell: UITableViewCell {
         // [[UIApplication sharedApplication] openURL: @"sms:98765432"];
         if let url = NSURL(string:"sms:\(phone)") {
             UIApplication.sharedApplication().openURL(url)
+        } else {
+            showInvalidNumberAlert()
         }
     }
     
     @IBAction func phone(sender: UIButton) {
         if let url = NSURL(string: "tel://\(phone)") {
             UIApplication.sharedApplication().openURL(url)
+        } else {
+            showInvalidNumberAlert()
         }
+    }
+    
+    func showInvalidNumberAlert() {
+        // TODO: Add this.
     }
 }
