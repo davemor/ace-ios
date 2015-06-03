@@ -12,7 +12,7 @@ import RealmSwift
 class MeetingsListViewController: UITableViewController {
 
     // array of event lists ordered by day then ordered by time
-    var orderedMeetings:[Meeting.Day:[Meeting]]!
+    var orderedMeetings:[Day:[Meeting]]!
     
     var notificationToken: NotificationToken?
     let groups = Realm().objects(Group)
@@ -29,7 +29,7 @@ class MeetingsListViewController: UITableViewController {
     }
     
     func refresh() {
-        orderedMeetings = Array(meetings.generate()).groupBy { Meeting.Day(rawValue: $0.day)! }.mapValues { (day:Meeting.Day, meetings:Array<Meeting>) -> Array<Meeting> in
+        orderedMeetings = Array(meetings.generate()).groupBy { Day(rawValue: $0.day)! }.mapValues { (day:Day, meetings:Array<Meeting>) -> Array<Meeting> in
             meetings.sortUsing { $0.dateTime }
         }
         tableView.reloadData()
@@ -53,7 +53,7 @@ class MeetingsListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let day = Meeting.Day(rawValue: section)!
+        let day = Day(rawValue: section)!
         if let count = orderedMeetings[day]?.count {
             return count
         } else {
@@ -64,7 +64,7 @@ class MeetingsListViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("meetingsListReuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
-        let day = Meeting.Day(rawValue: indexPath.section)!
+        let day = Day(rawValue: indexPath.section)!
         if let meetings = orderedMeetings[day] {
             let meeting = meetings[indexPath.row]
             cell.textLabel?.text = meeting.displayTimeOfDay
@@ -74,7 +74,7 @@ class MeetingsListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let day = Meeting.Day(rawValue: section)!
+        let day = Day(rawValue: section)!
         return day.description.capitalized
     }
     
@@ -87,7 +87,7 @@ class MeetingsListViewController: UITableViewController {
         if segue.identifier == "meetingDetailSegue" {
             let dest = segue.destinationViewController as? MeetingsDetailViewController
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-            let day = Meeting.Day(rawValue: indexPath.section)!
+            let day = Day(rawValue: indexPath.section)!
             let meeting = orderedMeetings[day]![indexPath.row]
             dest?.meeting = meeting
             dest?.venue = meeting.venue

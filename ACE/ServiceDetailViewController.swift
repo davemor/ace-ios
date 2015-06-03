@@ -25,11 +25,15 @@ class ServiceDetailViewController: UITableViewController {
         super.viewDidLoad()
 
         serviceName.text = service.name
-        serviceDescription.text = service.description
+        serviceDescription.text = service.desc
         
-        // for time in service?.businessTimes {
-            // TODO: Complete this
-        // }
+        for time in service.businessTimes {
+            for index in 0..<businessTimeLabels.count {
+                let label = businessTimeLabels[index]
+                // TODO: Finish this off!
+                // Hard to know what to do exactly though.
+            }
+        }
         
         telephone.setTitle(service.telephone, forState: .Normal)
         email.setTitle(service.email, forState: .Normal)

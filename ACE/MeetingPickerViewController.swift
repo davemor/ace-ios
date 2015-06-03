@@ -54,7 +54,7 @@ class MeetingPickerViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let key = orderedMeetings.keys.array[section]
-        let day = Meeting.Day(rawValue: key)
+        let day = Day(rawValue: key)
         return day!.description.capitalized
     }
 

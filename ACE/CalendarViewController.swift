@@ -31,13 +31,13 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         
         // TODO: Would maths be better here?
         private var cvDayToDay = [
-            1: Meeting.Day.sunday,
-            2: Meeting.Day.monday,
-            3: Meeting.Day.tuesday,
-            4: Meeting.Day.wednesday,
-            5: Meeting.Day.thursday,
-            6: Meeting.Day.friday,
-            7: Meeting.Day.saturday,
+            1: Day.sunday,
+            2: Day.monday,
+            3: Day.tuesday,
+            4: Day.wednesday,
+            5: Day.thursday,
+            6: Day.friday,
+            7: Day.saturday,
         ]
     }
     var currentDate = CVDate(date: NSDate())

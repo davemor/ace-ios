@@ -31,7 +31,7 @@ class Venue: Object {
     }
     
     var services: [Service] {
-        return linkingObjects(Service.self, forProperty: "service")
+        return linkingObjects(Service.self, forProperty: "venue")
     }
     
     // some helper functions for working out how best to display stuff

@@ -22,6 +22,12 @@ class SupportTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Actions
+    
+    @IBAction func close(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

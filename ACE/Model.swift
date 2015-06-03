@@ -87,7 +87,7 @@ class Model {
                                 meeting.contactPhone = dict.read("contactPhone", alt: "")
                                 meeting.dateTime = dict.readDateTime("date_time")
                                 meeting.repeat = Repeat.strToRaw(dict.read("repeat", alt: "none"))
-                                meeting.day = Meeting.Day.strToRaw(dict.read("day_of_week", alt: "none"))
+                                meeting.day = Day.strToRaw(dict.read("day_of_week", alt: "none"))
                                 
                                 // find the venue if it exists
                                 let venueId = dict.read("venue_id", alt: 0)

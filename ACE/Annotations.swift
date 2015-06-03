@@ -23,7 +23,7 @@ let mapPins = [
 ]
 
 class VenueAnnotation : NSObject, MKAnnotation {
-    let venueId:Int
+    let venue: Venue
     let pin:UIImage
     
     // implement the MKAnnotation protocol
@@ -32,7 +32,7 @@ class VenueAnnotation : NSObject, MKAnnotation {
     var subtitle:String!
     
     init(venue: Venue) {
-        self.venueId = venue.id
+        self.venue = venue
         self.coordinate = venue.coordinate
         self.title = venue.displayName
         self.pin = getPin(venue)

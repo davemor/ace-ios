@@ -25,46 +25,6 @@ class Meeting: Object {
         return "id"
     }
     
-    // helpers
-    enum Day: Int, Printable {
-        case monday = 0
-        case tuesday = 1
-        case wednesday = 2
-        case thursday = 3
-        case friday = 4
-        case saturday = 5
-        case sunday = 6
-        
-        var description : String {
-            switch self {
-            case .monday: return "monday"
-            case .tuesday: return "tuesday"
-            case .wednesday: return "wednesday"
-            case .thursday: return "thursday"
-            case .friday: return "friday"
-            case .saturday: return "saturday"
-            case .sunday: return "sunday"
-            }
-        }
-        
-        static func fromString(str: String) -> Day {
-            switch str {
-            case "monday": return .monday
-            case "tuesday": return .tuesday
-            case "wednesday": return .wednesday
-            case "thursday": return .thursday
-            case "friday": return .friday
-            case "saturday": return .saturday
-            case "sunday": return .sunday
-            default: return .monday
-            }
-        }
-        
-        static func strToRaw(str: String) -> Int {
-            return fromString(str).rawValue
-        }
-    }
-    
     // helper for Calendar
     func includeOnDate(date: CVDate) -> Bool {
         let d = CVDate(date: dateTime)
@@ -155,6 +115,46 @@ class Meeting: Object {
     
     var repeated: Repeat {
         return Repeat(rawValue: self.repeat)!
+    }
+}
+
+// helpers
+enum Day: Int, Printable {
+    case monday = 0
+    case tuesday = 1
+    case wednesday = 2
+    case thursday = 3
+    case friday = 4
+    case saturday = 5
+    case sunday = 6
+    
+    var description : String {
+        switch self {
+        case .monday: return "monday"
+        case .tuesday: return "tuesday"
+        case .wednesday: return "wednesday"
+        case .thursday: return "thursday"
+        case .friday: return "friday"
+        case .saturday: return "saturday"
+        case .sunday: return "sunday"
+        }
+    }
+    
+    static func fromString(str: String) -> Day {
+        switch str {
+        case "monday": return .monday
+        case "tuesday": return .tuesday
+        case "wednesday": return .wednesday
+        case "thursday": return .thursday
+        case "friday": return .friday
+        case "saturday": return .saturday
+        case "sunday": return .sunday
+        default: return .monday
+        }
+    }
+    
+    static func strToRaw(str: String) -> Int {
+        return fromString(str).rawValue
     }
 }
 

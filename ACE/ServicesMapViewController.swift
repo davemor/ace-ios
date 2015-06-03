@@ -8,12 +8,14 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class ServicesMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var map: MKMapView!
     
-    
+    var notificationToken: NotificationToken?
+    let services = Realm().objects(Service)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,20 +25,34 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
         // zoom to show Edinburgh
         setMapLocation(CLLocationCoordinate2D(latitude: 55.9410655, longitude: -3.2053836), delta: 0.05)
 
-        // add all the venues to the map
-        //for (id,event) in Event.all {
-        //    let annotation = EventAnnotation(event: event)
-        //    self.map.addAnnotation(annotation)
-        //}
-        
+        // Set up the view and the notificaiton block
+        refresh()
+        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+            self.refresh()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    func refresh() {
+        for service in services {
+            if let venue = service.venue {
+                let annotation = VenueAnnotation(venue: venue)
+                map.addAnnotation(annotation)
+            }
+        }
+    }
     
-    // helper methods
+    // MARK: Actions
+    @IBAction func close(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    
+    // MARK: - helper methods
     func setMapLocation(location: CLLocationCoordinate2D, delta: Double) {
         let span = MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
         let region = MKCoordinateRegion(center: location, span: span)
@@ -52,7 +68,7 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             view.canShowCallout = true
             view.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIView
-            // view.image = (annotation as? EventAnnotation)?.pin
+            view.image = UIImage(named: "BlueMapPin")
         }
         // configure the annotation
         view.annotation = annotation
@@ -71,7 +87,7 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
         // Pass the selected object to the new view controller.
         let annotation = sender as? VenueAnnotation
         if let dest = segue.destinationViewController as? VenueDetailViewController {
-           // dest.venue = Venue.all[annotation!.venueId]!
+            dest.venue = annotation?.venue
         }
     }
 }

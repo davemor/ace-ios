@@ -798,7 +798,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="tQw-ob-5uT"/>
                     <navigationItem key="navigationItem" id="rpw-kb-uhu">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="p9G-N4-jhE"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="p9G-N4-jhE">
+                            <connections>
+                                <action selector="close:" destination="ugO-bI-KqC" id="byZ-oA-NTi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="map" destination="839-xc-DhM" id="yn1-ZI-25O"/>
@@ -3530,7 +3534,11 @@ G11 5QP</string>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="List" image="ListIcon" id="fuY-UV-oLA"/>
                     <navigationItem key="navigationItem" id="6e6-yH-KsA">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="LAJ-tW-w4C"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="LAJ-tW-w4C">
+                            <connections>
+                                <action selector="close:" destination="35S-ks-QkV" id="wPa-kh-UKm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="NQX-YA-bSQ" id="Z8g-dC-8SR"/>
