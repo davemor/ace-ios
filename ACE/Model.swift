@@ -25,8 +25,8 @@ class Model {
         return Static.instance!
     }
     
-    // let serverBaseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")!
-    let serverBaseUrl = NSURL(string: "http://localhost:3000/api/")!
+    let serverBaseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")!
+    // let serverBaseUrl = NSURL(string: "http://localhost:3000/api/")!
     
     let communityCalendarUrl = NSURL(string: "https://recoverycommunitycalendar.hasacalendar.co.uk/api1/events.json")!
     

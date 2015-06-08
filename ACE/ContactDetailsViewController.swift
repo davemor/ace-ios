@@ -16,8 +16,6 @@ class ContactDetailsViewController: UITableViewController {
     // MARK: Bindings
     @IBOutlet weak var nameView: UILabel!
     @IBOutlet weak var phoneView: UILabel!
-    @IBOutlet weak var textInEmergencySwitch: UISwitch!
-    @IBOutlet weak var phoneInEmergencySwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +23,6 @@ class ContactDetailsViewController: UITableViewController {
         // bind the views
         nameView.text = contact.name
         phoneView.text = contact.phone
-        textInEmergencySwitch.setOn(contact.textInEmergency, animated: false)
-        phoneInEmergencySwitch.setOn(contact.phoneInEmergency, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,15 +30,7 @@ class ContactDetailsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: Actions
-    @IBAction func textInEmergencyToggled(sender: UISwitch) {
-        // TODO: Mutate the contact
-    }
-    
-    @IBAction func phoneInEmergency(sender: UISwitch) {
-        // TODO: Mutate the contact
-    }
-    
+    // MARK: - Actions
     @IBAction func removeContact(sender: UIButton) {
         let realm = Realm()
         realm.write {

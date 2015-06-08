@@ -20,13 +20,17 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var whenView: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var addressView: UITextView!
+    @IBOutlet weak var addressView: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleView.text = activity.name
         refreshAddButtonTitle()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44.0
         
         // set when
         let start = activity.start.toString()
@@ -39,7 +43,8 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
         let annotation = ActivityAnnotation(activity: activity)
         mapView.addAnnotation(annotation)
         mapView.selectAnnotation(annotation, animated: true)
-        addressView.text = activity.venue.fullAddress
+        let address = activity.venue.address
+        addressView.text = address.stringByReplacingOccurrencesOfString(",", withString: ",\n")
     }
 
     override func viewWillLayoutSubviews() {
@@ -55,6 +60,11 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     func refreshAddButtonTitle() {
         let title = activity.attending ? "Remove" : "Add"
         addButton.setTitle(title, forState: .Normal)
+    }
+    
+    // MARK: - TableView
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     // MARK: - Actions

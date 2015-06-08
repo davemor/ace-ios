@@ -115,7 +115,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
             dest.activity = activity
         }
     }
-
 }
 
 // MARK: - CVCalendarViewDelegate

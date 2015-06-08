@@ -17,6 +17,11 @@
 		FF20F1031ABAFE79009CDF4D /* ACETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20F1021ABAFE79009CDF4D /* ACETests.swift */; };
 		FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20F10C1ABB8216009CDF4D /* HomeViewController.swift */; };
 		FF20F10F1ABB855D009CDF4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF20F10E1ABB855D009CDF4D /* MapKit.framework */; };
+		FF3754BA1B21903800EE1F00 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3754B91B21903800EE1F00 /* HexagonView.swift */; };
+		FF3755511B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3755501B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift */; };
+		FF3755521B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3755501B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift */; };
+		FF3755551B22DCE800EE1F00 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF3755541B22DCE800EE1F00 /* FontAwesome.otf */; };
+		FF3755561B22DCE800EE1F00 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF3755541B22DCE800EE1F00 /* FontAwesome.otf */; };
 		FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */; };
 		FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB301ACC9D0400EA1954 /* Service.swift */; };
 		FF47006B1B0B391A004528EB /* MeetingPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */; };
@@ -136,6 +141,9 @@
 		FF20F1021ABAFE79009CDF4D /* ACETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACETests.swift; sourceTree = "<group>"; };
 		FF20F10C1ABB8216009CDF4D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FF20F10E1ABB855D009CDF4D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FF3754B91B21903800EE1F00 /* HexagonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
+		FF3755501B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+FontAwesomeSwift.swift"; sourceTree = "<group>"; };
+		FF3755541B22DCE800EE1F00 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		FF44EB301ACC9D0400EA1954 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingPickerViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +259,7 @@
 		EC95499243A72577CEB33F0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF20F10E1ABB855D009CDF4D /* MapKit.framework */,
 				8432260F4345D4716C6ECDDC /* Pods_ACE.framework */,
 				51A15FD2C54A9B4290DCD6B9 /* Pods_ACETests.framework */,
 			);
@@ -282,7 +291,6 @@
 		FF20F0DE1ABAFE79009CDF4D = {
 			isa = PBXGroup;
 			children = (
-				FF20F10E1ABB855D009CDF4D /* MapKit.framework */,
 				FF20F0E91ABAFE79009CDF4D /* ACE */,
 				FF20F0FF1ABAFE79009CDF4D /* ACETests */,
 				FF20F0E81ABAFE79009CDF4D /* Products */,
@@ -318,7 +326,7 @@
 				FF20F0F31ABAFE79009CDF4D /* Images.xcassets */,
 				FF20F0F51ABAFE79009CDF4D /* LaunchScreen.xib */,
 				FF20F0EA1ABAFE79009CDF4D /* Supporting Files */,
-				FF20F10C1ABB8216009CDF4D /* HomeViewController.swift */,
+				FF3754B81B21902200EE1F00 /* Home */,
 			);
 			path = ACE;
 			sourceTree = "<group>";
@@ -326,6 +334,7 @@
 		FF20F0EA1ABAFE79009CDF4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FF3755541B22DCE800EE1F00 /* FontAwesome.otf */,
 				FF20F0EB1ABAFE79009CDF4D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -346,6 +355,23 @@
 				FF20F1011ABAFE79009CDF4D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF3754B81B21902200EE1F00 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FF20F10C1ABB8216009CDF4D /* HomeViewController.swift */,
+				FF3754B91B21903800EE1F00 /* HexagonView.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		FF3755531B22DC5000EE1F00 /* FontAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				FF3755501B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift */,
+			);
+			name = FontAwesome;
 			sourceTree = "<group>";
 		};
 		FF44EB2D1ACC9C7A00EA1954 /* Model */ = {
@@ -419,6 +445,7 @@
 		FF7395421B0C6C2400972F67 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FF3755531B22DC5000EE1F00 /* FontAwesome */,
 				FFDAF7011B14D60800BC4589 /* AFDateExtension */,
 				FF73950D1B0C6C0B00972F67 /* CVCalendar */,
 				FF85964E1AFB8AAB0099DFF8 /* ExSwift */,
@@ -633,6 +660,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF8596651AFB8AAB0099DFF8 /* Info.plist in Resources */,
+				FF3755551B22DCE800EE1F00 /* FontAwesome.otf in Resources */,
 				FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */,
 				FF20F0F71ABAFE79009CDF4D /* LaunchScreen.xib in Resources */,
 				FF20F0F41ABAFE79009CDF4D /* Images.xcassets in Resources */,
@@ -643,6 +671,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3755561B22DCE800EE1F00 /* FontAwesome.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +793,7 @@
 				FF73953E1B0C6C0B00972F67 /* CVScrollDirection.swift in Sources */,
 				FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */,
 				FFC486E41AE058A80045C9CE /* Colors.swift in Sources */,
+				FF3755511B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift in Sources */,
 				FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */,
 				FFDAF7001B14883300BC4589 /* PersonalActivity.swift in Sources */,
 				FF7395381B0C6C0B00972F67 /* CVCalendarViewPresentationMode.swift in Sources */,
@@ -782,6 +812,7 @@
 				FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */,
 				FFCDAE401B1B2EEA0016614F /* TextDiaryEntry.swift in Sources */,
 				FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */,
+				FF3754BA1B21903800EE1F00 /* HexagonView.swift in Sources */,
 				FF75EB3D1B1F151800B9B969 /* ServiceDetailViewController.swift in Sources */,
 				FF73953A1B0C6C0B00972F67 /* CVCalendarWeekday.swift in Sources */,
 				FFDAF6FA1B146B6800BC4589 /* MeetingActivity.swift in Sources */,
@@ -843,6 +874,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3755521B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift in Sources */,
 				FF20F1031ABAFE79009CDF4D /* ACETests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
