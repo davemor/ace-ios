@@ -32,6 +32,8 @@
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
 		FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */; };
+		FF6ACA8E1B25CEE8004FA163 /* Theme.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FF6ACA8D1B25CEE8004FA163 /* Theme.yaml */; };
+		FF6ACA901B25CFE2004FA163 /* ThemeSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ACA8F1B25CFE2004FA163 /* ThemeSymbols.swift */; };
 		FF7395281B0C6C0B00972F67 /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73950E1B0C6C0B00972F67 /* CVAuxiliaryView.swift */; };
 		FF7395291B0C6C0B00972F67 /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73950F1B0C6C0B00972F67 /* CVCalendarContentViewController.swift */; };
 		FF73952A1B0C6C0B00972F67 /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7395101B0C6C0B00972F67 /* CVCalendarDayView.swift */; };
@@ -154,6 +156,8 @@
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		FF6ACA8D1B25CEE8004FA163 /* Theme.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Theme.yaml; sourceTree = "<group>"; };
+		FF6ACA8F1B25CFE2004FA163 /* ThemeSymbols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSymbols.swift; sourceTree = "<group>"; };
 		FF73950E1B0C6C0B00972F67 /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		FF73950F1B0C6C0B00972F67 /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
 		FF7395101B0C6C0B00972F67 /* CVCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarDayView.swift; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 		FF20F0E91ABAFE79009CDF4D /* ACE */ = {
 			isa = PBXGroup;
 			children = (
+				FF6ACA8C1B25CEC9004FA163 /* Theme */,
 				FF75EB311B1F14E500B9B969 /* Support */,
 				FF75EB2E1B1EFC2500B9B969 /* Emergency */,
 				FF7395421B0C6C2400972F67 /* Lib */,
@@ -385,6 +390,15 @@
 				FFC2E1B51AFE773900D11DF5 /* Contact.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		FF6ACA8C1B25CEC9004FA163 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				FF6ACA8D1B25CEE8004FA163 /* Theme.yaml */,
+				FF6ACA8F1B25CFE2004FA163 /* ThemeSymbols.swift */,
+			);
+			name = Theme;
 			sourceTree = "<group>";
 		};
 		FF7395091B0B7ADF00972F67 /* Support */ = {
@@ -659,6 +673,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF6ACA8E1B25CEE8004FA163 /* Theme.yaml in Resources */,
 				FF8596651AFB8AAB0099DFF8 /* Info.plist in Resources */,
 				FF3755551B22DCE800EE1F00 /* FontAwesome.otf in Resources */,
 				FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */,
@@ -824,6 +839,7 @@
 				FF7395401B0C6C0B00972F67 /* CVSet.swift in Sources */,
 				FF75EB3E1B1F151800B9B969 /* ServicesMapViewController.swift in Sources */,
 				FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */,
+				FF6ACA901B25CFE2004FA163 /* ThemeSymbols.swift in Sources */,
 				FFDAF7031B14D61400BC4589 /* AF+Date+Extension.swift in Sources */,
 				FF73953F1B0C6C0B00972F67 /* CVSelectionType.swift in Sources */,
 				FF75EB401B1F151800B9B969 /* VenueDetailsCell.swift in Sources */,

@@ -10,8 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var daysInRecoveryView: UILabel!
-    @IBOutlet weak var meetingsAttendedView: UILabel!
+    //@IBOutlet weak var daysInRecoveryView: UILabel!
+    //@IBOutlet weak var meetingsAttendedView: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,17 +31,25 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        //self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
+        
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
         
         refreshView()
     }
     
     override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        //self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
+    
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
     }
-
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -53,6 +61,7 @@ class HomeViewController: UIViewController {
     */
     
     func refreshView() {
+        /*
         // set up the view
         let defaults = NSUserDefaults.standardUserDefaults()
         daysInRecoveryView.hidden = !defaults.boolForKey("show_days_in_recovery")
@@ -70,5 +79,6 @@ class HomeViewController: UIViewController {
         } else {
             daysInRecoveryView.text = "Days 0"
         }
+        */
     }
 }
