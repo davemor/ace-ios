@@ -13,6 +13,12 @@ class HomeViewController: UIViewController {
     //@IBOutlet weak var daysInRecoveryView: UILabel!
     //@IBOutlet weak var meetingsAttendedView: UILabel!
     
+    @IBOutlet weak var settingsButton: UIButton!
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +43,7 @@ class HomeViewController: UIViewController {
         //self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
         
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
+        // UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
         
         refreshView()
     }
@@ -46,12 +52,12 @@ class HomeViewController: UIViewController {
         //self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
     
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
+        //UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+    //override func prefersStatusBarHidden() -> Bool {
+    //    return true
+    //}
     
     /*
     // MARK: - Navigation
@@ -64,6 +70,7 @@ class HomeViewController: UIViewController {
     */
     
     func refreshView() {
+        
         /*
         // set up the view
         let defaults = NSUserDefaults.standardUserDefaults()
