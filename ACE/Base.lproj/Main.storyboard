@@ -725,11 +725,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Diary" id="jve-Js-8ne">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="AYx-QF-BZ4">
+                            <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="close:" destination="fPF-B9-Ph8" id="8Wc-ca-02U"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New" id="opX-MS-TP3">
+                            <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="new:" destination="fPF-B9-Ph8" id="ZEk-Bw-Xh5"/>
                             </connections>
@@ -796,12 +798,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="phJ-mN-NLT" firstAttribute="leading" secondItem="vUz-FI-bFZ" secondAttribute="leadingMargin" id="BeW-NX-fiU"/>
-                            <constraint firstItem="phJ-mN-NLT" firstAttribute="top" secondItem="3qA-OB-ReY" secondAttribute="bottom" constant="8" id="FNU-W4-bJs"/>
+                            <constraint firstItem="phJ-mN-NLT" firstAttribute="top" secondItem="3qA-OB-ReY" secondAttribute="bottom" constant="8" id="FNU-W4-bJs">
+                                <variation key="heightClass=regular-widthClass=compact" constant="7"/>
+                            </constraint>
                             <constraint firstItem="aCT-XW-pyB" firstAttribute="top" secondItem="C3d-uD-cag" secondAttribute="bottom" constant="8" id="Ipx-fO-X2H"/>
                             <constraint firstItem="C3d-uD-cag" firstAttribute="leading" secondItem="vUz-FI-bFZ" secondAttribute="leadingMargin" id="QZ0-lr-O7M"/>
-                            <constraint firstItem="3qA-OB-ReY" firstAttribute="top" secondItem="6NG-kH-ktx" secondAttribute="bottom" constant="8" id="R18-xj-GGv"/>
+                            <constraint firstItem="3qA-OB-ReY" firstAttribute="top" secondItem="6NG-kH-ktx" secondAttribute="bottom" constant="8" id="R18-xj-GGv">
+                                <variation key="heightClass=regular-widthClass=compact" constant="72"/>
+                            </constraint>
                             <constraint firstItem="C3d-uD-cag" firstAttribute="trailing" secondItem="vUz-FI-bFZ" secondAttribute="trailingMargin" id="SaT-nN-If4"/>
-                            <constraint firstItem="C3d-uD-cag" firstAttribute="top" secondItem="phJ-mN-NLT" secondAttribute="bottom" constant="8" id="Zfb-TP-YCt"/>
+                            <constraint firstItem="C3d-uD-cag" firstAttribute="top" secondItem="phJ-mN-NLT" secondAttribute="bottom" constant="8" id="Zfb-TP-YCt">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-56"/>
+                            </constraint>
                             <constraint firstItem="3qA-OB-ReY" firstAttribute="trailing" secondItem="vUz-FI-bFZ" secondAttribute="trailingMargin" id="aPd-FH-Xcg"/>
                             <constraint firstItem="phJ-mN-NLT" firstAttribute="trailing" secondItem="vUz-FI-bFZ" secondAttribute="trailingMargin" id="gVw-xM-fEx"/>
                             <constraint firstItem="3qA-OB-ReY" firstAttribute="leading" secondItem="vUz-FI-bFZ" secondAttribute="leadingMargin" id="wOI-I5-JSE"/>
@@ -1002,9 +1010,13 @@
         <scene sceneID="U74-AG-PDv">
             <objects>
                 <navigationController id="T26-ml-KZN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iBG-hz-NTJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="iBG-hz-NTJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="fPF-B9-Ph8" kind="relationship" relationship="rootViewController" id="V8h-G3-6pn"/>
@@ -3391,7 +3403,7 @@ G11 5QP</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="About me" id="lSw-nP-hEK">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="c2Y-3l-7Rc">
+                        <barButtonItem key="leftBarButtonItem" title="Close" style="done" id="c2Y-3l-7Rc">
                             <connections>
                                 <action selector="close:" destination="rQc-or-Hpz" id="o58-m1-UQP"/>
                             </connections>
@@ -4493,8 +4505,7 @@ G11 5QP</string>
                                                             <exclude reference="PNa-j7-hrc"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="266" y="7" width="44" height="30"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="PNa-j7-hrc"/>
                                                         </mask>
@@ -4508,9 +4519,6 @@ G11 5QP</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="8" y="11" width="212" height="21"/>
-                                                    </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAF-2X-eot">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -4525,8 +4533,7 @@ G11 5QP</string>
                                                             <exclude reference="MUB-SL-t3P"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="228" y="7" width="30" height="30"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="MUB-SL-t3P"/>
                                                         </mask>
@@ -4596,11 +4603,16 @@ G11 5QP</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="e6v-de-gV7" secondAttribute="centerX" id="0cx-HC-MaX"/>
                             <constraint firstItem="e6v-de-gV7" firstAttribute="leading" secondItem="jU9-vd-G70" secondAttribute="leadingMargin" id="4m5-3U-UaO"/>
-                            <constraint firstItem="En1-T3-iw7" firstAttribute="trailing" secondItem="jU9-vd-G70" secondAttribute="trailingMargin" id="7Zl-2d-S7i"/>
+                            <constraint firstItem="En1-T3-iw7" firstAttribute="trailing" secondItem="jU9-vd-G70" secondAttribute="trailingMargin" id="7Zl-2d-S7i">
+                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                            </constraint>
                             <constraint firstItem="e6v-de-gV7" firstAttribute="top" secondItem="ipo-pA-kcE" secondAttribute="bottom" constant="8" id="I9P-gB-CyA"/>
                             <constraint firstItem="e6v-de-gV7" firstAttribute="trailing" secondItem="jU9-vd-G70" secondAttribute="trailingMargin" id="XO6-My-DEC"/>
-                            <constraint firstItem="En1-T3-iw7" firstAttribute="leading" secondItem="jU9-vd-G70" secondAttribute="leadingMargin" id="Z0G-c6-YMy"/>
+                            <constraint firstItem="En1-T3-iw7" firstAttribute="leading" secondItem="jU9-vd-G70" secondAttribute="leadingMargin" id="Z0G-c6-YMy">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
+                            </constraint>
                             <constraint firstItem="En1-T3-iw7" firstAttribute="top" secondItem="e6v-de-gV7" secondAttribute="bottom" constant="8" id="mqq-ZN-dAu"/>
                             <constraint firstItem="sA6-Hj-zYA" firstAttribute="top" secondItem="En1-T3-iw7" secondAttribute="bottom" constant="8" id="qeb-6W-vRj"/>
                         </constraints>
@@ -4610,13 +4622,14 @@ G11 5QP</string>
                                 <exclude reference="En1-T3-iw7"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="0cx-HC-MaX"/>
                                 <exclude reference="4m5-3U-UaO"/>
                                 <exclude reference="I9P-gB-CyA"/>
                                 <exclude reference="XO6-My-DEC"/>
-                                <exclude reference="qeb-6W-vRj"/>
                                 <exclude reference="7Zl-2d-S7i"/>
                                 <exclude reference="Z0G-c6-YMy"/>
                                 <exclude reference="mqq-ZN-dAu"/>
+                                <exclude reference="qeb-6W-vRj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -4625,18 +4638,20 @@ G11 5QP</string>
                                 <include reference="En1-T3-iw7"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4m5-3U-UaO"/>
+                                <include reference="0cx-HC-MaX"/>
+                                <exclude reference="4m5-3U-UaO"/>
                                 <include reference="I9P-gB-CyA"/>
-                                <include reference="XO6-My-DEC"/>
-                                <include reference="qeb-6W-vRj"/>
+                                <exclude reference="XO6-My-DEC"/>
                                 <include reference="7Zl-2d-S7i"/>
                                 <include reference="Z0G-c6-YMy"/>
                                 <include reference="mqq-ZN-dAu"/>
+                                <include reference="qeb-6W-vRj"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="ZSr-fa-Nxa">
+                    <navigationItem key="navigationItem" title="Emergency" id="ZSr-fa-Nxa">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="9w1-V8-9Ry">
+                            <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="close:" destination="lGt-Yb-LRk" id="Vav-x7-0sC"/>
                             </connections>
@@ -4654,9 +4669,10 @@ G11 5QP</string>
         <scene sceneID="zbG-qO-MAw">
             <objects>
                 <navigationController id="n78-zl-uvg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vci-9p-RuE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Vci-9p-RuE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="lGt-Yb-LRk" kind="relationship" relationship="rootViewController" id="WG8-wY-MNS"/>
@@ -5268,6 +5284,9 @@ G11 5QP</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="72" width="368" height="21"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsq-Va-Hno">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>

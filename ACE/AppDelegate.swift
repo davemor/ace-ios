@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Motif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

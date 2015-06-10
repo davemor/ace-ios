@@ -28,12 +28,11 @@
 		FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DC1AE6A2ED00943B41 /* Strings.swift */; };
 		FF569F9D1B0E25CA00E26D16 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF569F9C1B0E25CA00E26D16 /* Activity.swift */; };
 		FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5803DD1B04BCAD0030B109 /* MoodMenuViewController.swift */; };
+		FF5967071B27804F00B149F4 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5967061B27804F00B149F4 /* Style.swift */; };
 		FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8B1AE8CB2400889EA0 /* ExerciseDetailViewController.swift */; };
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
 		FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */; };
-		FF6ACA8E1B25CEE8004FA163 /* Theme.yaml in Resources */ = {isa = PBXBuildFile; fileRef = FF6ACA8D1B25CEE8004FA163 /* Theme.yaml */; };
-		FF6ACA901B25CFE2004FA163 /* ThemeSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ACA8F1B25CFE2004FA163 /* ThemeSymbols.swift */; };
 		FF7395281B0C6C0B00972F67 /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73950E1B0C6C0B00972F67 /* CVAuxiliaryView.swift */; };
 		FF7395291B0C6C0B00972F67 /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73950F1B0C6C0B00972F67 /* CVCalendarContentViewController.swift */; };
 		FF73952A1B0C6C0B00972F67 /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7395101B0C6C0B00972F67 /* CVCalendarDayView.swift */; };
@@ -152,12 +151,11 @@
 		FF54C2DC1AE6A2ED00943B41 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FF569F9C1B0E25CA00E26D16 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		FF5803DD1B04BCAD0030B109 /* MoodMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodMenuViewController.swift; sourceTree = "<group>"; };
+		FF5967061B27804F00B149F4 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		FF648C8B1AE8CB2400889EA0 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
-		FF6ACA8D1B25CEE8004FA163 /* Theme.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Theme.yaml; sourceTree = "<group>"; };
-		FF6ACA8F1B25CFE2004FA163 /* ThemeSymbols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSymbols.swift; sourceTree = "<group>"; };
 		FF73950E1B0C6C0B00972F67 /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		FF73950F1B0C6C0B00972F67 /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
 		FF7395101B0C6C0B00972F67 /* CVCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarDayView.swift; sourceTree = "<group>"; };
@@ -395,8 +393,7 @@
 		FF6ACA8C1B25CEC9004FA163 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				FF6ACA8D1B25CEE8004FA163 /* Theme.yaml */,
-				FF6ACA8F1B25CFE2004FA163 /* ThemeSymbols.swift */,
+				FF5967061B27804F00B149F4 /* Style.swift */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -673,7 +670,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF6ACA8E1B25CEE8004FA163 /* Theme.yaml in Resources */,
 				FF8596651AFB8AAB0099DFF8 /* Info.plist in Resources */,
 				FF3755551B22DCE800EE1F00 /* FontAwesome.otf in Resources */,
 				FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */,
@@ -839,7 +835,6 @@
 				FF7395401B0C6C0B00972F67 /* CVSet.swift in Sources */,
 				FF75EB3E1B1F151800B9B969 /* ServicesMapViewController.swift in Sources */,
 				FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */,
-				FF6ACA901B25CFE2004FA163 /* ThemeSymbols.swift in Sources */,
 				FFDAF7031B14D61400BC4589 /* AF+Date+Extension.swift in Sources */,
 				FF73953F1B0C6C0B00972F67 /* CVSelectionType.swift in Sources */,
 				FF75EB401B1F151800B9B969 /* VenueDetailsCell.swift in Sources */,
@@ -873,6 +868,7 @@
 				FF73952C1B0C6C0B00972F67 /* CVCalendarManager.swift in Sources */,
 				FF73952E1B0C6C0B00972F67 /* CVCalendarMenuViewDelegate.swift in Sources */,
 				FFDAF6FE1B147A5000BC4589 /* CommunityEvent.swift in Sources */,
+				FF5967071B27804F00B149F4 /* Style.swift in Sources */,
 				FF85965F1AFB8AAB0099DFF8 /* Bool.swift in Sources */,
 				FF20F10D1ABB8216009CDF4D /* HomeViewController.swift in Sources */,
 				FF8596641AFB8AAB0099DFF8 /* Float.swift in Sources */,

@@ -17,9 +17,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // load up the model
-        Model.sharedInstance.deleteAll()
+        // Model.sharedInstance.deleteAll()
         Model.sharedInstance.updateFromServer()
         Model.sharedInstance.updateFromCommunityCalendar()
+        
+        // style the controls
+        setupStyles()
         
         // set up the view
         refreshView()
