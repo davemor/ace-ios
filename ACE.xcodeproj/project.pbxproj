@@ -93,6 +93,7 @@
 		FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F901AE3E66C00F3516C /* Group.swift */; };
 		FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F951AE400F200F3516C /* Reachability.swift */; };
 		FFA45D5A1B09F62E00D05C80 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA45D591B09F62E00D05C80 /* Meeting.swift */; };
+		FFBB4D601B286F6F00822E5C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB4D5F1B286F6F00822E5C /* PhotoViewController.swift */; };
 		FFC2E1B41AFE737700D11DF5 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2E1B31AFE737700D11DF5 /* ContactListViewController.swift */; };
 		FFC2E1B61AFE773900D11DF5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2E1B51AFE773900D11DF5 /* Contact.swift */; };
 		FFC2E1BA1AFF88F300D11DF5 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC2E1B91AFF88F300D11DF5 /* ContactDetailsViewController.swift */; };
@@ -217,6 +218,7 @@
 		FF9E9F901AE3E66C00F3516C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FF9E9F951AE400F200F3516C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FFA45D591B09F62E00D05C80 /* Meeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
+		FFBB4D5F1B286F6F00822E5C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		FFC2E1B31AFE737700D11DF5 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 		FFC2E1B51AFE773900D11DF5 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		FFC2E1B91AFF88F300D11DF5 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 				FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */,
 				FFC2E1B31AFE737700D11DF5 /* ContactListViewController.swift */,
 				FFC2E1B91AFF88F300D11DF5 /* ContactDetailsViewController.swift */,
+				FFBB4D5F1B286F6F00822E5C /* PhotoViewController.swift */,
 			);
 			name = About;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				FFC2E1B41AFE737700D11DF5 /* ContactListViewController.swift in Sources */,
 				FF73952B1B0C6C0B00972F67 /* CVCalendarDayViewControlCoordinator.swift in Sources */,
 				FF8596631AFB8AAB0099DFF8 /* ExSwift.swift in Sources */,
+				FFBB4D601B286F6F00822E5C /* PhotoViewController.swift in Sources */,
 				FF73953E1B0C6C0B00972F67 /* CVScrollDirection.swift in Sources */,
 				FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */,
 				FFC486E41AE058A80045C9CE /* Colors.swift in Sources */,
