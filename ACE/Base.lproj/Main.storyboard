@@ -3645,68 +3645,6 @@ G11 5QP</string>
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SP5-VQ-d7c">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SP5-VQ-d7c" id="o4c-Ss-Qf9">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa3-JS-cA6">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iH4-db-SxW">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Remove">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="removeContact:" destination="otR-LA-OWS" eventType="touchUpInside" id="KlY-Ky-tb2"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="iH4-db-SxW" firstAttribute="leading" secondItem="o4c-Ss-Qf9" secondAttribute="leadingMargin" id="Des-zO-zBa"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Fa3-JS-cA6" secondAttribute="bottom" constant="3" id="KnQ-8U-T7j"/>
-                                                <constraint firstItem="Fa3-JS-cA6" firstAttribute="top" secondItem="o4c-Ss-Qf9" secondAttribute="topMargin" constant="3" id="TQ2-vy-ndk"/>
-                                                <constraint firstItem="iH4-db-SxW" firstAttribute="trailing" secondItem="o4c-Ss-Qf9" secondAttribute="trailingMargin" id="bsj-Nn-ata"/>
-                                                <constraint firstItem="iH4-db-SxW" firstAttribute="top" secondItem="o4c-Ss-Qf9" secondAttribute="topMargin" constant="-7" id="g5Q-U1-RUR"/>
-                                                <constraint firstItem="Fa3-JS-cA6" firstAttribute="leading" secondItem="o4c-Ss-Qf9" secondAttribute="leadingMargin" id="uSh-BB-jCU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="iH4-db-SxW" secondAttribute="bottom" constant="-8" id="z3g-eW-6me"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="Fa3-JS-cA6"/>
-                                                    <exclude reference="iH4-db-SxW"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="KnQ-8U-T7j"/>
-                                                    <exclude reference="TQ2-vy-ndk"/>
-                                                    <exclude reference="uSh-BB-jCU"/>
-                                                    <exclude reference="Des-zO-zBa"/>
-                                                    <exclude reference="bsj-Nn-ata"/>
-                                                    <exclude reference="g5Q-U1-RUR"/>
-                                                    <exclude reference="z3g-eW-6me"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="Fa3-JS-cA6"/>
-                                                    <include reference="iH4-db-SxW"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="KnQ-8U-T7j"/>
-                                                    <include reference="TQ2-vy-ndk"/>
-                                                    <include reference="uSh-BB-jCU"/>
-                                                    <include reference="Des-zO-zBa"/>
-                                                    <include reference="bsj-Nn-ata"/>
-                                                    <include reference="g5Q-U1-RUR"/>
-                                                    <include reference="z3g-eW-6me"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -3715,6 +3653,14 @@ G11 5QP</string>
                             <outlet property="delegate" destination="otR-LA-OWS" id="O2G-4d-V9p"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="YmP-Em-qGs">
+                        <barButtonItem key="rightBarButtonItem" title="Remove" id="OF0-rx-ShZ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="remove:" destination="otR-LA-OWS" id="CQs-mm-idP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameView" destination="KxK-Aa-mUv" id="Ovn-nH-YRZ"/>
                         <outlet property="phoneView" destination="hn6-cI-SlA" id="z4z-MA-yZh"/>
@@ -4564,8 +4510,7 @@ G11 5QP</string>
                                                             <exclude reference="PNa-j7-hrc"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="266" y="7" width="44" height="30"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="PNa-j7-hrc"/>
                                                         </mask>
@@ -4579,9 +4524,6 @@ G11 5QP</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="8" y="11" width="212" height="21"/>
-                                                    </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAF-2X-eot">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -4596,8 +4538,7 @@ G11 5QP</string>
                                                             <exclude reference="MUB-SL-t3P"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="228" y="7" width="30" height="30"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="MUB-SL-t3P"/>
                                                         </mask>
