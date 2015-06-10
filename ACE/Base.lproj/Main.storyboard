@@ -647,6 +647,7 @@
                                             <constraint firstAttribute="height" constant="30" id="BYe-eK-8Cy"/>
                                             <constraint firstAttribute="width" constant="57" id="lJO-sM-SM3"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -672,10 +673,18 @@
                                 <constraints>
                                     <constraint firstItem="Wan-yO-idN" firstAttribute="top" secondItem="zMX-I2-JIx" secondAttribute="top" constant="8" id="NWC-6v-O8d"/>
                                     <constraint firstItem="Wan-yO-idN" firstAttribute="leading" secondItem="zMX-I2-JIx" secondAttribute="leading" constant="8" id="UEd-9A-w0Q"/>
-                                    <constraint firstAttribute="trailing" secondItem="Wan-yO-idN" secondAttribute="trailing" constant="8" id="dPL-3C-qRZ"/>
-                                    <constraint firstAttribute="width" constant="77" id="jQ3-b6-m7Y"/>
-                                    <constraint firstAttribute="height" constant="77" id="qcC-vi-syM"/>
-                                    <constraint firstAttribute="bottom" secondItem="Wan-yO-idN" secondAttribute="bottom" constant="8" id="rQI-za-8a3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wan-yO-idN" secondAttribute="trailing" constant="8" id="dPL-3C-qRZ">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="-33"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="77" id="jQ3-b6-m7Y">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="36"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="77" id="qcC-vi-syM">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="Wan-yO-idN" secondAttribute="bottom" constant="8" id="rQI-za-8a3">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="-19"/>
+                                    </constraint>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
@@ -683,7 +692,7 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="icon" value="Cog"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
-                                        <real key="value" value="42"/>
+                                        <real key="value" value="37"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
