@@ -14,6 +14,12 @@ func condenseWhitespace(string: String) -> String {
     return join("", components)
 }
 
+extension String {
+    func condense() -> String {
+        return condenseWhitespace(self)
+    }
+}
+
 func ordinalNumberFormat(num: Int) -> String {
     let ones = num % 10
     let tens = (num / 10) % 10

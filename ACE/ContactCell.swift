@@ -12,6 +12,7 @@ class ContactCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     
+    var parent: EmergencyContactViewController!
     var phone = ""
     
     override func awakeFromNib() {
@@ -27,16 +28,12 @@ class ContactCell: UITableViewCell {
 
     // MARK: - Actions
     @IBAction func text(sender: UIButton) {
-        // [[UIApplication sharedApplication] openURL: @"sms:98765432"];
-        if let url = NSURL(string:"sms:\(phone)") {
-            UIApplication.sharedApplication().openURL(url)
-        } else {
-            showInvalidNumberAlert()
-        }
+        parent.sendText(phone)
     }
     
     @IBAction func phone(sender: UIButton) {
-        if let url = NSURL(string: "tel://\(phone)") {
+        let str = "tel://\(phone.condense())"
+        if let url = NSURL(string: str) {
             UIApplication.sharedApplication().openURL(url)
         } else {
             showInvalidNumberAlert()

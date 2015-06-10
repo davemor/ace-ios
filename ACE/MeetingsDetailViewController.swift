@@ -38,7 +38,7 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
     }
     
     @IBAction func callContact(sender: AnyObject) {
-        let phoneNumber = "tel://\(condenseWhitespace(meeting.displayContactPhone))"
+        let phoneNumber = "tel://\(meeting.displayContactPhone.condense())"
         println(phoneNumber)
         UIApplication.sharedApplication().openURL(NSURL(string: phoneNumber)!)
     }

@@ -39,8 +39,6 @@ class ContactDetailsViewController: UITableViewController {
         navigationController?.popViewControllerAnimated(true)
     }
     
-    
-    
     /*
     // MARK: - Navigation
 
