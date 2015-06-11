@@ -2200,7 +2200,7 @@ G11 5QP</string>
         <scene sceneID="DFA-lm-AOj">
             <objects>
                 <navigationController id="4sp-JP-ktd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wvW-wa-I64"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="ic_format_list_bulleted_white_36pt" id="wvW-wa-I64"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hbO-Xn-4Vc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2275,10 +2275,15 @@ G11 5QP</string>
         <scene sceneID="otd-G3-Ahq">
             <objects>
                 <navigationController id="vJQ-cX-e0h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="Vsx-uV-MTE"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rra-h7-B2q">
+                    <tabBarItem key="tabBarItem" title="Map" image="ic_map_white_36pt" id="Vsx-uV-MTE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="rra-h7-B2q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1647058824" green="0.70980392160000005" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="eIs-L6-Neb" kind="relationship" relationship="rootViewController" id="OWf-7y-tVq"/>
@@ -2617,11 +2622,13 @@ G11 5QP</string>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Map" id="E0K-57-S8y">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="9f3-6F-OeR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="eIs-L6-Neb" id="e4r-K4-Pp0"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="2sO-Sa-7Tp">
+                            <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="toggleFilter:" destination="eIs-L6-Neb" id="YGI-27-hZA"/>
                             </connections>
@@ -3109,10 +3116,18 @@ G11 5QP</string>
             <objects>
                 <tabBarController id="kJZ-Ry-Cbf" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="FZa-U2-kmv">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="FZa-U2-kmv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.1647058824" green="0.70980392160000005" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.1647058824" green="0.70980392160000005" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.1647058824" green="0.70980392160000005" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="vJQ-cX-e0h" kind="relationship" relationship="viewControllers" id="Mqb-kq-d0s"/>
@@ -3121,7 +3136,7 @@ G11 5QP</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gd4-TL-aSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1728" y="-2285.25"/>
+            <point key="canvasLocation" x="-1801.5" y="-2280.75"/>
         </scene>
         <!--Support-->
         <scene sceneID="XqV-wa-3tw">
@@ -5565,9 +5580,11 @@ G11 5QP</string>
     <resources>
         <image name="ListIcon" width="32" height="32"/>
         <image name="MapIcon" width="35" height="34"/>
+        <image name="ic_format_list_bulleted_white_36pt" width="36" height="36"/>
+        <image name="ic_map_white_36pt" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aFm-e2-cT4"/>
         <segue reference="IUu-qJ-yDK"/>
+        <segue reference="RcC-fF-asP"/>
     </inferredMetricsTieBreakers>
 </document>

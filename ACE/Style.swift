@@ -23,4 +23,7 @@ func setupStyles() {
     // status bar
     UIApplication.sharedApplication().setStatusBarStyle(
         UIStatusBarStyle.LightContent, animated: false)
+    
+    // tabbar
+    // UITabBar.appearance().tintColor = UIColor.whiteColor()
 }
