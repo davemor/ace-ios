@@ -10,6 +10,7 @@
 		65881A25513A054C4281539A /* Pods_ACETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A15FD2C54A9B4290DCD6B9 /* Pods_ACETests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DF4E1D7BC77A618CBDADD76C /* Pods_ACE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432260F4345D4716C6ECDDC /* Pods_ACE.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */; };
+		FF1E1B351B29C43A00A97F12 /* MeetingsListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E1B341B29C43A00A97F12 /* MeetingsListHeader.swift */; };
 		FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20F0EC1ABAFE79009CDF4D /* AppDelegate.swift */; };
 		FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF20F0F01ABAFE79009CDF4D /* Main.storyboard */; };
 		FF20F0F41ABAFE79009CDF4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF20F0F31ABAFE79009CDF4D /* Images.xcassets */; };
@@ -132,6 +133,7 @@
 		8432260F4345D4716C6ECDDC /* Pods_ACE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F0AF1713F10A275D6924AF /* Pods-ACETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACETests/Pods-ACETests.release.xcconfig"; sourceTree = "<group>"; };
 		FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsMapViewController.swift; sourceTree = "<group>"; };
+		FF1E1B341B29C43A00A97F12 /* MeetingsListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsListHeader.swift; sourceTree = "<group>"; };
 		FF20F0E71ABAFE79009CDF4D /* ACE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF20F0EB1ABAFE79009CDF4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF20F0EC1ABAFE79009CDF4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */,
 				FF8596461AFB87320099DFF8 /* MeetingsListViewController.swift */,
 				FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */,
+				FF1E1B341B29C43A00A97F12 /* MeetingsListHeader.swift */,
 			);
 			name = Meetings;
 			sourceTree = "<group>";
@@ -846,6 +849,7 @@
 				FF7395441B0C70E000972F67 /* CalendarViewController.swift in Sources */,
 				FFDAF6FC1B14713300BC4589 /* ActivityDetailsViewController.swift in Sources */,
 				FF75EB2D1B1EF76B00B9B969 /* EmergencyContactViewController.swift in Sources */,
+				FF1E1B351B29C43A00A97F12 /* MeetingsListHeader.swift in Sources */,
 				FF73953B1B0C6C0B00972F67 /* CVCalendarWeekView.swift in Sources */,
 				FFC486E71AE0DF0D0045C9CE /* ActivitiesViewController.swift in Sources */,
 				FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */,

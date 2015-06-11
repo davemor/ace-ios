@@ -18,6 +18,17 @@ class MeetingsListViewController: UITableViewController {
     let groups = Realm().objects(Group)
     let meetings = Realm().objects(Meeting)
     
+    // keep track of which sections are expanded
+    var sectionOpen = [
+        0 : false,
+        1 : false,
+        2 : false,
+        3 : false,
+        4 : false,
+        5 : false,
+        6 : false
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +57,12 @@ class MeetingsListViewController: UITableViewController {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
     }
     
+    @IBAction func sectionExpand(sender: UIButton) {
+        sectionOpen[sender.tag] = !sectionOpen[sender.tag]!
+         self.tableView.reloadSections(NSIndexSet(index: sender.tag), withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -53,12 +70,13 @@ class MeetingsListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let day = Day(rawValue: section)!
-        if let count = orderedMeetings[day]?.count {
-            return count
-        } else {
-            return 0
+        if sectionOpen[section]! {
+            let day = Day(rawValue: section)!
+            if let count = orderedMeetings[day]?.count {
+                return count
+            }
         }
+        return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -73,9 +91,19 @@ class MeetingsListViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let cellId = "sectionHeader"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! MeetingsListHeader
         let day = Day(rawValue: section)!
-        return day.description.capitalized
+        cell.titleLabel.text = day.description.capitalized
+        cell.expandButton.tag = section
+        cell.autoresizingMask = .FlexibleHeight | .FlexibleWidth
+        
+        var view = UIView(frame: cell.frame)
+        
+        view.addSubview(cell)
+        return view
     }
     
     // MARK: - Navigation

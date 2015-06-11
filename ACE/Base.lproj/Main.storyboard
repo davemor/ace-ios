@@ -2201,9 +2201,13 @@ G11 5QP</string>
             <objects>
                 <navigationController id="4sp-JP-ktd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="ic_format_list_bulleted_white_36pt" id="wvW-wa-I64"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hbO-Xn-4Vc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hbO-Xn-4Vc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1647058824" green="0.70980392160000005" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Ley-mM-7UK" kind="relationship" relationship="rootViewController" id="Aeq-C9-qXA"/>
@@ -2218,7 +2222,7 @@ G11 5QP</string>
             <objects>
                 <tableViewController title="List" id="Ley-mM-7UK" customClass="MeetingsListViewController" customModule="ACE" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Syx-Ua-oAs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -2251,6 +2255,67 @@ G11 5QP</string>
                                     <segue destination="K5E-Yx-GDh" kind="show" identifier="meetingDetailSegue" id="zPf-Uh-1cr"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sectionHeader" id="wSl-zD-Wyy" customClass="MeetingsListHeader" customModule="ACE" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wSl-zD-Wyy" id="h9n-Fq-D6D">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fT7-Jb-lhk">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJ9-gJ-fRo">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <state key="normal" title="Button">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="sectionExpand:" destination="Ley-mM-7UK" eventType="touchUpInside" id="W6t-dH-EpT"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="LJ9-gJ-fRo" secondAttribute="centerY" id="ASj-96-62f"/>
+                                        <constraint firstItem="fT7-Jb-lhk" firstAttribute="leading" secondItem="h9n-Fq-D6D" secondAttribute="leadingMargin" id="E2c-XH-vvD"/>
+                                        <constraint firstItem="LJ9-gJ-fRo" firstAttribute="leading" secondItem="fT7-Jb-lhk" secondAttribute="trailing" constant="8" id="bxV-sq-aRf"/>
+                                        <constraint firstItem="LJ9-gJ-fRo" firstAttribute="trailing" secondItem="h9n-Fq-D6D" secondAttribute="trailingMargin" id="rn2-2H-n79"/>
+                                        <constraint firstAttribute="centerY" secondItem="fT7-Jb-lhk" secondAttribute="centerY" id="zjw-jv-MUi"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="fT7-Jb-lhk"/>
+                                            <exclude reference="LJ9-gJ-fRo"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="E2c-XH-vvD"/>
+                                            <exclude reference="zjw-jv-MUi"/>
+                                            <exclude reference="ASj-96-62f"/>
+                                            <exclude reference="bxV-sq-aRf"/>
+                                            <exclude reference="rn2-2H-n79"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="fT7-Jb-lhk"/>
+                                            <include reference="LJ9-gJ-fRo"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="E2c-XH-vvD"/>
+                                            <include reference="zjw-jv-MUi"/>
+                                            <include reference="ASj-96-62f"/>
+                                            <include reference="bxV-sq-aRf"/>
+                                            <include reference="rn2-2H-n79"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="expandButton" destination="LJ9-gJ-fRo" id="XrU-cc-X8t"/>
+                                    <outlet property="titleLabel" destination="fT7-Jb-lhk" id="ssr-jo-nXN"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Ley-mM-7UK" id="S12-iU-ZEZ"/>
@@ -2260,16 +2325,19 @@ G11 5QP</string>
                     <tabBarItem key="tabBarItem" title="List" image="ListIcon" id="Le2-VP-Lb6"/>
                     <navigationItem key="navigationItem" title="List" id="Jjq-JB-NDz">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="udm-vh-6lD">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="Ley-mM-7UK" id="dxX-fl-NvY"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="Oj8-af-Mcg"/>
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="Oj8-af-Mcg">
+                            <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pin-CG-ac9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-250.5" y="-1826.25"/>
+            <point key="canvasLocation" x="-250.5" y="-1814.25"/>
         </scene>
         <!--Map-->
         <scene sceneID="otd-G3-Ahq">
@@ -4680,7 +4748,7 @@ G11 5QP</string>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="266" y="7" width="44" height="31"/>
+                                                        <rect key="frame" x="266" y="7" width="44" height="30"/>
                                                         <mask key="constraints">
                                                             <include reference="PNa-j7-hrc"/>
                                                         </mask>
@@ -4695,7 +4763,7 @@ G11 5QP</string>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="8" y="11" width="212" height="22"/>
+                                                        <rect key="frame" x="8" y="11" width="212" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAF-2X-eot">
@@ -4712,7 +4780,7 @@ G11 5QP</string>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="228" y="7" width="30" height="31"/>
+                                                        <rect key="frame" x="228" y="7" width="30" height="30"/>
                                                         <mask key="constraints">
                                                             <include reference="MUB-SL-t3P"/>
                                                         </mask>
@@ -5584,7 +5652,7 @@ G11 5QP</string>
         <image name="ic_map_white_36pt" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="zPf-Uh-1cr"/>
         <segue reference="IUu-qJ-yDK"/>
-        <segue reference="RcC-fF-asP"/>
     </inferredMetricsTieBreakers>
 </document>
