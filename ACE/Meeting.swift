@@ -82,7 +82,7 @@ class Meeting: Object {
     
     var displayTimeOfDay: String {
         var format = NSDateFormatter()
-        format.dateFormat = "HH:mm a"
+        format.dateFormat = "HH:mm"
         return format.stringFromDate(self.dateTime)
     }
     
