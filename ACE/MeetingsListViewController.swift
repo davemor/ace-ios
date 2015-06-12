@@ -80,13 +80,14 @@ class MeetingsListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("meetingsListReuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("meetingsListReuseIdentifier", forIndexPath: indexPath) as! MeetingListCell
 
         let day = Day(rawValue: indexPath.section)!
         if let meetings = orderedMeetings[day] {
             let meeting = meetings[indexPath.row]
-            cell.textLabel?.text = meeting.displayTimeOfDay
-            cell.detailTextLabel?.text = meeting.displayName
+            cell.fellowship.text = meeting.displayName
+            cell.time.text = meeting.displayTimeOfDay
+            cell.backgroundColor = meeting.group!.color
         }
         return cell
     }
@@ -96,12 +97,14 @@ class MeetingsListViewController: UITableViewController {
         let cellId = "sectionHeader"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! MeetingsListHeader
         let day = Day(rawValue: section)!
+        
         cell.titleLabel.text = day.description.capitalized
         cell.expandButton.tag = section
+        let title = sectionOpen[section]! ? "Close" : "Open"
+        cell.expandButton.setTitle(title, forState: .Normal)
         cell.autoresizingMask = .FlexibleHeight | .FlexibleWidth
         
         var view = UIView(frame: cell.frame)
-        
         view.addSubview(cell)
         return view
     }

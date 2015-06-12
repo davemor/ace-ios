@@ -44,3 +44,13 @@ func getRandomAceColor() -> UIColor {
     let index = Int(arc4random_uniform(5))
     return aceColors[AceColor(rawValue: index)!]!
 }
+
+func getColorForGroup(group: String) -> UIColor {
+    switch group {
+    case "Cocaine Anonymous": return aceColors[AceColor.Yellow]!
+    case "Narcotics Anonymous": return aceColors[AceColor.Blue]!
+    case "SMART Recovery Groups": return aceColors[AceColor.Pink]!
+    case "Alcoholics Anonymous": return aceColors[AceColor.Purple]!
+    default: return UIColor.grayColor()
+    }
+}

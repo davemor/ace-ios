@@ -17,7 +17,7 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
     
     // bindings for views
     @IBOutlet weak var nameOfGroupView: UILabel!
-    @IBOutlet weak var descriptionOfGroupView: UITextView!
+    @IBOutlet weak var descriptionOfGroupView: UILabel!
     @IBOutlet weak var timeOfMeetingView: UILabel!
     
     // finding us
@@ -62,6 +62,8 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
         
         mapView.delegate = self
         
+        configureTableView()
+        
         // bindings for views
         nameOfGroupView.text = meeting.displayName
         descriptionOfGroupView.text = meeting.displayDescription
@@ -77,6 +79,7 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
         // getting touch
         contactView.text = meeting.displayContactName
         contectNumber.setTitle(meeting.displayContactPhone, forState: .Normal)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,6 +106,15 @@ class MeetingsDetailViewController: UITableViewController, MKMapViewDelegate {
     
     // MARK: - Table view data source
 
+    func configureTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 160.0
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.

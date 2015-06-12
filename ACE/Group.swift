@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
 class Group: Object {
     dynamic var id = 0
@@ -22,5 +23,9 @@ class Group: Object {
     
     var meetings: [Meeting] {
         return linkingObjects(Meeting.self, forProperty: "group")
+    }
+    
+    var color: UIColor {
+        return getColorForGroup(name)
     }
 }
