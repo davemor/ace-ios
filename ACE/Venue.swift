@@ -63,7 +63,7 @@ class Venue: Object {
     }
     
     var fullAddress: String {
-        return "\(self.address),\n\(self.city),\n\(self.postcode)"
+        return "\(self.address),\n\(self.city),\n\(self.postcode)".stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
     
     var coordinate:CLLocationCoordinate2D {

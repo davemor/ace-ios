@@ -69,6 +69,10 @@ class MeetingsListViewController: UITableViewController {
         return 7
     }
 
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if sectionOpen[section]! {
             let day = Day(rawValue: section)!

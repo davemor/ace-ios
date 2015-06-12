@@ -12,7 +12,7 @@
 		FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */; };
 		FF1E1B351B29C43A00A97F12 /* MeetingsListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E1B341B29C43A00A97F12 /* MeetingsListHeader.swift */; };
 		FF1E1B371B29E34B00A97F12 /* MeetingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E1B361B29E34B00A97F12 /* MeetingListCell.swift */; };
-		FF1E1B6B1B2A398400A97F12 /* MeetingDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E1B6A1B2A398400A97F12 /* MeetingDetailTableViewController.swift */; };
+		FF1E1B6B1B2A398400A97F12 /* MeetingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E1B6A1B2A398400A97F12 /* MeetingsDetailViewController.swift */; };
 		FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20F0EC1ABAFE79009CDF4D /* AppDelegate.swift */; };
 		FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF20F0F01ABAFE79009CDF4D /* Main.storyboard */; };
 		FF20F0F41ABAFE79009CDF4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF20F0F31ABAFE79009CDF4D /* Images.xcassets */; };
@@ -75,7 +75,6 @@
 		FF75EB3F1B1F151800B9B969 /* SupportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB371B1F151800B9B969 /* SupportTableViewController.swift */; };
 		FF75EB401B1F151800B9B969 /* VenueDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB381B1F151800B9B969 /* VenueDetailsCell.swift */; };
 		FF75EB411B1F151800B9B969 /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB391B1F151800B9B969 /* VenueDetailViewController.swift */; };
-		FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */; };
 		FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */; };
 		FF8596451AFAA8920099DFF8 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596441AFAA8920099DFF8 /* Dates.swift */; };
 		FF8596471AFB87320099DFF8 /* MeetingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596461AFB87320099DFF8 /* MeetingsListViewController.swift */; };
@@ -137,7 +136,7 @@
 		FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsMapViewController.swift; sourceTree = "<group>"; };
 		FF1E1B341B29C43A00A97F12 /* MeetingsListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsListHeader.swift; sourceTree = "<group>"; };
 		FF1E1B361B29E34B00A97F12 /* MeetingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingListCell.swift; sourceTree = "<group>"; };
-		FF1E1B6A1B2A398400A97F12 /* MeetingDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingDetailTableViewController.swift; sourceTree = "<group>"; };
+		FF1E1B6A1B2A398400A97F12 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
 		FF20F0E71ABAFE79009CDF4D /* ACE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF20F0EB1ABAFE79009CDF4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF20F0EC1ABAFE79009CDF4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -202,7 +201,6 @@
 		FF75EB371B1F151800B9B969 /* SupportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportTableViewController.swift; sourceTree = "<group>"; };
 		FF75EB381B1F151800B9B969 /* VenueDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailsCell.swift; sourceTree = "<group>"; };
 		FF75EB391B1F151800B9B969 /* VenueDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
-		FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
 		FF8596421AFA1C7D0099DFF8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FF8596441AFAA8920099DFF8 /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		FF8596461AFB87320099DFF8 /* MeetingsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsListViewController.swift; sourceTree = "<group>"; };
@@ -291,12 +289,11 @@
 			isa = PBXGroup;
 			children = (
 				FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */,
-				FF85963D1AF9816E0099DFF8 /* MeetingsDetailViewController.swift */,
 				FF8596461AFB87320099DFF8 /* MeetingsListViewController.swift */,
 				FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */,
 				FF1E1B341B29C43A00A97F12 /* MeetingsListHeader.swift */,
 				FF1E1B361B29E34B00A97F12 /* MeetingListCell.swift */,
-				FF1E1B6A1B2A398400A97F12 /* MeetingDetailTableViewController.swift */,
+				FF1E1B6A1B2A398400A97F12 /* MeetingsDetailViewController.swift */,
 			);
 			name = Meetings;
 			sourceTree = "<group>";
@@ -815,7 +812,6 @@
 				FF8596631AFB8AAB0099DFF8 /* ExSwift.swift in Sources */,
 				FFBB4D601B286F6F00822E5C /* PhotoViewController.swift in Sources */,
 				FF73953E1B0C6C0B00972F67 /* CVScrollDirection.swift in Sources */,
-				FF85963E1AF9816E0099DFF8 /* MeetingsDetailViewController.swift in Sources */,
 				FFC486E41AE058A80045C9CE /* Colors.swift in Sources */,
 				FF3755511B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift in Sources */,
 				FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */,
@@ -863,7 +859,7 @@
 				FF85966A1AFB8AAB0099DFF8 /* Sequence.swift in Sources */,
 				FFCDAE3C1B1B2E680016614F /* DiaryEntry.swift in Sources */,
 				FF7395291B0C6C0B00972F67 /* CVCalendarContentViewController.swift in Sources */,
-				FF1E1B6B1B2A398400A97F12 /* MeetingDetailTableViewController.swift in Sources */,
+				FF1E1B6B1B2A398400A97F12 /* MeetingsDetailViewController.swift in Sources */,
 				FF75EB301B1EFC6A00B9B969 /* ContactCell.swift in Sources */,
 				FF7395331B0C6C0B00972F67 /* CVCalendarViewAnimator.swift in Sources */,
 				FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */,
