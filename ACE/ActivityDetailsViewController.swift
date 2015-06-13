@@ -17,12 +17,11 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var titleView: UILabel!
-    @IBOutlet weak var addButton: UIButton!
+
+    @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var whenView: UILabel!
-    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressView: UILabel!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,22 +32,12 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
         tableView.estimatedRowHeight = 44.0
         
         // set when
-        let start = activity.start.toString()
-        let end = activity.end.toString()
-        whenView.text = "From \(start) to \(end)"
+        whenView.text = getActivityDateRangeString(activity)
     
         // set where
-        mapView.delegate = self
-        setMapLocation(activity.venue.coordinate, delta: 0.025)
-        let annotation = ActivityAnnotation(activity: activity)
-        mapView.addAnnotation(annotation)
-        mapView.selectAnnotation(annotation, animated: true)
         let address = activity.venue.address
+        print(address)
         addressView.text = address.stringByReplacingOccurrencesOfString(",", withString: ",\n")
-    }
-
-    override func viewWillLayoutSubviews() {
-        // titleView.preferredMaxLayoutWidth = self.view.bounds.size.width - 40;
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,7 +48,7 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     // MARK: - Helpers
     func refreshAddButtonTitle() {
         let title = activity.attending ? "Remove" : "Add"
-        addButton.setTitle(title, forState: .Normal)
+        addButton.title = title
     }
     
     // MARK: - TableView
@@ -68,11 +57,7 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     }
     
     // MARK: - Actions
-    @IBAction func close(sender: AnyObject) {
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
-    }
-    
-    @IBAction func toggleAttending(sender: UIButton) {
+    @IBAction func toggleAttending(sender: AnyObject) {
         let realm = Realm()
         realm.write {
             self.activity.attending = !self.activity.attending
@@ -112,12 +97,6 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
         // configure the annotation
         view.annotation = annotation
         return view
-    }    
-    
-    func setMapLocation(location: CLLocationCoordinate2D, delta: Double) {
-        let span = MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
-        let region = MKCoordinateRegion(center: location, span: span)
-        mapView.setRegion(region, animated: true)
     }
     
     /*
@@ -129,6 +108,48 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+func getActivityDateRangeString(activity: Activity) -> String {
+    if onSameDay(activity.start, activity.end) {
+        let dayOfWeek = activity.start.toString(format: DateFormat.Custom("EEEE"))
+        let day = activity.start.toString(format: DateFormat.Custom("dd"))
+        let suffix = daySuffix(activity.start)
+        let month = activity.start.toString(format: DateFormat.Custom("MMMM"))
+        let start = activity.start.toString(format: DateFormat.Custom("HH:mm"))
+        let end = activity.end.toString(format: DateFormat.Custom("HH:mm"))
+        return "\(dayOfWeek) \(day)\(suffix) of \(month)\nFrom\t\(start)\nUntil\t\(end)"
+    } else {
+        let start = activity.start.toString()
+        let end = activity.end.toString()
+        return "From \(start) to \(end)"
+    }
+}
+
+func daySuffix(date: NSDate) -> String {
+    let calendar = NSCalendar.currentCalendar()
+    let dayOfMonth = calendar.component(.CalendarUnitDay, fromDate: date)
+    switch dayOfMonth {
+    case 1: fallthrough
+    case 21: fallthrough
+    case 31: return "st"
+    case 2: fallthrough
+    case 22: return "nd"
+    case 3: fallthrough
+    case 23: return "rd"
+    default: return "th"
+    }
+}
+
+func onSameDay(date0: NSDate, date1: NSDate) -> Bool {
+    let cal = NSCalendar.currentCalendar()
+    var components = cal.components((.CalendarUnitEra | .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay), fromDate:date0)
+    let firstDate = cal.dateFromComponents(components)!
+    
+    components = cal.components((.CalendarUnitEra | .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay), fromDate:date1);
+    let otherDate = cal.dateFromComponents(components)!
+    
+    return firstDate.isEqualToDate(otherDate)
 }
 
 class ActivityAnnotation: NSObject, MKAnnotation {
