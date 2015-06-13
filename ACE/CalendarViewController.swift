@@ -6,13 +6,24 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     // MARK: - Properties
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
-    @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var daysOutSwitch: UISwitch!
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     var shouldShowDaysOut = true
     var animationFinished = true
+    
+    var isCalendarShown = true
+    
+    // constrains for animations
+    @IBOutlet weak var weekViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var weekViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var monthViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var monthViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var monthViewHeightConstraint: NSLayoutConstraint!
+    
     
     // model
     // each day is a section
@@ -50,9 +61,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     
     func populateMonth() {
         daysForMonth.removeAll(keepCapacity: true)
-        
-        println("community activities: \(communityActivities.count)")
-        
+
         // TODO: not sure if this is the most effective way of doing this
         let meetings = Array(meetingActivities.generate())
         let community = Array(communityActivities.generate())
@@ -81,16 +90,28 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        monthLabel.text = CVDate(date: NSDate()).globalDescription
+
+        self.navigationItem.title = CVDate(date: NSDate()).globalDescription
         
         notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
             self.refresh()
         }
+        
+        //calendarView.hidden = true
+        //hideCalendar()
     }
     
+    var toggling = false // This is a bit of hack - make calendar hidden
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        /*
+        if !toggling {
+            if isCalendarShown {
+                showCalendar()
+            } else {
+                hideCalendar()
+            }
+        }*/
         refresh()
     }
     
@@ -103,6 +124,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         
         calendarView.changeDaysOutShowingState(true)
         shouldShowDaysOut = false
+        
+        scrollToDate(currentDate)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -191,44 +214,14 @@ extension CalendarViewController: CVCalendarViewDelegate {
         let section = date.day - 1 // sections are zero indexed, the days of the month are not.
         var sectionRect = tableView.rectForSection(section)
         sectionRect.size.height = tableView.frame.size.height;
-        tableView.scrollRectToVisible(sectionRect, animated:true)
+        UIView.animateWithDuration(0.5) {
+            self.tableView.scrollRectToVisible(sectionRect, animated:true)
+        }
     }
     
     func presentedDateUpdated(date: CVDate) {
-        if monthLabel.text != date.globalDescription && self.animationFinished {
-            let updatedMonthLabel = UILabel()
-            updatedMonthLabel.textColor = monthLabel.textColor
-            updatedMonthLabel.font = monthLabel.font
-            updatedMonthLabel.textAlignment = .Center
-            updatedMonthLabel.text = date.globalDescription
-            updatedMonthLabel.sizeToFit()
-            updatedMonthLabel.alpha = 0
-            updatedMonthLabel.center = self.monthLabel.center
-            
-            let offset = CGFloat(48)
-            updatedMonthLabel.transform = CGAffineTransformMakeTranslation(0, offset)
-            updatedMonthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
-            
-            UIView.animateWithDuration(0.35, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.animationFinished = false
-                self.monthLabel.transform = CGAffineTransformMakeTranslation(0, -offset)
-                self.monthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
-                self.monthLabel.alpha = 0
-                
-                updatedMonthLabel.alpha = 1
-                updatedMonthLabel.transform = CGAffineTransformIdentity
-                
-                }) { _ in
-                    
-                    self.animationFinished = true
-                    self.monthLabel.frame = updatedMonthLabel.frame
-                    self.monthLabel.text = updatedMonthLabel.text
-                    self.monthLabel.transform = CGAffineTransformIdentity
-                    self.monthLabel.alpha = 1
-                    updatedMonthLabel.removeFromSuperview()
-            }
-            
-            self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
+        if self.navigationItem.title != date.globalDescription && self.animationFinished {
+            self.navigationItem.title = date.globalDescription
         }
     }
     
@@ -302,14 +295,65 @@ extension CalendarViewController {
     }
     
     /// Switch to MonthView mode.
+    /*
     @IBAction func toggleCalendarView(sender: AnyObject) {
+        /*
         if calendarView.calendarMode == CalendarMode.WeekView {
             calendarView.changeMode(.MonthView)
         } else {
             calendarView.changeMode(.WeekView)
         }
+        */
+        
+    }
+    */
+    
+    @IBAction func toggleCalendarShown(sender: UIBarButtonItem) {
+        //toggling = true
+        if isCalendarShown {
+            hideCalendar()
+            sender.title = "Show"
+        } else {
+            showCalendar()
+            sender.title = "Hide"
+        }
+        isCalendarShown = !isCalendarShown
+        //toggling = false
     }
     
+    func hideCalendar() {
+        
+        calendarView.contentController.updateHeight(0.0, animated: true)
+        
+        
+        self.view.layoutIfNeeded()
+        weekViewHeightConstraint.constant = 0
+        weekViewTopConstraint.constant = 0
+        monthViewTopConstraint.constant = 0
+        monthViewBottomConstraint.constant = 0
+        UIView.animateWithDuration(0.2) {
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
+    func showCalendar() {
+        
+        calendarView.contentController.updateHeight(calendarView.contentController.presentedMonthView.potentialSize.height, animated: true)
+        
+        
+        self.view.layoutIfNeeded()
+        weekViewHeightConstraint.constant = 24
+        weekViewTopConstraint.constant = 7
+        monthViewTopConstraint.constant = 7
+        monthViewBottomConstraint.constant = 7
+        UIView.animateWithDuration(0.2) {
+            self.view.layoutIfNeeded()
+        }
+        
+
+    }
+
     @IBAction func loadPrevious(sender: AnyObject) {
         calendarView.loadPreviousView()
     }

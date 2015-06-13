@@ -210,7 +210,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="vK0-nj-49S" kind="show" id="vDI-Kc-xen"/>
+                                                    <segue destination="ilG-J3-CH7" kind="show" id="OXj-Tg-EZn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -4923,7 +4923,7 @@ G11 5QP</string>
             </objects>
             <point key="canvasLocation" x="1087.5" y="460.5"/>
         </scene>
-        <!--Calendar View Controller-->
+        <!--Month-->
         <scene sceneID="2s8-nU-xDy">
             <objects>
                 <viewController id="vK0-nj-49S" customClass="CalendarViewController" customModule="ACE" customModuleProvider="target" sceneMemberID="viewController">
@@ -4937,42 +4937,28 @@ G11 5QP</string>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2qd-LE-GS7" customClass="CVCalendarMenuView" customModule="ACE" customModuleProvider="target">
                                 <rect key="frame" x="16" y="71" width="568" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="qC8-vQ-ZPe"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qC8-vQ-ZPe"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="qC8-vQ-ZPe"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="menuViewDelegate" destination="vK0-nj-49S" id="Uk5-lo-ewG"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygZ-yE-UCi">
-                                <rect key="frame" x="551" y="23" width="33" height="33"/>
-                                <state key="normal" title="Today"/>
-                                <connections>
-                                    <action selector="todayMonthView" destination="vK0-nj-49S" eventType="touchUpInside" id="C6A-iO-u5o"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxr-Wk-E0o" customClass="CVCalendarView" customModule="ACE" customModuleProvider="target">
-                                <rect key="frame" x="16" y="103" width="568" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="9Ge-4Q-45O">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="200"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="480"/>
-                                    </constraint>
-                                </constraints>
-                                <connections>
-                                    <outlet property="calendarAppearanceDelegate" destination="vK0-nj-49S" id="gs3-SN-1VI"/>
-                                    <outlet property="calendarDelegate" destination="vK0-nj-49S" id="CyJ-62-EfO"/>
-                                </connections>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhN-r1-LC0">
-                                <rect key="frame" x="62" y="25" width="44" height="30"/>
-                                <state key="normal" title="Month">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="toggleCalendarView:" destination="vK0-nj-49S" eventType="touchUpInside" id="UEV-nA-EZs"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="T5C-wv-Hhz">
                                 <rect key="frame" x="0.0" y="411" width="600" height="189"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calendarReuseIdentifier" textLabel="3Ws-f3-GXK" detailTextLabel="jnd-Uw-N9B" style="IBUITableViewCellStyleValue1" id="zgE-74-m8m">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -5006,97 +4992,90 @@ G11 5QP</string>
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXE-My-L0o">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Close">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxr-Wk-E0o" customClass="CVCalendarView" customModule="ACE" customModuleProvider="target">
+                                <rect key="frame" x="16" y="103" width="568" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="9Ge-4Q-45O">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="200"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="480"/>
+                                    </constraint>
+                                </constraints>
                                 <connections>
-                                    <action selector="close:" destination="vK0-nj-49S" eventType="touchUpInside" id="NZv-kI-eZh"/>
+                                    <outlet property="calendarAppearanceDelegate" destination="vK0-nj-49S" id="gs3-SN-1VI"/>
+                                    <outlet property="calendarDelegate" destination="vK0-nj-49S" id="CyJ-62-EfO"/>
                                 </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbi-yz-Tbw">
-                                <rect key="frame" x="237" y="28" width="127" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2qd-LE-GS7" firstAttribute="top" secondItem="rXE-My-L0o" secondAttribute="bottom" constant="16" id="5N2-a6-yOx"/>
-                            <constraint firstItem="Lbi-yz-Tbw" firstAttribute="top" secondItem="xkT-jD-yea" secondAttribute="bottom" constant="8" symbolic="YES" id="5RI-Y2-AS7"/>
-                            <constraint firstItem="BhN-r1-LC0" firstAttribute="top" secondItem="xkT-jD-yea" secondAttribute="bottom" constant="5" id="5SL-d4-nGO"/>
                             <constraint firstItem="gxr-Wk-E0o" firstAttribute="leading" secondItem="NOM-Yc-Px8" secondAttribute="leadingMargin" id="A9g-rd-9Nf"/>
                             <constraint firstItem="gxr-Wk-E0o" firstAttribute="leading" secondItem="2qd-LE-GS7" secondAttribute="leading" id="BXi-BU-YM6"/>
-                            <constraint firstItem="gxr-Wk-E0o" firstAttribute="top" secondItem="2qd-LE-GS7" secondAttribute="bottom" constant="8" symbolic="YES" id="C9u-EI-baE"/>
+                            <constraint firstItem="gxr-Wk-E0o" firstAttribute="top" secondItem="2qd-LE-GS7" secondAttribute="bottom" constant="7" id="C9u-EI-baE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T5C-wv-Hhz" secondAttribute="trailing" constant="-16" id="NJb-kW-hHI"/>
-                            <constraint firstItem="2qd-LE-GS7" firstAttribute="top" secondItem="Lbi-yz-Tbw" secondAttribute="bottom" constant="19" id="NbC-R2-soA"/>
                             <constraint firstItem="T5C-wv-Hhz" firstAttribute="leading" secondItem="NOM-Yc-Px8" secondAttribute="leadingMargin" constant="-16" id="RvP-bk-lq0"/>
-                            <constraint firstItem="Lbi-yz-Tbw" firstAttribute="centerX" secondItem="2qd-LE-GS7" secondAttribute="centerX" id="SwE-Dy-4UJ"/>
-                            <constraint firstItem="rXE-My-L0o" firstAttribute="leading" secondItem="NOM-Yc-Px8" secondAttribute="leadingMargin" id="TKJ-NN-W4z"/>
-                            <constraint firstItem="rXE-My-L0o" firstAttribute="top" secondItem="xkT-jD-yea" secondAttribute="bottom" constant="5" id="TY2-WW-QE9"/>
                             <constraint firstItem="2qd-LE-GS7" firstAttribute="trailing" secondItem="NOM-Yc-Px8" secondAttribute="trailingMargin" id="Ueg-c2-8si"/>
-                            <constraint firstItem="gxr-Wk-E0o" firstAttribute="top" secondItem="NOM-Yc-Px8" secondAttribute="top" constant="103" id="bvq-H5-Tnp"/>
-                            <constraint firstItem="2qd-LE-GS7" firstAttribute="top" secondItem="ygZ-yE-UCi" secondAttribute="bottom" constant="15" id="cGI-sf-WGC"/>
-                            <constraint firstItem="BhN-r1-LC0" firstAttribute="top" secondItem="xkT-jD-yea" secondAttribute="bottom" constant="5" id="iKQ-xb-svB"/>
-                            <constraint firstItem="T5C-wv-Hhz" firstAttribute="top" secondItem="gxr-Wk-E0o" secondAttribute="bottom" constant="8" id="mLn-MF-S0P"/>
-                            <constraint firstItem="ygZ-yE-UCi" firstAttribute="top" secondItem="xkT-jD-yea" secondAttribute="bottom" constant="3" id="nfY-rg-I8Z"/>
-                            <constraint firstItem="ygZ-yE-UCi" firstAttribute="leading" secondItem="BhN-r1-LC0" secondAttribute="trailing" constant="8" id="oeQ-7R-TTo"/>
-                            <constraint firstItem="Lbi-yz-Tbw" firstAttribute="leading" secondItem="rXE-My-L0o" secondAttribute="trailing" constant="8" id="oeb-ir-Fgk"/>
+                            <constraint firstItem="T5C-wv-Hhz" firstAttribute="top" secondItem="gxr-Wk-E0o" secondAttribute="bottom" constant="7" id="mLn-MF-S0P"/>
                             <constraint firstItem="5TI-tW-tcV" firstAttribute="top" secondItem="T5C-wv-Hhz" secondAttribute="bottom" id="osL-tG-f1M"/>
-                            <constraint firstItem="2qd-LE-GS7" firstAttribute="top" secondItem="BhN-r1-LC0" secondAttribute="bottom" constant="16" id="qGX-Fk-Iyk"/>
-                            <constraint firstItem="ygZ-yE-UCi" firstAttribute="trailing" secondItem="2qd-LE-GS7" secondAttribute="trailing" id="qMw-HR-hgC"/>
-                            <constraint firstItem="Lbi-yz-Tbw" firstAttribute="top" secondItem="xkT-jD-yea" secondAttribute="bottom" constant="8" id="xGe-iX-3Nf"/>
                             <constraint firstItem="gxr-Wk-E0o" firstAttribute="trailing" secondItem="2qd-LE-GS7" secondAttribute="trailing" id="xLx-Oe-rb2"/>
+                            <constraint firstItem="2qd-LE-GS7" firstAttribute="top" secondItem="xkT-jD-yea" secondAttribute="bottom" constant="7" id="yC3-aG-oNL"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="rXE-My-L0o"/>
-                            </mask>
                             <mask key="constraints">
-                                <exclude reference="TKJ-NN-W4z"/>
-                                <exclude reference="TY2-WW-QE9"/>
-                                <exclude reference="iKQ-xb-svB"/>
-                                <exclude reference="5N2-a6-yOx"/>
-                                <exclude reference="NbC-R2-soA"/>
-                                <exclude reference="qGX-Fk-Iyk"/>
-                                <exclude reference="oeb-ir-Fgk"/>
-                                <exclude reference="xGe-iX-3Nf"/>
-                                <exclude reference="oeQ-7R-TTo"/>
+                                <exclude reference="yC3-aG-oNL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="rXE-My-L0o"/>
-                            </mask>
                             <mask key="constraints">
-                                <include reference="TKJ-NN-W4z"/>
-                                <include reference="TY2-WW-QE9"/>
-                                <exclude reference="5SL-d4-nGO"/>
-                                <include reference="iKQ-xb-svB"/>
-                                <include reference="5N2-a6-yOx"/>
-                                <include reference="NbC-R2-soA"/>
-                                <include reference="qGX-Fk-Iyk"/>
-                                <exclude reference="5RI-Y2-AS7"/>
-                                <exclude reference="SwE-Dy-4UJ"/>
-                                <include reference="oeb-ir-Fgk"/>
-                                <include reference="xGe-iX-3Nf"/>
-                                <include reference="oeQ-7R-TTo"/>
+                                <include reference="yC3-aG-oNL"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="0Fi-Ce-E53"/>
+                    <navigationItem key="navigationItem" title="Month" id="AnU-PX-3Za">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="jCd-3q-n1m">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="close:" destination="vK0-nj-49S" id="Blp-KY-rG5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Hide" id="yvZ-IJ-JHV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="toggleCalendarShown:" destination="vK0-nj-49S" id="CC2-oV-R5l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendarView" destination="gxr-Wk-E0o" id="jUb-uV-BjR"/>
                         <outlet property="menuView" destination="2qd-LE-GS7" id="fW1-Ls-VBy"/>
-                        <outlet property="monthLabel" destination="Lbi-yz-Tbw" id="iXd-kQ-L7n"/>
+                        <outlet property="monthViewBottomConstraint" destination="mLn-MF-S0P" id="aP5-kw-z5y"/>
+                        <outlet property="monthViewHeightConstraint" destination="9Ge-4Q-45O" id="7CI-Cy-fix"/>
+                        <outlet property="monthViewTopConstraint" destination="C9u-EI-baE" id="oxe-kF-fDe"/>
                         <outlet property="tableView" destination="T5C-wv-Hhz" id="L3P-9U-jZC"/>
+                        <outlet property="weekViewHeightConstraint" destination="qC8-vQ-ZPe" id="x0t-nc-MX8"/>
+                        <outlet property="weekViewTopConstraint" destination="yC3-aG-oNL" id="OdC-lJ-WBD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIt-B8-v2i" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1231.5" y="-824.25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OBw-g5-dYW">
+            <objects>
+                <navigationController id="ilG-J3-CH7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="0pU-ox-D2f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.67843137249999996" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vK0-nj-49S" kind="relationship" relationship="rootViewController" id="BMV-QQ-K5d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w2c-5T-HX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1998" y="-824.25"/>
         </scene>
         <!--Activity Details View Controller-->
         <scene sceneID="VFH-qu-xhY">
@@ -5506,7 +5485,7 @@ G11 5QP</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6N-sK-LSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-519" y="-824.25"/>
+            <point key="canvasLocation" x="-468" y="-824.25"/>
         </scene>
         <!--Diary Entry-->
         <scene sceneID="ldF-NC-lWB">
