@@ -2366,9 +2366,6 @@ G11 5QP</string>
                                 <action selector="back:" destination="Ley-mM-7UK" id="dxX-fl-NvY"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="Oj8-af-Mcg">
-                            <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pin-CG-ac9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2754,7 +2751,7 @@ G11 5QP</string>
             </objects>
             <point key="canvasLocation" x="-250.5" y="-2534.25"/>
         </scene>
-        <!--Meeting Picker View Controller-->
+        <!--Meetings-->
         <scene sceneID="ZbI-8Q-Cbb">
             <objects>
                 <tableViewController id="g1J-iu-XUh" customClass="MeetingPickerViewController" customModule="ACE" customModuleProvider="target" sceneMemberID="viewController">
@@ -2839,6 +2836,7 @@ G11 5QP</string>
                             <outlet property="delegate" destination="g1J-iu-XUh" id="ySM-9E-Ilo"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Meetings" id="ISh-hS-CJT"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQi-Kw-d4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
