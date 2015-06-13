@@ -10,8 +10,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
     var shouldShowDaysOut = true
     var animationFinished = true
     
@@ -23,7 +21,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var monthViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var monthViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var monthViewHeightConstraint: NSLayoutConstraint!
-    
     
     // model
     // each day is a section
@@ -124,8 +121,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         
         calendarView.changeDaysOutShowingState(true)
         shouldShowDaysOut = false
-        
-        scrollToDate(currentDate)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -400,11 +395,11 @@ extension CalendarViewController: UITableViewDataSource {
         
         // set up the shading
         if activity.attending {
-           let color = cell.textLabel?.textColor.colorWithAlphaComponent(1.0)
-           cell.textLabel?.textColor = color
+            let color = aceColors[AceColor.Blue]
+           cell.titleLabel.textColor = color
         } else {
-            let color = cell.textLabel?.textColor.colorWithAlphaComponent(0.5)
-            cell.textLabel?.textColor = color
+            let color = UIColor.blackColor().colorWithAlphaComponent(0.5)
+            cell.titleLabel.textColor = color
         }
         
         return cell
