@@ -102,7 +102,6 @@ class Model {
                                 let groupRes = realm.objects(Group).filter(predicate)
                                 if groupRes.count > 0 {
                                     let first = groupRes.first
-                                    print(first)
                                     meeting.group = first!
                                 }
                                 
@@ -156,7 +155,6 @@ class Model {
                                 }
                                 
                                 realm.add(service, update: true)
-                                println(service)
                             }
                         }
                     }
@@ -183,6 +181,8 @@ class Model {
                     if let events = json["data"] as? NSArray {
                         for data in events {
                             if let event = data as? NSDictionary {
+                                print(event)
+                                
                                 let activity = CommunityActivity()
                                 activity.slug = event.read("slug", alt: 0)
                                 activity.summary = event.read("summary", alt: "")
@@ -199,12 +199,16 @@ class Model {
                                     v.id = venue.read("slug", alt: 0)
                                     v.name = venue.read("title", alt: "")
                                     v.address = venue.read("address", alt: "")
+                                    print(v.address)
                                     // v.city = this is missing or rather part of the address.
                                     v.postcode = venue.read("addresscode", alt: "")
                                     v.latitude = venue.read("lat", alt: 0.0)
                                     v.longitude = venue.read("lng", alt: 0.0)
+                                    realm.add(v, update: true)
                                     activity.aVenue = v
                                 }
+                                
+                                print(activity)
                                 realm.add(activity, update: true)
                                 
                                 // println(activity)

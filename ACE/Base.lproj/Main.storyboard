@@ -5326,6 +5326,52 @@ G11 5QP</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Description" id="Y9n-NR-EVz">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="43" id="KxG-gm-nZg">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KxG-gm-nZg" id="aBa-6P-L1E">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zt-ol-91a">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="8Zt-ol-91a" secondAttribute="bottom" constant="11" id="18Q-ij-Vor"/>
+                                                <constraint firstItem="8Zt-ol-91a" firstAttribute="trailing" secondItem="aBa-6P-L1E" secondAttribute="trailingMargin" id="On4-T9-Yfz"/>
+                                                <constraint firstItem="8Zt-ol-91a" firstAttribute="leading" secondItem="aBa-6P-L1E" secondAttribute="leadingMargin" id="txa-aq-tWL"/>
+                                                <constraint firstItem="8Zt-ol-91a" firstAttribute="top" secondItem="aBa-6P-L1E" secondAttribute="top" constant="11" id="w2J-Lc-dDj"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="8Zt-ol-91a"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="18Q-ij-Vor"/>
+                                                    <exclude reference="On4-T9-Yfz"/>
+                                                    <exclude reference="txa-aq-tWL"/>
+                                                    <exclude reference="w2J-Lc-dDj"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="8Zt-ol-91a"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="18Q-ij-Vor"/>
+                                                    <include reference="On4-T9-Yfz"/>
+                                                    <include reference="txa-aq-tWL"/>
+                                                    <include reference="w2J-Lc-dDj"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Get in Touch" id="a8M-cO-MK6">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8Yj-Uo-cJU">
@@ -5406,6 +5452,7 @@ G11 5QP</string>
                     <connections>
                         <outlet property="addButton" destination="tuh-Jh-ghG" id="QbA-sy-hLw"/>
                         <outlet property="addressView" destination="24f-wk-9QD" id="gXs-kk-LlA"/>
+                        <outlet property="descriptionView" destination="8Zt-ol-91a" id="2f6-Hb-pSt"/>
                         <outlet property="titleView" destination="qrM-E6-Cf1" id="Yds-36-r13"/>
                         <outlet property="whenView" destination="SFZ-jf-7mh" id="2Eb-Be-Vve"/>
                     </connections>

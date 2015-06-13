@@ -101,14 +101,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     var toggling = false // This is a bit of hack - make calendar hidden
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        /*
-        if !toggling {
-            if isCalendarShown {
-                showCalendar()
-            } else {
-                hideCalendar()
-            }
-        }*/
         refresh()
     }
     

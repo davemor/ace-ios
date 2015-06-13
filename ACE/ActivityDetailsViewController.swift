@@ -21,6 +21,7 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var whenView: UILabel!
     @IBOutlet weak var addressView: UILabel!
+    @IBOutlet weak var descriptionView: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +34,14 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
         
         // set when
         whenView.text = getActivityDateRangeString(activity)
-    
+        
         // set where
-        let address = activity.venue.address
-        print(address)
-        addressView.text = address.stringByReplacingOccurrencesOfString(",", withString: ",\n")
+        let addressParts = split(activity.venue.address) { $0 == "," }.map { $0.trimmed() }
+        let address = ",\n".join(addressParts)
+        addressView.text = address
+        
+        // set description
+        descriptionView.text = activity.desc
     }
     
     override func didReceiveMemoryWarning() {
