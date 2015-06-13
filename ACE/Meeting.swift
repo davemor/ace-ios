@@ -68,13 +68,13 @@ class Meeting: Object {
         let rtn: String
         switch self.repeated {
         case .none:
-            format.dateFormat = "MMM dd, yyyy HH:mm a"
+            format.dateFormat = "MMM dd, yyyy HH:mm"
             rtn = format.stringFromDate(self.dateTime)
         case .weekly:
-            format.dateFormat = "HH:mm a"
+            format.dateFormat = "HH:mm"
             rtn = "Every \(self.dayOfWeek.description.capitalizedString) at \(format.stringFromDate(self.dateTime))"
         case .monthly:
-            format.dateFormat = "dd, HH:mm a"
+            format.dateFormat = "dd, HH:mm"
             rtn = "Every month on the \(format.stringFromDate(self.dateTime))"
         }
         return rtn

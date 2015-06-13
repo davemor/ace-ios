@@ -13,14 +13,17 @@ class MeetingPickerViewController: UITableViewController {
     var meetings: [Meeting]!
     var venue: Venue!
     
-    var orderedMeetings: [Int:[Meeting]]!
+    var orderedMeetings: [(Int,[Meeting])]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // order the meetings
-        orderedMeetings = meetings.groupBy { (meeting:Meeting) -> Int in
-            meeting.day
+        orderedMeetings = meetings
+        .groupBy { $0.day }
+        .toArray { (day:$0, meetings:$1) }
+        .sortUsing { (day:Int, meetings:Array<Meeting>) -> Int in
+            return day
         }
     }
 
@@ -36,24 +39,21 @@ class MeetingPickerViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let day = orderedMeetings.keys.array[section]
-        return orderedMeetings[day]!.count
+        return orderedMeetings[section].1.count
     }
 
-    let reuseId = "pickerCellReuseId"
+    let reuseId = "meetingsListReuseIdentifier"
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseId, forIndexPath: indexPath) as! UITableViewCell
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier(reuseId, forIndexPath: indexPath) as! MeetingListCell
         let meeting = meetingForSectionRow(indexPath.section, row: indexPath.row)
-
-        cell.textLabel?.text = meeting.displayTimeOfDay
-        cell.detailTextLabel?.text = meeting.displayName
-        
+        cell.fellowship.text = meeting.displayName
+        cell.time.text = meeting.displayTimeOfDay
+        cell.backgroundColor = meeting.group!.color
         return cell
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let key = orderedMeetings.keys.array[section]
+        let key = orderedMeetings[section].0
         let day = Day(rawValue: key)
         return day!.description.capitalized
     }
@@ -76,8 +76,7 @@ class MeetingPickerViewController: UITableViewController {
     }
     
     func meetingForSectionRow(section: Int, row: Int) -> Meeting {
-        let day = orderedMeetings.keys.array[section]
-        let meeting = orderedMeetings[day]![row]
+        let meeting = orderedMeetings[section].1[row]
         return meeting
     }
 }
