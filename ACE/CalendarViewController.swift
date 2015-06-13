@@ -392,10 +392,11 @@ extension CalendarViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("calendarReuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("calendarReuseIdentifier", forIndexPath: indexPath) as! CalendarCell
         
         let activity = activityForIndexPath(indexPath)
-        cell.textLabel?.text = activity.name
+        cell.titleLabel.text = activity.name
+        cell.timeLabel.text = activity.start.toString(format: DateFormat.Custom("HH:mm"))
         
         // set up the shading
         if activity.attending {

@@ -25,6 +25,7 @@
 		FF3755521B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3755501B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift */; };
 		FF3755551B22DCE800EE1F00 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF3755541B22DCE800EE1F00 /* FontAwesome.otf */; };
 		FF3755561B22DCE800EE1F00 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF3755541B22DCE800EE1F00 /* FontAwesome.otf */; };
+		FF375EE31B2C77B7001052D7 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF375EE21B2C77B7001052D7 /* CalendarCell.swift */; };
 		FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */; };
 		FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB301ACC9D0400EA1954 /* Service.swift */; };
 		FF47006B1B0B391A004528EB /* MeetingPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */; };
@@ -151,6 +152,7 @@
 		FF3754B91B21903800EE1F00 /* HexagonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		FF3755501B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+FontAwesomeSwift.swift"; sourceTree = "<group>"; };
 		FF3755541B22DCE800EE1F00 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		FF375EE21B2C77B7001052D7 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		FF44EB301ACC9D0400EA1954 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingPickerViewController.swift; sourceTree = "<group>"; };
@@ -580,6 +582,7 @@
 			children = (
 				FF7395431B0C70E000972F67 /* CalendarViewController.swift */,
 				FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */,
+				FF375EE21B2C77B7001052D7 /* CalendarCell.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				FF7395441B0C70E000972F67 /* CalendarViewController.swift in Sources */,
 				FFDAF6FC1B14713300BC4589 /* ActivityDetailsViewController.swift in Sources */,
 				FF75EB2D1B1EF76B00B9B969 /* EmergencyContactViewController.swift in Sources */,
+				FF375EE31B2C77B7001052D7 /* CalendarCell.swift in Sources */,
 				FF1E1B351B29C43A00A97F12 /* MeetingsListHeader.swift in Sources */,
 				FF73953B1B0C6C0B00972F67 /* CVCalendarWeekView.swift in Sources */,
 				FFC486E71AE0DF0D0045C9CE /* ActivitiesViewController.swift in Sources */,
