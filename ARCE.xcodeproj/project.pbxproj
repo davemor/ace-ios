@@ -10,6 +10,7 @@
 		65881A25513A054C4281539A /* Pods_ACETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A15FD2C54A9B4290DCD6B9 /* Pods_ACETests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DF4E1D7BC77A618CBDADD76C /* Pods_ACE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8432260F4345D4716C6ECDDC /* Pods_ACE.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */; };
+		FF19B5861B2E309D002BCB09 /* HexagonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF19B5851B2E309D002BCB09 /* HexagonWithImage.swift */; };
 		FF1E1B351B29C43A00A97F12 /* MeetingsListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E1B341B29C43A00A97F12 /* MeetingsListHeader.swift */; };
 		FF1E1B371B29E34B00A97F12 /* MeetingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E1B361B29E34B00A97F12 /* MeetingListCell.swift */; };
 		FF1E1B6B1B2A398400A97F12 /* MeetingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E1B6A1B2A398400A97F12 /* MeetingsDetailViewController.swift */; };
@@ -26,6 +27,8 @@
 		FF3755551B22DCE800EE1F00 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF3755541B22DCE800EE1F00 /* FontAwesome.otf */; };
 		FF3755561B22DCE800EE1F00 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF3755541B22DCE800EE1F00 /* FontAwesome.otf */; };
 		FF375EE31B2C77B7001052D7 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF375EE21B2C77B7001052D7 /* CalendarCell.swift */; };
+		FF375EE51B2D8A93001052D7 /* DiaryTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF375EE41B2D8A93001052D7 /* DiaryTopCell.swift */; };
+		FF375EE71B2D8AA5001052D7 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF375EE61B2D8AA5001052D7 /* DiaryCell.swift */; };
 		FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */; };
 		FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB301ACC9D0400EA1954 /* Service.swift */; };
 		FF47006B1B0B391A004528EB /* MeetingPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */; };
@@ -64,9 +67,6 @@
 		FF7395401B0C6C0B00972F67 /* CVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7395261B0C6C0B00972F67 /* CVSet.swift */; };
 		FF7395411B0C6C0B00972F67 /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7395271B0C6C0B00972F67 /* CVShape.swift */; };
 		FF7395441B0C70E000972F67 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7395431B0C70E000972F67 /* CalendarViewController.swift */; };
-		FF75EB251B1C686B00B9B969 /* DiaryTextEntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB241B1C686B00B9B969 /* DiaryTextEntryDetailsViewController.swift */; };
-		FF75EB291B1C7AA200B9B969 /* DiaryPictureEntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB281B1C7AA200B9B969 /* DiaryPictureEntryDetailsViewController.swift */; };
-		FF75EB2B1B1C7AF300B9B969 /* PictureDiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB2A1B1C7AF300B9B969 /* PictureDiaryEntry.swift */; };
 		FF75EB2D1B1EF76B00B9B969 /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB2C1B1EF76B00B9B969 /* EmergencyContactViewController.swift */; };
 		FF75EB301B1EFC6A00B9B969 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB2F1B1EFC6A00B9B969 /* ContactCell.swift */; };
 		FF75EB3A1B1F151800B9B969 /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75EB321B1F151800B9B969 /* Annotations.swift */; };
@@ -107,9 +107,7 @@
 		FFC486E41AE058A80045C9CE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486E31AE058A80045C9CE /* Colors.swift */; };
 		FFC486E71AE0DF0D0045C9CE /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC486E61AE0DF0D0045C9CE /* ActivitiesViewController.swift */; };
 		FFCDAE3C1B1B2E680016614F /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDAE3B1B1B2E680016614F /* DiaryEntry.swift */; };
-		FFCDAE401B1B2EEA0016614F /* TextDiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDAE3F1B1B2EEA0016614F /* TextDiaryEntry.swift */; };
 		FFCDAE421B1B68CD0016614F /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDAE411B1B68CD0016614F /* DiaryViewController.swift */; };
-		FFCDAE451B1B72490016614F /* AddTextEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDAE441B1B72490016614F /* AddTextEntryViewController.swift */; };
 		FFDAF6FA1B146B6800BC4589 /* MeetingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6F91B146B6800BC4589 /* MeetingActivity.swift */; };
 		FFDAF6FC1B14713300BC4589 /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */; };
 		FFDAF6FE1B147A5000BC4589 /* CommunityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */; };
@@ -135,6 +133,7 @@
 		8432260F4345D4716C6ECDDC /* Pods_ACE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F0AF1713F10A275D6924AF /* Pods-ACETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACETests/Pods-ACETests.release.xcconfig"; sourceTree = "<group>"; };
 		FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsMapViewController.swift; sourceTree = "<group>"; };
+		FF19B5851B2E309D002BCB09 /* HexagonWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonWithImage.swift; sourceTree = "<group>"; };
 		FF1E1B341B29C43A00A97F12 /* MeetingsListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsListHeader.swift; sourceTree = "<group>"; };
 		FF1E1B361B29E34B00A97F12 /* MeetingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingListCell.swift; sourceTree = "<group>"; };
 		FF1E1B6A1B2A398400A97F12 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +152,8 @@
 		FF3755501B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+FontAwesomeSwift.swift"; sourceTree = "<group>"; };
 		FF3755541B22DCE800EE1F00 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		FF375EE21B2C77B7001052D7 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		FF375EE41B2D8A93001052D7 /* DiaryTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTopCell.swift; sourceTree = "<group>"; };
+		FF375EE61B2D8AA5001052D7 /* DiaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		FF44EB301ACC9D0400EA1954 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingPickerViewController.swift; sourceTree = "<group>"; };
@@ -191,9 +192,6 @@
 		FF7395261B0C6C0B00972F67 /* CVSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVSet.swift; sourceTree = "<group>"; };
 		FF7395271B0C6C0B00972F67 /* CVShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVShape.swift; sourceTree = "<group>"; };
 		FF7395431B0C70E000972F67 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		FF75EB241B1C686B00B9B969 /* DiaryTextEntryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTextEntryDetailsViewController.swift; sourceTree = "<group>"; };
-		FF75EB281B1C7AA200B9B969 /* DiaryPictureEntryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryPictureEntryDetailsViewController.swift; sourceTree = "<group>"; };
-		FF75EB2A1B1C7AF300B9B969 /* PictureDiaryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureDiaryEntry.swift; sourceTree = "<group>"; };
 		FF75EB2C1B1EF76B00B9B969 /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmergencyContactViewController.swift; path = ../EmergencyContactViewController.swift; sourceTree = "<group>"; };
 		FF75EB2F1B1EFC6A00B9B969 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		FF75EB321B1F151800B9B969 /* Annotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotations.swift; sourceTree = "<group>"; };
@@ -235,9 +233,7 @@
 		FFC486E31AE058A80045C9CE /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FFC486E61AE0DF0D0045C9CE /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		FFCDAE3B1B1B2E680016614F /* DiaryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntry.swift; sourceTree = "<group>"; };
-		FFCDAE3F1B1B2EEA0016614F /* TextDiaryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDiaryEntry.swift; sourceTree = "<group>"; };
 		FFCDAE411B1B68CD0016614F /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
-		FFCDAE441B1B72490016614F /* AddTextEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTextEntryViewController.swift; sourceTree = "<group>"; };
 		FFDAF6F91B146B6800BC4589 /* MeetingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingActivity.swift; sourceTree = "<group>"; };
 		FFDAF6FB1B14713300BC4589 /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
 		FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityEvent.swift; sourceTree = "<group>"; };
@@ -375,6 +371,7 @@
 			children = (
 				FF20F10C1ABB8216009CDF4D /* HomeViewController.swift */,
 				FF3754B91B21903800EE1F00 /* HexagonView.swift */,
+				FF19B5851B2E309D002BCB09 /* HexagonWithImage.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -560,8 +557,6 @@
 			isa = PBXGroup;
 			children = (
 				FFCDAE3B1B1B2E680016614F /* DiaryEntry.swift */,
-				FFCDAE3F1B1B2EEA0016614F /* TextDiaryEntry.swift */,
-				FF75EB2A1B1C7AF300B9B969 /* PictureDiaryEntry.swift */,
 			);
 			name = Diary;
 			sourceTree = "<group>";
@@ -570,9 +565,8 @@
 			isa = PBXGroup;
 			children = (
 				FFCDAE411B1B68CD0016614F /* DiaryViewController.swift */,
-				FFCDAE441B1B72490016614F /* AddTextEntryViewController.swift */,
-				FF75EB241B1C686B00B9B969 /* DiaryTextEntryDetailsViewController.swift */,
-				FF75EB281B1C7AA200B9B969 /* DiaryPictureEntryDetailsViewController.swift */,
+				FF375EE41B2D8A93001052D7 /* DiaryTopCell.swift */,
+				FF375EE61B2D8AA5001052D7 /* DiaryCell.swift */,
 			);
 			name = Diary;
 			sourceTree = "<group>";
@@ -801,11 +795,9 @@
 				FF73952F1B0C6C0B00972F67 /* CVCalendarMonthContentViewController.swift in Sources */,
 				FFA45D5A1B09F62E00D05C80 /* Meeting.swift in Sources */,
 				FF47006B1B0B391A004528EB /* MeetingPickerViewController.swift in Sources */,
-				FF75EB291B1C7AA200B9B969 /* DiaryPictureEntryDetailsViewController.swift in Sources */,
 				FFCDAE421B1B68CD0016614F /* DiaryViewController.swift in Sources */,
 				FF8596671AFB8AAB0099DFF8 /* NSArray.swift in Sources */,
 				FFC2E1B61AFE773900D11DF5 /* Contact.swift in Sources */,
-				FF75EB251B1C686B00B9B969 /* DiaryTextEntryDetailsViewController.swift in Sources */,
 				FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */,
 				FF75EB3F1B1F151800B9B969 /* SupportTableViewController.swift in Sources */,
 				FF7395321B0C6C0B00972F67 /* CVCalendarView.swift in Sources */,
@@ -824,16 +816,14 @@
 				FF7395351B0C6C0B00972F67 /* CVCalendarViewAppearance.swift in Sources */,
 				FF7395391B0C6C0B00972F67 /* CVCalendarWeekContentViewController.swift in Sources */,
 				FF7395371B0C6C0B00972F67 /* CVCalendarViewDelegate.swift in Sources */,
-				FFCDAE451B1B72490016614F /* AddTextEntryViewController.swift in Sources */,
 				FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */,
 				FF75EB3A1B1F151800B9B969 /* Annotations.swift in Sources */,
-				FF75EB2B1B1C7AF300B9B969 /* PictureDiaryEntry.swift in Sources */,
 				FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */,
 				FF8596471AFB87320099DFF8 /* MeetingsListViewController.swift in Sources */,
 				FF8596611AFB8AAB0099DFF8 /* Dictionary.swift in Sources */,
+				FF19B5861B2E309D002BCB09 /* HexagonWithImage.swift in Sources */,
 				FF7395341B0C6C0B00972F67 /* CVCalendarViewAnimatorDelegate.swift in Sources */,
 				FF20F0ED1ABAFE79009CDF4D /* AppDelegate.swift in Sources */,
-				FFCDAE401B1B2EEA0016614F /* TextDiaryEntry.swift in Sources */,
 				FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */,
 				FF3754BA1B21903800EE1F00 /* HexagonView.swift in Sources */,
 				FF75EB3D1B1F151800B9B969 /* ServiceDetailViewController.swift in Sources */,
@@ -873,6 +863,7 @@
 				FF8596691AFB8AAB0099DFF8 /* Range.swift in Sources */,
 				FF8596451AFAA8920099DFF8 /* Dates.swift in Sources */,
 				FF8596661AFB8AAB0099DFF8 /* Int.swift in Sources */,
+				FF375EE71B2D8AA5001052D7 /* DiaryCell.swift in Sources */,
 				FF73953D1B0C6C0B00972F67 /* CVRange.swift in Sources */,
 				FFC486E21AE04CE30045C9CE /* Quote.swift in Sources */,
 				FF7395361B0C6C0B00972F67 /* CVCalendarViewAppearanceDelegate.swift in Sources */,
@@ -883,6 +874,7 @@
 				FF73952C1B0C6C0B00972F67 /* CVCalendarManager.swift in Sources */,
 				FF73952E1B0C6C0B00972F67 /* CVCalendarMenuViewDelegate.swift in Sources */,
 				FFDAF6FE1B147A5000BC4589 /* CommunityEvent.swift in Sources */,
+				FF375EE51B2D8A93001052D7 /* DiaryTopCell.swift in Sources */,
 				FF5967071B27804F00B149F4 /* Style.swift in Sources */,
 				FF1E1B371B29E34B00A97F12 /* MeetingListCell.swift in Sources */,
 				FF85965F1AFB8AAB0099DFF8 /* Bool.swift in Sources */,

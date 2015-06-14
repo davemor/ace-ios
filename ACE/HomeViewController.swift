@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     //@IBOutlet weak var meetingsAttendedView: UILabel!
     
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var pictureView: HaxagonWithImage!
+    
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
@@ -70,6 +72,12 @@ class HomeViewController: UIViewController {
     */
     
     func refreshView() {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let filePath = defaults.objectForKey("user_picture") as? String,
+            let image = UIImage(contentsOfFile: filePath) {
+                pictureView.image = image
+        }
         
         /*
         // set up the view

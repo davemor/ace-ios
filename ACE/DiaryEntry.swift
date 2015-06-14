@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-protocol DiaryEntry {
-    var date:NSDate { get }
+class DiaryEntry: Object {
+    dynamic var date = NSDate()
+    dynamic var text = ""
+    dynamic var imagePath = ""
 }
