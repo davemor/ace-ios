@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF20F0E61ABAFE79009CDF4D"
                BuildableName = "ARCE.app"
-               BlueprintName = "ARCE"
-               ReferencedContainer = "container:ARCE.xcodeproj">
+               BlueprintName = "ARC"
+               ReferencedContainer = "container:ARC.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,8 +30,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF20F0FB1ABAFE79009CDF4D"
                BuildableName = "ARCETests.xctest"
-               BlueprintName = "ARCETests"
-               ReferencedContainer = "container:ARCE.xcodeproj">
+               BlueprintName = "ARCTests"
+               ReferencedContainer = "container:ARC.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,8 +48,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF20F0FB1ABAFE79009CDF4D"
                BuildableName = "ARCETests.xctest"
-               BlueprintName = "ARCETests"
-               ReferencedContainer = "container:ARCE.xcodeproj">
+               BlueprintName = "ARCTests"
+               ReferencedContainer = "container:ARC.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,8 +58,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF20F0E61ABAFE79009CDF4D"
             BuildableName = "ARCE.app"
-            BlueprintName = "ARCE"
-            ReferencedContainer = "container:ARCE.xcodeproj">
+            BlueprintName = "ARC"
+            ReferencedContainer = "container:ARC.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -78,8 +78,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF20F0E61ABAFE79009CDF4D"
             BuildableName = "ARCE.app"
-            BlueprintName = "ARCE"
-            ReferencedContainer = "container:ARCE.xcodeproj">
+            BlueprintName = "ARC"
+            ReferencedContainer = "container:ARC.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,8 +97,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF20F0E61ABAFE79009CDF4D"
             BuildableName = "ARCE.app"
-            BlueprintName = "ARCE"
-            ReferencedContainer = "container:ARCE.xcodeproj">
+            BlueprintName = "ARC"
+            ReferencedContainer = "container:ARC.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

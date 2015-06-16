@@ -141,13 +141,13 @@
 		FF1E1B341B29C43A00A97F12 /* MeetingsListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsListHeader.swift; sourceTree = "<group>"; };
 		FF1E1B361B29E34B00A97F12 /* MeetingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingListCell.swift; sourceTree = "<group>"; };
 		FF1E1B6A1B2A398400A97F12 /* MeetingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsDetailViewController.swift; sourceTree = "<group>"; };
-		FF20F0E71ABAFE79009CDF4D /* ARCE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARCE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF20F0E71ABAFE79009CDF4D /* ARC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF20F0EB1ABAFE79009CDF4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF20F0EC1ABAFE79009CDF4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF20F0F11ABAFE79009CDF4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF20F0F31ABAFE79009CDF4D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FF20F0F61ABAFE79009CDF4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FF20F0FC1ABAFE79009CDF4D /* ARCETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARCETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF20F0FC1ABAFE79009CDF4D /* ARCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF20F1011ABAFE79009CDF4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF20F1021ABAFE79009CDF4D /* ACETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACETests.swift; sourceTree = "<group>"; };
 		FF20F10C1ABB8216009CDF4D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -318,8 +318,8 @@
 		FF20F0E81ABAFE79009CDF4D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF20F0E71ABAFE79009CDF4D /* ARCE.app */,
-				FF20F0FC1ABAFE79009CDF4D /* ARCETests.xctest */,
+				FF20F0E71ABAFE79009CDF4D /* ARC.app */,
+				FF20F0FC1ABAFE79009CDF4D /* ARCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -620,9 +620,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FF20F0E61ABAFE79009CDF4D /* ARCE */ = {
+		FF20F0E61ABAFE79009CDF4D /* ARC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF20F1061ABAFE79009CDF4D /* Build configuration list for PBXNativeTarget "ARCE" */;
+			buildConfigurationList = FF20F1061ABAFE79009CDF4D /* Build configuration list for PBXNativeTarget "ARC" */;
 			buildPhases = (
 				BA0C625B6712C461764A6568 /* Check Pods Manifest.lock */,
 				FF20F0E31ABAFE79009CDF4D /* Sources */,
@@ -635,14 +635,14 @@
 			);
 			dependencies = (
 			);
-			name = ARCE;
+			name = ARC;
 			productName = ACE;
-			productReference = FF20F0E71ABAFE79009CDF4D /* ARCE.app */;
+			productReference = FF20F0E71ABAFE79009CDF4D /* ARC.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FF20F0FB1ABAFE79009CDF4D /* ARCETests */ = {
+		FF20F0FB1ABAFE79009CDF4D /* ARCTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF20F1091ABAFE79009CDF4D /* Build configuration list for PBXNativeTarget "ARCETests" */;
+			buildConfigurationList = FF20F1091ABAFE79009CDF4D /* Build configuration list for PBXNativeTarget "ARCTests" */;
 			buildPhases = (
 				8294593F73B7C89FA905B4D6 /* Check Pods Manifest.lock */,
 				FF20F0F81ABAFE79009CDF4D /* Sources */,
@@ -656,9 +656,9 @@
 			dependencies = (
 				FF20F0FE1ABAFE79009CDF4D /* PBXTargetDependency */,
 			);
-			name = ARCETests;
+			name = ARCTests;
 			productName = ACETests;
-			productReference = FF20F0FC1ABAFE79009CDF4D /* ARCETests.xctest */;
+			productReference = FF20F0FC1ABAFE79009CDF4D /* ARCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -680,7 +680,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FF20F0E21ABAFE79009CDF4D /* Build configuration list for PBXProject "ARCE" */;
+			buildConfigurationList = FF20F0E21ABAFE79009CDF4D /* Build configuration list for PBXProject "ARC" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -693,8 +693,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FF20F0E61ABAFE79009CDF4D /* ARCE */,
-				FF20F0FB1ABAFE79009CDF4D /* ARCETests */,
+				FF20F0E61ABAFE79009CDF4D /* ARC */,
+				FF20F0FB1ABAFE79009CDF4D /* ARCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -936,7 +936,7 @@
 /* Begin PBXTargetDependency section */
 		FF20F0FE1ABAFE79009CDF4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FF20F0E61ABAFE79009CDF4D /* ARCE */;
+			target = FF20F0E61ABAFE79009CDF4D /* ARC */;
 			targetProxy = FF20F0FD1ABAFE79009CDF4D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1047,7 +1047,7 @@
 				INFOPLIST_FILE = ACE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = ARCE;
+				PRODUCT_NAME = ARC;
 			};
 			name = Debug;
 		};
@@ -1060,7 +1060,7 @@
 				INFOPLIST_FILE = ACE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = ARCE;
+				PRODUCT_NAME = ARC;
 			};
 			name = Release;
 		};
@@ -1079,7 +1079,7 @@
 				);
 				INFOPLIST_FILE = ACETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = ARCETests;
+				PRODUCT_NAME = ARCTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACE.app/ACE";
 			};
 			name = Debug;
@@ -1095,7 +1095,7 @@
 				);
 				INFOPLIST_FILE = ACETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = ARCETests;
+				PRODUCT_NAME = ARCTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACE.app/ACE";
 			};
 			name = Release;
@@ -1103,7 +1103,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FF20F0E21ABAFE79009CDF4D /* Build configuration list for PBXProject "ARCE" */ = {
+		FF20F0E21ABAFE79009CDF4D /* Build configuration list for PBXProject "ARC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF20F1041ABAFE79009CDF4D /* Debug */,
@@ -1112,7 +1112,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF20F1061ABAFE79009CDF4D /* Build configuration list for PBXNativeTarget "ARCE" */ = {
+		FF20F1061ABAFE79009CDF4D /* Build configuration list for PBXNativeTarget "ARC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF20F1071ABAFE79009CDF4D /* Debug */,
@@ -1121,7 +1121,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF20F1091ABAFE79009CDF4D /* Build configuration list for PBXNativeTarget "ARCETests" */ = {
+		FF20F1091ABAFE79009CDF4D /* Build configuration list for PBXNativeTarget "ARCTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF20F10A1ABAFE79009CDF4D /* Debug */,
