@@ -16,7 +16,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var pictureView: HaxagonWithImage!
     
-    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
@@ -56,6 +55,13 @@ class HomeViewController: UIViewController {
     
         //UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Fade)
     }
+    
+    // MARK: - Actions
+    @IBAction func sendFeedback(sender: AnyObject) {
+        let url = NSURL(string: "mailto:addicationrecoverycompanion@gmail.com?subject=Feedback%20from%20iOS%20App")!
+        UIApplication.sharedApplication().openURL(url)
+    }
+    
     
     //override func prefersStatusBarHidden() -> Bool {
     //    return true

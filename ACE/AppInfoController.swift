@@ -32,6 +32,7 @@ class AppInfoController: UIViewController, UIWebViewDelegate {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
     }
     
+    // MARK: - Webview Delegate
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if navigationType == UIWebViewNavigationType.LinkClicked {
             UIApplication.sharedApplication().openURL(request.URL!)
