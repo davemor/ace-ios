@@ -25,7 +25,8 @@ class HexagonView: UIView {
         "Users" : FontAwesome.Users,
         "Phone" : FontAwesome.Phone,
         "PencilSquareO" : FontAwesome.PencilSquareO,
-        "Cog" : FontAwesome.Cog
+        "Cog" : FontAwesome.Cog,
+        "FaEnvelopeO" : FontAwesome.EnvelopeO
     ]
     
     // helpful constants

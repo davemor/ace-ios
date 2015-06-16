@@ -81,7 +81,7 @@ class HomeViewController: UIViewController {
         
         /*
         // set up the view
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDetfaults.standardUserDefaults()
         daysInRecoveryView.hidden = !defaults.boolForKey("show_days_in_recovery")
         meetingsAttendedView.hidden = !defaults.boolForKey("show_days_in_recovery")
         

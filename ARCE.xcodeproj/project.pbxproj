@@ -93,6 +93,7 @@
 		FF8596691AFB8AAB0099DFF8 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85965B1AFB8AAB0099DFF8 /* Range.swift */; };
 		FF85966A1AFB8AAB0099DFF8 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85965C1AFB8AAB0099DFF8 /* Sequence.swift */; };
 		FF85966B1AFB8AAB0099DFF8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85965D1AFB8AAB0099DFF8 /* String.swift */; };
+		FF98E5F91B2EC507003E235F /* AppInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98E5F81B2EC507003E235F /* AppInfoController.swift */; };
 		FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F901AE3E66C00F3516C /* Group.swift */; };
 		FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F951AE400F200F3516C /* Reachability.swift */; };
 		FFA45D5A1B09F62E00D05C80 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA45D591B09F62E00D05C80 /* Meeting.swift */; };
@@ -219,6 +220,7 @@
 		FF85965B1AFB8AAB0099DFF8 /* Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
 		FF85965C1AFB8AAB0099DFF8 /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		FF85965D1AFB8AAB0099DFF8 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FF98E5F81B2EC507003E235F /* AppInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoController.swift; sourceTree = "<group>"; };
 		FF9E9F901AE3E66C00F3516C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FF9E9F951AE400F200F3516C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FFA45D591B09F62E00D05C80 /* Meeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		FF20F0E91ABAFE79009CDF4D /* ACE */ = {
 			isa = PBXGroup;
 			children = (
+				FF98E5F71B2EC4E1003E235F /* AppInfo */,
 				FF6ACA8C1B25CEC9004FA163 /* Theme */,
 				FF75EB311B1F14E500B9B969 /* Support */,
 				FF75EB2E1B1EFC2500B9B969 /* Emergency */,
@@ -525,6 +528,14 @@
 				FF85965D1AFB8AAB0099DFF8 /* String.swift */,
 			);
 			path = ExSwift;
+			sourceTree = "<group>";
+		};
+		FF98E5F71B2EC4E1003E235F /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				FF98E5F81B2EC507003E235F /* AppInfoController.swift */,
+			);
+			name = AppInfo;
 			sourceTree = "<group>";
 		};
 		FF9E9F941AE400D700F3516C /* Util */ = {
@@ -827,6 +838,7 @@
 				FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */,
 				FF3754BA1B21903800EE1F00 /* HexagonView.swift in Sources */,
 				FF75EB3D1B1F151800B9B969 /* ServiceDetailViewController.swift in Sources */,
+				FF98E5F91B2EC507003E235F /* AppInfoController.swift in Sources */,
 				FF73953A1B0C6C0B00972F67 /* CVCalendarWeekday.swift in Sources */,
 				FFDAF6FA1B146B6800BC4589 /* MeetingActivity.swift in Sources */,
 				FF75EB411B1F151800B9B969 /* VenueDetailViewController.swift in Sources */,
