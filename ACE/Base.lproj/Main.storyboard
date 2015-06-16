@@ -4858,6 +4858,9 @@ G11 5QP</string>
                                         <include reference="zwf-HQ-yRE"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="xsQ-0T-Ztj" kind="showDetail" id="0Ie-UO-Iln"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1176470588" green="0.71764705880000002" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4912,7 +4915,7 @@ G11 5QP</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gye-AT-R4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846.5" y="1440"/>
+            <point key="canvasLocation" x="3400.5" y="-273"/>
         </scene>
         <!--Mindfulness-->
         <scene sceneID="XP0-7L-r3N">
@@ -6027,7 +6030,8 @@ G11 5QP</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IUu-qJ-yDK"/>
-        <segue reference="GJg-Nt-48I"/>
         <segue reference="nUC-jR-wmb"/>
+        <segue reference="GJg-Nt-48I"/>
+        <segue reference="0Ie-UO-Iln"/>
     </inferredMetricsTieBreakers>
 </document>
