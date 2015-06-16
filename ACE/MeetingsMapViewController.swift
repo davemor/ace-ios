@@ -24,7 +24,7 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
     var groupFlags = [String:Bool]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() 
 
         mapView.delegate = self
         

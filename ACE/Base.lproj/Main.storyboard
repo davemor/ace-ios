@@ -1263,14 +1263,15 @@
             </objects>
             <point key="canvasLocation" x="955.5" y="-202.5"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="QLQ-7A-e7y">
             <objects>
                 <navigationController id="cHv-X7-Rjt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="TAf-1m-w36"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3XI-Yh-VSi">
+                    <tabBarItem key="tabBarItem" title="Map" image="ic_map_white_36pt" id="TAf-1m-w36"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="3XI-Yh-VSi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.53657671429999998" green="0.21003639769999999" blue="0.68431504750000005" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="ugO-bI-KqC" kind="relationship" relationship="rootViewController" id="mga-re-43O"/>
@@ -1289,7 +1290,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wkP-M3-NqY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="w4e-An-01R">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="839-xc-DhM">
@@ -1329,9 +1330,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="tQw-ob-5uT"/>
-                    <navigationItem key="navigationItem" id="rpw-kb-uhu">
+                    <navigationItem key="navigationItem" title="Map" id="rpw-kb-uhu">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="p9G-N4-jhE">
+                            <color key="tintColor" red="1" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="close:" destination="ugO-bI-KqC" id="byZ-oA-NTi"/>
                             </connections>
@@ -1344,14 +1345,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btf-4D-d7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2742" y="-1365.75"/>
+            <point key="canvasLocation" x="2766" y="-1365.75"/>
         </scene>
         <!--Venue Details-->
         <scene sceneID="se1-fg-Nhg">
             <objects>
                 <tableViewController title="Venue Details" id="2Jj-Ci-3VB" customClass="VenueDetailViewController" customModule="ARC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kMQ-li-Tyr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1566,7 +1567,7 @@ G11 5QP</string>
             <objects>
                 <tableViewController id="J9g-0D-58s" customClass="ServiceDetailViewController" customModule="ARC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="V5b-oM-u3w">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -3374,10 +3375,13 @@ G11 5QP</string>
             <objects>
                 <tabBarController title="Support" id="azp-Se-55W" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="5Pp-9p-ndJ">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="5Pp-9p-ndJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.53657671429999998" green="0.21003639769999999" blue="0.68431504750000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.53657671429999998" green="0.21003639769999999" blue="0.68431504750000005" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="cHv-X7-Rjt" kind="relationship" relationship="viewControllers" id="Qkw-WC-gA7"/>
@@ -4075,9 +4079,10 @@ G11 5QP</string>
             <objects>
                 <navigationController id="BiY-eO-Lds" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="ListIcon" id="RFC-ha-Aw7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MeT-gh-w2t">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="MeT-gh-w2t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.53657671429999998" green="0.21003639769999999" blue="0.68431504750000005" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="35S-ks-QkV" kind="relationship" relationship="rootViewController" id="Wo1-nh-lug"/>
@@ -4092,7 +4097,7 @@ G11 5QP</string>
             <objects>
                 <tableViewController id="35S-ks-QkV" customClass="SupportTableViewController" customModule="ARC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5nC-bv-Mu9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -4119,9 +4124,9 @@ G11 5QP</string>
                             <outlet property="delegate" destination="35S-ks-QkV" id="WQT-b8-jdA"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="List" image="ListIcon" id="fuY-UV-oLA"/>
-                    <navigationItem key="navigationItem" id="6e6-yH-KsA">
+                    <navigationItem key="navigationItem" title="List" id="6e6-yH-KsA">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="LAJ-tW-w4C">
+                            <color key="tintColor" red="1" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="close:" destination="35S-ks-QkV" id="wPa-kh-UKm"/>
                             </connections>
@@ -4156,9 +4161,10 @@ G11 5QP</string>
         <scene sceneID="HhW-tf-NLF">
             <objects>
                 <navigationController id="bUC-Tn-5vL" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yzh-qO-cn1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Yzh-qO-cn1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92941176469999998" green="0.1647058824" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="6Rj-Be-grf" kind="relationship" relationship="rootViewController" id="jrf-pX-P4B"/>
@@ -4384,6 +4390,7 @@ G11 5QP</string>
                     </view>
                     <navigationItem key="navigationItem" title="Motivation &amp; Reflection" id="sl2-pF-4Qc">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="Xq7-ad-vq1">
+                            <color key="tintColor" red="1" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="back:" destination="6Rj-Be-grf" id="KOo-HX-siF"/>
                             </connections>
@@ -5634,7 +5641,6 @@ G11 5QP</string>
     <resources>
         <image name="ListIcon" width="32" height="32"/>
         <image name="Logo" width="76" height="76"/>
-        <image name="MapIcon" width="35" height="34"/>
         <image name="ic_format_list_bulleted_white_36pt" width="36" height="36"/>
         <image name="ic_map_white_36pt" width="36" height="36"/>
     </resources>

@@ -89,6 +89,7 @@ class HomeViewController: UIViewController {
         if let filePath = defaults.objectForKey("user_picture") as? String,
             let image = UIImage(contentsOfFile: filePath) {
                 pictureView.image = image
+                pictureView.setNeedsDisplay()
         }
         
         // set up the view

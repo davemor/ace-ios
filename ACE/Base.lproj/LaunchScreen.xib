@@ -11,14 +11,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="2cl-yZ-mn1">
-                    <rect key="frame" x="202" y="202" width="76" height="76"/>
+                    <rect key="frame" x="202" y="133" width="76" height="76"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="76" id="VRc-jg-Rvi"/>
                         <constraint firstAttribute="width" constant="76" id="gjo-nK-anu"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARC Edinburgh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OW-Yj-tFQ">
-                    <rect key="frame" x="8" y="321" width="464" height="63"/>
+                    <rect key="frame" x="8" y="263" width="464" height="63"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="63" id="Nus-1b-4Yz"/>
                     </constraints>
@@ -30,9 +30,9 @@
             <color key="backgroundColor" red="0.20784313730000001" green="0.29411764709999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="2cl-yZ-mn1" secondAttribute="centerX" id="Iuj-Xw-B8d"/>
-                <constraint firstAttribute="centerY" secondItem="2cl-yZ-mn1" secondAttribute="centerY" id="bfv-CH-hDv"/>
+                <constraint firstItem="2cl-yZ-mn1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="133" id="NZh-Tv-0kq"/>
                 <constraint firstItem="1OW-Yj-tFQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="j9d-zP-Eea"/>
-                <constraint firstItem="1OW-Yj-tFQ" firstAttribute="top" secondItem="2cl-yZ-mn1" secondAttribute="bottom" constant="43" id="kMd-pE-B0Y"/>
+                <constraint firstItem="1OW-Yj-tFQ" firstAttribute="top" secondItem="2cl-yZ-mn1" secondAttribute="bottom" constant="54" id="kMd-pE-B0Y"/>
                 <constraint firstAttribute="trailing" secondItem="1OW-Yj-tFQ" secondAttribute="trailing" constant="8" id="ybF-eW-bhk"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
