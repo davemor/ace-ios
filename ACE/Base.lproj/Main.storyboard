@@ -678,6 +678,9 @@
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="n78-zl-uvg" kind="show" id="x0X-sF-Elc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -4296,6 +4299,9 @@ G11 5QP</string>
                                         <exclude reference="zQb-eF-RTB"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="n78-zl-uvg" kind="show" id="GJg-Nt-48I"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08x-1R-6g6">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -5097,7 +5103,7 @@ G11 5QP</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUJ-yk-d6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087.5" y="460.5"/>
+            <point key="canvasLocation" x="-444" y="333"/>
         </scene>
         <!--Month-->
         <scene sceneID="2s8-nU-xDy">
@@ -5646,6 +5652,7 @@ G11 5QP</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IUu-qJ-yDK"/>
+        <segue reference="GJg-Nt-48I"/>
         <segue reference="nUC-jR-wmb"/>
     </inferredMetricsTieBreakers>
 </document>
