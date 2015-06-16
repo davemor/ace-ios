@@ -17,62 +17,74 @@
                         <color key="barTintColor" red="0.32941177490000001" green="0.41176471110000001" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JEj-MH-k9b" kind="relationship" relationship="rootViewController" id="lmB-I1-Eak"/>
+                        <segue destination="pa4-VG-c6o" kind="relationship" relationship="rootViewController" id="Vta-mm-KrI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9R-oL-yFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3169.5" y="249.75"/>
         </scene>
-        <!--App Info Controller-->
-        <scene sceneID="sVi-i3-QkX">
+        <!--About this app-->
+        <scene sceneID="7jZ-Sj-cCz">
             <objects>
-                <tableViewController id="JEj-MH-k9b" customClass="AppInfoController" customModule="ARCE" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4uN-g7-p02">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKp-uf-bjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="pa4-VG-c6o" customClass="AppInfoController" customModule="ARCE" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Db7-ZY-OYI"/>
+                        <viewControllerLayoutGuide type="bottom" id="QBW-KF-Uyc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P1f-HY-ibs">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65T-0t-tbV">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="44I-iX-Rsk">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rOh-a9-4G7">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rOh-a9-4G7" id="6dl-qp-q4s">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="k6U-5C-4qM">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k6U-5C-4qM" id="qJz-i3-hE3">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9qq-Mq-b33">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9qq-Mq-b33" id="zH4-8B-fuq">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="JEj-MH-k9b" id="EAY-QI-4tQ"/>
-                            <outlet property="delegate" destination="JEj-MH-k9b" id="Ybf-fr-l0f"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="gF2-H6-cYT">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="G2u-3C-FUu">
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="65T-0t-tbV" secondAttribute="trailing" id="kz4-It-zWm"/>
+                            <constraint firstItem="65T-0t-tbV" firstAttribute="leading" secondItem="P1f-HY-ibs" secondAttribute="leading" id="qX7-Q6-SJ1"/>
+                            <constraint firstItem="65T-0t-tbV" firstAttribute="top" secondItem="Db7-ZY-OYI" secondAttribute="bottom" id="xPB-Dl-7yx"/>
+                            <constraint firstItem="QBW-KF-Uyc" firstAttribute="top" secondItem="65T-0t-tbV" secondAttribute="bottom" id="xcb-ZP-CLN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="65T-0t-tbV"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="kz4-It-zWm"/>
+                                <exclude reference="qX7-Q6-SJ1"/>
+                                <exclude reference="xPB-Dl-7yx"/>
+                                <exclude reference="xcb-ZP-CLN"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="65T-0t-tbV"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="kz4-It-zWm"/>
+                                <include reference="qX7-Q6-SJ1"/>
+                                <include reference="xPB-Dl-7yx"/>
+                                <include reference="xcb-ZP-CLN"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="About this app" id="9cp-eA-S8S">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="ASc-rr-6A5">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="close:" destination="JEj-MH-k9b" id="KCz-zf-deo"/>
+                                <action selector="close:" destination="pa4-VG-c6o" id="RPq-WF-He9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CHM-kC-ERt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="webView" destination="65T-0t-tbV" id="GTR-oz-dDj"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="-2433" y="249.75"/>
+            <point key="canvasLocation" x="-2421" y="249.75"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="A4g-EZ-9Zm">
@@ -138,7 +150,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="icon" value="Cog"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="icon" value="FaInfoCircle"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
                                         <real key="value" value="37"/>
                                     </userDefinedRuntimeAttribute>

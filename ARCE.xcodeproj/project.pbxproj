@@ -40,6 +40,9 @@
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
 		FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */; };
+		FF70C1061B300023000883E7 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = FF70C1051B300023000883E7 /* about.html */; };
+		FF70C1081B300A34000883E7 /* eadp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF70C1071B300A34000883E7 /* eadp.jpg */; };
+		FF70C10A1B300B8D000883E7 /* cec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF70C1091B300B8D000883E7 /* cec.jpg */; };
 		FF7395281B0C6C0B00972F67 /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73950E1B0C6C0B00972F67 /* CVAuxiliaryView.swift */; };
 		FF7395291B0C6C0B00972F67 /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73950F1B0C6C0B00972F67 /* CVCalendarContentViewController.swift */; };
 		FF73952A1B0C6C0B00972F67 /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7395101B0C6C0B00972F67 /* CVCalendarDayView.swift */; };
@@ -166,6 +169,9 @@
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		FF70C1051B300023000883E7 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		FF70C1071B300A34000883E7 /* eadp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eadp.jpg; sourceTree = "<group>"; };
+		FF70C1091B300B8D000883E7 /* cec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cec.jpg; sourceTree = "<group>"; };
 		FF73950E1B0C6C0B00972F67 /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		FF73950F1B0C6C0B00972F67 /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
 		FF7395101B0C6C0B00972F67 /* CVCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarDayView.swift; sourceTree = "<group>"; };
@@ -346,6 +352,7 @@
 		FF20F0EA1ABAFE79009CDF4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FF70C1041B2FFFE7000883E7 /* AppInfoHtml */,
 				FF3755541B22DCE800EE1F00 /* FontAwesome.otf */,
 				FF20F0EB1ABAFE79009CDF4D /* Info.plist */,
 			);
@@ -406,6 +413,16 @@
 				FF5967061B27804F00B149F4 /* Style.swift */,
 			);
 			name = Theme;
+			sourceTree = "<group>";
+		};
+		FF70C1041B2FFFE7000883E7 /* AppInfoHtml */ = {
+			isa = PBXGroup;
+			children = (
+				FF70C1091B300B8D000883E7 /* cec.jpg */,
+				FF70C1071B300A34000883E7 /* eadp.jpg */,
+				FF70C1051B300023000883E7 /* about.html */,
+			);
+			name = AppInfoHtml;
 			sourceTree = "<group>";
 		};
 		FF7395091B0B7ADF00972F67 /* Support */ = {
@@ -687,9 +704,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF70C1061B300023000883E7 /* about.html in Resources */,
+				FF70C10A1B300B8D000883E7 /* cec.jpg in Resources */,
 				FF8596651AFB8AAB0099DFF8 /* Info.plist in Resources */,
 				FF3755551B22DCE800EE1F00 /* FontAwesome.otf in Resources */,
 				FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */,
+				FF70C1081B300A34000883E7 /* eadp.jpg in Resources */,
 				FF20F0F71ABAFE79009CDF4D /* LaunchScreen.xib in Resources */,
 				FF20F0F41ABAFE79009CDF4D /* Images.xcassets in Resources */,
 			);
