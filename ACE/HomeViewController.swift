@@ -16,6 +16,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var pictureView: HaxagonWithImage!
     
+    
+    @IBOutlet weak var daysHexagon: HexagonView!
+    @IBOutlet weak var daysCounterLabel: UILabel!
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
@@ -30,6 +34,8 @@ class HomeViewController: UIViewController {
         
         // style the controls
         setupStyles()
+        
+        daysCounterLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 23)
         
         // set up the view
         refreshView()
@@ -85,24 +91,17 @@ class HomeViewController: UIViewController {
                 pictureView.image = image
         }
         
-        /*
         // set up the view
-        let defaults = NSUserDetfaults.standardUserDefaults()
-        daysInRecoveryView.hidden = !defaults.boolForKey("show_days_in_recovery")
-        meetingsAttendedView.hidden = !defaults.boolForKey("show_days_in_recovery")
+        daysHexagon.hidden = !defaults.boolForKey("show_days_in_recovery")
         
         // set the values of the view
+        daysCounterLabel.text = "0"
         if let dateStr = defaults.stringForKey("recovery_start_date") {
             var dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "dd MMMM yyyy"
             if let date = dateFormatter.dateFromString(dateStr) {
-                daysInRecoveryView.text = "Days \(daysBetweenDates(date, NSDate()))"
-            } else {
-                daysInRecoveryView.text = "Days 0"
+                daysCounterLabel.text = "\(daysBetweenDates(date, NSDate()))"
             }
-        } else {
-            daysInRecoveryView.text = "Days 0"
         }
-        */
     }
 }
