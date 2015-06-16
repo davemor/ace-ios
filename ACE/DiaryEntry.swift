@@ -13,4 +13,5 @@ class DiaryEntry: Object {
     dynamic var date = NSDate()
     dynamic var text = ""
     dynamic var imagePath = ""
+    dynamic var hasImage = false
 }

@@ -32,6 +32,7 @@
 		FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */; };
 		FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB301ACC9D0400EA1954 /* Service.swift */; };
 		FF47006B1B0B391A004528EB /* MeetingPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */; };
+		FF4F80031B30CC0F0066D337 /* DiaryEntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F80021B30CC0F0066D337 /* DiaryEntryDetailsViewController.swift */; };
 		FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DC1AE6A2ED00943B41 /* Strings.swift */; };
 		FF569F9D1B0E25CA00E26D16 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF569F9C1B0E25CA00E26D16 /* Activity.swift */; };
 		FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5803DD1B04BCAD0030B109 /* MoodMenuViewController.swift */; };
@@ -40,6 +41,7 @@
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
 		FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */; };
+		FF6F09221B306646009CA5E1 /* NewDiaryEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F09211B306646009CA5E1 /* NewDiaryEntryViewController.swift */; };
 		FF70C1061B300023000883E7 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = FF70C1051B300023000883E7 /* about.html */; };
 		FF70C1081B300A34000883E7 /* eadp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF70C1071B300A34000883E7 /* eadp.jpg */; };
 		FF70C10A1B300B8D000883E7 /* cec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF70C1091B300B8D000883E7 /* cec.jpg */; };
@@ -161,6 +163,7 @@
 		FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		FF44EB301ACC9D0400EA1954 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingPickerViewController.swift; sourceTree = "<group>"; };
+		FF4F80021B30CC0F0066D337 /* DiaryEntryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntryDetailsViewController.swift; sourceTree = "<group>"; };
 		FF54C2DC1AE6A2ED00943B41 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FF569F9C1B0E25CA00E26D16 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		FF5803DD1B04BCAD0030B109 /* MoodMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodMenuViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		FF648C911AE8DA3A00889EA0 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		FF6F09211B306646009CA5E1 /* NewDiaryEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDiaryEntryViewController.swift; sourceTree = "<group>"; };
 		FF70C1051B300023000883E7 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		FF70C1071B300A34000883E7 /* eadp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eadp.jpg; sourceTree = "<group>"; };
 		FF70C1091B300B8D000883E7 /* cec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cec.jpg; sourceTree = "<group>"; };
@@ -595,6 +599,8 @@
 				FFCDAE411B1B68CD0016614F /* DiaryViewController.swift */,
 				FF375EE41B2D8A93001052D7 /* DiaryTopCell.swift */,
 				FF375EE61B2D8AA5001052D7 /* DiaryCell.swift */,
+				FF6F09211B306646009CA5E1 /* NewDiaryEntryViewController.swift */,
+				FF4F80021B30CC0F0066D337 /* DiaryEntryDetailsViewController.swift */,
 			);
 			name = Diary;
 			sourceTree = "<group>";
@@ -872,6 +878,7 @@
 				FFDAF7031B14D61400BC4589 /* AF+Date+Extension.swift in Sources */,
 				FF73953F1B0C6C0B00972F67 /* CVSelectionType.swift in Sources */,
 				FF75EB401B1F151800B9B969 /* VenueDetailsCell.swift in Sources */,
+				FF6F09221B306646009CA5E1 /* NewDiaryEntryViewController.swift in Sources */,
 				FF648C921AE8DA3A00889EA0 /* ExercisesViewController.swift in Sources */,
 				FF7395441B0C70E000972F67 /* CalendarViewController.swift in Sources */,
 				FFDAF6FC1B14713300BC4589 /* ActivityDetailsViewController.swift in Sources */,
@@ -916,6 +923,7 @@
 				FF7395301B0C6C0B00972F67 /* CVCalendarMonthView.swift in Sources */,
 				FFC486DE1AE045930045C9CE /* QuotesViewController.swift in Sources */,
 				FF73953C1B0C6C0B00972F67 /* CVDate.swift in Sources */,
+				FF4F80031B30CC0F0066D337 /* DiaryEntryDetailsViewController.swift in Sources */,
 				FF75EB3C1B1F151800B9B969 /* LinkCell.swift in Sources */,
 				FF8596431AFA1C7D0099DFF8 /* AboutViewController.swift in Sources */,
 				FF8596621AFB8AAB0099DFF8 /* Double.swift in Sources */,

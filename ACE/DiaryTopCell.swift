@@ -11,7 +11,7 @@ import UIKit
 class DiaryTopCell: UITableViewCell {
 
     // MARK: - Outlets
-    @IBOutlet weak var userImage: UIView!
+    @IBOutlet weak var userImage: HaxagonWithImage!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

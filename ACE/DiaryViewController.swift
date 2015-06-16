@@ -9,17 +9,21 @@
 import UIKit
 import RealmSwift
 
-class DiaryViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class DiaryViewController: UITableViewController {
 
     // MARK: - Model
     var notificationToken: NotificationToken?
-    let diaryEntries = Realm().objects(DiaryEntry).sorted("date")
+    let diaryEntries = Realm().objects(DiaryEntry).sorted("date", ascending: false)
 
+    var userImage: UIImage?
+    
+    var images: [Int:UIImage] = [Int:UIImage]()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        refresh()
+        
+        
         
         // Set realm notification block
         notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
@@ -33,7 +37,22 @@ class DiaryViewController: UITableViewController, UIImagePickerControllerDelegat
     }
 
     func refresh() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let filePath = defaults.objectForKey("user_picture") as? String {
+            userImage = UIImage(contentsOfFile: filePath)
+        }
+        var idx = 0
+        for entry in diaryEntries {
+            if entry.hasImage {
+                images[idx] = UIImage(contentsOfFile: entry.imagePath)
+            }
+            idx = idx + 1
+        }
         tableView.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        refresh()
     }
     
     // MARK: - Actions
@@ -66,15 +85,35 @@ class DiaryViewController: UITableViewController, UIImagePickerControllerDelegat
             if let image = UIImage(contentsOfFile: entry.imagePath) {
                 cell.backgroundImage.image = image
             }
+            cell.backgroundImage.layer.zPosition = -1
+            if let image = userImage {
+                cell.userImage.image = image
+                cell.userImage.setNeedsDisplay()
+            }
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("textCellId", forIndexPath: indexPath) as! UITableViewCell
-            //let entry = entryAtPath(indexPath)
-            //cell.textLabel!.text = entry.date.toString()
+            let cell = tableView.dequeueReusableCellWithIdentifier("textCellId", forIndexPath: indexPath) as! DiaryCell
+            let entry = entryAtPath(indexPath)
+            cell.dateLabel.text = entry.date.toString()
+            cell.titleLabel.text = entry.text
+            if entry.hasImage {
+                print(indexPath)
+                if let img = images[indexPath.row] {
+                    cell.backgroundImage.image = img
+                }
+            }
             return cell
         }
     }
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 213
+        } else {
+            return 100
+        }
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let entry = entryAtPath(indexPath)
         self.performSegueWithIdentifier("viewEntrySegue", sender: indexPath)
@@ -95,6 +134,9 @@ class DiaryViewController: UITableViewController, UIImagePickerControllerDelegat
         }
         if segue.identifier == "viewEntrySegue" {
             let entry = entryAtPath(sender as! NSIndexPath)
+            if let dest = segue.destinationViewController as? DiaryEntryDetailsViewController {
+               dest.entry = entry
+            }
         }
     }
 }

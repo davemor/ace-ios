@@ -11,8 +11,9 @@ import UIKit
 class DiaryCell: UITableViewCell {
 
     // MARK: - Outlets
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

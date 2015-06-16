@@ -17,8 +17,11 @@ class HaxagonWithImage: UIView {
         var path = bezierPathWithPolygonInRect(rect, 6, 0.3, -M_PI_2, 2)
         path.lineJoinStyle = kCGLineJoinRound
         path.lineWidth = 8.0
-        // path.fill()
         path.addClip()
-        image?.drawInRect(rect)
+        if var img = image {
+            img.drawInRect(rect)
+        } else {
+            path.fill()
+        }
     }
 }
