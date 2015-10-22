@@ -14,8 +14,8 @@ class HaxagonWithImage: UIView {
     override func drawRect(rect: CGRect) {
         UIColor.blackColor().setStroke()
         UIColor.blueColor().setFill()
-        var path = bezierPathWithPolygonInRect(rect, 6, 0.3, -M_PI_2, 2)
-        path.lineJoinStyle = kCGLineJoinRound
+        var path = bezierPathWithPolygonInRect(rect, numSides: 6, smooth: 0.3, startAngle: -M_PI_2, margin: 2)
+        path.lineJoinStyle = CGLineJoin.Round
         path.lineWidth = 8.0
         path.addClip()
         if var img = image {

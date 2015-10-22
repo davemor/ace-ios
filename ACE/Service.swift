@@ -26,7 +26,7 @@ class Service: Object {
     dynamic var businessTimesExtraInfo = ""
 
     // relationships
-    dynamic var businessTimes = List<BusinessTime>()
+    var businessTimes = List<BusinessTime>()
     dynamic var venue: Venue?
     
     override static func primaryKey() -> String? {

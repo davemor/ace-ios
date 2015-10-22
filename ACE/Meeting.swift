@@ -16,7 +16,7 @@ class Meeting: Object {
     dynamic var contactName = ""
     dynamic var contactPhone = ""
     dynamic var dateTime = NSDate()
-    dynamic var repeat = 0
+    dynamic var `repeat` = 0
     dynamic var day = 0
     dynamic var venue: Venue?
     dynamic var group: Group?
@@ -62,7 +62,7 @@ class Meeting: Object {
     }
     
     var displayTime: String {
-        var format = NSDateFormatter()
+        let format = NSDateFormatter()
         // format.timeZone = NSTimeZone.localTimeZone()
         
         let rtn: String
@@ -81,7 +81,7 @@ class Meeting: Object {
     }
     
     var displayTimeOfDay: String {
-        var format = NSDateFormatter()
+        let format = NSDateFormatter()
         format.dateFormat = "HH:mm"
         return format.stringFromDate(self.dateTime)
     }
@@ -114,12 +114,12 @@ class Meeting: Object {
     }
     
     var repeated: Repeat {
-        return Repeat(rawValue: self.repeat)!
+        return Repeat(rawValue: self.`repeat`)!
     }
 }
 
 // helpers
-enum Day: Int, Printable {
+enum Day: Int, CustomStringConvertible {
     case monday = 0
     case tuesday = 1
     case wednesday = 2
@@ -158,7 +158,7 @@ enum Day: Int, Printable {
     }
 }
 
-enum Repeat: Int, Printable {
+enum Repeat: Int, CustomStringConvertible {
     case none
     case weekly
     case monthly

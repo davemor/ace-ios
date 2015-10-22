@@ -53,15 +53,15 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     
     // interface to Realm
     var notificationToken: NotificationToken?
-    let meetingActivities = Realm().objects(MeetingActivity.self)
-    let communityActivities = Realm().objects(CommunityActivity.self)
+    var meetingActivities: Results<MeetingActivity>!
+    var communityActivities: Results<CommunityActivity>!
     
     func populateMonth() {
         daysForMonth.removeAll(keepCapacity: true)
 
         // TODO: not sure if this is the most effective way of doing this
-        let meetings = Array(meetingActivities.generate())
-        let community = Array(communityActivities.generate())
+        let meetings = meetingActivities.toArray()
+        let community = communityActivities.toArray()
         
         let dates = calendarView.manager.datesInMonth(currentDate.date)
         for date in dates {
@@ -85,13 +85,22 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        do {
+            try meetingActivities = Realm().objects(MeetingActivity.self)
+            try communityActivities = Realm().objects(CommunityActivity.self)
+        } catch {
+            print("Error with Realm in CalendarViewController.")
+        }
+            
         tableView.delegate = self
         tableView.dataSource = self
 
         self.navigationItem.title = CVDate(date: NSDate()).globalDescription
         
-        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
-            self.refresh()
+        do {
+            try notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in self.refresh() }
+        } catch {
+            print("Error setting up realm notification token.")
         }
         
         //calendarView.hidden = true
@@ -142,7 +151,7 @@ extension CalendarViewController: CVCalendarViewDelegate
         let ringLineWidth: CGFloat = 4.0
         let ringLineColour: UIColor = .blueColor()
         
-        var newView = UIView(frame: dayView.bounds)
+        let newView = UIView(frame: dayView.bounds)
         
         let diameter: CGFloat = (newView.bounds.width) - ringSpacing
         let radius: CGFloat = diameter / 2.0
@@ -156,7 +165,7 @@ extension CalendarViewController: CVCalendarViewDelegate
         ringLayer.lineWidth = ringLineWidth
         ringLayer.strokeColor = ringLineColour.CGColor
         
-        var ringLineWidthInset: CGFloat = CGFloat(ringLineWidth/2.0) + ringInsetWidth
+        let ringLineWidthInset: CGFloat = CGFloat(ringLineWidth/2.0) + ringInsetWidth
         let ringRect: CGRect = CGRectInset(rect, ringLineWidthInset, ringLineWidthInset)
         let centrePoint: CGPoint = CGPointMake(ringRect.midX, ringRect.midY)
         let startAngle: CGFloat = CGFloat(-π/2.0)
@@ -176,7 +185,7 @@ extension CalendarViewController: CVCalendarViewDelegate
 }
 
 
-extension CalendarViewController: CVCalendarViewDelegate {
+extension CalendarViewController { //: CVCalendarViewDelegate {
     func presentationMode() -> CalendarMode {
         return .MonthView
     }
@@ -191,7 +200,7 @@ extension CalendarViewController: CVCalendarViewDelegate {
     
     func didSelectDayView(dayView: CVCalendarDayView) {
         currentDate = dayView.date
-        println("\(calendarView.presentedDate.commonDescription) is selected!")
+        print("\(calendarView.presentedDate.commonDescription) is selected!")
         refresh()
         scrollToDate(currentDate)
     }
@@ -379,7 +388,7 @@ extension CalendarViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("calendarReuseIdentifier", forIndexPath: indexPath) as! CalendarCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("calendarReuseIdentifier", forIndexPath: indexPath) as! CalendarCell
         
         let activity = activityForIndexPath(indexPath)
         cell.titleLabel.text = activity.name
@@ -398,7 +407,7 @@ extension CalendarViewController: UITableViewDataSource {
     }
 }
 
-extension CalendarViewController: UITableViewDelegate {
+extension CalendarViewController { // : UITableViewDelegate {
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return daysForMonth[section].formattedDate
     }

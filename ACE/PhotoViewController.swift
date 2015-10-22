@@ -47,11 +47,11 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     func getPhoto() {
         if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
             
-            var alert = UIAlertController(title: "Unsupported", message: "This device does not have a camera", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Unsupported", message: "This device does not have a camera", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
-            var picker = UIImagePickerController()
+            let picker = UIImagePickerController()
             picker.delegate = self
             picker.allowsEditing = true
             picker.sourceType = UIImagePickerControllerSourceType.Camera
@@ -88,24 +88,27 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     // MARK: - Helpers
     func generateUniqueFileName() -> String {
         // create a unique file name for the image
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd-hh-mm-ss-SSS" // ms for a unique filename
         let now = NSDate()
         let dateStr = dateFormatter.stringFromDate(now)
-        let randomStr = toString(arc4random_uniform(256)) // and a random number
-        var fileName = dateStr + randomStr
+        let randomStr = String(arc4random_uniform(256)) // and a random number
+        let fileName = dateStr + randomStr
         return fileName
     }
     func makePathForImage(fileName: String) -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentsPath = paths[0] as! String
-        let fullPath = documentsPath.stringByAppendingPathComponent(fileName) + ".png"
+        let documentsPath = paths[0] 
+        let fullPath = (documentsPath as NSString).stringByAppendingPathComponent(fileName) + ".png"
         return fullPath
     }
     func saveAsPNG(image: UIImage, fullPath: String) {
         // save the image to our local directory so the app can get it back
-        let pngData = UIImagePNGRepresentation(image);
-        pngData.writeToFile(fullPath, atomically: true)
+        if let pngData = UIImagePNGRepresentation(image) {
+            pngData.writeToFile(fullPath, atomically: true)
+        } else {
+            print("Error writing PNG to file in PhotoViewController.")
+        }
     }
     
     /*

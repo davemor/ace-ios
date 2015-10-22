@@ -14,15 +14,25 @@ import RealmSwift
 class ContactListViewController: UITableViewController, ABPeoplePickerNavigationControllerDelegate {
 
     // setup realm with a notification for changes
-    let contacts = Realm().objects(Contact.self)
+    var contacts: Results<Contact>!
     var notificationToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        do {
+            try contacts = Realm().objects(Contact.self)
+        } catch {
+            print("Error retriving contacts from Realm in ContactListViewController.")
+        }
+        
         // Set realm notification block
-        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
-            self.tableView.reloadData()
+        do {
+            try notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+                self.tableView.reloadData()
+            }
+        } catch {
+            print("Error setting Realm notification block in ContactListViewContoller.")
         }
     }
 
@@ -52,7 +62,7 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
     
     // MARK: - People picker delegate
     
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!) {
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController, didSelectPerson person: ABRecordRef) {
         
         // TODO: This is crashing when some of the fields are missing.
         // Work out how to handle this - perhaps make the second name optional and check for it's presence.
@@ -67,12 +77,16 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
             let name = "\(firstName) \(secondName)"
             
             // create a new contact
-            let realm = Realm()
-            realm.write {
-                let contact = Contact()
-                contact.name = name
-                contact.phone = phone
-                realm.add(contact, update: true)
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    let contact = Contact()
+                    contact.name = name
+                    contact.phone = phone
+                    realm.add(contact, update: true)
+                }
+            } catch {
+                print("Error writting new contact to Realm in peoplePickerNavigationController.")
             }
 
             // segue to the new screen
@@ -83,13 +97,13 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
         }
     }
     
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController, shouldContinueAfterSelectingPerson person: ABRecordRef) -> Bool {
         peoplePickerNavigationController(peoplePicker, didSelectPerson: person)
         peoplePicker.dismissViewControllerAnimated(true, completion: nil)
         return false;
     }
     
-    func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
+    func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController) {
         peoplePicker.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -108,7 +122,7 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("contactReuseId", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("contactReuseId", forIndexPath: indexPath)
 
         // Configure the cell...
         cell.textLabel?.text = contacts[indexPath.row].name

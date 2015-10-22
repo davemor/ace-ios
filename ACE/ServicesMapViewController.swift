@@ -15,11 +15,17 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var map: MKMapView!
     
     var notificationToken: NotificationToken?
-    let services = Realm().objects(Service)
+    var services: Results<Service>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        do {
+            services = try Realm().objects(Service)
+        } catch {
+            print("Error querying Realm from ServicesMapViewController.")
+        }
+        
         map.delegate = self
         
         // zoom to show Edinburgh
@@ -27,8 +33,13 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
 
         // Set up the view and the notificaiton block
         refresh()
-        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
-            self.refresh()
+        
+        do {
+            notificationToken = try Realm().addNotificationBlock { [unowned self] note, realm in
+                self.refresh()
+            }
+        } catch {
+            print("Error setting up Notification token in ServicesMapViewController.")
         }
     }
 
@@ -62,20 +73,20 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
     // MARK: - MKMapViewDelegate implementation
     let reuseId = "annotationViewReuseId"
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         var view = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
         if view == nil {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            view.canShowCallout = true
-            view.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIView
-            view.image = UIImage(named: "BlueMapPin")
+            view!.canShowCallout = true
+            view!.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure) as UIView
+            view!.image = UIImage(named: "BlueMapPin")
         }
         // configure the annotation
-        view.annotation = annotation
+        view!.annotation = annotation
         return view
     }
     
-    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         self.performSegueWithIdentifier("venueDetailsSegue", sender: view.annotation)
     }
     

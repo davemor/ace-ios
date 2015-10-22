@@ -16,11 +16,17 @@ class EmergencyContactViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Model
-    let contacts = Realm().objects(Contact)
+    var contacts: Results<Contact>!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            contacts = try Realm().objects(Contact)
+        } catch {
+            print("Error querying contacts from Realm in EmergencyContactViewController.")
+        }
         
         // set up the table view
         tableView.delegate = self
@@ -40,7 +46,7 @@ class EmergencyContactViewController: UIViewController, UITableViewDelegate, UIT
     // MARK: - Handle the text message stuff
     func sendText(phoneNumber: String) {
         if MFMessageComposeViewController.canSendText() {
-            var controller = MFMessageComposeViewController()
+            let controller = MFMessageComposeViewController()
             controller.body = "I'm having a bad day.  Can you call me?"
             controller.recipients = [
                 phoneNumber
@@ -51,13 +57,13 @@ class EmergencyContactViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     // MARK: - Message controller delegate
-    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        switch result.value {
-        case MessageComposeResultCancelled.value: break // showSimpleAlert("Text cancelled.")
-        case MFMailComposeResultSaved.value:  break // showSimpleAlert("Text saved.")
-        case MFMailComposeResultSent.value: showSimpleAlert("Text sent.")
-        case MFMailComposeResultFailed.value: showSimpleAlert("Failed to send text.")
+        switch result.rawValue {
+        case MessageComposeResultCancelled.rawValue: break // showSimpleAlert("Text cancelled.")
+        case MFMailComposeResultSaved.rawValue:  break // showSimpleAlert("Text saved.")
+        case MFMailComposeResultSent.rawValue: showSimpleAlert("Text sent.")
+        case MFMailComposeResultFailed.rawValue: showSimpleAlert("Failed to send text.")
         default:
             break;
         }

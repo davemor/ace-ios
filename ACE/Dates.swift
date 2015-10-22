@@ -11,8 +11,8 @@ import UIKit
 
 func daysBetweenDates(startDate:NSDate, endDate:NSDate) -> Int {
     let cal = NSCalendar.currentCalendar()
-    let unit:NSCalendarUnit = .CalendarUnitDay
-    let components = cal.components(unit, fromDate: startDate, toDate: endDate, options: nil)
+    let unit:NSCalendarUnit = .Day
+    let components = cal.components(unit, fromDate: startDate, toDate: endDate, options: [])
     return components.day
 }
 

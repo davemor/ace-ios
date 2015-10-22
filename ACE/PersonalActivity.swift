@@ -24,9 +24,9 @@ class PersonalActivity: Object, Activity {
     var desc = ""
     var start = NSDate()
     var end = NSDate()
-    var repeat = Repeat.none
+    var `repeat` = Repeat.none
     var url: String?
-    var venue = Venue()
+    var venue:Venue? = Venue()
     var attending: Bool {
         get { return isAttending }
         set { isAttending = newValue }

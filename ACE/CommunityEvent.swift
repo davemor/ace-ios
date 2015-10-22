@@ -28,7 +28,7 @@ class CommunityActivity: Object, Activity {
         // check if the day falls between the start and end days
         let start = dateWithTime(startDate, hour: 0, minute: 0, second: 0)
         let end = dateWithTime(endDate, hour: 23, minute: 59, second: 59)
-        return dateIsBetween(date, start, end)
+        return dateIsBetween(date, begin: start, end: end)
     }
     
     // MARK: - Implement the Activity Protocol
@@ -36,9 +36,9 @@ class CommunityActivity: Object, Activity {
     var desc: String { return aDescription }
     var start: NSDate { return startDate }
     var end: NSDate { return endDate }
-    var repeat: Repeat { return .none }
+    var `repeat`: Repeat { return .none }
     var url: String? { return aURL }
-    var venue: Venue { return aVenue! }
+    var venue: Venue? { return aVenue! }
     var attending: Bool {
         get { return isAttending }
         set { isAttending = newValue }
@@ -47,7 +47,7 @@ class CommunityActivity: Object, Activity {
     private func dateWithTime(date:NSDate, hour:Int, minute:Int, second:Int) -> NSDate {
 
         let calendar = NSCalendar.currentCalendar()
-        let dateComponents = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: date)
+        let dateComponents = calendar.components([.Year, .Month, .Day], fromDate: date)
         
         let components = NSDateComponents()
         components.year = dateComponents.year

@@ -20,11 +20,8 @@ class MeetingPickerViewController: UITableViewController {
 
         // order the meetings
         orderedMeetings = meetings
-        .groupBy { $0.day }
-        .toArray { (day:$0, meetings:$1) }
-        .sortUsing { (day:Int, meetings:Array<Meeting>) -> Int in
-            return day
-        }
+        .groupBy  { $0.day }
+        .sort { $0.0 < $1.0 }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +52,7 @@ class MeetingPickerViewController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let key = orderedMeetings[section].0
         let day = Day(rawValue: key)
-        return day!.description.capitalized
+        return day!.description.capitalizedString
     }
 
     // MARK: - Navigation

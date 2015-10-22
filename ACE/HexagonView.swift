@@ -35,7 +35,7 @@ class HexagonView: UIView {
     let iconYPos: CGFloat = 0.4
     let preferedFont = "Avenir Next Condensed"
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         color = UIColor.blueColor()
         super.init(coder: aDecoder)
     }
@@ -50,8 +50,8 @@ class HexagonView: UIView {
     override func drawRect(rect: CGRect) {
         UIColor.blackColor().setStroke()
         color.setFill()
-        var path = bezierPathWithPolygonInRect(rect, 6, 0.3, -M_PI_2, 2)
-        path.lineJoinStyle = kCGLineJoinRound
+        var path = bezierPathWithPolygonInRect(rect, numSides: 6, smooth: 0.3, startAngle: -M_PI_2, margin: 2)
+        path.lineJoinStyle = CGLineJoin.Round
         path.lineWidth = 8.0
         path.fill()
         
@@ -118,7 +118,7 @@ func bezierPathWithPolygonInRect(rect: CGRect, numSides: Int, smooth: Float, sta
         return CGPoint(x: x, y: y)
     }
     
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     path.moveToPoint(controlPoints.first!)
     for point in controlPoints {
         path.addLineToPoint(point)

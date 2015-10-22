@@ -15,7 +15,7 @@ func setupStyles() {
     
     // style the navigation bar
     UINavigationBar.appearance().titleTextAttributes = [
-        NSString(string: NSFontAttributeName): UIFont(name: "Arial Rounded MT Bold", size: 16)!
+        NSString(string: NSFontAttributeName) as String : UIFont(name: "Arial Rounded MT Bold", size: 16)!
     ]
     UINavigationBar.appearance().shadowImage = UIImage()
     UINavigationBar.appearance().tintColor = UIColor.whiteColor()

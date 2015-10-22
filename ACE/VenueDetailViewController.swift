@@ -46,13 +46,13 @@ class VenueDetailViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier("servicesDetailPropertyCell", forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("servicesDetailPropertyCell", forIndexPath: indexPath) 
 
             // Configure the cell...
             (cell as? VenueDetailsCell)?.setup(venue!)
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier("servicesDetailLinkCell", forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("servicesDetailLinkCell", forIndexPath: indexPath) 
             
                 if let linkCell = cell as? LinkCell {
                     let event = venue.meetings[indexPath.row]
@@ -62,7 +62,7 @@ class VenueDetailViewController: UITableViewController {
             return cell
         default:
             // TODO: revist this
-            let cell = tableView.dequeueReusableCellWithIdentifier("servicesDetailLinkCell", forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("servicesDetailLinkCell", forIndexPath: indexPath) 
             if let linkCell = cell as? LinkCell {
                 let service = venue?.services[indexPath.row]
                 linkCell.name.text = service?.name
@@ -114,7 +114,7 @@ class VenueDetailViewController: UITableViewController {
         switch indexPath.section {
         case 1: self.performSegueWithIdentifier("showEventSegue", sender:indexPath)
         case 2: self.performSegueWithIdentifier("showServiceSegue", sender:indexPath)
-        default: println("I am an executable statement.")
+        default: print("I am an executable statement.")
         }
     }
 }

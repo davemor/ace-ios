@@ -28,8 +28,8 @@ class VenueAnnotation : NSObject, MKAnnotation {
     
     // implement the MKAnnotation protocol
     var coordinate:CLLocationCoordinate2D
-    var title:String!
-    var subtitle:String!
+    var title:String?
+    var subtitle:String?
     
     init(venue: Venue) {
         self.venue = venue

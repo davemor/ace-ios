@@ -36,7 +36,7 @@ class VenueDetailsCell: UITableViewCell, MKMapViewDelegate {
         // set the information about the venue
         title.text = venue.name
         address.text = venue.fullAddress
-        let addressViewSize = address.contentSize
+        // let addressViewSize = address.contentSize
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -55,17 +55,17 @@ class VenueDetailsCell: UITableViewCell, MKMapViewDelegate {
     // MARK: - MKMapViewDelegate implementation
     let reuseId = "annotationViewReuseId"
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
         var view = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
         if view == nil {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            view.canShowCallout = true
-            view.image = (annotation as? VenueAnnotation)?.pin
+            view!.canShowCallout = true
+            view!.image = (annotation as? VenueAnnotation)?.pin
         }
         
         // configure the annotation
-        view.annotation = annotation
+        view!.annotation = annotation
         return view
     }
     

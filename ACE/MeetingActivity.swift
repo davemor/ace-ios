@@ -32,9 +32,9 @@ class MeetingActivity: Object, Activity {
         let secondsInOneHour = NSTimeInterval(1 * 60 * 60)
         return start.dateByAddingTimeInterval(secondsInOneHour)
     }
-    var repeat: Repeat { return Repeat(rawValue: meeting!.repeat)! }
+    var `repeat`: Repeat { return Repeat(rawValue: meeting!.`repeat`)! }
     var url: String? { return Optional() }
-    var venue: Venue { return meeting!.venue! }
+    var venue: Venue? { return meeting!.venue! }
     var attending: Bool {
         get { return true }
         set { /* do nothing */ }

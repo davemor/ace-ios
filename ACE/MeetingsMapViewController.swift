@@ -17,8 +17,8 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
     
     // hold onto this in the instance the instance is always notified
     var notificationToken: NotificationToken?
-    let groups = Realm().objects(Group)
-    let meetings = Realm().objects(Meeting)
+    var groups: Results<Group>!
+    var meetings: Results<Meeting>!
     
     // model for the filters
     var groupFlags = [String:Bool]()
@@ -26,6 +26,14 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad() 
 
+        // set up the realm queries
+        do {
+            groups = try Realm().objects(Group)
+            meetings = try Realm().objects(Meeting)
+        } catch {
+            print("Error querying Realm in MeetingsMapViewController.")
+        }
+        
         mapView.delegate = self
         
         // move focus the map on Edinburgh
@@ -35,8 +43,12 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         refresh()
         
         // Set realm notification block
-        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
-            self.refresh()
+        do {
+            try notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+                self.refresh()
+            }
+        } catch {
+            print("Error creating Realm notification token in MeetingsMapViewController.")
         }
     }
 
@@ -83,10 +95,10 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         // add the new ones
         let filteredMeetings = meetings.filter(query)
         if filteredMeetings.count > 0 {
-            let arrayOfMeetings = Array(filteredMeetings.generate())
-            let groupedMeetings = arrayOfMeetings.groupBy(groupingFunction: {$0.venue!} )
+            let arrayOfMeetings = filteredMeetings.toArray()
+            let groupedMeetings = arrayOfMeetings.groupBy { $0.venue! }
             for (venue, meetings) in groupedMeetings {
-                let annotation = MeetingAnnotation(meetings: meetings, venue: venue)
+                let annotation = MeetingAnnotation(meetings: meetings, venue: Venue(value: venue))
                 mapView.addAnnotation(annotation)
             }
         }
@@ -96,7 +108,7 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         let elements = groupFlags.toArray { (key:String, val:Bool) -> String in
             return val ? "group.name = '\(key)'" : ""
             }.reject {$0.isEmpty}
-        let query = " OR ".join(elements)
+        let query = elements.joinWithSeparator(" OR ")
         if query.isEmpty {
             return NSPredicate(format: "group == nil")
         }
@@ -106,21 +118,21 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
     // MARK: - MKMapViewDelegate implementation
     let reuseId = "annotationViewReuseId"
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         var view = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
         if view == nil {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            view.canShowCallout = true
-            view.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIView
+            view!.canShowCallout = true
+            view!.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure) as UIView
         }
         // configure the annotation
-        view.annotation = annotation
-        view.image = (annotation as? MeetingAnnotation)?.pin
+        view!.annotation = annotation
+        view!.image = (annotation as? MeetingAnnotation)?.pin
 
         return view
     }
 
-    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let meetings = (view.annotation as? MeetingAnnotation)?.meetings {
             if meetings.count == 1 {
                 performSegueWithIdentifier("meetingDetailSegue", sender: view)
@@ -210,8 +222,8 @@ class MeetingAnnotation : NSObject, MKAnnotation {
     
     // implement the MKAnnotation protocol
     var coordinate:CLLocationCoordinate2D
-    var title:String!
-    var subtitle:String!
+    var title:String?
+    var subtitle:String?
     
     init(meetings: [Meeting], venue: Venue) {
         self.meetings = meetings
@@ -222,7 +234,7 @@ class MeetingAnnotation : NSObject, MKAnnotation {
         
         let grouped = meetings.groupBy {$0.group!}
         if grouped.count == 1 {
-            if let group = grouped.keys.first {
+            if let group = grouped.keys.first as? Group {
                 self.title = group.name
                 self.pin = knownGroupPins[group.name]
             }

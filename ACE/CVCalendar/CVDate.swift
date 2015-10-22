@@ -45,7 +45,7 @@ class CVDate: NSObject {
     }
     
     var weekday: Int {
-        let units = NSCalendarUnit.CalendarUnitWeekday
+        let units = NSCalendarUnit.Weekday
         let components = NSCalendar.currentCalendar().components(units, fromDate: date)
         return components.weekday
     }

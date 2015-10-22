@@ -13,7 +13,7 @@ class DiaryViewController: UITableViewController {
 
     // MARK: - Model
     var notificationToken: NotificationToken?
-    let diaryEntries = Realm().objects(DiaryEntry).sorted("date", ascending: false)
+    var diaryEntries: Results<(DiaryEntry)>!
 
     var userImage: UIImage?
     
@@ -22,12 +22,16 @@ class DiaryViewController: UITableViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        // Set realm notification block
-        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
-            self.refresh()
+    
+        do {
+            try diaryEntries = Realm().objects(DiaryEntry).sorted("date", ascending: false)
+            
+            // Set realm notification block
+            try notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+                self.refresh()
+            }
+        } catch {
+            print("Errors with DiaryViewController.")
         }
     }
 
@@ -97,7 +101,7 @@ class DiaryViewController: UITableViewController {
             cell.dateLabel.text = entry.date.toString()
             cell.titleLabel.text = entry.text
             if entry.hasImage {
-                print(indexPath)
+                // print(indexPath, terminator: "")
                 if let img = images[indexPath.row] {
                     cell.backgroundImage.image = img
                 }
@@ -115,7 +119,7 @@ class DiaryViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let entry = entryAtPath(indexPath)
+        // let entry = entryAtPath(indexPath)
         self.performSegueWithIdentifier("viewEntrySegue", sender: indexPath)
     }
     

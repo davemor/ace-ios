@@ -101,7 +101,7 @@ class HomeViewController: UIViewController {
             var dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "dd MMMM yyyy"
             if let date = dateFormatter.dateFromString(dateStr) {
-                daysCounterLabel.text = "\(daysBetweenDates(date, NSDate()))"
+                daysCounterLabel.text = "\(daysBetweenDates(date, endDate: NSDate()))"
             }
         }
     }

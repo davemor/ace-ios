@@ -36,8 +36,8 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
         whenView.text = getActivityDateRangeString(activity)
         
         // set where
-        let addressParts = split(activity.venue.address) { $0 == "," }.map { $0.trimmed() }
-        let address = ",\n".join(addressParts)
+        let addressParts = activity.venue!.address.characters.split { $0 == "," }.map { String($0) }.map { $0.trimmed() }
+        let address = addressParts.joinWithSeparator(",\n")
         addressView.text = address
         
         // set description
@@ -62,15 +62,19 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     
     // MARK: - Actions
     @IBAction func toggleAttending(sender: AnyObject) {
-        let realm = Realm()
-        realm.write {
-            self.activity.attending = !self.activity.attending
+        do {
+            let realm = try Realm()
+            try realm.write {
+                self.activity.attending = !self.activity.attending
+            }
+            refreshAddButtonTitle()
+        } catch {
+            print("Error toggling attending in ActivityDetailsViewController.")
         }
-        refreshAddButtonTitle()
     }
     
     @IBAction func getDirections(sender: AnyObject) {
-        let placemark = MKPlacemark(coordinate: activity.venue.coordinate, addressDictionary: nil)
+        let placemark = MKPlacemark(coordinate: activity.venue!.coordinate, addressDictionary: nil)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = activity.name
         mapItem.openInMapsWithLaunchOptions(nil)
@@ -89,17 +93,17 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     
     // MARK: - Map View
     let reuseId = "annotationViewReuseId"
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView! {
         
         var view = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
         if view == nil {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            view.canShowCallout = true
-            view.image = UIImage(named: "BlueMapPin")!
+            view!.canShowCallout = true
+            view!.image = UIImage(named: "BlueMapPin")!
         }
         
         // configure the annotation
-        view.annotation = annotation
+        view!.annotation = annotation
         return view
     }
     
@@ -115,7 +119,7 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
 }
 
 func getActivityDateRangeString(activity: Activity) -> String {
-    if onSameDay(activity.start, activity.end) {
+    if onSameDay(activity.start, date1: activity.end) {
         let dayOfWeek = activity.start.toString(format: DateFormat.Custom("EEEE"))
         let day = activity.start.toString(format: DateFormat.Custom("dd"))
         let suffix = daySuffix(activity.start)
@@ -132,7 +136,7 @@ func getActivityDateRangeString(activity: Activity) -> String {
 
 func daySuffix(date: NSDate) -> String {
     let calendar = NSCalendar.currentCalendar()
-    let dayOfMonth = calendar.component(.CalendarUnitDay, fromDate: date)
+    let dayOfMonth = calendar.component(.Day, fromDate: date)
     switch dayOfMonth {
     case 1: fallthrough
     case 21: fallthrough
@@ -147,10 +151,10 @@ func daySuffix(date: NSDate) -> String {
 
 func onSameDay(date0: NSDate, date1: NSDate) -> Bool {
     let cal = NSCalendar.currentCalendar()
-    var components = cal.components((.CalendarUnitEra | .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay), fromDate:date0)
+    var components = cal.components(([.Era, .Year, .Month, .Day]), fromDate:date0)
     let firstDate = cal.dateFromComponents(components)!
     
-    components = cal.components((.CalendarUnitEra | .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay), fromDate:date1);
+    components = cal.components(([.Era, .Year, .Month, .Day]), fromDate:date1);
     let otherDate = cal.dateFromComponents(components)!
     
     return firstDate.isEqualToDate(otherDate)
@@ -161,7 +165,7 @@ class ActivityAnnotation: NSObject, MKAnnotation {
     let myTitle: String
     
     init(activity: Activity) {
-        self.myCoordinate = activity.venue.coordinate
+        self.myCoordinate = activity.venue!.coordinate
         self.myTitle = activity.name
     }
     
@@ -170,7 +174,7 @@ class ActivityAnnotation: NSObject, MKAnnotation {
     }
     
     // Title and subtitle for use by selection UI.
-    var title: String! {
+    var title: String? {
         return myTitle
     }
 }

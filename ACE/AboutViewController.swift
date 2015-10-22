@@ -75,7 +75,7 @@ class AboutViewController: UITableViewController {
             saveDateToUserDefaults(sender.date)
         } else {
             // show an alert
-            var alert = UIAlertController(title: "Alert", message: "Your recovery should not start in the future.  Let's do it now!", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Alert", message: "Your recovery should not start in the future.  Let's do it now!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: {
                 // reset the picker
@@ -86,19 +86,19 @@ class AboutViewController: UITableViewController {
         }
     }
     func isInPast(date:NSDate) -> Bool {
-        let difference = daysBetweenDates(date, NSDate())
-        println("\(difference)")
+        let difference = daysBetweenDates(date, endDate: NSDate())
+        print("\(difference)")
         return difference >= 0
     }
     func setLabelToDate(date: NSDate) {
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd MMMM yyyy"
         let dateStr = dateFormatter.stringFromDate(date)
         recoveryStartDateButton.setTitle(dateStr, forState: .Normal)
     }
     func loadDateFromUserDefaults(defaults: NSUserDefaults) -> NSDate {
         if let dateStr = defaults.stringForKey("recovery_start_date") {
-            var dateFormatter = NSDateFormatter()
+            let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "dd MMMM yyyy"
             if let rtn = dateFormatter.dateFromString(dateStr) {
                 return rtn
@@ -110,7 +110,7 @@ class AboutViewController: UITableViewController {
         }
     }
     func saveDateToUserDefaults(date: NSDate) {
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd MMMM yyyy"
         let dateStr = dateFormatter.stringFromDate(date)
         let defaults = NSUserDefaults.standardUserDefaults()

@@ -20,9 +20,9 @@ class QuotesViewController: UITableViewController {
         tableView.dataSource = self
         
         // add refresh control
-        var refresh = UIRefreshControl()
+        let refresh = UIRefreshControl()
         refresh.tintColor = UIColor.whiteColor()
-        var attrs = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        let attrs = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         refresh.attributedTitle = NSAttributedString(string: "Pull for a new quote.", attributes:attrs)
         refresh.addTarget(self, action: "refreshView", forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refresh
@@ -79,7 +79,7 @@ class QuotesViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("quotesCellReuseId", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("quotesCellReuseId", forIndexPath: indexPath) 
         currentCell = cell as? QuotesTableViewCell
         return cell
     }

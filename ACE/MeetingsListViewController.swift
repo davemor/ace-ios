@@ -15,8 +15,8 @@ class MeetingsListViewController: UITableViewController {
     var orderedMeetings:[Day:[Meeting]]!
     
     var notificationToken: NotificationToken?
-    let groups = Realm().objects(Group)
-    let meetings = Realm().objects(Meeting)
+    var groups: Results<Group>!
+    var meetings: Results<Meeting>!
     
     // keep track of which sections are expanded
     var sectionOpen = [
@@ -32,17 +32,34 @@ class MeetingsListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
-            self.refresh()
+        do {
+            groups = try Realm().objects(Group)
+            meetings = try Realm().objects(Meeting)
+        } catch {
+            print("Error loading from Realm in MeetingsListViewController.")
+        }
+        
+        do {
+            notificationToken = try Realm().addNotificationBlock { [unowned self] note, realm in
+                self.refresh()
+            }
+        } catch {
+            print("Error creating notification token in MeetingsListViewController.")
         }
         
         self.refresh()
     }
     
     func refresh() {
-        orderedMeetings = Array(meetings.generate()).groupBy { Day(rawValue: $0.day)! }.mapValues { (day:Day, meetings:Array<Meeting>) -> Array<Meeting> in
-            meetings.sortUsing { $0.dateTime }
+        // TODO: This is not good - revisit
+        let meetingsArr = meetings.toArray()
+        let groupedMeetings = meetingsArr.groupBy { Day(rawValue: $0.day)! }
+        var newMeetings = [Day:[Meeting]]()
+        for g in groupedMeetings {
+            newMeetings[g.0] = g.1.sort { $0.dateTime.compare($1.dateTime) == NSComparisonResult.OrderedAscending }
         }
+        orderedMeetings = newMeetings
+        
         tableView.reloadData()
     }
 
@@ -84,7 +101,7 @@ class MeetingsListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("meetingsListReuseIdentifier", forIndexPath: indexPath) as! MeetingListCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("meetingsListReuseIdentifier", forIndexPath: indexPath) as! MeetingListCell
 
         let day = Day(rawValue: indexPath.section)!
         if let meetings = orderedMeetings[day] {
@@ -102,13 +119,13 @@ class MeetingsListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! MeetingsListHeader
         let day = Day(rawValue: section)!
         
-        cell.titleLabel.text = day.description.capitalized
+        cell.titleLabel.text = day.description.capitalizedString
         cell.expandButton.tag = section
         let title = sectionOpen[section]! ? "Close" : "Open"
         cell.expandButton.setTitle(title, forState: .Normal)
-        cell.autoresizingMask = .FlexibleHeight | .FlexibleWidth
+        cell.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
         
-        var view = UIView(frame: cell.frame)
+        let view = UIView(frame: cell.frame)
         view.addSubview(cell)
         return view
     }

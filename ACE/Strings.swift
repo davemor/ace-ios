@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 func condenseWhitespace(string: String) -> String {
-    let components = string.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).filter({!isEmpty($0)})
-    return join("", components)
+    let components = string.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).filter({!$0.characters.isEmpty})
+    return components.joinWithSeparator("")
 }
 
 extension String {

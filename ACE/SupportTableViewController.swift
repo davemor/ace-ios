@@ -11,10 +11,16 @@ import RealmSwift
 
 class SupportTableViewController: UITableViewController {
 
-    let services = Realm().objects(Service)
+    var services: Results<Service>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            try services = Realm().objects(Service)
+        } catch {
+            print("Error while loadting services in SupportTableViewController.")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +45,7 @@ class SupportTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("supportListReuseId", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("supportListReuseId", forIndexPath: indexPath) 
 
         let service = serviceAtPath(indexPath)
         cell.textLabel?.text = service.name

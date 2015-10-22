@@ -38,9 +38,13 @@ class ContactDetailsViewController: UITableViewController {
         alertController.addAction(cancelAction)
         
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-            let realm = Realm()
-            realm.write {
-                realm.delete(self.contact)
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.delete(self.contact)
+                }
+            } catch {
+                print("Error updating contact details.")
             }
             self.navigationController?.popViewControllerAnimated(true)
         }

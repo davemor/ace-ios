@@ -14,10 +14,10 @@ protocol Activity {
     
     var start: NSDate { get }
     var end: NSDate { get }
-    var repeat: Repeat { get }
+    var `repeat`: Repeat { get }
     
     var url: String? { get }
-    var venue: Venue { get }
+    var venue: Venue? { get }
     
     var attending: Bool { get set }
 }

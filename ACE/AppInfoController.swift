@@ -18,7 +18,7 @@ class AppInfoController: UIViewController, UIWebViewDelegate {
         // set up the webview
         self.webView.delegate = self
         self.automaticallyAdjustsScrollViewInsets = false
-        let htmlFile = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("about", ofType: "html")!)!
+        let htmlFile = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("about", ofType: "html")!)
         webView.loadRequest(NSURLRequest(URL: htmlFile))
     }
 
