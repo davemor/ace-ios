@@ -187,7 +187,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOy-jx-qvP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-LW-YkV" customClass="HexagonView" customModule="ARC" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-LW-YkV" customClass="HexagonView" customModule="ARC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cP7-S4-eZC">
@@ -4603,10 +4603,10 @@ G11 5QP</string>
             </objects>
             <point key="canvasLocation" x="3069" y="-2441.25"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Reflection-->
         <scene sceneID="HhW-tf-NLF">
             <objects>
-                <navigationController id="bUC-Tn-5vL" sceneMemberID="viewController">
+                <navigationController title="Reflection" id="bUC-Tn-5vL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Yzh-qO-cn1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
