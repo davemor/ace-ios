@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         // style the controls
         setupStyles()
         
-        daysCounterLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 23)
+        daysCounterLabel.font = UIFont(name: "Arial Rounded MT Bold", size: 36)
         
         // set up the view
         refreshView()
