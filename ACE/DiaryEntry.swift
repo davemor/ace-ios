@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class DiaryEntry: Object {
-    dynamic var id = 0
+    dynamic var id = ""
 
     dynamic var date = NSDate()
     dynamic var text = ""

@@ -43,6 +43,7 @@ class NewDiaryEntryViewController: UIViewController, UIImagePickerControllerDele
             let realm = try Realm()
             try realm.write {
                 let entry = DiaryEntry()
+                entry.id = NSUUID().UUIDString
                 entry.text = self.textArea.text
                 if let path = self.imagePath {
                     entry.imagePath = path
