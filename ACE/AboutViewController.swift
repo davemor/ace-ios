@@ -14,7 +14,6 @@ class AboutViewController: UITableViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var daysSwitch: UISwitch!
-    @IBOutlet weak var badgesSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,6 @@ class AboutViewController: UITableViewController {
         datePicker.date = date
         setLabelToDate(date)
         daysSwitch.on = defaults.boolForKey("show_days_in_recovery")
-        badgesSwitch.on = defaults.boolForKey("show_milestone_badges")
     }
 
     override func didReceiveMemoryWarning() {

@@ -4261,78 +4261,12 @@ G11 5QP</string>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="GRI-Dp-2Fn">
-                                        <rect key="frame" x="0.0" y="452" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GRI-Dp-2Fn" id="mpa-Hh-oJG">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show milestone badges" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLU-5v-6oR">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yU7-fR-Usd">
-                                                    <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                                    <animations/>
-                                                    <color key="onTintColor" red="0.20784313730000001" green="0.29411764709999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <connections>
-                                                        <action selector="toggleShowMilestoneBadges:" destination="rQc-or-Hpz" eventType="valueChanged" id="ivf-7x-4qG"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstItem="MLU-5v-6oR" firstAttribute="top" secondItem="mpa-Hh-oJG" secondAttribute="topMargin" constant="3" id="Fl0-rM-q08"/>
-                                                <constraint firstItem="yU7-fR-Usd" firstAttribute="trailing" secondItem="mpa-Hh-oJG" secondAttribute="trailingMargin" id="NAV-Kr-Oro"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="MLU-5v-6oR" secondAttribute="bottom" constant="3" id="Pab-Hm-cEG"/>
-                                                <constraint firstItem="yU7-fR-Usd" firstAttribute="top" secondItem="mpa-Hh-oJG" secondAttribute="topMargin" constant="-2" id="T4p-i9-Cy6"/>
-                                                <constraint firstItem="MLU-5v-6oR" firstAttribute="trailing" secondItem="mpa-Hh-oJG" secondAttribute="trailingMargin" id="igm-g4-ErN"/>
-                                                <constraint firstItem="MLU-5v-6oR" firstAttribute="leading" secondItem="mpa-Hh-oJG" secondAttribute="leadingMargin" id="ldy-NZ-P8W"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="yU7-fR-Usd" secondAttribute="bottom" constant="-1" id="xuR-3y-Tbl"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="MLU-5v-6oR"/>
-                                                    <exclude reference="yU7-fR-Usd"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="Fl0-rM-q08"/>
-                                                    <exclude reference="Pab-Hm-cEG"/>
-                                                    <exclude reference="igm-g4-ErN"/>
-                                                    <exclude reference="ldy-NZ-P8W"/>
-                                                    <exclude reference="NAV-Kr-Oro"/>
-                                                    <exclude reference="T4p-i9-Cy6"/>
-                                                    <exclude reference="xuR-3y-Tbl"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="MLU-5v-6oR"/>
-                                                    <include reference="yU7-fR-Usd"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="Fl0-rM-q08"/>
-                                                    <include reference="Pab-Hm-cEG"/>
-                                                    <include reference="igm-g4-ErN"/>
-                                                    <include reference="ldy-NZ-P8W"/>
-                                                    <include reference="NAV-Kr-Oro"/>
-                                                    <include reference="T4p-i9-Cy6"/>
-                                                    <include reference="xuR-3y-Tbl"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="About me" id="leX-Uk-4QW">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="1pK-PO-JVs">
-                                        <rect key="frame" x="0.0" y="539" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="495" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1pK-PO-JVs" id="9rg-JW-spk">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -4423,7 +4357,6 @@ G11 5QP</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="badgesSwitch" destination="yU7-fR-Usd" id="IxQ-9Y-X0e"/>
                         <outlet property="datePicker" destination="yyb-j4-MF8" id="AOl-VE-ick"/>
                         <outlet property="daysSwitch" destination="tIT-13-WGD" id="wBd-N6-p6x"/>
                         <outlet property="recoveryStartDateButton" destination="hKb-ys-myt" id="uhv-TX-xqD"/>
