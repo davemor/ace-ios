@@ -103,9 +103,11 @@ class DiaryEntryDetailsViewController: UIViewController, UITextViewDelegate {
                     self.entry.text = self.textLabel.text
                     realm.add(self.entry, update: true)
                 }
+                /*
                 let alert = UIAlertController(title: "Entry Updated", message: "The entry has been updated in your diary.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
+*/
             } catch {
                 print("Error saving updated diary entry.")
             }

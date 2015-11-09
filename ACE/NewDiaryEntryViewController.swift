@@ -51,9 +51,12 @@ class NewDiaryEntryViewController: UIViewController, UIImagePickerControllerDele
                 }
                 realm.add(entry, update: false)
             }
+            /*
             let alert = UIAlertController(title: "Entry Added", message: "The entry has been added to your diary.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+*/
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
         } catch {
             print("Error saving new diary entry.")
         }
