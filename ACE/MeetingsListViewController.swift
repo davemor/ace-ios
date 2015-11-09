@@ -120,7 +120,7 @@ class MeetingsListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! MeetingsListHeader
         let day = Day(rawValue: section)!
         
-        cell.titleLabel.text = day.description.capitalizedString
+        cell.titleLabel.text = day.description.capitalizedString + "s"
         cell.expandButton.tag = section
         let title = sectionOpen[section]! ? "Close" : "Open"
         cell.expandButton.setTitle(title, forState: .Normal)
