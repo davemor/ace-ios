@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DiaryEntryDetailsViewController: UIViewController {
 
@@ -24,6 +25,9 @@ class DiaryEntryDetailsViewController: UIViewController {
         dateLabel.text = entry.date.toRelativeName()
         imageLabel.image = UIImage(contentsOfFile: entry.imagePath)
         textLabel.text = entry.text
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: Selector("editView"))
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,5 +45,35 @@ class DiaryEntryDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func editView()
+    {
+        if self.navigationItem.rightBarButtonItem!.title == "Edit"
+        {
+            self.navigationItem.rightBarButtonItem!.title = "Done"
+            
+            textLabel.editable = true
+            textLabel.becomeFirstResponder()
 
+        }
+        else
+        {
+            self.navigationItem.rightBarButtonItem!.title = "Edit"
+            textLabel.editable = false
+            textLabel.resignFirstResponder()
+            
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    self.entry.text = self.textLabel.text
+                    realm.add(self.entry, update: true)
+                }
+                let alert = UIAlertController(title: "Entry Updated", message: "The entry has been updated in your diary.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            } catch {
+                print("Error saving updated diary entry.")
+            }
+        }
+    }
 }

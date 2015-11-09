@@ -10,8 +10,14 @@ import Foundation
 import RealmSwift
 
 class DiaryEntry: Object {
+    dynamic var id = 0
+
     dynamic var date = NSDate()
     dynamic var text = ""
     dynamic var imagePath = ""
     dynamic var hasImage = false
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
