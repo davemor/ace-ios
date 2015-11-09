@@ -22,6 +22,9 @@ class DiaryViewController: UITableViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.estimatedRowHeight = 68.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     
         do {
             try diaryEntries = Realm().objects(DiaryEntry).sorted("date", ascending: false)
@@ -110,15 +113,28 @@ class DiaryViewController: UITableViewController {
         }
     }
 
+    /*
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        
+        return UITableViewAutomaticDimension
+
         if indexPath.row == 0 {
             return 213
         } else {
-            return 100
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("textCellId", forIndexPath: indexPath) as! DiaryCell
+            let entry = entryAtPath(indexPath)
+            cell.dateLabel.text = entry.date.toRelativeName()
+            cell.titleLabel.text = entry.text
+
+            cell.setNeedsLayout();
+            cell.layoutIfNeeded();
+            let size = cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+
+            return size.height
         }
     }
+*/
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // let entry = entryAtPath(indexPath)
