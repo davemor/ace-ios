@@ -2895,11 +2895,11 @@ G11 5QP</string>
             </objects>
             <point key="canvasLocation" x="4345.5" y="-2082"/>
         </scene>
-        <!--Item-->
+        <!--List-->
         <scene sceneID="DFA-lm-AOj">
             <objects>
                 <navigationController id="4sp-JP-ktd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="ic_format_list_bulleted_white_36pt" id="wvW-wa-I64"/>
+                    <tabBarItem key="tabBarItem" title="List" image="ic_format_list_bulleted_white_36pt" id="wvW-wa-I64"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hbO-Xn-4Vc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -6370,7 +6370,7 @@ Let's record it for later ...</string>
     <inferredMetricsTieBreakers>
         <segue reference="GJg-Nt-48I"/>
         <segue reference="0Ie-UO-Iln"/>
-        <segue reference="nUC-jR-wmb"/>
+        <segue reference="Ldb-eS-0c1"/>
         <segue reference="IUu-qJ-yDK"/>
     </inferredMetricsTieBreakers>
 </document>
