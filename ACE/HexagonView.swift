@@ -8,9 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-
-class HexagonView: UIView {
+@IBDesignable class HexagonView: UIView {
     
     @IBInspectable var color: UIColor
     @IBInspectable var title: String?
@@ -50,7 +48,7 @@ class HexagonView: UIView {
     override func drawRect(rect: CGRect) {
         UIColor.blackColor().setStroke()
         color.setFill()
-        var path = bezierPathWithPolygonInRect(rect, numSides: 6, smooth: 0.3, startAngle: -M_PI_2, margin: 2)
+        let path = bezierPathWithPolygonInRect(rect, numSides: 6, smooth: 0.3, startAngle: -M_PI_2, margin: 2)
         path.lineJoinStyle = CGLineJoin.Round
         path.lineWidth = 8.0
         path.fill()
@@ -58,12 +56,12 @@ class HexagonView: UIView {
         let center = CGPointMake(rect.size.width / 2, rect.size.height / 2)
         
         if let unwrapped = title {
-            if var str = NSString(UTF8String: unwrapped) {
+            if let str = NSString(UTF8String: unwrapped) {
 
                 let font = UIFont(name: preferedFont, size: fontSize) ?? UIFont.systemFontOfSize(fontSize)
                 let style = NSMutableParagraphStyle()
                 style.alignment = NSTextAlignment.Center
-                var attrs = [
+                let attrs = [
                     NSFontAttributeName: font,
                     NSParagraphStyleAttributeName: style,
                     NSForegroundColorAttributeName: UIColor.whiteColor()
@@ -81,7 +79,7 @@ class HexagonView: UIView {
 
     func drawIcon(rect: CGRect) {
         let font = UIFont.fontAwesomeOfSize(iconSize)
-        if let iconStr = icon {
+        if let _ = icon {
             if let t = icons[icon!] {
                 let text = String.fontAwesomeIconWithName(t)
                 let attributes = [
