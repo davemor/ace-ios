@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492E4F441BF0F641009BC873 /* NSDate-toRelativeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E4F431BF0F641009BC873 /* NSDate-toRelativeName.swift */; };
 		B0597BFFC0D90966B9055223 /* Pods_ARC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1884887B915F53880B1DF0 /* Pods_ARC.framework */; };
 		B492A62DD332157F1A4507FA /* Pods_ARCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5E3313E20696AE1752009 /* Pods_ARCTests.framework */; };
 		FF0E8C291AF91C1B00B7EC68 /* MeetingsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E8C281AF91C1B00B7EC68 /* MeetingsMapViewController.swift */; };
@@ -29,8 +30,8 @@
 		FF375EE31B2C77B7001052D7 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF375EE21B2C77B7001052D7 /* CalendarCell.swift */; };
 		FF375EE51B2D8A93001052D7 /* DiaryTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF375EE41B2D8A93001052D7 /* DiaryTopCell.swift */; };
 		FF375EE71B2D8AA5001052D7 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF375EE61B2D8AA5001052D7 /* DiaryCell.swift */; };
-		FF380AE21BD7C93600EE944C /* categorise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380AE11BD7C93600EE944C /* categorise.swift */; settings = {ASSET_TAGS = (); }; };
-		FF380AE41BD94A0000EE944C /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380AE31BD94A0000EE944C /* Results.swift */; settings = {ASSET_TAGS = (); }; };
+		FF380AE21BD7C93600EE944C /* categorise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380AE11BD7C93600EE944C /* categorise.swift */; };
+		FF380AE41BD94A0000EE944C /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF380AE31BD94A0000EE944C /* Results.swift */; };
 		FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */; };
 		FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB301ACC9D0400EA1954 /* Service.swift */; };
 		FF47006B1B0B391A004528EB /* MeetingPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */; };
@@ -39,20 +40,20 @@
 		FF569F9D1B0E25CA00E26D16 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF569F9C1B0E25CA00E26D16 /* Activity.swift */; };
 		FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5803DD1B04BCAD0030B109 /* MoodMenuViewController.swift */; };
 		FF5967071B27804F00B149F4 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5967061B27804F00B149F4 /* Style.swift */; };
-		FF5CEF441BD9544500030FB5 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF351BD9544500030FB5 /* Array.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF451BD9544500030FB5 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF361BD9544500030FB5 /* Bool.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF461BD9544500030FB5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF371BD9544500030FB5 /* Character.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF471BD9544500030FB5 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF381BD9544500030FB5 /* Dictionary.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF481BD9544500030FB5 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF391BD9544500030FB5 /* Double.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF491BD9544500030FB5 /* ExSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF3B1BD9544500030FB5 /* ExSwift.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF4A1BD9544500030FB5 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF3C1BD9544500030FB5 /* Float.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF4B1BD9544500030FB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF5CEF3D1BD9544500030FB5 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF4C1BD9544500030FB5 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF3E1BD9544500030FB5 /* Int.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF4D1BD9544500030FB5 /* NSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF3F1BD9544500030FB5 /* NSArray.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF4E1BD9544500030FB5 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF401BD9544500030FB5 /* NSDate.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF4F1BD9544500030FB5 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF411BD9544500030FB5 /* Range.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF501BD9544500030FB5 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF421BD9544500030FB5 /* Sequence.swift */; settings = {ASSET_TAGS = (); }; };
-		FF5CEF511BD9544500030FB5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF431BD9544500030FB5 /* String.swift */; settings = {ASSET_TAGS = (); }; };
+		FF5CEF441BD9544500030FB5 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF351BD9544500030FB5 /* Array.swift */; };
+		FF5CEF451BD9544500030FB5 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF361BD9544500030FB5 /* Bool.swift */; };
+		FF5CEF461BD9544500030FB5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF371BD9544500030FB5 /* Character.swift */; };
+		FF5CEF471BD9544500030FB5 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF381BD9544500030FB5 /* Dictionary.swift */; };
+		FF5CEF481BD9544500030FB5 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF391BD9544500030FB5 /* Double.swift */; };
+		FF5CEF491BD9544500030FB5 /* ExSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF3B1BD9544500030FB5 /* ExSwift.swift */; };
+		FF5CEF4A1BD9544500030FB5 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF3C1BD9544500030FB5 /* Float.swift */; };
+		FF5CEF4B1BD9544500030FB5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF5CEF3D1BD9544500030FB5 /* Info.plist */; };
+		FF5CEF4C1BD9544500030FB5 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF3E1BD9544500030FB5 /* Int.swift */; };
+		FF5CEF4D1BD9544500030FB5 /* NSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF3F1BD9544500030FB5 /* NSArray.swift */; };
+		FF5CEF4E1BD9544500030FB5 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF401BD9544500030FB5 /* NSDate.swift */; };
+		FF5CEF4F1BD9544500030FB5 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF411BD9544500030FB5 /* Range.swift */; };
+		FF5CEF501BD9544500030FB5 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF421BD9544500030FB5 /* Sequence.swift */; };
+		FF5CEF511BD9544500030FB5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF431BD9544500030FB5 /* String.swift */; };
 		FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8B1AE8CB2400889EA0 /* ExerciseDetailViewController.swift */; };
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
@@ -135,6 +136,7 @@
 
 /* Begin PBXFileReference section */
 		38C01D39147E5DD0FB6F84DC /* Pods-ARCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARCTests/Pods-ARCTests.release.xcconfig"; sourceTree = "<group>"; };
+		492E4F431BF0F641009BC873 /* NSDate-toRelativeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-toRelativeName.swift"; sourceTree = "<group>"; };
 		7AB70A1C88156340096CD569 /* Pods-ARC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARC.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARC/Pods-ARC.release.xcconfig"; sourceTree = "<group>"; };
 		AEB5E3313E20696AE1752009 /* Pods_ARCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9FFC7772F424843D4654EE1 /* Pods-ARCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARCTests/Pods-ARCTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 			children = (
 				FF380AE11BD7C93600EE944C /* categorise.swift */,
 				FF380AE31BD94A0000EE944C /* Results.swift */,
+				492E4F431BF0F641009BC873 /* NSDate-toRelativeName.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				FF5CEF4C1BD9544500030FB5 /* Int.swift in Sources */,
 				FF3755511B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift in Sources */,
 				FF5CEF491BD9544500030FB5 /* ExSwift.swift in Sources */,
+				492E4F441BF0F641009BC873 /* NSDate-toRelativeName.swift in Sources */,
 				FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */,
 				FFDAF7001B14883300BC4589 /* PersonalActivity.swift in Sources */,
 				FF7395381B0C6C0B00972F67 /* CVCalendarViewPresentationMode.swift in Sources */,

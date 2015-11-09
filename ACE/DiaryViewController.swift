@@ -85,7 +85,7 @@ class DiaryViewController: UITableViewController {
             
             let entry = entryAtPath(indexPath)
             cell.titleLabel.text = entry.text
-            cell.dateLabel.text = entry.date.toString()
+            cell.dateLabel.text = entry.date.toRelativeName()
             if let image = UIImage(contentsOfFile: entry.imagePath) {
                 cell.backgroundImage.image = image
             }
@@ -98,7 +98,7 @@ class DiaryViewController: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("textCellId", forIndexPath: indexPath) as! DiaryCell
             let entry = entryAtPath(indexPath)
-            cell.dateLabel.text = entry.date.toString()
+            cell.dateLabel.text = entry.date.toRelativeName()
             cell.titleLabel.text = entry.text
             if entry.hasImage {
                 // print(indexPath, terminator: "")

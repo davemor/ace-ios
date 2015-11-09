@@ -21,7 +21,7 @@ class DiaryEntryDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dateLabel.text = entry.date.toString()
+        dateLabel.text = entry.date.toRelativeName()
         imageLabel.image = UIImage(contentsOfFile: entry.imagePath)
         textLabel.text = entry.text
     }
