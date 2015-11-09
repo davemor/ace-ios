@@ -7,10 +7,8 @@
 //
 //  Provides a set of helper functions for working with
 //  the model of the application.
-
 import Foundation
 import RealmSwift
-
 class Model {
     
     // shared singleton instance
@@ -27,7 +25,7 @@ class Model {
     
     // let serverBaseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")!
     // let serverBaseUrl = NSURL(string: "http://localhost:3000/api/")!
-    let serverBaseUrl = NSURL(string: "http://http://arc.cechosting.org/api/")!
+    let serverBaseUrl = NSURL(string: "http://arc.cechosting.org/api/")!
     
     let communityCalendarUrl = NSURL(string: "https://recoverycommunitycalendar.hasacalendar.co.uk/api1/events.json")!
     
@@ -35,7 +33,7 @@ class Model {
         do {
             let realm = try Realm()
             try Realm().write {
-               realm.deleteAll()
+                realm.deleteAll()
             }
         } catch {
             print("Error deleting realm.")
@@ -43,139 +41,154 @@ class Model {
     }
     
     func updateFromServer() {
-            let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-            dispatch_async(queue) {
-                if let response = NSData(contentsOfURL: self.serverBaseUrl) {
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        dispatch_async(queue) {
+            if let response = NSData(contentsOfURL: self.serverBaseUrl) {
+                
+                // De-serialize the response to JSON
+                let json = (try! NSJSONSerialization.JSONObjectWithData(response,
+                    options: NSJSONReadingOptions(rawValue: 0))) as! NSDictionary
+                
+                do {
                     
-                    // De-serialize the response to JSON
-                    let json = (try! NSJSONSerialization.JSONObjectWithData(response,
-                        options: NSJSONReadingOptions(rawValue: 0))) as! NSDictionary
-                    
-                    do {
-                    
-                        let realm = try Realm()
-                        try realm.write {
-                            // read in the venues
-                            if let venues = json["venues"] as? NSArray {
-                                for data in venues {
-                                    realm.create(Venue.self, value: data, update: true)
+                    let realm = try Realm()
+                    try realm.write {
+                        // read in the venues
+                        if let venues = json["venues"] as? NSArray {
+                            for dict in venues {
+                                if let dict = dict as? NSDictionary {
+                                    let venue = Venue()
+                                    venue.id = dict.read("id", alt: 0)
+                                    venue.name = dict.read("name", alt: "")
+                                    venue.address = dict.read("address", alt: "")
+                                    venue.city = dict.read("city", alt: "")
+                                    venue.postcode = dict.read("postcode", alt: "")
+                                    venue.email = dict.read("email", alt: "")
+                                    venue.telephone = dict.read("telephone", alt: "")
+                                    venue.website = dict.read("website", alt: "")
+                                    venue.latitude = dict.read("latitude", alt: 0.0)
+                                    venue.longitude = dict.read("longitude", alt: 0.0)
+                                    realm.add(venue, update:true)
                                 }
                             }
                         }
-                        
-                        try realm.write {
-                            // read in the groups
-                            if let groups = json["groups"] as? NSArray {
-                                for data in groups {
-                                    if let dict = data as? NSDictionary {
-                                        let group = Group()
-                                        group.id = dict.read("id", alt: 0)
-                                        group.name = dict.read("name", alt: "")
-                                        group.desc = dict.read("description", alt: "")
-                                        group.contactName = dict.read("contact_name", alt: "")
-                                        group.telephone = dict.read("telephone", alt: "")
-                                        // println(group)
-                                        realm.add(group, update:true)
+                    }
+                    
+                    try realm.write {
+                        // read in the groups
+                        if let groups = json["groups"] as? NSArray {
+                            for data in groups {
+                                if let dict = data as? NSDictionary {
+                                    let group = Group()
+                                    group.id = dict.read("id", alt: 0)
+                                    group.name = dict.read("name", alt: "")
+                                    group.desc = dict.read("description", alt: "")
+                                    group.contactName = dict.read("contact_name", alt: "")
+                                    group.telephone = dict.read("telephone", alt: "")
+                                    // println(group)
+                                    realm.add(group, update:true)
+                                }
+                            }
+                        }
+                    }
+                    try realm.write {
+                        // read in the meetings
+                        if let meetings = json["events"] as? NSArray {
+                            for data in meetings {
+                                if let dict = data as? NSDictionary {
+                                    let meeting = Meeting()
+                                    meeting.id = dict.read("id", alt: 0)
+                                    meeting.name = dict.read("name", alt: "")
+                                    meeting.desc = dict.read("description", alt: "")
+                                    meeting.contactName = dict.read("contact_name", alt: "")
+                                    meeting.contactPhone = dict.read("contactPhone", alt: "")
+                                    meeting.dateTime = dict.readDateTime("date_time")
+                                    meeting.`repeat` = Repeat.strToRaw(dict.read("repeat", alt: "none"))
+                                    meeting.day = Day.strToRaw(dict.read("day_of_week", alt: "none"))
+                                    
+                                    // find the venue if it exists
+                                    let venueId = dict.read("venue_id", alt: 0)
+                                    let venueRes = realm.objects(Venue).filter("id = %d", venueId)
+                                    if venueRes.count > 0 {
+                                        meeting.venue = venueRes.first
                                     }
-                                }
-                            }
-                        }
-                        try realm.write {
-                            // read in the meetings
-                            if let meetings = json["events"] as? NSArray {
-                                for data in meetings {
-                                    if let dict = data as? NSDictionary {
-                                        let meeting = Meeting()
-                                        meeting.id = dict.read("id", alt: 0)
-                                        meeting.name = dict.read("name", alt: "")
-                                        meeting.desc = dict.read("description", alt: "")
-                                        meeting.contactName = dict.read("contact_name", alt: "")
-                                        meeting.contactPhone = dict.read("contactPhone", alt: "")
-                                        meeting.dateTime = dict.readDateTime("date_time")
-                                        meeting.`repeat` = Repeat.strToRaw(dict.read("repeat", alt: "none"))
-                                        meeting.day = Day.strToRaw(dict.read("day_of_week", alt: "none"))
-                                        
-                                        // find the venue if it exists
-                                        let venueId = dict.read("venue_id", alt: 0)
-                                        let venueRes = realm.objects(Venue).filter("id = %d", venueId)
-                                        if venueRes.count > 0 {
-                                            meeting.venue = venueRes.first
-                                        }
-                                        
-                                        // find the group if it exists
-                                        let groupId = dict.read("group_id", alt: 0)
-                                        let predicate = NSPredicate(format: "id = %d", groupId)
-                                        let groupRes = realm.objects(Group).filter(predicate)
-                                        if groupRes.count > 0 {
-                                            let first = groupRes.first
-                                            meeting.group = first!
-                                        }
-                                        
-                                        // add the meeting to the realm.
-                                        realm.add(meeting, update: true)
+                                    
+                                    // find the group if it exists
+                                    let groupId = dict.read("group_id", alt: 0)
+                                    let predicate = NSPredicate(format: "id = %d", groupId)
+                                    let groupRes = realm.objects(Group).filter(predicate)
+                                    if groupRes.count > 0 {
+                                        let first = groupRes.first
+                                        print(first!.name)
+                                        meeting.group = first!
                                     }
+                                    
+                                    // add the meeting to the realm.
+                                    realm.add(meeting, update: true)
                                 }
                             }
                         }
-                        try realm.write {
-                            // read in the services
-                            if let services = json["services"] as? NSArray {
-                                for data in services {
-                                    if let dict = data as? NSDictionary {
-                                        let service = Service()
-                                        service.id = dict.read("id", alt: 0)
-                                        service.name = dict.read("name", alt: "")
-                                        service.desc = dict.read("description", alt: "")
-                                        service.telephone = dict.read("telephone", alt: "")
-                                        service.email = dict.read("email", alt: "")
-                                        service.mobile = dict.read("mobile", alt: "")
-                                        service.fax = dict.read("fax", alt: "")
-                                        service.website = dict.read("website", alt: "")
-                                        service.supportOptions = dict.read("supportOptions", alt: "")
-                                        service.referralMethod = dict.read("referralMethod", alt: "")
-                                        service.recoveryHubs = dict.read("recoveryHubs", alt: "")
-                                        service.businessTimesExtraInfo = dict.read("businessTimesExtraInfo", alt: "")
-                                        
-                                        // find the venue if it exists
-                                        let venueId = dict.read("venue_id", alt: 0)
-                                        let venueRes = realm.objects(Venue).filter("id = %d", venueId)
-                                        if venueRes.count > 0 {
-                                            service.venue = venueRes.first
-                                        }
-                                        
-                                        // set up the business hours
-                                        if let times = dict.objectForKey("business_times") as? NSArray {
-                                            for time in times {
+                    }
+                    try realm.write {
+                        // read in the services
+                        if let services = json["services"] as? NSArray {
+                            for data in services {
+                                if let dict = data as? NSDictionary {
+                                    let service = Service()
+                                    service.id = dict.read("id", alt: 0)
+                                    service.name = dict.read("name", alt: "")
+                                    service.desc = dict.read("description", alt: "")
+                                    service.telephone = dict.read("telephone", alt: "")
+                                    service.email = dict.read("email", alt: "")
+                                    service.mobile = dict.read("mobile", alt: "")
+                                    service.fax = dict.read("fax", alt: "")
+                                    service.website = dict.read("website", alt: "")
+                                    service.supportOptions = dict.read("supportOptions", alt: "")
+                                    service.referralMethod = dict.read("referralMethod", alt: "")
+                                    service.recoveryHubs = dict.read("recoveryHubs", alt: "")
+                                    service.businessTimesExtraInfo = dict.read("businessTimesExtraInfo", alt: "")
+                                    
+                                    // find the venue if it exists
+                                    let venueId = dict.read("venue_id", alt: 0)
+                                    let venueRes = realm.objects(Venue).filter("id = %d", venueId)
+                                    if venueRes.count > 0 {
+                                        service.venue = venueRes.first
+                                    }
+                                    
+                                    // set up the business hours
+                                    if let times = dict.objectForKey("business_times") as? NSArray {
+                                        for time in times {
+                                            if let t = time as? NSDictionary {
                                                 let bt = BusinessTime()
-                                                bt.open = dict.readDateTime("opening_time")
-                                                bt.close = dict.readDateTime("closing_time")
-                                                bt.monday = dict.read("monday", alt: false)
-                                                bt.tuesday = dict.read("tuesday", alt: false)
-                                                bt.wednesday = dict.read("wednesday", alt: false)
-                                                bt.thursday = dict.read("thursday", alt: false)
-                                                bt.friday = dict.read("friday", alt: false)
-                                                bt.saturday = dict.read("saturday", alt: false)
-                                                bt.sunday = dict.read("sunday", alt: false)
+                                                bt.open = t.readDateTime("opening_time")
+                                                bt.close = t.readDateTime("closing_time")
+                                                bt.monday = t.read("monday", alt: false)
+                                                bt.tuesday = t.read("tuesday", alt: false)
+                                                bt.wednesday = t.read("wednesday", alt: false)
+                                                bt.thursday = t.read("thursday", alt: false)
+                                                bt.friday = t.read("friday", alt: false)
+                                                bt.saturday = t.read("saturday", alt: false)
+                                                bt.sunday = t.read("sunday", alt: false)
                                                 service.businessTimes.append(bt)
                                             }
                                         }
-                                        
-                                        realm.add(service, update: true)
                                     }
+                                    
+                                    realm.add(service, update: true)
                                 }
                             }
                         }
-                    } catch {
-                        print("Error writting to Realm.")
                     }
-                } else {
-                    // TODO: Try again later.
-                    print("Cannot Reach server")
+                } catch {
+                    print("Error writting to Realm.")
                 }
+            } else {
+                // TODO: Try again later.
+                print("Cannot Reach server")
             }
         }
+    }
     
-
     func updateFromCommunityCalendar() {
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         dispatch_async(queue) {
@@ -191,7 +204,7 @@ class Model {
                         if let events = json["data"] as? NSArray {
                             for data in events {
                                 if let event = data as? NSDictionary {
-                                    print(event, terminator: "")
+                                    //print(event, terminator: "")
                                     
                                     let activity = CommunityActivity()
                                     activity.slug = event.read("slug", alt: 0)
@@ -209,7 +222,7 @@ class Model {
                                         v.id = venue.read("slug", alt: 0)
                                         v.name = venue.read("title", alt: "")
                                         v.address = venue.read("address", alt: "")
-                                        print(v.address, terminator: "")
+                                        //print(v.address, terminator: "")
                                         // v.city = this is missing or rather part of the address.
                                         v.postcode = venue.read("addresscode", alt: "")
                                         v.latitude = venue.read("lat", alt: 0.0)
@@ -218,7 +231,7 @@ class Model {
                                         activity.aVenue = v
                                     }
                                     
-                                    print(activity, terminator: "")
+                                    //print(activity, terminator: "")
                                     realm.add(activity, update: true)
                                     
                                     // println(activity)
@@ -233,8 +246,6 @@ class Model {
         }
     }
 }
-
-
 extension NSDictionary {
     func read<T>(key:String, alt:T) -> T {
         if let obj = objectForKey(key) as? T {
@@ -263,21 +274,3 @@ extension NSDictionary {
         return rtn
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
