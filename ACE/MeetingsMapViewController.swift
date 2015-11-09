@@ -35,6 +35,7 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         }
         
         mapView.delegate = self
+        self.title = "Meetings"
         
         // move focus the map on Edinburgh
         setMapLocation(CLLocationCoordinate2D(latitude: 55.9410655, longitude: -3.2053836), delta: 0.05)

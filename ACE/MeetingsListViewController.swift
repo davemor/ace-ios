@@ -31,6 +31,7 @@ class MeetingsListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Meetings"
         
         do {
             groups = try Realm().objects(Group)
