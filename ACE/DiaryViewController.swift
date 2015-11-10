@@ -97,6 +97,7 @@ class DiaryViewController: UITableViewController {
                 cell.userImage.image = image
                 cell.userImage.setNeedsDisplay()
             }
+            cell.backgroundColor = getAceColorForIndex(indexPath.row)
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("textCellId", forIndexPath: indexPath) as! DiaryCell
@@ -109,6 +110,8 @@ class DiaryViewController: UITableViewController {
                     cell.backgroundImage.image = img
                 }
             }
+            cell.backgroundColor = getAceColorForIndex(indexPath.row)
+
             return cell
         }
     }

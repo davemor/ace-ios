@@ -45,6 +45,12 @@ func getRandomAceColor() -> UIColor {
     return aceColors[AceColor(rawValue: index)!]!
 }
 
+func getAceColorForIndex(index: Int) -> UIColor {
+    
+    return aceColors[AceColor(rawValue: index % 5)!]!
+    
+}
+
 func getColorForGroup(group: String) -> UIColor {
     switch group {
     case "Cocaine Anonymous": return aceColors[AceColor.Yellow]!
