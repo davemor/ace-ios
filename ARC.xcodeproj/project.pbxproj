@@ -1104,10 +1104,6 @@
 			baseConfigurationReference = F9FFC7772F424843D4654EE1 /* Pods-ARCTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1116,7 +1112,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.davemor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ARCTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACE.app/ACE";
 			};
 			name = Debug;
 		};
@@ -1125,15 +1120,10 @@
 			baseConfigurationReference = 38C01D39147E5DD0FB6F84DC /* Pods-ARCTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = ACETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.davemor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ARCTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACE.app/ACE";
 			};
 			name = Release;
 		};
