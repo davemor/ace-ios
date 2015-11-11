@@ -31,10 +31,6 @@ class ServiceDetailViewController: UITableViewController {
 
         serviceName.text = service.name
         serviceDescription.text = service.desc
-        serviceDescription.sizeToFit()
-        
-        self.tableView.setNeedsLayout()
-        self.tableView.layoutIfNeeded()
         
         /*
         serviceDescriptionHeightConstraint.constant = serviceDescription.sizeThatFits(CGSizeMake(serviceDescription.frame.size.width, CGFloat.max)).height

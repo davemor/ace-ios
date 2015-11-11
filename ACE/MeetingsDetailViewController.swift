@@ -42,7 +42,7 @@ class MeetingsDetailViewController: UITableViewController {
         tableView.estimatedRowHeight = 44.0
         
         // setup the model
-        if let activity = findActivityForMeeting() {
+        if let _ = findActivityForMeeting() {
             addBarButton.title = "Remove"
         } else {
             addBarButton.title = "Add"
