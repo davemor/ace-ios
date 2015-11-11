@@ -88,13 +88,28 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
         // Work out how to handle this - perhaps make the second name optional and check for it's presence.
         
         let phoneNumbers: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue()
-        let firstName: ABMultiValueRef = ABRecordCopyValue(person, kABPersonFirstNameProperty).takeRetainedValue() as! String
-        let secondName: ABMultiValueRef = ABRecordCopyValue(person, kABPersonLastNameProperty).takeRetainedValue() as! String
+        
+        
+        let firstName = ABRecordCopyValue(person, kABPersonFirstNameProperty)?.takeRetainedValue() as? String
+        var first_name = ""
+        if firstName != nil {
+            first_name = firstName! as String
+        }
+        
+        let lastName  = ABRecordCopyValue(person, kABPersonLastNameProperty)?.takeRetainedValue() as? String
+        var last_name = ""
+        if lastName != nil {
+            last_name = lastName! as String
+        }
         if (ABMultiValueGetCount(phoneNumbers) > 0) {
             let index = 0 as CFIndex
-            let phone = ABMultiValueCopyValueAtIndex(phoneNumbers, index).takeRetainedValue() as! String
+            let phone = ABMultiValueCopyValueAtIndex(phoneNumbers, index).takeRetainedValue() as? String
+            var phone_number = ""
+            if phone != nil {
+                phone_number = phone! as String
+            }
 
-            let name = "\(firstName) \(secondName)"
+            let name = "\(first_name) \(last_name)"
             
             // create a new contact
             do {
@@ -102,7 +117,7 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
                 try realm.write {
                     let contact = Contact()
                     contact.name = name
-                    contact.phone = phone
+                    contact.phone = phone_number
                     realm.add(contact, update: true)
                 }
             } catch {
