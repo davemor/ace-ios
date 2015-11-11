@@ -24,6 +24,7 @@ import UIKit
         "Phone" : FontAwesome.Phone,
         "PencilSquareO" : FontAwesome.PencilSquareO,
         "Cog" : FontAwesome.Cog,
+        "Cogs" : FontAwesome.Cogs,
         "FaEnvelopeO" : FontAwesome.EnvelopeO,
         "FaInfoCircle" : FontAwesome.InfoCircle
     ]

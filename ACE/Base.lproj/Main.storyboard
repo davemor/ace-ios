@@ -354,9 +354,6 @@
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="14" y="0.0" width="61" height="77"/>
-                                                </variation>
                                             </button>
                                         </subviews>
                                         <animations/>
@@ -586,7 +583,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
                                                 <color key="value" red="0.53657671429999998" green="0.21003639769999999" blue="0.68431504750000005" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="icon" value="Users"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="icon" value="Cogs"/>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="subviews">
@@ -1157,30 +1154,31 @@
                                             <exclude reference="Y78-UI-xNQ"/>
                                             <exclude reference="ahW-Nr-vEn"/>
                                             <exclude reference="uIA-IU-5HD"/>
-                                            <exclude reference="4bG-7h-oaH"/>
-                                            <exclude reference="8Y7-sf-5ra"/>
-                                            <exclude reference="TXU-5P-x8c"/>
-                                            <exclude reference="U9f-PC-Ybu"/>
                                             <exclude reference="ZEl-8M-l7g"/>
                                             <exclude reference="gOx-ri-Vb9"/>
                                             <exclude reference="oeF-Gz-TjB"/>
                                             <exclude reference="s1b-c9-N1Z"/>
+                                            <exclude reference="4bG-7h-oaH"/>
+                                            <exclude reference="8Y7-sf-5ra"/>
+                                            <exclude reference="TXU-5P-x8c"/>
+                                            <exclude reference="U9f-PC-Ybu"/>
                                             <exclude reference="ZPv-Jh-j9W"/>
                                             <exclude reference="alb-Cm-76v"/>
                                         </mask>
                                     </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
+                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="213"/>
                                         <mask key="constraints">
                                             <include reference="Y78-UI-xNQ"/>
                                             <include reference="ahW-Nr-vEn"/>
                                             <include reference="uIA-IU-5HD"/>
-                                            <include reference="8Y7-sf-5ra"/>
-                                            <include reference="TXU-5P-x8c"/>
-                                            <include reference="U9f-PC-Ybu"/>
                                             <include reference="ZEl-8M-l7g"/>
                                             <include reference="gOx-ri-Vb9"/>
                                             <include reference="oeF-Gz-TjB"/>
                                             <include reference="s1b-c9-N1Z"/>
+                                            <include reference="8Y7-sf-5ra"/>
+                                            <include reference="TXU-5P-x8c"/>
+                                            <include reference="U9f-PC-Ybu"/>
                                             <include reference="ZPv-Jh-j9W"/>
                                             <include reference="alb-Cm-76v"/>
                                         </mask>
@@ -1254,14 +1252,14 @@
                                             <exclude reference="cAW-gD-I3E"/>
                                             <exclude reference="h59-Ss-nms"/>
                                             <exclude reference="sms-9F-STr"/>
-                                            <exclude reference="VBm-et-7xo"/>
-                                            <exclude reference="g97-s7-7wo"/>
-                                            <exclude reference="zXP-sV-gDV"/>
                                             <exclude reference="6Kd-GH-XR4"/>
                                             <exclude reference="8wF-3s-P7K"/>
                                             <exclude reference="GSW-uw-WXw"/>
                                             <exclude reference="Xx8-rO-EhJ"/>
                                             <exclude reference="vfy-03-DdE"/>
+                                            <exclude reference="VBm-et-7xo"/>
+                                            <exclude reference="g97-s7-7wo"/>
+                                            <exclude reference="zXP-sV-gDV"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -1269,13 +1267,13 @@
                                             <include reference="cAW-gD-I3E"/>
                                             <include reference="h59-Ss-nms"/>
                                             <include reference="sms-9F-STr"/>
-                                            <include reference="VBm-et-7xo"/>
-                                            <include reference="g97-s7-7wo"/>
-                                            <include reference="zXP-sV-gDV"/>
                                             <include reference="6Kd-GH-XR4"/>
                                             <include reference="GSW-uw-WXw"/>
                                             <include reference="Xx8-rO-EhJ"/>
                                             <include reference="vfy-03-DdE"/>
+                                            <include reference="VBm-et-7xo"/>
+                                            <include reference="g97-s7-7wo"/>
+                                            <include reference="zXP-sV-gDV"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -1593,7 +1591,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ew-X2-dBH">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEK-G5-BiS" userLabel="Content">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fEK-G5-BiS" userLabel="Content">
                                         <rect key="frame" x="0.0" y="0.0" width="115" height="640"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzX-jI-ahG">
@@ -1613,7 +1611,7 @@
                                                     <constraint firstAttribute="height" constant="250" id="Ehb-gU-it2"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMM-Jr-J1X">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMM-Jr-J1X">
                                                 <rect key="frame" x="20" y="307" width="75" height="33"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -5802,6 +5800,9 @@ Let's record it for later ...</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="59" y="11" width="500" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
