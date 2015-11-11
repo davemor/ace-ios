@@ -107,6 +107,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         //hideCalendar()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollToDate(currentDate, animated: false)
+    }
+    
     var toggling = false // This is a bit of hack - make calendar hidden
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -202,16 +207,20 @@ extension CalendarViewController { //: CVCalendarViewDelegate {
         currentDate = dayView.date
         print("\(calendarView.presentedDate.commonDescription) is selected!")
         refresh()
-        scrollToDate(currentDate)
+        scrollToDate(currentDate, animated: true)
     }
     
-    func scrollToDate(date: CVDate) {
+    func scrollToDate(date: CVDate, animated: Bool) {
         // the day of the month is the section
         let section = date.day - 1 // sections are zero indexed, the days of the month are not.
         var sectionRect = tableView.rectForSection(section)
         sectionRect.size.height = tableView.frame.size.height;
-        UIView.animateWithDuration(0.5) {
-            self.tableView.scrollRectToVisible(sectionRect, animated:true)
+        if animated {
+            UIView.animateWithDuration(0.5) {
+                self.tableView.scrollRectToVisible(sectionRect, animated:animated)
+            }
+        } else {
+            self.tableView.scrollRectToVisible(sectionRect, animated:animated)
         }
     }
     
@@ -413,22 +422,3 @@ extension CalendarViewController { // : UITableViewDelegate {
         return daysForMonth[section].formattedDate
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
