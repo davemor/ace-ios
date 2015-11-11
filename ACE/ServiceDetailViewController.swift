@@ -11,8 +11,7 @@ import UIKit
 class ServiceDetailViewController: UITableViewController {
 
     @IBOutlet weak var serviceName: UILabel!
-    @IBOutlet weak var serviceDescription: UITextView!
-    @IBOutlet weak var serviceDescriptionHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var serviceDescription: UILabel!
 
     
     @IBOutlet var businessTimeLabels: [UILabel]!
@@ -32,12 +31,17 @@ class ServiceDetailViewController: UITableViewController {
 
         serviceName.text = service.name
         serviceDescription.text = service.desc
+        serviceDescription.sizeToFit()
         
+        self.tableView.setNeedsLayout()
+        self.tableView.layoutIfNeeded()
+        
+        /*
         serviceDescriptionHeightConstraint.constant = serviceDescription.sizeThatFits(CGSizeMake(serviceDescription.frame.size.width, CGFloat.max)).height
         serviceDescription.layoutIfNeeded()
         serviceDescription.updateConstraints()
         serviceDescription.setNeedsDisplay()
-        
+        */
 
         
         for time in service.businessTimes {

@@ -2082,62 +2082,64 @@ G11 5QP</string>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="227" id="DhN-hJ-PUY">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="0.0" id="DhN-hJ-PUY">
                                         <rect key="frame" x="0.0" y="130" width="600" height="227"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DhN-hJ-PUY" id="Bwh-o0-594">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="226"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcE-sW-r0c">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2S-AL-qRR">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="226" id="ngC-9m-eTQ"/>
-                                                    </constraints>
-                                                    <string key="text">Aberlour Family Outreach Edinburgh works with mothers and fathers and their children, aged 0 - 16 years. The parents must be having difficulties with drug and / or alcohol misuse. They also work with pregnant women, and women with new born babies. They work with parents to address the effect of their drinking or drug use on their children, and to help them to stop using drugs or alcohol. They can support families Monday to Saturday, up to three times per week. They can come any time of day from early mornings until 8pm. They also have a project for children or young people aged 5 - 16 who need extra help because of their parent's substance use.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="ngC-9m-eTQ"/>
-                                                        </mask>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="8" y="8" width="384" height="63"/>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="ngC-9m-eTQ"/>
-                                                        </mask>
-                                                    </variation>
-                                                </textView>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="zcE-sW-r0c" firstAttribute="top" secondItem="Bwh-o0-594" secondAttribute="topMargin" constant="-8" id="CQ5-zh-yIg"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="zcE-sW-r0c" secondAttribute="bottom" constant="-8" id="jgI-99-Rqo"/>
-                                                <constraint firstItem="zcE-sW-r0c" firstAttribute="leading" secondItem="Bwh-o0-594" secondAttribute="leadingMargin" id="q54-bA-hHM"/>
-                                                <constraint firstItem="zcE-sW-r0c" firstAttribute="trailing" secondItem="Bwh-o0-594" secondAttribute="trailingMargin" id="to0-Qz-0tt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="R2S-AL-qRR" secondAttribute="bottom" id="4tM-OP-m0c"/>
+                                                <constraint firstAttribute="topMargin" secondItem="R2S-AL-qRR" secondAttribute="top" id="7b8-vq-2g1"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="R2S-AL-qRR" secondAttribute="leading" id="KLH-7B-kIU"/>
+                                                <constraint firstItem="R2S-AL-qRR" firstAttribute="leading" secondItem="Bwh-o0-594" secondAttribute="leadingMargin" id="KSi-De-Ead"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="R2S-AL-qRR" secondAttribute="trailing" id="Lla-Uc-t4K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="R2S-AL-qRR" secondAttribute="bottom" id="Vre-P0-qU6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="R2S-AL-qRR" secondAttribute="trailing" id="aW2-ov-qr6"/>
+                                                <constraint firstItem="R2S-AL-qRR" firstAttribute="top" secondItem="Bwh-o0-594" secondAttribute="topMargin" id="oia-Sa-MLU"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
-                                                    <exclude reference="zcE-sW-r0c"/>
+                                                    <exclude reference="R2S-AL-qRR"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="CQ5-zh-yIg"/>
-                                                    <exclude reference="jgI-99-Rqo"/>
-                                                    <exclude reference="q54-bA-hHM"/>
-                                                    <exclude reference="to0-Qz-0tt"/>
+                                                    <exclude reference="4tM-OP-m0c"/>
+                                                    <exclude reference="7b8-vq-2g1"/>
+                                                    <exclude reference="KLH-7B-kIU"/>
+                                                    <exclude reference="KSi-De-Ead"/>
+                                                    <exclude reference="Lla-Uc-t4K"/>
+                                                    <exclude reference="Vre-P0-qU6"/>
+                                                    <exclude reference="aW2-ov-qr6"/>
+                                                    <exclude reference="oia-Sa-MLU"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
+                                            <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                                <rect key="frame" x="0.0" y="-1" width="400" height="1"/>
                                                 <mask key="subviews">
-                                                    <include reference="zcE-sW-r0c"/>
+                                                    <include reference="R2S-AL-qRR"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="CQ5-zh-yIg"/>
-                                                    <include reference="jgI-99-Rqo"/>
-                                                    <include reference="q54-bA-hHM"/>
-                                                    <include reference="to0-Qz-0tt"/>
+                                                    <exclude reference="4tM-OP-m0c"/>
+                                                    <include reference="7b8-vq-2g1"/>
+                                                    <include reference="KLH-7B-kIU"/>
+                                                    <exclude reference="KSi-De-Ead"/>
+                                                    <exclude reference="Lla-Uc-t4K"/>
+                                                    <include reference="Vre-P0-qU6"/>
+                                                    <include reference="aW2-ov-qr6"/>
+                                                    <exclude reference="oia-Sa-MLU"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -2903,8 +2905,7 @@ G11 5QP</string>
                     </tableView>
                     <connections>
                         <outlet property="email" destination="0Dq-5P-g1G" id="cka-6C-X9W"/>
-                        <outlet property="serviceDescription" destination="zcE-sW-r0c" id="CfI-7Z-aBS"/>
-                        <outlet property="serviceDescriptionHeightConstraint" destination="ngC-9m-eTQ" id="JVX-NH-d9a"/>
+                        <outlet property="serviceDescription" destination="R2S-AL-qRR" id="4Hc-mN-mHf"/>
                         <outlet property="serviceName" destination="HCx-Nx-VJX" id="wzm-pA-7eE"/>
                         <outlet property="telephone" destination="mGM-Dp-g9c" id="qpH-tT-A1u"/>
                         <outlet property="website" destination="Ev0-ya-VR2" id="Wsd-kE-mwH"/>
