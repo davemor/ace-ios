@@ -4392,6 +4392,53 @@ G11 5QP</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="m8H-2g-wa3" customClass="CustomHeaderView" customModule="ARC" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx1-rS-uQt">
+                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <animations/>
+                                    <string key="text">We know it can be tough reaching out when times are tough. If you add in the names of the people who support you we can make it easier for you to get in touch with them during those difficult times. Pressing the red ‘emergency’ button on the home screen will make it easy for you to call or text anyone from this list.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Hx1-rS-uQt" firstAttribute="top" secondItem="m8H-2g-wa3" secondAttribute="top" constant="20" symbolic="YES" id="1cV-Sw-RSK"/>
+                                <constraint firstItem="Hx1-rS-uQt" firstAttribute="leading" secondItem="m8H-2g-wa3" secondAttribute="leading" constant="20" symbolic="YES" id="Rki-vR-rpc"/>
+                                <constraint firstAttribute="trailing" secondItem="Hx1-rS-uQt" secondAttribute="trailing" constant="20" symbolic="YES" id="YOH-z0-5bW"/>
+                                <constraint firstAttribute="bottom" secondItem="Hx1-rS-uQt" secondAttribute="bottom" constant="20" symbolic="YES" id="gBs-bM-UpC"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="Hx1-rS-uQt"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <exclude reference="1cV-Sw-RSK"/>
+                                    <exclude reference="Rki-vR-rpc"/>
+                                    <exclude reference="YOH-z0-5bW"/>
+                                    <exclude reference="gBs-bM-UpC"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="Hx1-rS-uQt"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="1cV-Sw-RSK"/>
+                                    <include reference="Rki-vR-rpc"/>
+                                    <include reference="YOH-z0-5bW"/>
+                                    <include reference="gBs-bM-UpC"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <outlet property="label" destination="Hx1-rS-uQt" id="cCi-1c-c3y"/>
+                            </connections>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="contactReuseId" id="eGO-Xe-Tbg">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>

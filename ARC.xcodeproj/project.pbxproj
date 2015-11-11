@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491B5A0D1BF372F700C116BA /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491B5A0C1BF372F700C116BA /* CustomHeaderView.swift */; };
 		492E4F441BF0F641009BC873 /* NSDate-toRelativeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E4F431BF0F641009BC873 /* NSDate-toRelativeName.swift */; };
 		B0597BFFC0D90966B9055223 /* Pods_ARC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1884887B915F53880B1DF0 /* Pods_ARC.framework */; };
 		B492A62DD332157F1A4507FA /* Pods_ARCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB5E3313E20696AE1752009 /* Pods_ARCTests.framework */; };
@@ -136,6 +137,7 @@
 
 /* Begin PBXFileReference section */
 		38C01D39147E5DD0FB6F84DC /* Pods-ARCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARCTests/Pods-ARCTests.release.xcconfig"; sourceTree = "<group>"; };
+		491B5A0C1BF372F700C116BA /* CustomHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		492E4F431BF0F641009BC873 /* NSDate-toRelativeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-toRelativeName.swift"; sourceTree = "<group>"; };
 		7AB70A1C88156340096CD569 /* Pods-ARC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARC.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARC/Pods-ARC.release.xcconfig"; sourceTree = "<group>"; };
 		AEB5E3313E20696AE1752009 /* Pods_ARCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -563,6 +565,7 @@
 				FFC2E1B31AFE737700D11DF5 /* ContactListViewController.swift */,
 				FFC2E1B91AFF88F300D11DF5 /* ContactDetailsViewController.swift */,
 				FFBB4D5F1B286F6F00822E5C /* PhotoViewController.swift */,
+				491B5A0C1BF372F700C116BA /* CustomHeaderView.swift */,
 			);
 			name = About;
 			sourceTree = "<group>";
@@ -888,6 +891,7 @@
 				FF75EB3D1B1F151800B9B969 /* ServiceDetailViewController.swift in Sources */,
 				FF98E5F91B2EC507003E235F /* AppInfoController.swift in Sources */,
 				FF5CEF501BD9544500030FB5 /* Sequence.swift in Sources */,
+				491B5A0D1BF372F700C116BA /* CustomHeaderView.swift in Sources */,
 				FF73953A1B0C6C0B00972F67 /* CVCalendarWeekday.swift in Sources */,
 				FFDAF6FA1B146B6800BC4589 /* MeetingActivity.swift in Sources */,
 				FF380AE41BD94A0000EE944C /* Results.swift in Sources */,

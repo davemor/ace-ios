@@ -19,7 +19,7 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         do {
             try contacts = Realm().objects(Contact.self)
         } catch {
@@ -44,6 +44,26 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
     override func viewWillAppear(animated: Bool) {
         tableView.reloadData()
     }
+    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        sizeHeaderToFit()
+    }
+    
+    func sizeHeaderToFit() {
+        let headerView = tableView.tableHeaderView!
+        
+        headerView.setNeedsLayout()
+        headerView.layoutIfNeeded()
+        
+        let height = headerView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+        var frame = headerView.frame
+        frame.size.height = height
+        headerView.frame = frame
+        
+        tableView.tableHeaderView = headerView
+    }
+
     
     // MARK: - Actions
     
