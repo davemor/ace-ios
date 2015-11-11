@@ -60,4 +60,8 @@ class CommunityActivity: Object, Activity {
         
         return rtnDate!
     }
+    
+    var color: UIColor  {
+        get { return UIColor.grayColor() }
+    }
 }

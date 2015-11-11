@@ -39,4 +39,7 @@ class MeetingActivity: Object, Activity {
         get { return true }
         set { /* do nothing */ }
     }
+    var color: UIColor  {
+        get { return meeting!.group!.color }
+    }
 }

@@ -393,6 +393,7 @@ extension CalendarViewController: UITableViewDataSource {
         let activity = activityForIndexPath(indexPath)
         cell.titleLabel.text = activity.name
         cell.timeLabel.text = activity.start.toString(format: DateFormat.Custom("HH:mm"))
+        cell.backgroundColor = activity.color
         
         // set up the shading
         if activity.attending {

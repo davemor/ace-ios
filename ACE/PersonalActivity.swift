@@ -31,4 +31,7 @@ class PersonalActivity: Object, Activity {
         get { return isAttending }
         set { isAttending = newValue }
     }
+    var color: UIColor  {
+        get { return UIColor.grayColor() }
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol Activity {
     var name: String { get }
@@ -20,4 +21,5 @@ protocol Activity {
     var venue: Venue? { get }
     
     var attending: Bool { get set }
+    var color: UIColor { get }
 }
