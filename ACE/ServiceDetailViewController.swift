@@ -12,6 +12,8 @@ class ServiceDetailViewController: UITableViewController {
 
     @IBOutlet weak var serviceName: UILabel!
     @IBOutlet weak var serviceDescription: UITextView!
+    @IBOutlet weak var serviceDescriptionHeightConstraint: NSLayoutConstraint!
+
     
     @IBOutlet var businessTimeLabels: [UILabel]!
     
@@ -23,9 +25,20 @@ class ServiceDetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableViewAutomaticDimension
 
         serviceName.text = service.name
         serviceDescription.text = service.desc
+        
+        serviceDescriptionHeightConstraint.constant = serviceDescription.sizeThatFits(CGSizeMake(serviceDescription.frame.size.width, CGFloat.max)).height
+        serviceDescription.layoutIfNeeded()
+        serviceDescription.updateConstraints()
+        serviceDescription.setNeedsDisplay()
+        
+
         
         for time in service.businessTimes {
             for index in 0..<businessTimeLabels.count {

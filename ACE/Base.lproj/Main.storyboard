@@ -2089,13 +2089,26 @@ G11 5QP</string>
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="226"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcE-sW-r0c">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcE-sW-r0c">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="226" id="ngC-9m-eTQ"/>
+                                                    </constraints>
                                                     <string key="text">Aberlour Family Outreach Edinburgh works with mothers and fathers and their children, aged 0 - 16 years. The parents must be having difficulties with drug and / or alcohol misuse. They also work with pregnant women, and women with new born babies. They work with parents to address the effect of their drinking or drug use on their children, and to help them to stop using drugs or alcohol. They can support families Monday to Saturday, up to three times per week. They can come any time of day from early mornings until 8pm. They also have a project for children or young people aged 5 - 16 who need extra help because of their parent's substance use.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="ngC-9m-eTQ"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="ngC-9m-eTQ"/>
+                                                        </mask>
+                                                    </variation>
                                                 </textView>
                                             </subviews>
                                             <animations/>
@@ -2891,6 +2904,7 @@ G11 5QP</string>
                     <connections>
                         <outlet property="email" destination="0Dq-5P-g1G" id="cka-6C-X9W"/>
                         <outlet property="serviceDescription" destination="zcE-sW-r0c" id="CfI-7Z-aBS"/>
+                        <outlet property="serviceDescriptionHeightConstraint" destination="ngC-9m-eTQ" id="JVX-NH-d9a"/>
                         <outlet property="serviceName" destination="HCx-Nx-VJX" id="wzm-pA-7eE"/>
                         <outlet property="telephone" destination="mGM-Dp-g9c" id="qpH-tT-A1u"/>
                         <outlet property="website" destination="Ev0-ya-VR2" id="Wsd-kE-mwH"/>
