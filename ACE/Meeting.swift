@@ -42,21 +42,29 @@ class Meeting: Object {
     // computed values for public interface
     
     var displayName: String {
-        var rtn = "unknown"
+        var rtn = ""
         if self.name.isEmpty {
             if let g = self.group {
                 rtn = g.name
+            } else {
+                rtn = "unknown"
             }
+        } else {
+            rtn = self.name
         }
         return rtn
     }
     
     var displayDescription: String {
-        var rtn = "unknown"
+        var rtn = ""
         if self.desc.isEmpty {
             if let g = self.group {
                 rtn = g.desc
+            } else {
+                rtn = "unknown"
             }
+        } else {
+            rtn = self.desc
         }
         return rtn
     }
