@@ -34,7 +34,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     func refresh() {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let filePath = defaults.objectForKey("user_picture") as? String,
-           let image = UIImage(contentsOfFile: filePath) {
+           let image = UIImage(contentsOfFile: documentPath(filePath)) {
             imageView.image = image
         } else {
             // there is no picture
@@ -51,11 +51,14 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.allowsEditing = true
-            picker.sourceType = UIImagePickerControllerSourceType.Camera
-            self.presentViewController(picker, animated:true, completion:nil)
+            dispatch_async(dispatch_get_main_queue(), {
+                let imagePicker: UIImagePickerController = UIImagePickerController();
+                imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+                imagePicker.allowsEditing = true;
+                imagePicker.delegate = self;
+                
+                self.presentViewController(imagePicker, animated: true, completion: nil);
+            });
         }
     }
 
@@ -63,7 +66,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         
         // save the image to the local documents folder
-        let fullPath = makePathForImage(generateUniqueFileName())
+        let imageFileName = generateUniqueFileName()
+        let fullPath = makePathForImage(imageFileName)
         saveAsPNG(image, fullPath: fullPath)
         
         if picker.sourceType == .Camera {
@@ -74,7 +78,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             
         // write the file type to the user preferences
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(fullPath, forKey: "user_picture")
+        defaults.setObject(imageFileName, forKey: "user_picture")
         
         picker.dismissViewControllerAnimated(true, completion: nil)
         

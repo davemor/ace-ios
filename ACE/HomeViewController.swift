@@ -84,10 +84,9 @@ class HomeViewController: UIViewController {
     */
     
     func refreshView() {
-        
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let filePath = defaults.objectForKey("user_picture") as? String,
-            let image = UIImage(contentsOfFile: filePath) {
+        if let imagePath = defaults.objectForKey("user_picture") as? String,
+            let image = UIImage(contentsOfFile: documentPath(imagePath)) {
                 pictureView.image = image
                 pictureView.setNeedsDisplay()
         }

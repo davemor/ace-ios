@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491AE1FB1BFD1B2E00409041 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491AE1FA1BFD1B2E00409041 /* Files.swift */; };
 		491B5A0D1BF372F700C116BA /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491B5A0C1BF372F700C116BA /* CustomHeaderView.swift */; };
 		492E4F441BF0F641009BC873 /* NSDate-toRelativeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E4F431BF0F641009BC873 /* NSDate-toRelativeName.swift */; };
 		B0597BFFC0D90966B9055223 /* Pods_ARC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1884887B915F53880B1DF0 /* Pods_ARC.framework */; };
@@ -137,6 +138,7 @@
 
 /* Begin PBXFileReference section */
 		38C01D39147E5DD0FB6F84DC /* Pods-ARCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARCTests/Pods-ARCTests.release.xcconfig"; sourceTree = "<group>"; };
+		491AE1FA1BFD1B2E00409041 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		491B5A0C1BF372F700C116BA /* CustomHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		492E4F431BF0F641009BC873 /* NSDate-toRelativeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-toRelativeName.swift"; sourceTree = "<group>"; };
 		7AB70A1C88156340096CD569 /* Pods-ARC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARC.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARC/Pods-ARC.release.xcconfig"; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 				FF9E9F951AE400F200F3516C /* Reachability.swift */,
 				FF54C2DC1AE6A2ED00943B41 /* Strings.swift */,
 				FF8596441AFAA8920099DFF8 /* Dates.swift */,
+				491AE1FA1BFD1B2E00409041 /* Files.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -917,6 +920,7 @@
 				FFC486E71AE0DF0D0045C9CE /* ActivitiesViewController.swift in Sources */,
 				FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */,
 				FF7395311B0C6C0B00972F67 /* CVCalendarTouchController.swift in Sources */,
+				491AE1FB1BFD1B2E00409041 /* Files.swift in Sources */,
 				FFCDAE3C1B1B2E680016614F /* DiaryEntry.swift in Sources */,
 				FF7395291B0C6C0B00972F67 /* CVCalendarContentViewController.swift in Sources */,
 				FF1E1B6B1B2A398400A97F12 /* MeetingsDetailViewController.swift in Sources */,
@@ -1081,7 +1085,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ACE/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tmnr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ARC;
@@ -1098,7 +1102,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ACE/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tmnr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ARC;
