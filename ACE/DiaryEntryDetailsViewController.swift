@@ -113,4 +113,21 @@ class DiaryEntryDetailsViewController: UIViewController, UITextViewDelegate {
             }
         }
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func deleteEntryTapped(sender: AnyObject) {
+        
+        do {
+            let realm = try Realm()
+            try realm.write {
+                self.entry.text = self.textLabel.text
+                realm.delete(self.entry)
+                self.navigationController?.popViewControllerAnimated(true)
+
+            }
+        } catch {
+            print("Error deleting diary entry.")
+        }
+    }
 }
