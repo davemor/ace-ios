@@ -99,7 +99,8 @@ class NewDiaryEntryViewController: UIViewController, UIImagePickerControllerDele
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         
         // save the image to the local documents folder
-        let fullPath = makePathForImage(generateUniqueFileName())
+        let imageFileName = generateUniqueFileName()
+        let fullPath = makePathForImage(imageFileName)
         saveAsPNG(image, fullPath: fullPath)
         
         if picker.sourceType == .Camera {
@@ -108,7 +109,7 @@ class NewDiaryEntryViewController: UIViewController, UIImagePickerControllerDele
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
         
-        self.imagePath = fullPath
+        self.imagePath = imageFileName
         
         picker.dismissViewControllerAnimated(true, completion: nil)
         
@@ -118,28 +119,4 @@ class NewDiaryEntryViewController: UIViewController, UIImagePickerControllerDele
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    // MARK: - Helpers
-    func generateUniqueFileName() -> String {
-        // create a unique file name for the image
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd-hh-mm-ss-SSS" // ms for a unique filename
-        let now = NSDate()
-        let dateStr = dateFormatter.stringFromDate(now)
-        let randomStr = String(arc4random_uniform(256)) // and a random number
-        let fileName = dateStr + randomStr
-        return fileName
-    }
-    func makePathForImage(fileName: String) -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentsPath = paths[0] 
-        let fullPath = documentsPath + "/" + fileName + ".png" // TODO: This might be a source of bugs.
-        return fullPath
-    }
-    func saveAsPNG(image: UIImage, fullPath: String) {
-        // save the image to our local directory so the app can get it back
-        let pngData = UIImagePNGRepresentation(image);
-        pngData!.writeToFile(fullPath, atomically: true)
-    }
-
 }

@@ -23,9 +23,6 @@ class DiaryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 68.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-    
         do {
             try diaryEntries = Realm().objects(DiaryEntry).sorted("date", ascending: false)
             
@@ -46,12 +43,12 @@ class DiaryViewController: UITableViewController {
     func refresh() {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let filePath = defaults.objectForKey("user_picture") as? String {
-            userImage = UIImage(contentsOfFile: filePath)
+            userImage = UIImage(contentsOfFile: documentPath(filePath))
         }
         var idx = 0
         for entry in diaryEntries {
             if entry.hasImage {
-                images[idx] = UIImage(contentsOfFile: entry.imagePath)
+                images[idx] = UIImage(contentsOfFile: documentPath(entry.imagePath))
             }
             idx = idx + 1
         }
@@ -81,15 +78,23 @@ class DiaryViewController: UITableViewController {
         // Return the number of rows in the section.
         return diaryEntries.count
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 250
+        } else {
+            return 200
+        }
+    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("topCellId", forIndexPath: indexPath) as! DiaryTopCell
             
             let entry = entryAtPath(indexPath)
-            cell.titleLabel.text = entry.text
+            cell.titleLabel.text = entry.text.stringByAppendingString("\n\n\n\n")
             cell.dateLabel.text = entry.date.toRelativeName()
-            if let image = UIImage(contentsOfFile: entry.imagePath) {
+            if let image = UIImage(contentsOfFile: documentPath(entry.imagePath)) {
                 cell.backgroundImage.image = image
             }
             cell.backgroundImage.layer.zPosition = -1
@@ -97,13 +102,13 @@ class DiaryViewController: UITableViewController {
                 cell.userImage.image = image
                 cell.userImage.setNeedsDisplay()
             }
-            cell.backgroundColor = getAceColorForIndex(indexPath.row)
+            cell.backgroundColor = UIColor.clearColor()
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("textCellId", forIndexPath: indexPath) as! DiaryCell
             let entry = entryAtPath(indexPath)
             cell.dateLabel.text = entry.date.toRelativeName()
-            cell.titleLabel.text = entry.text
+            cell.titleLabel.text = entry.text.stringByAppendingString("\n\n\n\n")
             if entry.hasImage {
                 // print(indexPath, terminator: "")
                 if let img = images[indexPath.row] {

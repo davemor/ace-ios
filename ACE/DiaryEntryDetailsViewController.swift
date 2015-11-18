@@ -27,14 +27,14 @@ class DiaryEntryDetailsViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
 
         dateLabel.text = entry.date.toRelativeName()
-        imageLabel.image = UIImage(contentsOfFile: entry.imagePath)
+        imageLabel.image = UIImage(contentsOfFile: documentPath(entry.imagePath))
         textLabel.text = entry.text
         
         textLabel.delegate = self
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: Selector("editView"))
         
         let leftConstraint = NSLayoutConstraint.init(item:self.contentView,
-            attribute:NSLayoutAttribute.Leading,
+            attribute:NSLayoutAttribute.Left,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self.view,
             attribute:NSLayoutAttribute.Left,
@@ -44,7 +44,7 @@ class DiaryEntryDetailsViewController: UIViewController, UITextViewDelegate {
         self.view.addConstraint(leftConstraint)
         
         let rightConstraint = NSLayoutConstraint.init(item:self.contentView,
-            attribute:NSLayoutAttribute.Trailing,
+            attribute:NSLayoutAttribute.Right,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self.view,
             attribute:NSLayoutAttribute.Right,
