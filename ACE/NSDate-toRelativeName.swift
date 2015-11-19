@@ -24,4 +24,23 @@ extension NSDate {
         }
         return name
     }
+    
+    func compareTime(other :NSDate) -> NSComparisonResult {
+        let cal = NSCalendar.currentCalendar()
+        var flags: NSCalendarUnit = [.Hour, .Minute]
+        let componentsThis = cal.components(flags, fromDate: self)
+        componentsThis.day = 1
+        componentsThis.month = 1
+        componentsThis.year = 2015
+        
+        let componentsOther = cal.components(flags, fromDate: other)
+        componentsOther.day = 1
+        componentsOther.month = 1
+        componentsOther.year = 2015
+        
+        let thisDate = cal.dateFromComponents(componentsThis)
+        let otherDate = cal.dateFromComponents(componentsOther)
+        
+        return thisDate!.compare(otherDate!)
+    }
 }

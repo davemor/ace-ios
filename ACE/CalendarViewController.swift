@@ -72,6 +72,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
             day.activities += community.mapFilter {
                 $0.includeOnDate(date) ? $0 : nil as Activity?
             }
+            
+            
+            day.activities.sortInPlace( {$0.start.compareTime($1.start) == NSComparisonResult.OrderedAscending })
+            
+            
             daysForMonth.append(day)
         }
     }
