@@ -64,6 +64,12 @@
 		FF70C1061B300023000883E7 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = FF70C1051B300023000883E7 /* about.html */; };
 		FF70C1081B300A34000883E7 /* eadp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF70C1071B300A34000883E7 /* eadp.jpg */; };
 		FF70C10A1B300B8D000883E7 /* cec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF70C1091B300B8D000883E7 /* cec.jpg */; };
+		FF72FB171C0F897400F5C503 /* Building Self Confidence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF72FB131C0F897400F5C503 /* Building Self Confidence.mp3 */; };
+		FF72FB181C0F897400F5C503 /* mindfulness_exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = FF72FB141C0F897400F5C503 /* mindfulness_exercises.json */; };
+		FF72FB191C0F897400F5C503 /* One Minute Breathing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF72FB151C0F897400F5C503 /* One Minute Breathing.mp3 */; };
+		FF72FB1A1C0F897400F5C503 /* Rapid Relax.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF72FB161C0F897400F5C503 /* Rapid Relax.mp3 */; };
+		FF72FB1D1C0F897C00F5C503 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = FF72FB1C1C0F897C00F5C503 /* quotes.json */; };
+		FF72FB1F1C10567700F5C503 /* EdinburghApps.png in Resources */ = {isa = PBXBuildFile; fileRef = FF72FB1E1C10567700F5C503 /* EdinburghApps.png */; };
 		FF7395281B0C6C0B00972F67 /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73950E1B0C6C0B00972F67 /* CVAuxiliaryView.swift */; };
 		FF7395291B0C6C0B00972F67 /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73950F1B0C6C0B00972F67 /* CVCalendarContentViewController.swift */; };
 		FF73952A1B0C6C0B00972F67 /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7395101B0C6C0B00972F67 /* CVCalendarDayView.swift */; };
@@ -201,6 +207,12 @@
 		FF70C1051B300023000883E7 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		FF70C1071B300A34000883E7 /* eadp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eadp.jpg; sourceTree = "<group>"; };
 		FF70C1091B300B8D000883E7 /* cec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cec.jpg; sourceTree = "<group>"; };
+		FF72FB131C0F897400F5C503 /* Building Self Confidence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Building Self Confidence.mp3"; sourceTree = "<group>"; };
+		FF72FB141C0F897400F5C503 /* mindfulness_exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mindfulness_exercises.json; sourceTree = "<group>"; };
+		FF72FB151C0F897400F5C503 /* One Minute Breathing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "One Minute Breathing.mp3"; sourceTree = "<group>"; };
+		FF72FB161C0F897400F5C503 /* Rapid Relax.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rapid Relax.mp3"; sourceTree = "<group>"; };
+		FF72FB1C1C0F897C00F5C503 /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		FF72FB1E1C10567700F5C503 /* EdinburghApps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EdinburghApps.png; sourceTree = "<group>"; };
 		FF73950E1B0C6C0B00972F67 /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		FF73950F1B0C6C0B00972F67 /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
 		FF7395101B0C6C0B00972F67 /* CVCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarDayView.swift; sourceTree = "<group>"; };
@@ -366,6 +378,8 @@
 		FF20F0EA1ABAFE79009CDF4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FF72FB1B1C0F897C00F5C503 /* Quotes */,
+				FF72FB121C0F897400F5C503 /* MindfulnessExercises */,
 				FF70C1041B2FFFE7000883E7 /* AppInfoHtml */,
 				FF3755541B22DCE800EE1F00 /* FontAwesome.otf */,
 				FF20F0EB1ABAFE79009CDF4D /* Info.plist */,
@@ -464,11 +478,31 @@
 		FF70C1041B2FFFE7000883E7 /* AppInfoHtml */ = {
 			isa = PBXGroup;
 			children = (
+				FF72FB1E1C10567700F5C503 /* EdinburghApps.png */,
 				FF70C1091B300B8D000883E7 /* cec.jpg */,
 				FF70C1071B300A34000883E7 /* eadp.jpg */,
 				FF70C1051B300023000883E7 /* about.html */,
 			);
 			name = AppInfoHtml;
+			sourceTree = "<group>";
+		};
+		FF72FB121C0F897400F5C503 /* MindfulnessExercises */ = {
+			isa = PBXGroup;
+			children = (
+				FF72FB131C0F897400F5C503 /* Building Self Confidence.mp3 */,
+				FF72FB141C0F897400F5C503 /* mindfulness_exercises.json */,
+				FF72FB151C0F897400F5C503 /* One Minute Breathing.mp3 */,
+				FF72FB161C0F897400F5C503 /* Rapid Relax.mp3 */,
+			);
+			path = MindfulnessExercises;
+			sourceTree = "<group>";
+		};
+		FF72FB1B1C0F897C00F5C503 /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				FF72FB1C1C0F897C00F5C503 /* quotes.json */,
+			);
+			path = Quotes;
 			sourceTree = "<group>";
 		};
 		FF7395091B0B7ADF00972F67 /* Support */ = {
@@ -703,7 +737,7 @@
 				TargetAttributes = {
 					FF20F0E61ABAFE79009CDF4D = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 33W58W5MZ2;
+						DevelopmentTeam = DUAC26JHWC;
 					};
 					FF20F0FB1ABAFE79009CDF4D = {
 						CreatedOnToolsVersion = 6.2;
@@ -735,14 +769,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF72FB1F1C10567700F5C503 /* EdinburghApps.png in Resources */,
+				FF72FB1D1C0F897C00F5C503 /* quotes.json in Resources */,
 				FF5CEF4B1BD9544500030FB5 /* Info.plist in Resources */,
 				FF70C1061B300023000883E7 /* about.html in Resources */,
 				FF70C10A1B300B8D000883E7 /* cec.jpg in Resources */,
 				FF3755551B22DCE800EE1F00 /* FontAwesome.otf in Resources */,
 				FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */,
+				FF72FB1A1C0F897400F5C503 /* Rapid Relax.mp3 in Resources */,
+				FF72FB191C0F897400F5C503 /* One Minute Breathing.mp3 in Resources */,
 				FF70C1081B300A34000883E7 /* eadp.jpg in Resources */,
 				FF20F0F71ABAFE79009CDF4D /* LaunchScreen.xib in Resources */,
 				FF20F0F41ABAFE79009CDF4D /* Images.xcassets in Resources */,
+				FF72FB181C0F897400F5C503 /* mindfulness_exercises.json in Resources */,
+				FF72FB171C0F897400F5C503 /* Building Self Confidence.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

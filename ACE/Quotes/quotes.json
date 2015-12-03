@@ -1,0 +1,1208 @@
+[
+  {
+    "quote ID":1,
+    "Quote":"Keep your face always toward the sunshine - and shadows will fall behind you.",
+    "Author":"Walt Whitman",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":2,
+    "Quote":"If you look the right way, you can see that the whole world is a garden.",
+    "Author":"Frances Hodgson Burnett",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":3,
+    "Quote":"Life is meant to be a celebration! Wise is the person who finds a reason to make every day a special one.",
+    "Author":"Leo F. Buscaglia",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":4,
+    "Quote":"Some of your greatest pains, become your greatest strengths.",
+    "Author":"Drew Barrymore",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":5,
+    "Quote":"Determine that the thing can and shall be done, and then we shall find the way.",
+    "Author":"Abraham Lincoln",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":6,
+    "Quote":"I am not bound to win, but I am bound to be true. I am not bound to succeed, but I am bound to live up to what light I have.",
+    "Author":"Abraham Lincoln",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":7,
+    "Quote":"Always bear in mind that your own resolution to success is more important than any other one thing.",
+    "Author":"Abraham Lincoln",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":8,
+    "Quote":"If at first an idea isn't absurd there is no hope for it.",
+    "Author":"Albert Einstein",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":9,
+    "Quote":"Imagination is more important than knowledge.",
+    "Author":"Albert Einstein",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":10,
+    "Quote":"In the middle of difficulty lies opportunity.",
+    "Author":"Albert Einstein",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":11,
+    "Quote":"There are only two ways to live your life. One is, nothing is a miracle. The other is, everything is a miracle.",
+    "Author":"Albert Einstein",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":12,
+    "Quote":"When everything seems like an uphill struggle, just think of the view from the top.",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":13,
+    "Quote":"Your altitude is determined by your attitude.",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":14,
+    "Quote":"What you become is more important than what you accomplish.",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":15,
+    "Quote":"No individual raindrop considers itself responsible for the flood.",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":16,
+    "Quote":"Worry is a think stream of fear which, if encouraged, becomes a wide channel into which all other thoughts flow. Assume an attitude of positive expectancy!",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":17,
+    "Quote":"Man is what he believes.",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":18,
+    "Quote":"No one's happiness but my own is in my power to achieve or to destroy.",
+    "Author":"Ayn Rand",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":19,
+    "Quote":"The desire not to be anything is the desire not to be.",
+    "Author":"Ayn Rand",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":20,
+    "Quote":"Well done is better than well said.",
+    "Author":"Benjamin Franklin",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":21,
+    "Quote":"Success is to be measured not so much by the position that one has reached in life, as by the obstacles one has overcome trying to succeed.",
+    "Author":"Booker T. Washington",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":22,
+    "Quote":"We are what we think.",
+    "Author":"Buddha",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":23,
+    "Quote":"Better to light one small candle than to curse the darkness.",
+    "Author":"Chinese Proverb",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":24,
+    "Quote":"It's the constant and determined effort that breaks down all resistance, sweeps away all obstacles.",
+    "Author":"Claude M. Bristol",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":25,
+    "Quote":"Remember, today is the tomorrow you worried about yesterday.",
+    "Author":"Dale Carnegie",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":26,
+    "Quote":"I am not alone - I respect myself - I am a strong, capable person.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":27,
+    "Quote":"I am not a victim.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":28,
+    "Quote":"I no longer feel the need to control others - I affirm my worth & goodness.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":29,
+    "Quote":"I am a loving person - I touch those near me with love & gentleness.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":30,
+    "Quote":"I have a new awareness in my life - I am emotionally calm - I feel happy",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":31,
+    "Quote":"I am at peace with myself, I am a responsible person, I can be playful",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":32,
+    "Quote":"It's simple, not necessarily easy but, the rewards are endless.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":33,
+    "Quote":"Being a little kinder, a little slower to anger, a little more loving makes my life better�day by day.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":34,
+    "Quote":"Remember, today is the tomorrow you worried about yesterday.",
+    "Author":"Dale Carnegie",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":35,
+    "Quote":"�I take full charge of my life today.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":36,
+    "Quote":"I let serenity flow into my life - I feel appreciated.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":37,
+    "Quote":"I can give to others with no strings attached.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":38,
+    "Quote":"I can meet new opportunities without fear.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":39,
+    "Quote":"Believe only half of what you see and nothing that you hear.",
+    "Author":"Edgar Allan Poe",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":40,
+    "Quote":"I do not dwell on the past - I look for new challenges.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":41,
+    "Quote":"I�feel complete today, I feel great hope, I feel great potential for myself.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":42,
+    "Quote":"Remember to look up at the stars and not down at your feet.",
+    "Author":"Stephen Hawking",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":43,
+    "Quote":"I do not judge, I am tactful in my dealings with others.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":44,
+    "Quote":"I am learning to express my love, I feel good about myself.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":45,
+    "Quote":"I treat myself with kindness & patience.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":46,
+    "Quote":"I am an important person - I am beginning to establish my limits.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":47,
+    "Quote":"I am in charge of my life - I forgive myself & others who have hurt me.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":48,
+    "Quote":"I am a friend to myself, I can enjoy leisure without guilt & anxiety.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":49,
+    "Quote":"I can express my anger openly, honestly & appropriately.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":50,
+    "Quote":"I open my heart to my inner child, I can handle criticism with ease.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":51,
+    "Quote":"Today I will put all negativity behind me.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":52,
+    "Quote":"However hard life my seem there is always something you can do and succeed at.",
+    "Author":"Stephen Hawking",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":53,
+    "Quote":"If you can't fly then run, if you can't run then walk, if you can't walk then crawl but whatever you do you have to keep moving forward.",
+    "Author":"Martin Luther King",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":54,
+    "Quote":"We are good hearted, hard working, tenacious, gifted, worthy of life and all life�s treasures.� We are a human coloring book, created by God, Decorated by the inspiration of God�s beauty.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":55,
+    "Quote":"We have as many good qualities as the earth has droplets of water!� We merely haven�t discovered all of them yet!",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":56,
+    "Quote":"If I have a belief that I can do it, I shall surely acquire the capacity to do it; even if I have not had that belief in the beginning. ",
+    "Author":"Mahatama Gandhi",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":57,
+    "Quote":"You must love in such a way that the person you love feels free.",
+    "Author":"Thich Nhat Hanh",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":58,
+    "Quote":"People only see what they are prepared to see.",
+    "Author":"Ralph Waldo Emerson",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":59,
+    "Quote":"I know not who I am, simply that I am forever becoming exactly what I am meant to be.",
+    "Author":"Becca Lee",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":60,
+    "Quote":"Believe those who are seeking the truth. Doubt those that find it.",
+    "Author":"Andre Gide",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":61,
+    "Quote":"Think think think.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":62,
+    "Quote":"One day at time.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":63,
+    "Quote":"Don't wait for someone to bring you flowers. Plant your own garden and decorate your own soul.",
+    "Author":"Mario Quintana",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":64,
+    "Quote":"Climb the mountain so you can see the world, not so the world can see you.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":65,
+    "Quote":"Don't worry about dying. Worry about not living.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":66,
+    "Quote":"This, too, shall pass.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":67,
+    "Quote":"Expect miracles.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":68,
+    "Quote":"All that is gold does not glitter, not all those that wander are lost.",
+    "Author":"JRR Tolkein",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":69,
+    "Quote":"Money does not define a person's character or value. Kindness, compassion and integrity do.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":70,
+    "Quote":"We are here to laugh at the odds and live our lives so well that Death will tremble to take us.",
+    "Author":"Charles Bukowski",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":71,
+    "Quote":"Those who move mountains begin by carrying away small stones.",
+    "Author":"Confuncius",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":72,
+    "Quote":"Sobriety is a journey, not a destination.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":73,
+    "Quote":"Kindness should become the natural way of life, not the exception.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":74,
+    "Quote":"Over thinking is a dream killer. Sometimes you can drown yourself in your own thoughts.",
+    "Author":"Steve Maraboli",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":75,
+    "Quote":"To thine own self be true.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":76,
+    "Quote":"Have the maturity to know sometimes silence is more powerful than having the last word.",
+    "Author":"Thema Davis",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":77,
+    "Quote":"Live in the NOW.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":78,
+    "Quote":"Some people want it to happen, some wish it would happen, others make it happen.",
+    "Author":"Michael Jordan",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":79,
+    "Quote":"The more wisdom you attain and the more conscious you become, the crazier you will appear to others.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":80,
+    "Quote":"The expert in anything was once a beginner.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":81,
+    "Quote":"Only put off until tomorrow what you are willing to die having left undone.",
+    "Author":"Pablo Picasso",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":82,
+    "Quote":"The greatest deception men suffer is from their own opinions",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":83,
+    "Quote":"Don�t believe everything you think.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":84,
+    "Quote":"Be part of the solution, not the problem.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":85,
+    "Quote":"Never let the odds keep you from doing what you know in your heart what you were meant to do.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":86,
+    "Quote":"Growth is painful, change is painful. But nothing is as painful as staying stuck somewhere you don't belong.",
+    "Author":"Mandy Hale",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":87,
+    "Quote":"Keep an open mind.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":88,
+    "Quote":"To succeed, jump as quickly as opportunites as you do at conclusions.",
+    "Author":"Benjamin Franklin",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":89,
+    "Quote":"Willingness is the key.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":90,
+    "Quote":"You won't regret being patient, but you will regret giving up. Never, never never give up on something you truly believe in.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":91,
+    "Quote":"Don�t put your keys to happiness in someone else's pocket.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":92,
+    "Quote":"There is no pillow as soft as a clear conscience.",
+    "Author":"French poverb",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":93,
+    "Quote":"No pain, no gain.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":94,
+    "Quote":"Everybody has a chapter they don't read out loud.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":95,
+    "Quote":"The truth is unless you forgive yourself, unless you forgive the situation, unless you realise the situation is over, you cannot move forward.",
+    "Author":"Dr Steve Maraboli",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":96,
+    "Quote":"So many years of education have never taught us to love ourselves and why it is so important.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":97,
+    "Quote":"Let it begin with me.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":98,
+    "Quote":"A mind that is stretched by a new experience can never go back to its old dimensions",
+    "Author":"Oliver Wendell Holmes",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":99,
+    "Quote":"We are here to heal, not to harm. We are here to love, not to hate. We are here to create, not destroy.",
+    "Author":"A.D. Williams",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":100,
+    "Quote":"Raise your words, not voice. It is rain that grows flowers, not thunder",
+    "Author":"Rumi",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":101,
+    "Quote":"When you arise in the morning, think of what a precious priviledge it is to be alive - to breathe, to think, to enjoy, to love.",
+    "Author":"Marcus Aurelius",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":102,
+    "Quote":"Look for something positive in every day, even is some days you have to look a little harder",
+    "Author":"Mind Unleashed",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":103,
+    "Quote":"I cannot teach anybody anything. I can only make them think.",
+    "Author":"Socrates",
+    "Affiliation":"None"
+  },
+  {
+    "quote ID":104,
+    "Quote":"Don't quit before the miracle happens.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":105,
+    "Quote":"All change is hard at first, messy in the middle and gorgeous at the end.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":106,
+    "Quote":"Death is not the greatest loss in life. The greatest loss is what dies inside us while we live.",
+    "Author":"Norman Cousins",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":107,
+    "Quote":"Sometimes you will never know the value of a moment until it becomes a memory.",
+    "Author":"Dr Seuss",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":108,
+    "Quote":"When there is no enemy within, the enemies outside cannot hurt you.",
+    "Author":"African proverb",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":109,
+    "Quote":"The road to sobriety is a simple journey for confused people with a complicated disease.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":110,
+    "Quote":"Feed your soul by feeding the souls of others with love, kindness and compassion.",
+    "Author":"Daniella Nikolova",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":111,
+    "Quote":"It's ok to dislike someone, but it's not ok to disrespect, degrade and humilitate that person.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":112,
+    "Quote":"Have a good day, unless of course you have made other plans.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":113,
+    "Quote":"Decisions aren't forever.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":114,
+    "Quote":"It takes time.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":115,
+    "Quote":"You are under no obligation to be the same person you were a year, a month, or even 15 minutes ago. You have the right to grow",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":116,
+    "Quote":"You are not alone.",
+    "Author":"Voltaire",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":117,
+    "Quote":"If you're not excited about it, it's not the right path.",
+    "Author":"Abraham Hicks",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":118,
+    "Quote":"We are shaped by our thoughts; we become what we think. When the mind is pure, joy follows like a shadow that never leaves.",
+    "Author":"Buddha",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":119,
+    "Quote":"You can't control life, but you can control the way you see life.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":120,
+    "Quote":"Let us read and let us dance; these two amusements will never do any harm in the world",
+    "Author":"Voltaire",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":121,
+    "Quote":"Stay sober for yourself.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":122,
+    "Quote":"If you cannot find peace within yourself, you will never find it anywhere else.",
+    "Author":"Marvin Gaye",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":123,
+    "Quote":"Often when you think you're at the end of something, you're at the beginning of something else.",
+    "Author":"Fred Rogers",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":124,
+    "Quote":"Possession of material riches, withour inner peace, is like dying of thirst while bathing in a lake.",
+    "Author":"Paramahansa Yogananda",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":125,
+    "Quote":"Try not to place conditions on your sobriety.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":126,
+    "Quote":"The most common way people give up their power is by thinking they don't have any.",
+    "Author":"Alice Walker",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":127,
+    "Quote":"The quieter you become, the more you can hear",
+    "Author":"Ram Daas",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":128,
+    "Quote":"Share your happiness.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":129,
+    "Quote":"Take time, everyday, to do what makes your soul smile",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":130,
+    "Quote":"Some of the best advice you will ever get will come from your gut instinct",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":131,
+    "Quote":"Let go of old ideas.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":132,
+    "Quote":"Try to replace guilt with gratitude.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":133,
+    "Quote":"What goes around, comes around.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":134,
+    "Quote":"Change is a process, not an event.",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":135,
+    "Quote":"Do not become small for people who refuse to grow",
+    "Author":"None",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":136,
+    "Quote":"Wanting to be someone else is a waste of the person you are",
+    "Author":"Kurt Cobain",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":137,
+    "Quote":"We cannot lear without pain",
+    "Author":"Aristotle",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":138,
+    "Quote":"Ten years from now, make sure you can say that you chose your life. You didn't settle for it.",
+    "Author":"the idealist",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":139,
+    "Quote":"To keep it, you have to give it away.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":140,
+    "Quote":"You'll end up really disappointed if you think people will do for you as you do for them. Not everyone has the same heart as you.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":141,
+    "Quote":"The price for serenity and sanity is self-sacrifice.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":142,
+    "Quote":"Time is like a river. You cannot touch the same water twice because the flow that has passed will never pass again.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":143,
+    "Quote":"I'm finally learning how to walk away from people and situations that threaten my peace of mind, self-respect, or my self-worth",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":144,
+    "Quote":"You are beautiful because you let yourself feel, and that is a brave thing indeed.",
+    "Author":"Shinji Moon",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":145,
+    "Quote":"No one has ever become poor by giving",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":146,
+    "Quote":"Experience is the hardest kind of teacher. It gives you the test first and the lesson afterward",
+    "Author":"Oscar Wilde",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":147,
+    "Quote":"You can't give away what you don't have.",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":148,
+    "Quote":"Anger is one letter away from danger.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":149,
+    "Quote":"Courage to change.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":150,
+    "Quote":"Bring the body and the mind will follow.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":151,
+    "Quote":"Fear is the darkroom where negatives are developed.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":152,
+    "Quote":"Before engaging your mouth, put your mind in gear.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":153,
+    "Quote":"There is no chemical solution to a spiritual problem.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":154,
+    "Quote":"Spirituality is the ability to get our minds off ourselves.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":155,
+    "Quote":"Keep your sobriety first to make it last.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":156,
+    "Quote":"The first step in overcoming mistakes is to admit them.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":157,
+    "Quote":"Formula for failure: try to please everyone.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":158,
+    "Quote":"Sorrow is looking back worry is looking around.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":159,
+    "Quote":"Willpower= our willingness to use a Higher Power.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":160,
+    "Quote":"When your head begins to swell your mind stops growing.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":161,
+    "Quote":"A journey of a 1,000 miles begins with the first step.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":162,
+    "Quote":"You received without cost, now give without charge.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":163,
+    "Quote":"Humility is our acceptance of ourselves.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":164,
+    "Quote":"Faith is not belief without proof but trust without reservation.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":165,
+    "Quote":"We're responsible for the effort not the outcome.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":166,
+    "Quote":"Minds are like parachutes----they won't work unless they're open.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":167,
+    "Quote":"If you turn it over and don't let go of it, you will be upside down.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":168,
+    "Quote":"Serenity is not freedom from the storm but peace amid the storm.",
+    "Author":"none",
+    "Affiliation":"Alcoholics Anonymous"
+  },
+  {
+    "quote ID":169,
+    "Quote":"The trust of the innocent is the liar's most useful tool",
+    "Author":"Stephen King",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":170,
+    "Quote":"Don't raise your voice to improve your argument",
+    "Author":"the idealist",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":171,
+    "Quote":"If you're helping someone and expecting something in return, you're doing business not kindness",
+    "Author":"the idealist",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":172,
+    "Quote":"A negative mind will never give you a positive life",
+    "Author":"The Mind Unleashed",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":173,
+    "Quote":"Thining is difficult, that' s why most people judge",
+    "Author":"Carl Jung",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":174,
+    "Quote":"There are only two mistakes one can make along the road to truth: not going all the way, and not starting.",
+    "Author":"Buddha",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":175,
+    "Quote":"Be the person your dog thinks you are",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":176,
+    "Quote":"When you really pay attention, everything is your teacher.",
+    "Author":"Ezra Bayda",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":177,
+    "Quote":"Sometimeslife knocks you on your ass�.get up, get up, get up! Happiness is not the absence of problems, it's the ability to deal with them.",
+    "Author":"Steve Maraboli",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":178,
+    "Quote":"Miscommunication leads to misunderstanding, which rarely leads to anything good.",
+    "Author":"Charles F Glassman",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":179,
+    "Quote":"Every relationship.�very situation is part of a divinely created and highly specific curriculum for your soul growth.",
+    "Author":"Marianne Williamson",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":180,
+    "Quote":"Small acts, when multiplied by millions of people, can transform the world.",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":181,
+    "Quote":"A dream you dream alone is only a dream. A dream we dream together is reality.",
+    "Author":"John Lennon",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":182,
+    "Quote":"Happiness doesn't derive from location, or material posession. It derives from a higher state of consciousness",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":183,
+    "Quote":"Those who are unaware they are walking in darkness will never see the light",
+    "Author":"Bruce Lee",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":184,
+    "Quote":"Grattitude will shift you to a higher frequency, and you will attract much better things.",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":185,
+    "Quote":"Just because the past didn't turn out like you wanted it to, doesn't mean your future can't be better than you imagined.",
+    "Author":"The Minds Journal.com",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":186,
+    "Quote":"One day someone is going to hug you so tight that all of your broken pieces will stick back together.",
+    "Author":"The paeg of emotion",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":187,
+    "Quote":"If it doesn't challenge you it won't change you.",
+    "Author":"curiano.com",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":188,
+    "Quote":"A mind is like a parachute. If it doesn't work, it's not open.",
+    "Author":"Frank Zappa",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":189,
+    "Quote":"Always go too far because that's where you'll find the truth.",
+    "Author":"Albert Camus",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":190,
+    "Quote":"It isn't the mountains ahead to climb that wear you out; it's the pebble in your shoe.",
+    "Author":"Muhammad Ali",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":191,
+    "Quote":"The way you treat yourself sets the standards for others.",
+    "Author":"The Minds Journal.com",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":192,
+    "Quote":"Mastering others is strength. Mastering yourself is true power.",
+    "Author":"Lao Tzu",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":193,
+    "Quote":"Don't judge people for the choices they make when you don't know the options they had to choose from.",
+    "Author":"www.GoFitStayFit.com",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":194,
+    "Quote":"Don't cry because it's over, smile because it happened.",
+    "Author":"Dr Seuss",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":195,
+    "Quote":"The most powerful weapon on earth is the human soul on fire.",
+    "Author":"Ferdinand Foch",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":196,
+    "Quote":"If there is no enemy within, the enemy outside can do no harm.",
+    "Author":"An african proverb",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":197,
+    "Quote":"I'm learning to trust the jourmey even when I do not understand it.",
+    "Author":"Mila Bron",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":198,
+    "Quote":"Forgive others, not because they deserve forgiveness, but because you deserve peace.",
+    "Author":"Jonathan Lockwood Huie",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":199,
+    "Quote":"Be so happy that when others look at you they become happy too.",
+    "Author":"Unknown",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":200,
+    "Quote":"Everyone thinks of changing the world, but no one things of changing himself.",
+    "Author":"Leo Tolstoy",
+    "Affiliation":"none"
+  },
+  {
+    "quote ID":null,
+    "Quote":"Rule your own mind or it will rule you.",
+    "Author":"Buddha",
+    "Affiliation":"none"
+  }
+]

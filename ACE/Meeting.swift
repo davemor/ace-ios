@@ -48,7 +48,7 @@ class Meeting: Object {
                 rtn = g.name
             } else {
                 rtn = "unknown"
-            }
+            }   
         } else {
             rtn = self.name
         }
