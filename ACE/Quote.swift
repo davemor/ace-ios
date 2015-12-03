@@ -13,6 +13,7 @@ struct Quote {
     let author:String
 }
 
+/*
 let quotes = [
     Quote(quote: "Keep your face always toward the sunshine - and shadows will fall behind you.", author: "Walt Whitman"),
     Quote(quote: "If you look the right way, you can see that the whole world is a garden.", author: "Frances Hodgson Burnett"),
@@ -40,3 +41,34 @@ let quotes = [
     Quote(quote: "It's the constant and determined effort that breaks down all resistance, sweeps away all obstacles.", author: "Claude M. Bristol"),
     Quote(quote: "Remember, today is the tomorrow you worried about yesterday.", author: "Dale Carnegie")
 ]
+*/
+let quotes = loadQuotesFromJson()
+
+func loadQuotesFromJson() -> [Quote] {
+
+    var rtn = [Quote]()
+    if let path = NSBundle.mainBundle().pathForResource("quotes", ofType: "json") {
+        do {
+            let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+            if let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+            {
+                if let quotesArr : NSArray = jsonResult["quotes"] as? NSArray
+                {
+                    for data in quotesArr {
+                        if let dict = data as? NSDictionary {
+                            let text = dict.read("Quote", alt: "")
+                            let author = dict.read("Author", alt: "")
+                            let quote = Quote(quote: text, author: author)
+                            rtn.append(quote)
+                        }
+                    }
+                }
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    } else {
+        print("Invalid filename/path.")
+    }
+    return rtn
+}
