@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class ExercisesViewController: UITableViewController {
 
@@ -44,22 +46,35 @@ class ExercisesViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! ExerciseCell
 
         // Configure the cell...
-        cell.name.text = Exercise.all[indexPath.row].name
+        cell.name.text = Exercise.all[indexPath.row].title
 
         return cell
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("showExerciseSteps", sender: indexPath)
+        // self.performSegueWithIdentifier("showExerciseSteps", sender: indexPath)
+        
+        let filename = Exercise.all[indexPath.row].audioFile
+        let urlpath = NSBundle.mainBundle().pathForResource(filename, ofType: "mp3")
+        if let url:NSURL = NSURL.fileURLWithPath(urlpath!) {
+            let player = AVPlayer(URL: url)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            self.presentViewController(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+        } else {
+            print("Could not load audio file: \(filename)")
+        }
     }
-
-
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        /*
         if segue.identifier == "showExerciseSteps" {
             if let path = sender as? NSIndexPath {
                 if let dest = segue.destinationViewController as? ExerciseDetailViewController {
@@ -67,5 +82,6 @@ class ExercisesViewController: UITableViewController {
                 }
             }
         }
+        */
     }
 }

@@ -7,65 +7,40 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
-class ExerciseDetailViewController: UIViewController {
-
-    @IBOutlet weak var stepName: UILabel!
-    @IBOutlet weak var stepBody: UITextView!
-    @IBOutlet weak var nextButton: UIButton!
+class ExerciseDetailViewController: UIViewController, UIWebViewDelegate {
     
-    var currentStep = 0
-    var exercise: Exercise?
+    @IBOutlet weak var webview: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        refreshView()
+        
+        // set up the webview
+        self.webview.delegate = self
+        self.automaticallyAdjustsScrollViewInsets = false
+        let htmlFile = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("mindfulness", ofType: "html")!)
+        webview.loadRequest(NSURLRequest(URL: htmlFile))
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
+    // MARK: - Actions
+    @IBAction func close(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
-    }
-
-    @IBAction func next(sender: UIButton) {
-        if currentStep == exercise!.steps.count - 1 {
-            self.navigationController?.popViewControllerAnimated(true)
-        } else {
-            currentStep += 1
-            refreshView()
+    // MARK: - Webview Delegate
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if navigationType == UIWebViewNavigationType.LinkClicked {
+            UIApplication.sharedApplication().openURL(request.URL!)
+            return false
         }
+        return true
     }
-    
-    func refreshView() {
-        stepName.text = exercise?.steps[currentStep].name
-        stepBody.text = exercise?.steps[currentStep].description
-        if currentStep == exercise!.steps.count - 1 {
-            // it's the last step
-            nextButton.setTitle("I'm finished!", forState: .Normal)
-        } else {
-            nextButton.setTitle("Go to step \(currentStep + 2)", forState: .Normal)
-        }
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+

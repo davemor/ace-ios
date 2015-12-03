@@ -110,6 +110,7 @@
 		FF8596451AFAA8920099DFF8 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596441AFAA8920099DFF8 /* Dates.swift */; };
 		FF8596471AFB87320099DFF8 /* MeetingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8596461AFB87320099DFF8 /* MeetingsListViewController.swift */; };
 		FF98E5F91B2EC507003E235F /* AppInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98E5F81B2EC507003E235F /* AppInfoController.swift */; };
+		FF9D5E101C10CE7400F91C5B /* mindfulness.html in Resources */ = {isa = PBXBuildFile; fileRef = FF9D5E0F1C10CE7400F91C5B /* mindfulness.html */; };
 		FF9E9F911AE3E66C00F3516C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F901AE3E66C00F3516C /* Group.swift */; };
 		FF9E9F961AE400F200F3516C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9F951AE400F200F3516C /* Reachability.swift */; };
 		FFA45D5A1B09F62E00D05C80 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA45D591B09F62E00D05C80 /* Meeting.swift */; };
@@ -253,6 +254,7 @@
 		FF8596441AFAA8920099DFF8 /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		FF8596461AFB87320099DFF8 /* MeetingsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsListViewController.swift; sourceTree = "<group>"; };
 		FF98E5F81B2EC507003E235F /* AppInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoController.swift; sourceTree = "<group>"; };
+		FF9D5E0F1C10CE7400F91C5B /* mindfulness.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mindfulness.html; sourceTree = "<group>"; };
 		FF9E9F901AE3E66C00F3516C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FF9E9F951AE400F200F3516C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FFA45D591B09F62E00D05C80 /* Meeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				FF70C1041B2FFFE7000883E7 /* AppInfoHtml */,
 				FF3755541B22DCE800EE1F00 /* FontAwesome.otf */,
 				FF20F0EB1ABAFE79009CDF4D /* Info.plist */,
+				FF9D5E0F1C10CE7400F91C5B /* mindfulness.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				FF72FB1D1C0F897C00F5C503 /* quotes.json in Resources */,
 				FF5CEF4B1BD9544500030FB5 /* Info.plist in Resources */,
 				FF70C1061B300023000883E7 /* about.html in Resources */,
+				FF9D5E101C10CE7400F91C5B /* mindfulness.html in Resources */,
 				FF70C10A1B300B8D000883E7 /* cec.jpg in Resources */,
 				FF3755551B22DCE800EE1F00 /* FontAwesome.otf in Resources */,
 				FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */,
