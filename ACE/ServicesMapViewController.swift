@@ -76,7 +76,7 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         var view = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
         if view == nil {
-            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             view!.canShowCallout = true
             view!.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure) as UIView
             view!.image = UIImage(named: "BlueMapPin")
