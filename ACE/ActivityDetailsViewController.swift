@@ -17,7 +17,6 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var titleView: UILabel!
-
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var whenView: UILabel!
     @IBOutlet weak var addressView: UILabel!
@@ -36,9 +35,17 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
         whenView.text = getActivityDateRangeString(activity)
         
         // set where
-        let addressParts = activity.venue!.address.characters.split { $0 == "," }.map { String($0) }.map { $0.trimmed() }
-        let address = addressParts.joinWithSeparator(",\n")
-        addressView.text = address
+        if let venue = activity.venue {
+            let addressParts = venue.address.characters.split { $0 == "," }.map { String($0) }.map { $0.trimmed() }
+            let address = addressParts.joinWithSeparator(",\n")
+            addressView.text = address
+        } else {
+            // TODO: This is a hack
+            // try and downcast the activity to an AppointmentActivity
+            if let appointmentActivity = activity as? AppointmentActivity {
+                addressView.text = "\(appointmentActivity.address)\n\(appointmentActivity.city)\n\(appointmentActivity.postcode)"
+            }
+        }
         
         // set description
         descriptionView.text = activity.desc
@@ -64,10 +71,18 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     @IBAction func toggleAttending(sender: AnyObject) {
         do {
             let realm = try Realm()
-            try realm.write {
-                self.activity.attending = !self.activity.attending
+            if let appointmentActivity = activity as? AppointmentActivity {
+                realm.beginWrite()
+                realm.delete(appointmentActivity)
+                try realm.commitWrite()
+                
+                self.navigationController?.popViewControllerAnimated(true)
+            } else {
+                try realm.write {
+                    self.activity.attending = !self.activity.attending
+                }
+                refreshAddButtonTitle()
             }
-            refreshAddButtonTitle()
         } catch {
             print("Error toggling attending in ActivityDetailsViewController.")
         }

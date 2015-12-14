@@ -1,6 +1,7 @@
 
 import UIKit
 import RealmSwift
+import KCFloatingActionButton
 
 class CalendarViewController: UIViewController, UITableViewDelegate {
     // MARK: - Properties
@@ -55,6 +56,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     var notificationToken: NotificationToken?
     var meetingActivities: Results<MeetingActivity>!
     var communityActivities: Results<CommunityActivity>!
+    var appointmentActivities: Results<AppointmentActivity>!
     
     func populateMonth() {
         daysForMonth.removeAll(keepCapacity: true)
@@ -62,6 +64,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         // TODO: not sure if this is the most effective way of doing this
         let meetings = meetingActivities.toArray()
         let community = communityActivities.toArray()
+        let appointments = appointmentActivities.toArray()
         
         let dates = calendarView.manager.datesInMonth(currentDate.date)
         for date in dates {
@@ -72,7 +75,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
             day.activities += community.mapFilter {
                 $0.includeOnDate(date) ? $0 : nil as Activity?
             }
-            
+            day.activities += appointments.mapFilter {
+                $0.includeOnDate(date) ? $0 : nil as Activity?
+            }
             
             day.activities.sortInPlace( {$0.start.compareTime($1.start) == NSComparisonResult.OrderedAscending })
             
@@ -93,6 +98,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         do {
             try meetingActivities = Realm().objects(MeetingActivity.self)
             try communityActivities = Realm().objects(CommunityActivity.self)
+            try appointmentActivities = Realm().objects(AppointmentActivity.self)
         } catch {
             print("Error with Realm in CalendarViewController.")
         }
@@ -103,10 +109,24 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         self.navigationItem.title = CVDate(date: NSDate()).globalDescription
         
         do {
-            try notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in self.refresh() }
+            try notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+                self.refresh()
+            }
         } catch {
             print("Error setting up realm notification token.")
         }
+        
+        // add the fab
+        let fab = KCFloatingActionButton()
+        fab.buttonColor = UIColor(netHex: 0xFF3E1C)
+        fab.plusColor = UIColor.whiteColor()
+        fab.addItem("Add Appointment", icon: UIImage(named: "clock")!, handler: { item in
+            print("Appointment button pressed.")
+            // self.performSegueWithIdentifier("newAppointment", sender: self)
+            let destination = self.storyboard?.instantiateViewControllerWithIdentifier("NewAppointment")
+            self.navigationController?.pushViewController(destination!, animated: true)
+        })
+        self.view.addSubview(fab)
         
         //calendarView.hidden = true
         //hideCalendar()
@@ -137,12 +157,21 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        /*
         if segue.identifier == "showMeetingDetails" {
-            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+            let indexPath = sender as! NSIndexPath
             let activity = activityForIndexPath(indexPath)
             let dest = segue.destinationViewController as! ActivityDetailsViewController
             dest.activity = activity
         }
+        if segue.identifier == "showAppointmentDetails" {
+            let indexPath = sender as! NSIndexPath
+            if let appointment = activityForIndexPath(indexPath) as? AppointmentActivity {
+                let dest = segue.destinationViewController as! AppointmentActivityDetailsViewController
+                dest.appointment = appointment
+            }
+        }
+        */
     }
 }
 
@@ -407,15 +436,18 @@ extension CalendarViewController: UITableViewDataSource {
         let activity = activityForIndexPath(indexPath)
         cell.titleLabel.text = activity.name
         cell.timeLabel.text = activity.start.toString(format: DateFormat.Custom("HH:mm"))
-        cell.backgroundColor = activity.color
         
         // set up the shading
         if activity.attending {
-            let color = aceColors[AceColor.Blue]
-           cell.titleLabel.textColor = color
-        } else {
-            let color = UIColor.blackColor().colorWithAlphaComponent(0.5)
+            let color = UIColor(netHex: 0xFF3E1C)
             cell.titleLabel.textColor = color
+            cell.backgroundColor = UIColor.whiteColor()
+            cell.timeLabel.textColor = UIColor.blackColor()
+        } else {
+            // let color = UIColor.blackColor().colorWithAlphaComponent(0.5)
+            cell.titleLabel.textColor = UIColor.whiteColor()
+            cell.backgroundColor = activity.color
+            cell.timeLabel.textColor = UIColor.whiteColor()
         }
         
         return cell
@@ -425,5 +457,25 @@ extension CalendarViewController: UITableViewDataSource {
 extension CalendarViewController { // : UITableViewDelegate {
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return daysForMonth[section].formattedDate
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // get the type of the cell
+        let activity = activityForIndexPath(indexPath)
+        
+        // if it's an appointment:
+        if let appointment = activity as? AppointmentActivity {
+            // self.performSegueWithIdentifier("showAppointmentDetails", sender: indexPath)
+            if let destination = self.storyboard?.instantiateViewControllerWithIdentifier("ShowAppointment") as? AppointmentActivityDetailsViewController {
+                self.navigationController?.pushViewController(destination, animated: true)
+                destination.appointment = appointment
+            }
+        } else {
+            // self.performSegueWithIdentifier("showMeetingDetails", sender: indexPath)
+            if let destination = self.storyboard?.instantiateViewControllerWithIdentifier("EventDetails") as? ActivityDetailsViewController {
+                self.navigationController?.pushViewController(destination, animated: true)
+                destination.activity = activity
+            }
+        }
     }
 }

@@ -1,5 +1,7 @@
 PODS:
   - Dollar (4.0.1)
+  - Eureka (1.2.0)
+  - KCFloatingActionButton (1.1.7)
   - Realm (0.96.2):
     - Realm/Headers (= 0.96.2)
   - Realm/Headers (0.96.2)
@@ -8,10 +10,14 @@ PODS:
 
 DEPENDENCIES:
   - Dollar
+  - Eureka (~> 1.2)
+  - KCFloatingActionButton
   - RealmSwift
 
 SPEC CHECKSUMS:
   Dollar: a058e2659e0d3261307c12630dbc2fd8e32f80bf
+  Eureka: aa7059d2a30e1b206a581f0aabfcf903ece6beae
+  KCFloatingActionButton: deb80e65e7b21fa066607b18a31ab492d9caac15
   Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
   RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873
 

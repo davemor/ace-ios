@@ -62,6 +62,6 @@ class CommunityActivity: Object, Activity {
     }
     
     var color: UIColor  {
-        get { return UIColor.grayColor() }
+        get { return UIColor(netHex: 0x007ade) }
     }
 }
