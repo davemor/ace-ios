@@ -109,7 +109,9 @@ class MeetingsListViewController: UITableViewController {
             let meeting = meetings[indexPath.row]
             cell.fellowship.text = meeting.displayName
             cell.time.text = meeting.displayTimeOfDay
-            cell.backgroundColor = meeting.group!.color
+            if let group = meeting.group {
+                cell.backgroundColor = group.color
+            }
         }
         return cell
     }
