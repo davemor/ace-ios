@@ -35,13 +35,13 @@ class Service: Object {
 }
 
 class BusinessTime: Object {
-    var open = NSDate()
-    var close = NSDate()
-    var monday = false
-    var tuesday = false
-    var wednesday = false
-    var thursday = false
-    var friday = false
-    var saturday = false
-    var sunday = false
+    dynamic var open = NSDate()
+    dynamic var close = NSDate()
+    dynamic var monday = false
+    dynamic var tuesday = false
+    dynamic var wednesday = false
+    dynamic var thursday = false
+    dynamic var friday = false
+    dynamic var saturday = false
+    dynamic var sunday = false
 }

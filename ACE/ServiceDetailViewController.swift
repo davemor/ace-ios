@@ -38,13 +38,52 @@ class ServiceDetailViewController: UITableViewController {
         serviceDescription.updateConstraints()
         serviceDescription.setNeedsDisplay()
         */
+        
+        // set the label to empty strings
+        for index in 0..<businessTimeLabels.count {
+            businessTimeLabels[index].text = ""
+        }
 
+        // print(service.businessTimes.count)
+        
         
         for time in service.businessTimes {
-            for index in 0..<businessTimeLabels.count {
-                let label = businessTimeLabels[index]
-                // TODO: Finish this off!
-                // Hard to know what to do exactly though.
+            // print(time)
+            
+            if time.monday
+            {
+                businessTimeLabels[0].text! += "\(time.open.timeStr()) - \(time.close.timeStr())"
+            }
+            if time.tuesday
+            {
+                businessTimeLabels[1].text! += "\(time.open.timeStr()) - \(time.close.timeStr())"
+            }
+            if time.wednesday
+            {
+                businessTimeLabels[2].text! += "\(time.open.timeStr()) - \(time.close.timeStr())"
+            }
+            if time.thursday
+            {
+                businessTimeLabels[3].text! += "\(time.open.timeStr()) - \(time.close.timeStr())"
+            }
+            if time.friday
+            {
+                businessTimeLabels[4].text! += "\(time.open.timeStr()) - \(time.close.timeStr())"
+            }
+            if time.saturday
+            {
+                businessTimeLabels[5].text! += "\(time.open.timeStr()) - \(time.close.timeStr())"
+            }
+            if time.sunday
+            {
+                businessTimeLabels[6].text! += "\(time.open.timeStr()) - \(time.close.timeStr())"
+            }
+        }
+        
+        // for any empty label set the label to read "closed"
+        for index in 0..<businessTimeLabels.count {
+            if let text = businessTimeLabels[index].text where text.isEmpty {
+                businessTimeLabels[index].text = "Closed"
             }
         }
         

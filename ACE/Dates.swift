@@ -9,6 +9,16 @@
 import Foundation
 import UIKit
 
+public extension NSDate {
+    
+    public func timeStr() -> String {
+        let formatter = NSDateFormatter()
+        formatter.timeStyle = .ShortStyle
+        let rtn = formatter.stringFromDate(self)
+        return rtn
+    }
+}
+
 func daysBetweenDates(startDate:NSDate, endDate:NSDate) -> Int {
     let cal = NSCalendar.currentCalendar()
     let unit:NSCalendarUnit = .Day

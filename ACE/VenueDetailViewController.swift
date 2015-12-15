@@ -112,9 +112,12 @@ class VenueDetailViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // segue based on the path
         switch indexPath.section {
-        case 1: self.performSegueWithIdentifier("showEventSegue", sender:indexPath)
-        case 2: self.performSegueWithIdentifier("showServiceSegue", sender:indexPath)
-        default: print("I am an executable statement.")
+        case 1:
+            self.performSegueWithIdentifier("showEventSegue", sender:indexPath)
+        case 2:
+            self.performSegueWithIdentifier("showServiceSegue", sender:indexPath)
+        default:
+            print("I am an executable statement.")
         }
     }
 }
