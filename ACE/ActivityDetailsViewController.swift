@@ -58,6 +58,7 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     
     // MARK: - Helpers
     func refreshAddButtonTitle() {
+        print(self.activity.attending)
         let title = activity.attending ? "Remove" : "Add"
         addButton.title = title
     }
@@ -71,18 +72,10 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     @IBAction func toggleAttending(sender: AnyObject) {
         do {
             let realm = try Realm()
-            if let appointmentActivity = activity as? AppointmentActivity {
-                realm.beginWrite()
-                realm.delete(appointmentActivity)
-                try realm.commitWrite()
-                
-                self.navigationController?.popViewControllerAnimated(true)
-            } else {
-                try realm.write {
-                    self.activity.attending = !self.activity.attending
-                }
-                refreshAddButtonTitle()
+            try realm.write {
+                self.activity.attending = !self.activity.attending
             }
+            refreshAddButtonTitle()
         } catch {
             print("Error toggling attending in ActivityDetailsViewController.")
         }

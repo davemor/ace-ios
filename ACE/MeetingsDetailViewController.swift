@@ -68,6 +68,7 @@ class MeetingsDetailViewController: UITableViewController {
                 try realm.write {
                     let activity = MeetingActivity()
                     activity.meeting = self.meeting
+                    // print(self.meeting)
                     realm.add(activity, update: true)
                 }
                 addBarButton.title = "Remove"

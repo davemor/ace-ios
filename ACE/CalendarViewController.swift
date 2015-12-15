@@ -463,18 +463,23 @@ extension CalendarViewController { // : UITableViewDelegate {
         // get the type of the cell
         let activity = activityForIndexPath(indexPath)
         
-        // if it's an appointment:
+        // switch on the type
         if let appointment = activity as? AppointmentActivity {
-            // self.performSegueWithIdentifier("showAppointmentDetails", sender: indexPath)
             if let destination = self.storyboard?.instantiateViewControllerWithIdentifier("ShowAppointment") as? AppointmentActivityDetailsViewController {
                 self.navigationController?.pushViewController(destination, animated: true)
                 destination.appointment = appointment
             }
-        } else {
-            // self.performSegueWithIdentifier("showMeetingDetails", sender: indexPath)
+        } else if let _ = activity as? CommunityActivity {
             if let destination = self.storyboard?.instantiateViewControllerWithIdentifier("EventDetails") as? ActivityDetailsViewController {
                 self.navigationController?.pushViewController(destination, animated: true)
                 destination.activity = activity
+            }
+        } else if let meetingActivity = activity as? MeetingActivity {
+            if let destination = self.storyboard?.instantiateViewControllerWithIdentifier("MeetingDetails") as? MeetingsDetailViewController {
+                self.navigationController?.pushViewController(destination, animated: true)
+                if let meeting = meetingActivity.meeting {
+                    destination.meeting = meeting
+                }
             }
         }
     }

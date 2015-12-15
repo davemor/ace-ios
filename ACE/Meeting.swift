@@ -33,10 +33,20 @@ class Meeting: Object {
             // it never repeats so it has to match
             return d.day == date.day && d.month == date.month && d.year == date.year
         case .weekly:
-            return d.weekday == date.weekday
+            print(self)
+            print(date.date)
+            print(date.weekday)
+            let apiDay = dateWeekdayToAPIWeekday(date.weekday)
+            return self.day == apiDay
         case .monthly:
             return d.day == date.day
         }
+    }
+    
+    func dateWeekdayToAPIWeekday(dateWeekday: Int) -> Int {
+        var rtn = dateWeekday - 2
+        if rtn == -1 { rtn = 6 }
+        return rtn
     }
     
     // computed values for public interface

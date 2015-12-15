@@ -113,7 +113,13 @@ class VenueDetailViewController: UITableViewController {
         // segue based on the path
         switch indexPath.section {
         case 1:
-            self.performSegueWithIdentifier("showEventSegue", sender:indexPath)
+            // self.performSegueWithIdentifier("showEventSegue", sender:indexPath)
+            if let destination = self.storyboard?.instantiateViewControllerWithIdentifier("MeetingDetails") as? MeetingsDetailViewController {
+                self.navigationController?.pushViewController(destination, animated: true)
+                if let meeting = venue?.meetings[indexPath.row] {
+                    destination.meeting = meeting
+                }
+            }
         case 2:
             self.performSegueWithIdentifier("showServiceSegue", sender:indexPath)
         default:

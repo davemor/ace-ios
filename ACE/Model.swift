@@ -105,7 +105,7 @@ class Model {
                                     meeting.dateTime = dict.readDateTime("date_time")
                                     meeting.`repeat` = Repeat.strToRaw(dict.read("repeat", alt: "none"))
                                     meeting.day = Day.strToRaw(dict.read("day_of_week", alt: "none"))
-                                    
+
                                     // find the venue if it exists
                                     let venueId = dict.read("venue_id", alt: 0)
                                     let venueRes = realm.objects(Venue).filter("id = %d", venueId)
