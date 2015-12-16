@@ -123,7 +123,8 @@ class VenueDetailViewController: UITableViewController {
         case 2:
             self.performSegueWithIdentifier("showServiceSegue", sender:indexPath)
         default:
-            print("I am an executable statement.")
+            // print("I am an executable statement.")
+            print("")
         }
     }
 }

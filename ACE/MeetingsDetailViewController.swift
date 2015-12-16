@@ -90,7 +90,7 @@ class MeetingsDetailViewController: UITableViewController {
     
     @IBAction func phone(sender: AnyObject) {
         let phoneNumber = "tel://\(meeting.displayContactPhone.condense())"
-        print(phoneNumber)
+        // print(phoneNumber)
         UIApplication.sharedApplication().openURL(NSURL(string: phoneNumber)!)
     }
     

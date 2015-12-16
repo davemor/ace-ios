@@ -85,7 +85,7 @@ class AboutViewController: UITableViewController {
     }
     func isInPast(date:NSDate) -> Bool {
         let difference = daysBetweenDates(date, endDate: NSDate())
-        print("\(difference)")
+        // print("\(difference)")
         return difference >= 0
     }
     func setLabelToDate(date: NSDate) {

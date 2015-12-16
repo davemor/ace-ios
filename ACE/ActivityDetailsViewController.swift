@@ -58,7 +58,7 @@ class ActivityDetailsViewController: UITableViewController, MKMapViewDelegate {
     
     // MARK: - Helpers
     func refreshAddButtonTitle() {
-        print(self.activity.attending)
+        // print(self.activity.attending)
         let title = activity.attending ? "Remove" : "Add"
         addButton.title = title
     }

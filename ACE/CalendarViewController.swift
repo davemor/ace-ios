@@ -121,7 +121,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         fab.buttonColor = UIColor(netHex: 0xFF3E1C)
         fab.plusColor = UIColor.whiteColor()
         fab.addItem("Add Appointment", icon: UIImage(named: "clock")!, handler: { item in
-            print("Appointment button pressed.")
+            // print("Appointment button pressed.")
             // self.performSegueWithIdentifier("newAppointment", sender: self)
             let destination = self.storyboard?.instantiateViewControllerWithIdentifier("NewAppointment")
             self.navigationController?.pushViewController(destination!, animated: true)
@@ -239,7 +239,7 @@ extension CalendarViewController { //: CVCalendarViewDelegate {
     
     func didSelectDayView(dayView: CVCalendarDayView) {
         currentDate = dayView.date
-        print("\(calendarView.presentedDate.commonDescription) is selected!")
+        // print("\(calendarView.presentedDate.commonDescription) is selected!")
         refresh()
         scrollToDate(currentDate, animated: true)
     }

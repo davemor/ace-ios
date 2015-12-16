@@ -33,9 +33,9 @@ class Meeting: Object {
             // it never repeats so it has to match
             return d.day == date.day && d.month == date.month && d.year == date.year
         case .weekly:
-            print(self)
-            print(date.date)
-            print(date.weekday)
+            // print(self)
+            // print(date.date)
+            // print(date.weekday)
             let apiDay = dateWeekdayToAPIWeekday(date.weekday)
             return self.day == apiDay
         case .monthly:

@@ -119,7 +119,7 @@ class Model {
                                     let groupRes = realm.objects(Group).filter(predicate)
                                     if groupRes.count > 0 {
                                         let first = groupRes.first
-                                        print(first!.name)
+                                        // print(first!.name)
                                         meeting.group = first!
                                     }
                                     
