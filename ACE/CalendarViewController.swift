@@ -439,15 +439,14 @@ extension CalendarViewController: UITableViewDataSource {
         
         // set up the shading
         if activity.attending {
-            let color = UIColor(netHex: 0xFF3E1C)
-            cell.titleLabel.textColor = color
-            cell.backgroundColor = UIColor.whiteColor()
-            cell.timeLabel.textColor = UIColor.blackColor()
-        } else {
             // let color = UIColor.blackColor().colorWithAlphaComponent(0.5)
             cell.titleLabel.textColor = UIColor.whiteColor()
             cell.backgroundColor = activity.color
             cell.timeLabel.textColor = UIColor.whiteColor()
+        } else {
+            cell.titleLabel.textColor = UIColor(netHex: 0xA0A0A0)
+            cell.backgroundColor = UIColor(netHex: 0xF5F5F5)
+            cell.timeLabel.textColor = UIColor(netHex: 0xA0A0A0)
         }
         
         return cell
