@@ -29,7 +29,7 @@ BUNDLE_VERSION=$(get_bundle_version)
 #GIT=$(xcrun -find git)
 
 # Run Script build phases that operate on product files of the target that defines them should use the value of this build setting [TARGET_BUILD_DIR]. But Run Script build phases that operate on product files of other targets should use “BUILT_PRODUCTS_DIR” instead.
-INFO_PLIST="${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
+INFO_PLIST="${TARGET_BUILD_DIR}"
 
 /usr/libexec/PlistBuddy -c "Add :CFBundleBuildVersion string $BUILD_VERSION" "$INFO_PLIST" 2>/dev/null || /usr/libexec/PlistBuddy -c "Set :CFBundleBuildVersion $BUILD_VERSION" "$INFO_PLIST"
 /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $SHORT_VERSION" "$INFO_PLIST"
