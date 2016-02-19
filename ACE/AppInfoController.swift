@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 class AppInfoController: UIViewController, UIWebViewDelegate {
 
@@ -20,6 +21,9 @@ class AppInfoController: UIViewController, UIWebViewDelegate {
         self.automaticallyAdjustsScrollViewInsets = false
         let htmlFile = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("about", ofType: "html")!)
         webView.loadRequest(NSURLRequest(URL: htmlFile))
+        
+        // log with analytics
+        Mixpanel.sharedInstance().track("Information Section Opened")
     }
 
     override func didReceiveMemoryWarning() {

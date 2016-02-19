@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import RealmSwift
+import Mixpanel
 
 class ServicesMapViewController: UIViewController, MKMapViewDelegate {
 
@@ -19,6 +20,9 @@ class ServicesMapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // log with analytics
+        Mixpanel.sharedInstance().track("Services Map Opened")
         
         do {
             services = try Realm().objects(Service)

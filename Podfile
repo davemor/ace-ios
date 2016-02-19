@@ -7,6 +7,7 @@ target 'ARC' do
 	pod 'Dollar'
 	pod "KCFloatingActionButton"
 	pod 'Eureka', '~> 1.2'
+    pod 'Mixpanel'
 end
 
 target 'ARCTests' do
@@ -14,4 +15,5 @@ target 'ARCTests' do
 	pod 'Dollar'
 	pod "KCFloatingActionButton"
 	pod 'Eureka', '~> 1.2'
+    pod 'Mixpanel'
 end

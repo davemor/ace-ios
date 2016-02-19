@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 class MoodMenuViewController: UIViewController {
 
@@ -14,6 +15,9 @@ class MoodMenuViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // log with analytics
+        Mixpanel.sharedInstance().track("Reflection Section Opened")
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Mixpanel
 
 class DiaryViewController: UITableViewController {
 
@@ -22,6 +23,9 @@ class DiaryViewController: UITableViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // log with analytics
+        Mixpanel.sharedInstance().track("Diary Section Opened")
         
         do {
             try diaryEntries = Realm().objects(DiaryEntry).sorted("date", ascending: false)

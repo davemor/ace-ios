@@ -2,6 +2,7 @@
 import UIKit
 import RealmSwift
 import KCFloatingActionButton
+import Mixpanel
 
 class CalendarViewController: UIViewController, UITableViewDelegate {
     // MARK: - Properties
@@ -94,6 +95,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // log with analytics
+        Mixpanel.sharedInstance().track("Calendar Section Opened")
         
         do {
             try meetingActivities = Realm().objects(MeetingActivity.self)

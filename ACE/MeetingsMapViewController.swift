@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import RealmSwift
+import Mixpanel
 
 class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
 
@@ -26,6 +27,9 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad() 
 
+        // log with analytics
+        Mixpanel.sharedInstance().track("Meetings Map Opened")
+        
         // set up the realm queries
         do {
             groups = try Realm().objects(Group)

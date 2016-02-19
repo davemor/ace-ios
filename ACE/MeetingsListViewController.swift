@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Mixpanel
 
 class MeetingsListViewController: UITableViewController {
 
@@ -31,6 +32,10 @@ class MeetingsListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // log with analytics
+        Mixpanel.sharedInstance().track("Meetings List Opened")
+        
         self.title = "Meetings"
         
         do {

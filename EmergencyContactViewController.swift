@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import MessageUI
+import Mixpanel
 
 class EmergencyContactViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate {
 
@@ -21,6 +22,9 @@ class EmergencyContactViewController: UIViewController, UITableViewDelegate, UIT
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // log with analytics
+        Mixpanel.sharedInstance().track("Emergency Section Opened")
         
         do {
             contacts = try Realm().objects(Contact)

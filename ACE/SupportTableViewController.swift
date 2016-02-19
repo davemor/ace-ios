@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Mixpanel
 
 class SupportTableViewController: UITableViewController {
 
@@ -15,6 +16,9 @@ class SupportTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // log with analytics
+        Mixpanel.sharedInstance().track("Services List Opened")
         
         do {
             try services = Realm().objects(Service)

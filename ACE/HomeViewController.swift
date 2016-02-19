@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 class HomeViewController: UIViewController {
 
@@ -64,6 +65,9 @@ class HomeViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func sendFeedback(sender: AnyObject) {
+        // log with analytics
+        Mixpanel.sharedInstance().track("Tapped on Feedback Icon")
+        
         let url = NSURL(string: "mailto:addicationrecoverycompanion@gmail.com?subject=Feedback%20from%20iOS%20App")!
         UIApplication.sharedApplication().openURL(url)
     }
@@ -97,7 +101,7 @@ class HomeViewController: UIViewController {
         // set the values of the view
         daysCounterLabel.text = "0"
         if let dateStr = defaults.stringForKey("recovery_start_date") {
-            var dateFormatter = NSDateFormatter()
+            let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "dd MMMM yyyy"
             if let date = dateFormatter.dateFromString(dateStr) {
                 daysCounterLabel.text = "\(daysBetweenDates(date, endDate: NSDate()))"

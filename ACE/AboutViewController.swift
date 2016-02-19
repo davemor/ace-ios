@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 class AboutViewController: UITableViewController {
     
@@ -17,6 +18,9 @@ class AboutViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // log with analytics
+        Mixpanel.sharedInstance().track("About Section Opened")
         
         // load the values of the switches
         let defaults = NSUserDefaults.standardUserDefaults()

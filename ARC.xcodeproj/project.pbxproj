@@ -281,6 +281,7 @@
 		FFDAF6FD1B147A5000BC4589 /* CommunityEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityEvent.swift; sourceTree = "<group>"; };
 		FFDAF6FF1B14883300BC4589 /* PersonalActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalActivity.swift; sourceTree = "<group>"; };
 		FFDAF7021B14D61400BC4589 /* AF+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AF+Date+Extension.swift"; sourceTree = "<group>"; };
+		FFDFD0D71C77687800D366AA /* ARC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARC-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,6 +380,7 @@
 				FF20F0F51ABAFE79009CDF4D /* LaunchScreen.xib */,
 				FF20F0EA1ABAFE79009CDF4D /* Supporting Files */,
 				FF3754B81B21902200EE1F00 /* Home */,
+				FFDFD0D71C77687800D366AA /* ARC-Bridging-Header.h */,
 			);
 			path = ACE;
 			sourceTree = "<group>";
@@ -1146,6 +1148,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tmnr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ARC;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ACE/ARC-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1163,6 +1166,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tmnr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ARC;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ACE/ARC-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
