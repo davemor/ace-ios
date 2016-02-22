@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         // setup mixpanel
-        let mixpanel = Mixpanel.sharedInstanceWithToken("4981b89f8d22799a5d8a858b69f261ad")
+        let mixpanel = Mixpanel.sharedInstanceWithToken("45240346364426ee90099306d8fcbbbe")
         // mixpanel.registerSuperProperties([
         //     "foo" : 0.1
         // ])
