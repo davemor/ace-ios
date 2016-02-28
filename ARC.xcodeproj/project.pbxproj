@@ -59,6 +59,16 @@
 		FF5CEF4F1BD9544500030FB5 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF411BD9544500030FB5 /* Range.swift */; };
 		FF5CEF501BD9544500030FB5 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF421BD9544500030FB5 /* Sequence.swift */; };
 		FF5CEF511BD9544500030FB5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CEF431BD9544500030FB5 /* String.swift */; };
+		FF60B4BF1C83047800E70936 /* arclogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4B51C83047800E70936 /* arclogo.png */; };
+		FF60B4C01C83047800E70936 /* calendaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4B61C83047800E70936 /* calendaricon.png */; };
+		FF60B4C11C83047800E70936 /* diaryicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4B71C83047800E70936 /* diaryicon.png */; };
+		FF60B4C21C83047800E70936 /* emergencyicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4B81C83047800E70936 /* emergencyicon.png */; };
+		FF60B4C31C83047800E70936 /* envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4B91C83047800E70936 /* envelope.png */; };
+		FF60B4C41C83047800E70936 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4BA1C83047800E70936 /* info.png */; };
+		FF60B4C51C83047800E70936 /* meetingsicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4BB1C83047800E70936 /* meetingsicon.png */; };
+		FF60B4C61C83047800E70936 /* reflectionicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4BC1C83047800E70936 /* reflectionicon.png */; };
+		FF60B4C71C83047800E70936 /* servicesicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4BD1C83047800E70936 /* servicesicon.png */; };
+		FF60B4C81C83047800E70936 /* emergencyicon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4BE1C83047800E70936 /* emergencyicon.jpg */; };
 		FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8B1AE8CB2400889EA0 /* ExerciseDetailViewController.swift */; };
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
@@ -206,6 +216,16 @@
 		FF5CEF411BD9544500030FB5 /* Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
 		FF5CEF421BD9544500030FB5 /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		FF5CEF431BD9544500030FB5 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FF60B4B51C83047800E70936 /* arclogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arclogo.png; sourceTree = "<group>"; };
+		FF60B4B61C83047800E70936 /* calendaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendaricon.png; sourceTree = "<group>"; };
+		FF60B4B71C83047800E70936 /* diaryicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diaryicon.png; sourceTree = "<group>"; };
+		FF60B4B81C83047800E70936 /* emergencyicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emergencyicon.png; sourceTree = "<group>"; };
+		FF60B4B91C83047800E70936 /* envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = envelope.png; sourceTree = "<group>"; };
+		FF60B4BA1C83047800E70936 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		FF60B4BB1C83047800E70936 /* meetingsicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meetingsicon.png; sourceTree = "<group>"; };
+		FF60B4BC1C83047800E70936 /* reflectionicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reflectionicon.png; sourceTree = "<group>"; };
+		FF60B4BD1C83047800E70936 /* servicesicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = servicesicon.png; sourceTree = "<group>"; };
+		FF60B4BE1C83047800E70936 /* emergencyicon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = emergencyicon.jpg; sourceTree = "<group>"; };
 		FF648C8B1AE8CB2400889EA0 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
@@ -489,6 +509,16 @@
 		FF70C1041B2FFFE7000883E7 /* AppInfoHtml */ = {
 			isa = PBXGroup;
 			children = (
+				FF60B4B51C83047800E70936 /* arclogo.png */,
+				FF60B4B61C83047800E70936 /* calendaricon.png */,
+				FF60B4B71C83047800E70936 /* diaryicon.png */,
+				FF60B4B81C83047800E70936 /* emergencyicon.png */,
+				FF60B4B91C83047800E70936 /* envelope.png */,
+				FF60B4BA1C83047800E70936 /* info.png */,
+				FF60B4BB1C83047800E70936 /* meetingsicon.png */,
+				FF60B4BC1C83047800E70936 /* reflectionicon.png */,
+				FF60B4BD1C83047800E70936 /* servicesicon.png */,
+				FF60B4BE1C83047800E70936 /* emergencyicon.jpg */,
 				FF72FB1E1C10567700F5C503 /* EdinburghApps.png */,
 				FF70C1091B300B8D000883E7 /* cec.jpg */,
 				FF70C1071B300A34000883E7 /* eadp.jpg */,
@@ -788,14 +818,24 @@
 				FF5CEF4B1BD9544500030FB5 /* Info.plist in Resources */,
 				FF70C1061B300023000883E7 /* about.html in Resources */,
 				FF9D5E101C10CE7400F91C5B /* mindfulness.html in Resources */,
+				FF60B4BF1C83047800E70936 /* arclogo.png in Resources */,
+				FF60B4C51C83047800E70936 /* meetingsicon.png in Resources */,
 				FF70C10A1B300B8D000883E7 /* cec.jpg in Resources */,
+				FF60B4C21C83047800E70936 /* emergencyicon.png in Resources */,
+				FF60B4C41C83047800E70936 /* info.png in Resources */,
+				FF60B4C01C83047800E70936 /* calendaricon.png in Resources */,
 				FF3755551B22DCE800EE1F00 /* FontAwesome.otf in Resources */,
 				FF20F0F21ABAFE79009CDF4D /* Main.storyboard in Resources */,
+				FF60B4C11C83047800E70936 /* diaryicon.png in Resources */,
 				FF72FB1A1C0F897400F5C503 /* Rapid Relax.mp3 in Resources */,
 				FF72FB191C0F897400F5C503 /* One Minute Breathing.mp3 in Resources */,
+				FF60B4C71C83047800E70936 /* servicesicon.png in Resources */,
 				FF70C1081B300A34000883E7 /* eadp.jpg in Resources */,
 				FF20F0F71ABAFE79009CDF4D /* LaunchScreen.xib in Resources */,
+				FF60B4C81C83047800E70936 /* emergencyicon.jpg in Resources */,
 				FF20F0F41ABAFE79009CDF4D /* Images.xcassets in Resources */,
+				FF60B4C61C83047800E70936 /* reflectionicon.png in Resources */,
+				FF60B4C31C83047800E70936 /* envelope.png in Resources */,
 				FF72FB181C0F897400F5C503 /* mindfulness_exercises.json in Resources */,
 				FF72FB171C0F897400F5C503 /* Building Self Confidence.mp3 in Resources */,
 			);
