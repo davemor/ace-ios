@@ -62,7 +62,7 @@ class MeetingsListViewController: UITableViewController {
         let groupedMeetings = meetingsArr.groupBy { Day(rawValue: $0.day)! }
         var newMeetings = [Day:[Meeting]]()
         for g in groupedMeetings {
-            newMeetings[g.0] = g.1.sort { $0.dateTime.compare($1.dateTime) == NSComparisonResult.OrderedAscending }
+            newMeetings[g.0] = g.1.sort { $0.dateTime.cbvTimeIntervalSinceStartOfDay() < $1.dateTime.cbvTimeIntervalSinceStartOfDay() }
         }
         orderedMeetings = newMeetings
         

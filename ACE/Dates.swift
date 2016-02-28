@@ -48,3 +48,20 @@ func dateIsBetween(date: NSDate, begin: NSDate, end: NSDate) -> Bool {
     }
     return true
 }
+
+public extension NSDate {
+    public func cbvTimeIntervalSinceStartOfDay() -> Int {
+        let calendar = NSCalendar.currentCalendar()
+        let timeZone = NSTimeZone.defaultTimeZone()
+        let dateComponents = calendar.components([ .Hour, .Minute, .Second], fromDate: self)
+        
+        dateComponents.calendar = calendar
+        dateComponents.timeZone = timeZone
+        
+        let hoursComponent = dateComponents.hour * 3600
+        let minutesComponent = dateComponents.minute * 60
+        let secondsComponent = dateComponents.second
+        let toReturn = hoursComponent + minutesComponent + secondsComponent;
+        return toReturn;
+    }
+}
