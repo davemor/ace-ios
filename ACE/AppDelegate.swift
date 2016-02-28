@@ -8,6 +8,7 @@
 
 import UIKit
 import Mixpanel
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,13 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // set up the automatic Realm migration
+        let config = Realm.Configuration(
+            schemaVersion: 1, // set this everytime the schema is changed
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
+                    // Nothing to do!
+                    // Realm will automatically detect new properties and removed properties
+                    // And will update the schema on disk automatically
+                }
+        })
+        Realm.Configuration.defaultConfiguration = config
+        _ = try! Realm() // load the realm to run the migration
 
         // setup mixpanel
         let mixpanel = Mixpanel.sharedInstanceWithToken("45240346364426ee90099306d8fcbbbe")
-        // mixpanel.registerSuperProperties([
-        //     "foo" : 0.1
-        // ])
         mixpanel.track("Application Finished Launching")
         
         return true
