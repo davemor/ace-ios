@@ -30,8 +30,8 @@ class HomeViewController: UIViewController {
 
         // load up the model
         // Model.sharedInstance.deleteAll()
-        Model.sharedInstance.updateFromServer()
-        Model.sharedInstance.updateFromCommunityCalendar()
+        // Model.sharedInstance.updateFromServer()
+        // Model.sharedInstance.updateFromCommunityCalendar()
         
         // style the controls
         setupStyles()
@@ -52,6 +52,10 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
+
+        // this should be done quite a bit so to keep the data fresh
+        Model.sharedInstance.updateFromServer()
+        Model.sharedInstance.updateFromCommunityCalendar()
         
         refreshView()
     }
