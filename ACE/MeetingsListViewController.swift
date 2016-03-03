@@ -138,6 +138,11 @@ class MeetingsListViewController: UITableViewController {
         return view
     }
     
+    // MARK: - FilterViewListener
+    func filterSelectionHasChanged(selected: Set<String>) {
+        
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

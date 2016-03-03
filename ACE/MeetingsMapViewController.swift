@@ -11,7 +11,7 @@ import MapKit
 import RealmSwift
 import Mixpanel
 
-class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
+class MeetingsMapViewController: UIViewController, MKMapViewDelegate, FilterViewListener {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var filterView: UIView!
@@ -23,17 +23,36 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
     
     // model for the filters
     var groupFlags = [String:Bool]()
+    var groupsFilter: GroupsFilter!
     
     override func viewDidLoad() {
-        super.viewDidLoad() 
+        super.viewDidLoad()
+        
+        filterViewController = FilterViewController()
+        filterViewController.addListener(self)
+        
+        self.navigationController!.navigationBar.translucent = false;
 
         // log with analytics
         Mixpanel.sharedInstance().track("Meetings Map Opened")
         
         // set up the realm queries
         do {
-            groups = try Realm().objects(Group)
-            meetings = try Realm().objects(Meeting)
+            let realm = try Realm()
+            groups = realm.objects(Group)
+            meetings = realm.objects(Meeting)
+            let groupsFilters = realm.objects(GroupsFilter)
+            
+            // initalise the groups filter if required
+            if groupsFilters.count != 1 {
+                try realm.write() {
+                    realm.delete(groupsFilters)
+                    let groupNames = self.groups.map({$0.name}).joinWithSeparator(", ")
+                    let filter = GroupsFilter(value: ["groupsOfInterest" : groupNames])
+                    realm.add(filter)
+                }
+            }
+            
         } catch {
             print("Error querying Realm in MeetingsMapViewController.")
         }
@@ -45,12 +64,12 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         setMapLocation(CLLocationCoordinate2D(latitude: 55.9410655, longitude: -3.2053836), delta: 0.05)
         
         // populate the map
-        refresh()
+        refreshAnnotations(filterViewController.activeCategories)
         
         // Set realm notification block
         do {
             try notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
-                self.refresh()
+                self.refreshAnnotations(self.filterViewController.activeCategories)
             }
         } catch {
             print("Error creating Realm notification token in MeetingsMapViewController.")
@@ -62,40 +81,12 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func refresh() {
-        // refresh the filter view
-        refreshGroupFlags()
-        
-        // refresh the annotations
-        refreshAnnotations()
-    }
-    
-    func refreshGroupFlags() {
-        // we want a group flag for each group
-        // for each group
-        for group in groups {
-            if !groupFlags.has(group.name) {
-                groupFlags[group.name] = true
-            }
-        }
-        // remove all group in the flags array that are not in the results
-        var keysToDelete:[String] = []
-        for name in groupFlags.keys {
-            if groups.filter("name = '\(name)'").count == 0 {
-                keysToDelete.append(name)
-            }
-        }
-        for key in keysToDelete {
-            groupFlags.removeValueForKey(key)
-        }
-    }
-    
-    func refreshAnnotations() {
+    func refreshAnnotations(selected: Set<String>) {
         // remove the old ones
         let allAnnotations = self.mapView.annotations
         self.mapView.removeAnnotations(allAnnotations)
         
-        let query = queryFromGroupFlags()
+        let query = queryFromGroupFlags(selected)
         
         // add the new ones
         let filteredMeetings = meetings.filter(query)
@@ -109,16 +100,18 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    func queryFromGroupFlags() -> NSPredicate {
-        let elements = groupFlags.toArray { (key:String, val:Bool) -> String in
-            return val ? "group.name = '\(key)'" : ""
-            }.reject {$0.isEmpty}
-        let query = elements.joinWithSeparator(" OR ")
+    func queryFromGroupFlags(selected: Set<String>) -> NSPredicate {
+        let query = selected.map { "group.name = '\($0)'" }.joinWithSeparator(" OR ")
         if query.isEmpty {
             return NSPredicate(format: "group == nil")
         }
         return NSPredicate(format: query, "")
-    }    
+    }
+    
+    // MARK: - FilterViewListener
+    func filterSelectionHasChanged(selected: Set<String>) {
+        refreshAnnotations(selected)
+    }
     
     // MARK: - MKMapViewDelegate implementation
     let reuseId = "annotationViewReuseId"
@@ -147,37 +140,34 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    // MARK: - Actions
+    // MARK: - Filtering
+    
+    var filterViewController:FilterViewController!
+    var isShowingFilter = false
+    
     @IBAction func toggleFilter(sender: UIBarButtonItem) {
-        UIView.transitionWithView(filterView,
-            duration: NSTimeInterval(0.2),
-            options: UIViewAnimationOptions.TransitionCrossDissolve,
-            animations: {},
-            completion: nil)
-        
-        filterView.hidden = !filterView.hidden
+        if isShowingFilter {
+            hideContentController(filterViewController)
+            isShowingFilter = false
+        } else {
+            displayContentController(filterViewController)
+            isShowingFilter = true
+        }
     }
     
-    @IBAction func caSwitchValueChanged(sender: UISwitch) {
-        groupFlags["Cocaine Anonymous"] = sender.on
-        refreshAnnotations()
+    func displayContentController(content: UIViewController) {
+        self.addChildViewController(content)
+        self.view.addSubview(content.view)
+        content.didMoveToParentViewController(self)
+    }
+    
+    func hideContentController(content: UIViewController) {
+        content.willMoveToParentViewController(nil)
+        content.view.removeFromSuperview()
+        content.removeFromParentViewController()
     }
 
-    @IBAction func naSwitchValueChanged(sender: UISwitch) {
-        groupFlags["Narcotics Anonymous"] = sender.on
-        refreshAnnotations()
-    }
-    
-    @IBAction func smartSwitchValueChanged(sender: UISwitch) {
-        groupFlags["SMART Recovery Groups"] = sender.on
-        refreshAnnotations()
-    }
-    
-    @IBAction func aaSwitchValueChanged(sender: UISwitch) {
-        groupFlags["Alcoholics Anonymous"] = sender.on
-        refreshAnnotations()
-    }
-    
+
     // MARK: - Navigation
 
     @IBAction func back(sender: AnyObject) {
@@ -231,18 +221,24 @@ class MeetingAnnotation : NSObject, MKAnnotation {
     var subtitle:String?
     
     init(meetings: [Meeting], venue: Venue) {
+        print(meetings)
+        
         self.meetings = meetings
         self.venue = venue
         
         self.coordinate = venue.coordinate
         self.pin = knownGroupPins["Many"]!
         
-        let grouped = meetings.groupBy {$0.group!}
-        if grouped.count == 1 {
-            if let group = grouped.keys.first as? Group {
-                self.title = self.meetings[0].name
-                self.pin = knownGroupPins[group.name]
+        let grouped = meetings.groupBy { (meeting: Meeting) -> String in
+            if let group = meeting.group {
+                return group.name
+            } else {
+                return ""
             }
+        }
+        if grouped.count == 1 {
+            self.title = self.meetings[0].name
+            self.pin = knownGroupPins[grouped.keys.first!]
         } else {
             self.title = venue.name
             self.pin = knownGroupPins["Many"]
