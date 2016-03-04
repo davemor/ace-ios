@@ -38,7 +38,7 @@ class CommunityActivity: Object, Activity {
     var end: NSDate { return endDate }
     var `repeat`: Repeat { return .none }
     var url: String? { return aURL }
-    var venue: Venue? { return aVenue! }
+    var venue: Venue? { return aVenue }
     var attending: Bool {
         get { return isAttending }
         set { isAttending = newValue }

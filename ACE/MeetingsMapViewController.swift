@@ -23,7 +23,6 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate, FilterView
     
     // model for the filters
     var groupFlags = [String:Bool]()
-    var groupsFilter: GroupsFilter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,18 +40,6 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate, FilterView
             let realm = try Realm()
             groups = realm.objects(Group)
             meetings = realm.objects(Meeting)
-            let groupsFilters = realm.objects(GroupsFilter)
-            
-            // initalise the groups filter if required
-            if groupsFilters.count != 1 {
-                try realm.write() {
-                    realm.delete(groupsFilters)
-                    let groupNames = self.groups.map({$0.name}).joinWithSeparator(", ")
-                    let filter = GroupsFilter(value: ["groupsOfInterest" : groupNames])
-                    realm.add(filter)
-                }
-            }
-            
         } catch {
             print("Error querying Realm in MeetingsMapViewController.")
         }
@@ -221,8 +208,6 @@ class MeetingAnnotation : NSObject, MKAnnotation {
     var subtitle:String?
     
     init(meetings: [Meeting], venue: Venue) {
-        print(meetings)
-        
         self.meetings = meetings
         self.venue = venue
         

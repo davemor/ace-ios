@@ -10,6 +10,11 @@ import Foundation
 import RealmSwift
 
 // this class acts as a way to persist a 
-class GroupsFilter: Object {
-    dynamic var groupsOfInterest = ""
+class Filter: Object {
+    dynamic var id = 1
+    dynamic var groups = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

@@ -72,7 +72,7 @@
 		FF60B4CC1C83113100E70936 /* 3 minute mindfulness.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4C91C83113100E70936 /* 3 minute mindfulness.mp3 */; };
 		FF60B4CD1C83113100E70936 /* mindful relaxation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4CA1C83113100E70936 /* mindful relaxation.mp3 */; };
 		FF60B4CE1C83113100E70936 /* self confidence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF60B4CB1C83113100E70936 /* self confidence.mp3 */; };
-		FF60B4D01C83333300E70936 /* GroupsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF60B4CF1C83333300E70936 /* GroupsFilter.swift */; };
+		FF60B4D01C83333300E70936 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF60B4CF1C83333300E70936 /* Filter.swift */; };
 		FF648C8C1AE8CB2400889EA0 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8B1AE8CB2400889EA0 /* ExerciseDetailViewController.swift */; };
 		FF648C8E1AE8CC8500889EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8D1AE8CC8500889EA0 /* Exercise.swift */; };
 		FF648C901AE8D97000889EA0 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */; };
@@ -234,7 +234,7 @@
 		FF60B4C91C83113100E70936 /* 3 minute mindfulness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "3 minute mindfulness.mp3"; sourceTree = "<group>"; };
 		FF60B4CA1C83113100E70936 /* mindful relaxation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "mindful relaxation.mp3"; sourceTree = "<group>"; };
 		FF60B4CB1C83113100E70936 /* self confidence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "self confidence.mp3"; sourceTree = "<group>"; };
-		FF60B4CF1C83333300E70936 /* GroupsFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsFilter.swift; sourceTree = "<group>"; };
+		FF60B4CF1C83333300E70936 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		FF648C8B1AE8CB2400889EA0 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
 		FF648C8D1AE8CC8500889EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FF648C8F1AE8D97000889EA0 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
@@ -483,7 +483,7 @@
 				FFC486D41ADFC4D10045C9CE /* Model.swift */,
 				FFC486E31AE058A80045C9CE /* Colors.swift */,
 				FFC2E1B51AFE773900D11DF5 /* Contact.swift */,
-				FF60B4CF1C83333300E70936 /* GroupsFilter.swift */,
+				FF60B4CF1C83333300E70936 /* Filter.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1038,7 +1038,7 @@
 				FF7395311B0C6C0B00972F67 /* CVCalendarTouchController.swift in Sources */,
 				491AE1FB1BFD1B2E00409041 /* Files.swift in Sources */,
 				FFCDAE3C1B1B2E680016614F /* DiaryEntry.swift in Sources */,
-				FF60B4D01C83333300E70936 /* GroupsFilter.swift in Sources */,
+				FF60B4D01C83333300E70936 /* Filter.swift in Sources */,
 				FF7395291B0C6C0B00972F67 /* CVCalendarContentViewController.swift in Sources */,
 				FF1E1B6B1B2A398400A97F12 /* MeetingsDetailViewController.swift in Sources */,
 				FF75EB301B1EFC6A00B9B969 /* ContactCell.swift in Sources */,

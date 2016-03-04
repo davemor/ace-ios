@@ -11,6 +11,8 @@ import RealmSwift
 
 class FilterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let filterId = 1
+    
     let cellIdentifier = "Cell"
     
     var tableView: UITableView  =   UITableView()
@@ -40,10 +42,35 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
             let realm = try Realm()
             let groups = realm.objects(Group)
             categories = groups.map({$0.name})
+            loadActiveCategories(realm)
         } catch {
             print("Error querying Realm in FilterViewController.")
         }
-        activeCategories = Set(categories)  // TODO: Store this in the realm
+    }
+    
+    func loadActiveCategories(realm: Realm) {
+        let filter = realm.objects(Filter).filter("id = \(filterId)")
+        if filter.count > 0 {
+            if let groups = filter.first?.groups.componentsSeparatedByString(", ") {
+                activeCategories = Set(groups)
+            }
+        } else {
+            activeCategories = Set(categories)
+            saveActiveCategories()
+        }
+    }
+    
+    func saveActiveCategories() {
+        do {
+            let realm = try Realm()
+            let filter = Filter()
+            filter.groups = activeCategories.joinWithSeparator(", ")
+            try! realm.write {
+                realm.add(filter, update: true)
+            }
+        } catch {
+            print("Error querying Realm in FilterViewController.")
+        }
     }
     
     override func viewDidLoad() {
@@ -103,6 +130,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
             listener.filterSelectionHasChanged(activeCategories)
         }
         print(activeCategories)
+        saveActiveCategories()
     }
 }
 
