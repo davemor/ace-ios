@@ -56,7 +56,10 @@ class Model {
                     // in order to deal with elements that might have been deleted
                     // we will clear the realm of events, services, groups etc
                     try realm.write {
-                       realm.delete(realm.objects(Meeting));
+                       realm.delete(realm.objects(Meeting))
+                       realm.delete(realm.objects(Venue))
+                       realm.delete(realm.objects(Group))
+                       realm.delete(realm.objects(Service))
                     }
                     
                     try realm.write {
@@ -215,6 +218,7 @@ class Model {
                 
                 do {
                     let realm = try Realm()
+                    
                     try realm.write {
                         if let events = json["data"] as? NSArray {
                             for data in events {
@@ -245,6 +249,8 @@ class Model {
                                         realm.add(v, update: true)
                                         activity.aVenue = v
                                     }
+                                    activity.deleted = event.read("deleted", alt: false)
+                                    activity.cancelled = event.read("cancelled", alt: false)
                                     
                                     //print(activity, terminator: "")
                                     realm.add(activity, update: true)
@@ -254,6 +260,13 @@ class Model {
                             }
                         }
                     }
+                    
+                    // remove any orphened calendar activities
+                    let orphenedCommunityActivities = realm.objects(CommunityActivity).filter("deleted == true OR cancelled == true")
+                    try realm.write {
+                        realm.delete(orphenedCommunityActivities)
+                    }
+                    
                 } catch {
                     print("Error writting community calendar to Realm.")
                 }

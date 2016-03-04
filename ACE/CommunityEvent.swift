@@ -18,6 +18,9 @@ class CommunityActivity: Object, Activity {
     dynamic var aURL = ""
     dynamic var aVenue: Venue? // this should always be present
     
+    dynamic var deleted = false
+    dynamic var cancelled = false
+    
     dynamic var isAttending = false
     
     override static func primaryKey() -> String? {
