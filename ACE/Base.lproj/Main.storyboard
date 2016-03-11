@@ -3086,6 +3086,12 @@ G11 5QP</string>
                                 <action selector="back:" destination="Ley-mM-7UK" id="dxX-fl-NvY"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="L2J-0A-DXT">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="toggleFilter:" destination="Ley-mM-7UK" id="oDE-Mo-FbY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pin-CG-ac9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3563,7 +3569,7 @@ G11 5QP</string>
             <objects>
                 <tableViewController storyboardIdentifier="MeetingDetails" id="AHE-Sg-AHR" customClass="MeetingsDetailViewController" customModule="ARC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ren-Q4-fJD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -6308,9 +6314,9 @@ Let's record it for later ...</string>
         <image name="ic_map_white_36pt" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IUu-qJ-yDK"/>
-        <segue reference="nUC-jR-wmb"/>
+        <segue reference="sJu-rD-shL"/>
         <segue reference="GJg-Nt-48I"/>
         <segue reference="0Ie-UO-Iln"/>
+        <segue reference="IUu-qJ-yDK"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -6,9 +6,9 @@
         "audio-file" : "One Minute Breathing"
         },
         {
-        "title" : "Building Self Confidence",
+        "title" : "3 Minute Mindfulness",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum, neque a varius facilisis, felis nulla tempus dui, aliquet sollicitudin enim lorem ac odio. Aliquam rutrum ac quam non tincidunt. Pellentesque euismod feugiat malesuada. Aliquam nec luctus turpis.",
-        "audio-file" : "Building Self Confidence"
+        "audio-file" : "3 minute mindfulness"
         },
         {
         "title" : "Rapid Relax",
@@ -16,19 +16,9 @@
         "audio-file" : "Rapid Relax"
         },
         {
-        "title" : "3 Minute Mindfulness",
+        "title" : "Building Self Confidence",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum, neque a varius facilisis, felis nulla tempus dui, aliquet sollicitudin enim lorem ac odio. Aliquam rutrum ac quam non tincidunt. Pellentesque euismod feugiat malesuada. Aliquam nec luctus turpis.",
-        "audio-file" : "3 minute mindfulness"
-        },
-        {
-        "title" : "Mindful Relaxation",
-        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum, neque a varius facilisis, felis nulla tempus dui, aliquet sollicitudin enim lorem ac odio. Aliquam rutrum ac quam non tincidunt. Pellentesque euismod feugiat malesuada. Aliquam nec luctus turpis.",
-        "audio-file" : "mindful relaxation"
-        },
-        {
-        "title" : "Self Confidence",
-        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum, neque a varius facilisis, felis nulla tempus dui, aliquet sollicitudin enim lorem ac odio. Aliquam rutrum ac quam non tincidunt. Pellentesque euismod feugiat malesuada. Aliquam nec luctus turpis.",
-        "audio-file" : "self confidence"
+        "audio-file" : "Building Self Confidence"
         }
     ]
 }

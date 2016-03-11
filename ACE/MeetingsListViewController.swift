@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import Mixpanel
 
-class MeetingsListViewController: UITableViewController {
+class MeetingsListViewController: UITableViewController, FilterViewListener  {
 
     // array of event lists ordered by day then ordered by time
     var orderedMeetings:[Day:[Meeting]]!
@@ -32,6 +32,12 @@ class MeetingsListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // setup the filter view
+        filterViewController = FilterViewController()
+        filterViewController.addListener(self)
+        
+        self.navigationController!.navigationBar.translucent = false;
         
         // log with analytics
         Mixpanel.sharedInstance().track("Meetings List Opened")
@@ -85,6 +91,32 @@ class MeetingsListViewController: UITableViewController {
          self.tableView.reloadSections(NSIndexSet(index: sender.tag), withRowAnimation: UITableViewRowAnimation.Automatic)
     }
     
+    // MARK: - Filtering
+    
+    var filterViewController:FilterViewController!
+    var isShowingFilter = false
+    
+    @IBAction func toggleFilter(sender: UIBarButtonItem) {
+        if isShowingFilter {
+            hideContentController(filterViewController)
+            isShowingFilter = false
+        } else {
+            displayContentController(filterViewController)
+            isShowingFilter = true
+        }
+    }
+    
+    func displayContentController(content: UIViewController) {
+        self.addChildViewController(content)
+        self.view.addSubview(content.view)
+        content.didMoveToParentViewController(self)
+    }
+    
+    func hideContentController(content: UIViewController) {
+        content.willMoveToParentViewController(nil)
+        content.view.removeFromSuperview()
+        content.removeFromParentViewController()
+    }
     
     // MARK: - Table view data source
 
