@@ -6,7 +6,7 @@ target 'ARC' do
 	pod 'RealmSwift'
 	pod 'Dollar'
 	pod "KCFloatingActionButton"
-	pod 'Eureka', '~> 1.2'
+	pod 'Eureka', '~> 1.5'
     pod 'Mixpanel'
 end
 
@@ -14,6 +14,6 @@ target 'ARCTests' do
 	pod 'RealmSwift'
 	pod 'Dollar'
 	pod "KCFloatingActionButton"
-	pod 'Eureka', '~> 1.2'
+	pod 'Eureka', '~> 1.5'
     pod 'Mixpanel'
 end
