@@ -36,6 +36,11 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
         super.init(nibName: nil, bundle: nil)
         setup()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        setup()
+    }
+    
     func setup() {
         // query realm for all the group names to use as the categories
         do {
@@ -89,7 +94,12 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func addListener(listener: FilterViewListener) {
-        listeners.append(listener)
+        // make sure that listeners can only be added once.
+        if !listeners.contains({ (fvl:FilterViewListener) -> Bool in
+            return fvl === listener
+        }) {
+            listeners.append(listener)
+        }
     }
     
     //MARK: - Tableview Delegate & Datasource
@@ -114,7 +124,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
         let isOn = activeCategories.contains(category)
         switchControl.setOn(isOn, animated: false)
         switchControl.tag = indexPath.row
-        switchControl.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        switchControl.addTarget(self, action: #selector(FilterViewController.stateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         cell.accessoryView = switchControl
         
         return cell
@@ -134,6 +144,6 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     }
 }
 
-protocol FilterViewListener {
+protocol FilterViewListener : class {
     func filterSelectionHasChanged(selected: Set<String>)
 }

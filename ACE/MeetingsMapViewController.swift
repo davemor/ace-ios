@@ -27,8 +27,10 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate, FilterView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        filterViewController = FilterViewController()
-        filterViewController.addListener(self)
+        if let parent = self.tabBarController as? MeetingsTabbar {
+            filterViewController = parent.filterViewController
+            filterViewController.addListener(self)
+        }
         
         self.navigationController!.navigationBar.translucent = false;
 

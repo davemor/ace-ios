@@ -40,6 +40,7 @@
 		FF44EB2F1ACC9C8D00EA1954 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */; };
 		FF44EB311ACC9D0400EA1954 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44EB301ACC9D0400EA1954 /* Service.swift */; };
 		FF47006B1B0B391A004528EB /* MeetingPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */; };
+		FF4B72C31CE608E900D920B2 /* MeetingsTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4B72C21CE608E900D920B2 /* MeetingsTabbar.swift */; };
 		FF4F80031B30CC0F0066D337 /* DiaryEntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F80021B30CC0F0066D337 /* DiaryEntryDetailsViewController.swift */; };
 		FF54C2DD1AE6A2ED00943B41 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF54C2DC1AE6A2ED00943B41 /* Strings.swift */; };
 		FF569F9D1B0E25CA00E26D16 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF569F9C1B0E25CA00E26D16 /* Activity.swift */; };
@@ -199,6 +200,7 @@
 		FF44EB2E1ACC9C8D00EA1954 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		FF44EB301ACC9D0400EA1954 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FF47006A1B0B391A004528EB /* MeetingPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingPickerViewController.swift; sourceTree = "<group>"; };
+		FF4B72C21CE608E900D920B2 /* MeetingsTabbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsTabbar.swift; sourceTree = "<group>"; };
 		FF4F80021B30CC0F0066D337 /* DiaryEntryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntryDetailsViewController.swift; sourceTree = "<group>"; };
 		FF54C2DC1AE6A2ED00943B41 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FF569F9C1B0E25CA00E26D16 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				FF1E1B361B29E34B00A97F12 /* MeetingListCell.swift */,
 				FF1E1B6A1B2A398400A97F12 /* MeetingsDetailViewController.swift */,
 				FFF1AD261C8859BD004EE127 /* FilterViewController.swift */,
+				FF4B72C21CE608E900D920B2 /* MeetingsTabbar.swift */,
 			);
 			name = Meetings;
 			sourceTree = "<group>";
@@ -980,6 +983,7 @@
 				FF3755511B22DAB200EE1F00 /* NSString+FontAwesomeSwift.swift in Sources */,
 				FF5CEF491BD9544500030FB5 /* ExSwift.swift in Sources */,
 				492E4F441BF0F641009BC873 /* NSDate-toRelativeName.swift in Sources */,
+				FF4B72C31CE608E900D920B2 /* MeetingsTabbar.swift in Sources */,
 				FF5803DE1B04BCAD0030B109 /* MoodMenuViewController.swift in Sources */,
 				FF23DAD51C1107730016F96C /* NewAppointmentController.swift in Sources */,
 				FFDAF7001B14883300BC4589 /* PersonalActivity.swift in Sources */,
