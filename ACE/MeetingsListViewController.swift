@@ -44,7 +44,8 @@ class MeetingsListViewController: UITableViewController, FilterViewListener  {
         // log with analytics
         Mixpanel.sharedInstance().track("Meetings List Opened")
         
-        self.title = "Meetings"
+        self.tabBarItem.title = "Map"
+        self.navigationItem.title = "Meetings";
         
         do {
             groups = try Realm().objects(Group)

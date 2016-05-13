@@ -47,7 +47,9 @@ class MeetingsMapViewController: UIViewController, MKMapViewDelegate, FilterView
         }
         
         mapView.delegate = self
-        self.title = "Meetings"
+        
+        self.tabBarItem.title = "Map"
+        self.navigationItem.title = "Meetings";
         
         // move focus the map on Edinburgh
         setMapLocation(CLLocationCoordinate2D(latitude: 55.9410655, longitude: -3.2053836), delta: 0.05)
