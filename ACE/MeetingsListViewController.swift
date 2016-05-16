@@ -10,8 +10,10 @@ import UIKit
 import RealmSwift
 import Mixpanel
 
-class MeetingsListViewController: UITableViewController, FilterViewListener  {
+class MeetingsListViewController: UIViewController, FilterViewListener, UITableViewDataSource, UITableViewDelegate  {
 
+    @IBOutlet var tableView: UITableView!
+    
     // array of event lists ordered by day then ordered by time
     var orderedMeetings:[Day:[Meeting]]!
     
@@ -32,6 +34,10 @@ class MeetingsListViewController: UITableViewController, FilterViewListener  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set this as the data source and delegate of the tableview
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         // setup the filter view
         if let parent = self.tabBarController as? MeetingsTabbar {
@@ -63,6 +69,10 @@ class MeetingsListViewController: UITableViewController, FilterViewListener  {
         }
         
         self.refresh()
+    }
+    
+    deinit {
+        notificationToken?.stop()
     }
     
     func refresh() {
@@ -110,6 +120,8 @@ class MeetingsListViewController: UITableViewController, FilterViewListener  {
     }
     
     func displayContentController(content: UIViewController) {
+        // self.navigationController?.addChildViewController(content)
+        // self.navigationController?.view.addSubview(content.view)
         self.addChildViewController(content)
         self.view.addSubview(content.view)
         content.didMoveToParentViewController(self)
@@ -123,15 +135,15 @@ class MeetingsListViewController: UITableViewController, FilterViewListener  {
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 7
     }
 
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if sectionOpen[section]! {
             let day = Day(rawValue: section)!
             if let count = orderedMeetings[day]?.count {
@@ -141,7 +153,7 @@ class MeetingsListViewController: UITableViewController, FilterViewListener  {
         return 0
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("meetingsListReuseIdentifier", forIndexPath: indexPath) as! MeetingListCell
 
         let day = Day(rawValue: indexPath.section)!
@@ -156,7 +168,7 @@ class MeetingsListViewController: UITableViewController, FilterViewListener  {
         return cell
     }
 
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let cellId = "sectionHeader"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! MeetingsListHeader
