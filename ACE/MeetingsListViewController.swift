@@ -77,15 +77,29 @@ class MeetingsListViewController: UIViewController, FilterViewListener, UITableV
     
     func refresh() {
         // TODO: This is not good - revisit
-        let meetingsArr = meetings.toArray()
+        let selected = filterViewController.activeCategories
+        let query = queryFromGroupFlags(selected)
+        
+        // add the new ones
+        let filteredMeetings = meetings.filter(query)
+
+        let meetingsArr = filteredMeetings.toArray()
         let groupedMeetings = meetingsArr.groupBy { Day(rawValue: $0.day)! }
         var newMeetings = [Day:[Meeting]]()
         for g in groupedMeetings {
             newMeetings[g.0] = g.1.sort { $0.dateTime.cbvTimeIntervalSinceStartOfDay() < $1.dateTime.cbvTimeIntervalSinceStartOfDay() }
         }
         orderedMeetings = newMeetings
-        
+            
         tableView.reloadData()
+    }
+    
+    func queryFromGroupFlags(selected: Set<String>) -> NSPredicate {
+        let query = selected.map { "group.name = '\($0)'" }.joinWithSeparator(" OR ")
+        if query.isEmpty {
+            return NSPredicate(format: "group == nil")
+        }
+        return NSPredicate(format: query, "")
     }
 
     override func didReceiveMemoryWarning() {
@@ -187,6 +201,7 @@ class MeetingsListViewController: UIViewController, FilterViewListener, UITableV
     
     // MARK: - FilterViewListener
     func filterSelectionHasChanged(selected: Set<String>) {
+        self.refresh()
         
     }
     
