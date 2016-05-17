@@ -73,8 +73,10 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
             day.activities += meetings.mapFilter {
                 $0.includeOnDate(date) ? $0 : nil as Activity?
             }
-            day.activities += community.mapFilter {
-                $0.includeOnDate(date) ? $0 : nil as Activity?
+            if (shouldShowCommunityEvents()) {
+                day.activities += community.mapFilter {
+                    $0.includeOnDate(date) ? $0 : nil as Activity?
+                }
             }
             day.activities += appointments.mapFilter {
                 $0.includeOnDate(date) ? $0 : nil as Activity?
@@ -85,6 +87,12 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
             
             daysForMonth.append(day)
         }
+    }
+    
+    func shouldShowCommunityEvents() -> Bool {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let showCommunityEvents = defaults.boolForKey("show_community_events")
+        return showCommunityEvents
     }
     
     func activityForIndexPath(indexPath: NSIndexPath) -> Activity {

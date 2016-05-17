@@ -16,6 +16,9 @@ class AboutViewController: UITableViewController {
     
     @IBOutlet weak var daysSwitch: UISwitch!
     
+    @IBOutlet weak var communityEventsSwitch: UISwitch!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +31,7 @@ class AboutViewController: UITableViewController {
         datePicker.date = date
         setLabelToDate(date)
         daysSwitch.on = defaults.boolForKey("show_days_in_recovery")
+        communityEventsSwitch.on = defaults.boolForKey("show_community_events")
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +54,12 @@ class AboutViewController: UITableViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setBool(sender.on, forKey: "show_milestone_badges")
     }
+    
+    @IBAction func toggleShowCommunityEvents(sender: UISwitch) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(sender.on, forKey: "show_community_events")
+    }
+    
     
     // MARK: Expanding date picker stuff
     var isEditingDate = false

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BaD-gr-qQ6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BaD-gr-qQ6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -4003,10 +4003,10 @@ G11 5QP</string>
                                                     <exclude reference="N35-8k-Qse"/>
                                                     <exclude reference="QhN-OY-JMh"/>
                                                     <exclude reference="pqx-bQ-6qJ"/>
-                                                    <exclude reference="Yef-VQ-izG"/>
-                                                    <exclude reference="Z6L-lV-wfW"/>
                                                     <exclude reference="2aj-lt-K1V"/>
                                                     <exclude reference="UIw-U5-TXe"/>
+                                                    <exclude reference="Yef-VQ-izG"/>
+                                                    <exclude reference="Z6L-lV-wfW"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -4018,10 +4018,10 @@ G11 5QP</string>
                                                     <include reference="N35-8k-Qse"/>
                                                     <include reference="QhN-OY-JMh"/>
                                                     <include reference="pqx-bQ-6qJ"/>
-                                                    <include reference="Yef-VQ-izG"/>
-                                                    <include reference="Z6L-lV-wfW"/>
                                                     <include reference="2aj-lt-K1V"/>
                                                     <include reference="UIw-U5-TXe"/>
+                                                    <include reference="Yef-VQ-izG"/>
+                                                    <include reference="Z6L-lV-wfW"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -4068,10 +4068,10 @@ G11 5QP</string>
                                                     <exclude reference="aFn-cB-Y1K"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="kC9-Gi-Ms7"/>
                                                     <exclude reference="KwX-do-Ic8"/>
-                                                    <exclude reference="I1Z-oa-DlA"/>
+                                                    <exclude reference="kC9-Gi-Ms7"/>
                                                     <exclude reference="DAL-SE-kZh"/>
+                                                    <exclude reference="I1Z-oa-DlA"/>
                                                     <exclude reference="fw3-dl-PpS"/>
                                                 </mask>
                                             </variation>
@@ -4081,10 +4081,10 @@ G11 5QP</string>
                                                     <include reference="aFn-cB-Y1K"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="kC9-Gi-Ms7"/>
                                                     <include reference="KwX-do-Ic8"/>
-                                                    <include reference="I1Z-oa-DlA"/>
+                                                    <include reference="kC9-Gi-Ms7"/>
                                                     <include reference="DAL-SE-kZh"/>
+                                                    <include reference="I1Z-oa-DlA"/>
                                                     <include reference="fw3-dl-PpS"/>
                                                 </mask>
                                             </variation>
@@ -4493,6 +4493,73 @@ G11 5QP</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Calendar" id="hk5-AS-8jf" userLabel="Calendar">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="NCO-XP-VvG">
+                                        <rect key="frame" x="0.0" y="577.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NCO-XP-VvG" id="jyc-eF-i0g">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Community Events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jq0-6a-nRc">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUf-mk-2vy">
+                                                    <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.20784313730000001" green="0.29411764709999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="toggleShowCommunityEvents:" destination="rQc-or-Hpz" eventType="valueChanged" id="LHw-Xs-S3c"/>
+                                                        <action selector="toggleShowDaysInRecovery:" destination="rQc-or-Hpz" eventType="valueChanged" id="dH1-HP-Kq0"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AUf-mk-2vy" firstAttribute="trailing" secondItem="jyc-eF-i0g" secondAttribute="trailingMargin" id="4fs-M4-nYw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Jq0-6a-nRc" secondAttribute="bottom" constant="3" id="8nc-tG-iN6"/>
+                                                <constraint firstItem="Jq0-6a-nRc" firstAttribute="trailing" secondItem="jyc-eF-i0g" secondAttribute="trailingMargin" id="HGe-6u-HKa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="AUf-mk-2vy" secondAttribute="bottom" constant="-1" id="UE8-oI-cWR"/>
+                                                <constraint firstItem="Jq0-6a-nRc" firstAttribute="top" secondItem="jyc-eF-i0g" secondAttribute="topMargin" constant="3" id="wAi-xI-jNH"/>
+                                                <constraint firstItem="Jq0-6a-nRc" firstAttribute="leading" secondItem="jyc-eF-i0g" secondAttribute="leadingMargin" id="wUR-B2-QOR"/>
+                                                <constraint firstItem="AUf-mk-2vy" firstAttribute="top" secondItem="jyc-eF-i0g" secondAttribute="topMargin" constant="-2" id="wdB-yx-1Xe"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Jq0-6a-nRc"/>
+                                                    <exclude reference="AUf-mk-2vy"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="HGe-6u-HKa"/>
+                                                    <exclude reference="8nc-tG-iN6"/>
+                                                    <exclude reference="wAi-xI-jNH"/>
+                                                    <exclude reference="wUR-B2-QOR"/>
+                                                    <exclude reference="wdB-yx-1Xe"/>
+                                                    <exclude reference="4fs-M4-nYw"/>
+                                                    <exclude reference="UE8-oI-cWR"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Jq0-6a-nRc"/>
+                                                    <include reference="AUf-mk-2vy"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="HGe-6u-HKa"/>
+                                                    <include reference="8nc-tG-iN6"/>
+                                                    <include reference="wAi-xI-jNH"/>
+                                                    <include reference="wUR-B2-QOR"/>
+                                                    <include reference="wdB-yx-1Xe"/>
+                                                    <include reference="4fs-M4-nYw"/>
+                                                    <include reference="UE8-oI-cWR"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="rQc-or-Hpz" id="p9c-eo-L9l"/>
@@ -4508,6 +4575,7 @@ G11 5QP</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="communityEventsSwitch" destination="AUf-mk-2vy" id="NP6-sh-mHI"/>
                         <outlet property="datePicker" destination="yyb-j4-MF8" id="AOl-VE-ick"/>
                         <outlet property="daysSwitch" destination="tIT-13-WGD" id="wBd-N6-p6x"/>
                         <outlet property="recoveryStartDateButton" destination="hKb-ys-myt" id="uhv-TX-xqD"/>
