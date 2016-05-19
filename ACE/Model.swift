@@ -45,13 +45,14 @@ class Model {
         dispatch_async(queue) {
             if let response = NSData(contentsOfURL: self.serverBaseUrl) {
                 
-                // De-serialize the response to JSON
-                //let json = (try! NSJSONSerialization.JSONObjectWithData(response,
-                //    options: NSJSONReadingOptions(rawValue: 0))) as! NSDictionary
+                do {
                 
-                if let filePath = NSBundle.mainBundle().pathForResource("test_data", ofType: "json"), data = NSData(contentsOfFile: filePath) {
-                    do {
-                        let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
+                // De-serialize the response to JSON
+                let json = (try NSJSONSerialization.JSONObjectWithData(response, options: NSJSONReadingOptions(rawValue: 0))) as! NSDictionary
+                
+                //if let filePath = NSBundle.mainBundle().pathForResource("test_data", ofType: "json"), data = NSData(contentsOfFile: filePath) {
+                    //do {
+                        //let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
                         
                         do {
                             
@@ -282,12 +283,15 @@ class Model {
                             print("Error writting to Realm.")
                         }
 
-                    }
-                    catch {
+                    //}
+                    //catch {
                         //Handle error
-                    }
-                }
+                    //}
+                //}
                 
+                } catch {
+                    print("Error parsing the server JSON into NSDictionary.")
+                }
                 
             } else {
                 // TODO: Try again later.

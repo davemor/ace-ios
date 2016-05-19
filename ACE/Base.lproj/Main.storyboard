@@ -6562,9 +6562,9 @@ Let's record it for later ...</string>
         <image name="ic_map_white_36pt" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wGb-Sm-5Ms"/>
+        <segue reference="x0X-sF-Elc"/>
         <segue reference="m06-ug-KzT"/>
+        <segue reference="wGb-Sm-5Ms"/>
         <segue reference="IUu-qJ-yDK"/>
-        <segue reference="GJg-Nt-48I"/>
     </inferredMetricsTieBreakers>
 </document>

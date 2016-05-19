@@ -12,7 +12,14 @@ import RealmSwift
 
 class NewAppointmentController : FormViewController {
     
-    let appointment = AppointmentActivity()
+    // let appointment = AppointmentActivity()
+    var appointmentTitle = ""
+    var dateTime = NSDate()
+    var address = ""
+    var city = ""
+    var postcode = ""
+    var notes = ""
+    
     let dateTimeComponents = NSDateComponents()
     
     override func viewDidLoad() {
@@ -28,14 +35,14 @@ class NewAppointmentController : FormViewController {
         self.dateTimeComponents.hour = now.hour()
         self.dateTimeComponents.minute = now.minute()
         
-        let b = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: Selector("save"))
+        let b = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(NewAppointmentController.save))
         self.navigationItem.rightBarButtonItem = b
         
         form +++ Section("New Appointment")
             <<< TextRow() { $0.title = "Name"; $0.placeholder = "Name of event" }
                 .onChange({ (row) -> () in
                     if let val = row.value {
-                        self.appointment.title = val
+                        self.appointmentTitle = val
                     }
                 })
             <<< DateInlineRow() { $0.title = "Date"; $0.value = NSDate() }
@@ -54,26 +61,26 @@ class NewAppointmentController : FormViewController {
             <<< TextAreaRow("Address") { $0.placeholder = "" }
                 .onChange({ (row) -> () in
                     if let val = row.value {
-                        self.appointment.address = val
+                        self.address = val
                     }
                 })
             <<< TextRow() { $0.title = "City"; $0.placeholder = "" }
                 .onChange({ (row) -> () in
                     if let val = row.value {
-                        self.appointment.city = val
+                        self.city = val
                     }
                 })
             <<< TextRow() { $0.title = "Postcode"; $0.placeholder = "" }
                 .onChange({ (row) -> () in
                     if let val = row.value {
-                        self.appointment.postcode = val
+                        self.postcode = val
                     }
                 })
         +++ Section("Notes")
             <<< TextAreaRow("Notes") { $0.placeholder = "" }
                 .onChange({ (row) -> () in
                     if let val = row.value {
-                        self.appointment.notes = val
+                        self.notes = val
                     }
                 })
     }
@@ -82,17 +89,23 @@ class NewAppointmentController : FormViewController {
         // parse the date
         let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let date = calendar?.dateFromComponents(dateTimeComponents)
-        appointment.dateTime = date!
         
         // auto-incroment the appointment id
         do {
             let realm = try Realm()
-            appointment.id = NSUUID().UUIDString
-        
-            // save the appointment into the realm
-            realm.beginWrite()
-            realm.add(appointment)
-            try realm.commitWrite()
+            try realm.write {
+                let appointment = AppointmentActivity()
+                
+                appointment.id = NSUUID().UUIDString
+                appointment.title = appointmentTitle
+                appointment.dateTime = date!
+                appointment.address = address
+                appointment.city = city
+                appointment.postcode = postcode
+                appointment.notes = notes
+                
+                realm.add(appointment)
+            }
             
             // show an alert
             let alert = UIAlertController(title: "Added", message: "The appointment has been added to your calendar.", preferredStyle: .Alert)
