@@ -170,6 +170,7 @@ class MeetingsListViewController: UIViewController, FilterViewListener, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("meetingsListReuseIdentifier", forIndexPath: indexPath) as! MeetingListCell
 
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         let day = Day(rawValue: indexPath.section)!
         if let meetings = orderedMeetings[day] {
             let meeting = meetings[indexPath.row]
