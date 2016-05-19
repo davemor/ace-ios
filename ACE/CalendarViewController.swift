@@ -55,13 +55,22 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
     
     // interface to Realm
     var notificationToken: NotificationToken?
+    
+    /*
     var meetingActivities: Results<MeetingActivity>!
     var communityActivities: Results<CommunityActivity>!
     var appointmentActivities: Results<AppointmentActivity>!
-    
+    */
+ 
     func populateMonth() {
         daysForMonth.removeAll(keepCapacity: true)
 
+        let realm = try! Realm()
+        
+        let meetingActivities = realm.objects(MeetingActivity)
+        let communityActivities = realm.objects(CommunityActivity)
+        let appointmentActivities = realm.objects(AppointmentActivity)
+        
         // TODO: not sure if this is the most effective way of doing this
         let meetings = meetingActivities.toArray()
         let community = communityActivities.toArray()
@@ -71,7 +80,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         for date in dates {
             var day = DayInMonth(date: date)
             day.activities += meetings.mapFilter {
-                $0.includeOnDate(date) ? $0 : nil as Activity?
+                print($0)
+                return $0.includeOnDate(date) ? $0 : nil as Activity?
             }
             if (shouldShowCommunityEvents()) {
                 day.activities += community.mapFilter {
@@ -106,14 +116,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         
         // log with analytics
         Mixpanel.sharedInstance().track("Calendar Section Opened")
-        
-        do {
-            try meetingActivities = Realm().objects(MeetingActivity.self)
-            try communityActivities = Realm().objects(CommunityActivity.self)
-            try appointmentActivities = Realm().objects(AppointmentActivity.self)
-        } catch {
-            print("Error with Realm in CalendarViewController.")
-        }
             
         tableView.delegate = self
         tableView.dataSource = self

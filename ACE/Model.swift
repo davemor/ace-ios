@@ -55,12 +55,15 @@ class Model {
                     
                     // in order to deal with elements that might have been deleted
                     // we will clear the realm of events, services, groups etc
+                    /*
                     try realm.write {
                        realm.delete(realm.objects(Meeting))
                        realm.delete(realm.objects(Venue))
                        realm.delete(realm.objects(Group))
                        realm.delete(realm.objects(Service))
                     }
+                    */
+                    
                     
                     try realm.write {
                         // read in the venues
@@ -193,10 +196,15 @@ class Model {
                     
                     // remove any orphened calendar activities
                     // ie ones where the meeting has just been deleted
+                    /*
                     let orphenedMeetings = realm.objects(MeetingActivity).filter("meeting = nil")
-                    try realm.write {
-                        realm.delete(orphenedMeetings)
+                    if orphenedMeetings.count > 0 {
+                        try realm.write {
+                            print(orphenedMeetings)
+                            realm.delete(orphenedMeetings)
+                        }
                     }
+                    */
                 } catch {
                     print("Error writting to Realm.")
                 }

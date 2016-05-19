@@ -56,28 +56,29 @@ class MeetingsDetailViewController: UITableViewController {
     
     // MARK: Action
     @IBAction func toggleAttending(sender: UIBarButtonItem) {
-        do {
-            let realm = try Realm()
-            if let activity = findActivityForMeeting() {
-                try realm.write { realm.delete(activity) }
-                addBarButton.title = "Add"
-                let alert = UIAlertController(title: "Removed", message: "The meeting has been removed from your calendar.", preferredStyle: .Alert)
-                alert.addAction( UIAlertAction(title: "OK", style: .Default, handler: nil))
-                presentViewController(alert, animated: true, completion: nil)
-            } else {
-                try realm.write {
-                    let activity = MeetingActivity()
-                    activity.meeting = self.meeting
-                    print(self.meeting)
-                    realm.add(activity, update: true)
-                }
-                addBarButton.title = "Remove"
-                let alert = UIAlertController(title: "Added", message: "The meeting has been added to your calendar.", preferredStyle: .Alert)
-                alert.addAction( UIAlertAction(title: "OK", style: .Default, handler: nil))
-                presentViewController(alert, animated: true, completion: nil)
+        let realm = try! Realm()
+        if let activity = findActivityForMeeting() {
+            print("Removing meeting activity: \(activity.meeting?.id)")
+            try! realm.write {
+                realm.delete(activity)
             }
-        } catch {
-            print("Error toggleAttending with Realm")
+            addBarButton.title = "Add"
+            let alert = UIAlertController(title: "Removed", message: "The meeting has been removed from your calendar.", preferredStyle: .Alert)
+            alert.addAction( UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
+        } else {
+            try! realm.write {
+                let activity = MeetingActivity()
+                activity.id = meeting.id
+                activity.meeting = self.meeting
+                realm.add(activity, update: true)
+                print("Added meeting activity: \(activity.meeting?.id)")
+                print(activity)
+            }
+            addBarButton.title = "Remove"
+            let alert = UIAlertController(title: "Added", message: "The meeting has been added to your calendar.", preferredStyle: .Alert)
+            alert.addAction( UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
 
