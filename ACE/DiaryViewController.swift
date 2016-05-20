@@ -100,6 +100,8 @@ class DiaryViewController: UITableViewController {
             cell.dateLabel.text = entry.date.toRelativeName()
             if let image = UIImage(contentsOfFile: documentPath(entry.imagePath)) {
                 cell.backgroundImage.image = image
+            } else {
+                cell.backgroundImage.image = nil
             }
             cell.backgroundImage.layer.zPosition = -1
             if let image = userImage {
@@ -118,6 +120,8 @@ class DiaryViewController: UITableViewController {
                 if let img = images[indexPath.row] {
                     cell.backgroundImage.image = img
                 }
+            } else {
+                cell.backgroundImage.image = nil
             }
             cell.backgroundColor = getAceColorForIndex(indexPath.row)
 
