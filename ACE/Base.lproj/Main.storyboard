@@ -1846,7 +1846,7 @@
         <!--Venue Details-->
         <scene sceneID="se1-fg-Nhg">
             <objects>
-                <tableViewController title="Venue Details" id="2Jj-Ci-3VB" customClass="VenueDetailViewController" customModule="ARC" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="venueDetailViewController" title="Venue Details" id="2Jj-Ci-3VB" customClass="VenueDetailViewController" customModule="ARC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kMQ-li-Tyr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1961,14 +1961,14 @@ G11 5QP</string>
                                         <constraint firstAttribute="bottomMargin" secondItem="Xgi-Yb-TLl" secondAttribute="bottom" constant="60" id="4IX-3i-BxJ"/>
                                         <constraint firstItem="fbF-8h-iUf" firstAttribute="top" secondItem="nAD-e9-XlK" secondAttribute="topMargin" id="CGH-Sa-mwi"/>
                                         <constraint firstItem="3IP-6q-CHj" firstAttribute="top" secondItem="fbF-8h-iUf" secondAttribute="bottom" constant="8" id="DB4-hy-0zJ"/>
-                                        <constraint firstItem="3IP-6q-CHj" firstAttribute="leading" secondItem="nAD-e9-XlK" secondAttribute="leadingMargin" constant="-8" id="DIz-1U-Fx6"/>
+                                        <constraint firstItem="3IP-6q-CHj" firstAttribute="leading" secondItem="nAD-e9-XlK" secondAttribute="leadingMargin" id="DIz-1U-Fx6"/>
                                         <constraint firstItem="Xgi-Yb-TLl" firstAttribute="trailing" secondItem="nAD-e9-XlK" secondAttribute="trailingMargin" id="FEi-Yi-scS"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="3IP-6q-CHj" secondAttribute="trailing" constant="-8" id="FkO-vP-p9S"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3IP-6q-CHj" secondAttribute="trailing" id="FkO-vP-p9S"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="gWZ-zz-QW7" secondAttribute="bottom" constant="-2" id="GT2-4p-bfi"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="fbF-8h-iUf" secondAttribute="trailing" constant="-8" id="IXQ-ER-MD2"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fbF-8h-iUf" secondAttribute="trailing" id="IXQ-ER-MD2"/>
                                         <constraint firstItem="gWZ-zz-QW7" firstAttribute="top" secondItem="3IP-6q-CHj" secondAttribute="bottom" constant="8" id="Pue-Dt-AlX"/>
-                                        <constraint firstItem="gWZ-zz-QW7" firstAttribute="leading" secondItem="nAD-e9-XlK" secondAttribute="leadingMargin" constant="-8" id="U43-hJ-1Qk"/>
-                                        <constraint firstItem="fbF-8h-iUf" firstAttribute="leading" secondItem="nAD-e9-XlK" secondAttribute="leadingMargin" constant="-8" id="Y6x-23-JnK"/>
+                                        <constraint firstItem="gWZ-zz-QW7" firstAttribute="leading" secondItem="nAD-e9-XlK" secondAttribute="leadingMargin" id="U43-hJ-1Qk"/>
+                                        <constraint firstItem="fbF-8h-iUf" firstAttribute="leading" secondItem="nAD-e9-XlK" secondAttribute="leadingMargin" id="Y6x-23-JnK"/>
                                         <constraint firstItem="Xgi-Yb-TLl" firstAttribute="leading" secondItem="gWZ-zz-QW7" secondAttribute="trailing" constant="57" id="sN5-u9-m9C"/>
                                         <constraint firstItem="Xgi-Yb-TLl" firstAttribute="leading" secondItem="gWZ-zz-QW7" secondAttribute="trailing" constant="57" id="xKn-nb-C50"/>
                                     </constraints>
@@ -2055,6 +2055,7 @@ G11 5QP</string>
                             <outlet property="delegate" destination="2Jj-Ci-3VB" id="sDQ-pn-con"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="juU-Tv-xhw"/>
                     <connections>
                         <segue destination="J9g-0D-58s" kind="show" identifier="showServiceSegue" id="wrL-oe-WYu"/>
                     </connections>
@@ -2695,10 +2696,78 @@ G11 5QP</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Finding Us" id="Itx-N9-NWT">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="jzV-M3-zEb">
+                                        <rect key="frame" x="0.0" y="492" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jzV-M3-zEb" id="JMX-yO-SeA">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEm-yr-7GD">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7j-FN-Qjx">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <state key="normal" title="Show">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="showVenue:" destination="J9g-0D-58s" eventType="touchUpInside" id="4UJ-Jh-0P4"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GEm-yr-7GD" firstAttribute="top" secondItem="JMX-yO-SeA" secondAttribute="topMargin" constant="3" id="DcA-eG-0Xb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GEm-yr-7GD" secondAttribute="bottom" constant="3" id="IDD-3U-nIR"/>
+                                                <constraint firstItem="T7j-FN-Qjx" firstAttribute="top" secondItem="JMX-yO-SeA" secondAttribute="topMargin" constant="-1" id="WjZ-4E-CGX"/>
+                                                <constraint firstItem="T7j-FN-Qjx" firstAttribute="trailing" secondItem="JMX-yO-SeA" secondAttribute="trailingMargin" id="h28-EF-agy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="T7j-FN-Qjx" secondAttribute="bottom" constant="-2" id="hpS-cR-mDJ"/>
+                                                <constraint firstItem="GEm-yr-7GD" firstAttribute="leading" secondItem="JMX-yO-SeA" secondAttribute="leadingMargin" id="iD2-b2-jXE"/>
+                                                <constraint firstItem="T7j-FN-Qjx" firstAttribute="leading" secondItem="GEm-yr-7GD" secondAttribute="trailing" constant="8" id="vOR-qA-uP8"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="GEm-yr-7GD"/>
+                                                    <exclude reference="T7j-FN-Qjx"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="IDD-3U-nIR"/>
+                                                    <exclude reference="DcA-eG-0Xb"/>
+                                                    <exclude reference="iD2-b2-jXE"/>
+                                                    <exclude reference="hpS-cR-mDJ"/>
+                                                    <exclude reference="h28-EF-agy"/>
+                                                    <exclude reference="WjZ-4E-CGX"/>
+                                                    <exclude reference="vOR-qA-uP8"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="GEm-yr-7GD"/>
+                                                    <include reference="T7j-FN-Qjx"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="IDD-3U-nIR"/>
+                                                    <include reference="DcA-eG-0Xb"/>
+                                                    <include reference="iD2-b2-jXE"/>
+                                                    <include reference="hpS-cR-mDJ"/>
+                                                    <include reference="h28-EF-agy"/>
+                                                    <include reference="WjZ-4E-CGX"/>
+                                                    <include reference="vOR-qA-uP8"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Getting in Touch" id="t2i-Ir-Ere">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="bQv-kk-Hkn">
-                                        <rect key="frame" x="0.0" y="492" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="558" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bQv-kk-Hkn" id="l3k-wm-TQ3">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -2762,7 +2831,7 @@ G11 5QP</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Bbb-hg-ntP">
-                                        <rect key="frame" x="0.0" y="536" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="602" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bbb-hg-ntP" id="s95-be-Dln">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -2826,7 +2895,7 @@ G11 5QP</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="OHU-mf-fCf">
-                                        <rect key="frame" x="0.0" y="580" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="646" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OHU-mf-fCf" id="47T-6j-tng">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -2914,7 +2983,7 @@ G11 5QP</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9T0-em-NSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4345.5" y="-2082"/>
+            <point key="canvasLocation" x="4232" y="-2442"/>
         </scene>
         <!--List-->
         <scene sceneID="DFA-lm-AOj">
@@ -6552,8 +6621,8 @@ Let's record it for later ...</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="x0X-sF-Elc"/>
-        <segue reference="m06-ug-KzT"/>
         <segue reference="wGb-Sm-5Ms"/>
-        <segue reference="IUu-qJ-yDK"/>
+        <segue reference="m06-ug-KzT"/>
+        <segue reference="wrL-oe-WYu"/>
     </inferredMetricsTieBreakers>
 </document>

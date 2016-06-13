@@ -114,13 +114,27 @@ class ServiceDetailViewController: UITableViewController {
         }
     }
     
-    /*
+    @IBAction func showVenue(sender: AnyObject) {
+        if let venue = self.service.venue {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("venueDetailViewController") as! VenueDetailViewController
+            // self.presentViewController(vc, animated: true, completion: nil)
+            vc.venue = venue
+            navigationController?.popViewControllerAnimated(true)
+            navigationController?.pushViewController(vc, animated: true )
+        }
+    }
+    
     // MARK: - Navigation
-
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showVenueDetails" {
+            let dest = segue.destinationViewController as! VenueDetailViewController;
+            dest.venue = self.service.venue
+        }
     }
     */
 
