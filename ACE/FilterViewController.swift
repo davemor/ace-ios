@@ -43,6 +43,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     
     func setup() {
         // query realm for all the group names to use as the categories
+        self.tableView.allowsSelection = false
         do {
             let realm = try Realm()
             let groups = realm.objects(Group)
