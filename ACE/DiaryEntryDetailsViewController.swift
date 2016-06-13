@@ -31,7 +31,7 @@ class DiaryEntryDetailsViewController: UIViewController, UITextViewDelegate {
         textLabel.text = entry.text
         
         textLabel.delegate = self
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: Selector("editView"))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(editView))
         
         let leftConstraint = NSLayoutConstraint.init(item:self.contentView,
             attribute:NSLayoutAttribute.Left,
