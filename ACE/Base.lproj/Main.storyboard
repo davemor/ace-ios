@@ -5362,54 +5362,39 @@ Let's record it for later ...</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="exerciseCell" id="ZXo-k4-S1P" customClass="ExerciseCell" customModule="ARC" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="exerciseCell" id="ZXo-k4-S1P" customClass="ExerciseCell" customModule="ARC" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZXo-k4-S1P" id="onh-85-weN">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc7-zV-vFz">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUW-0C-r1z">
+                                            <rect key="frame" x="526" y="11" width="66" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCa-oS-ocW">
+                                            <rect key="frame" x="8" y="11" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Bc7-zV-vFz" secondAttribute="bottom" constant="3" id="8oE-f4-Gr5"/>
-                                        <constraint firstItem="Bc7-zV-vFz" firstAttribute="top" secondItem="onh-85-weN" secondAttribute="topMargin" constant="3" id="coE-7O-5Ax"/>
-                                        <constraint firstItem="Bc7-zV-vFz" firstAttribute="leading" secondItem="onh-85-weN" secondAttribute="leadingMargin" id="kuy-4C-v3L"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Bc7-zV-vFz" secondAttribute="trailing" constant="309" id="o6O-Ah-6bU">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                                        </constraint>
+                                        <constraint firstItem="KCa-oS-ocW" firstAttribute="top" secondItem="onh-85-weN" secondAttribute="topMargin" constant="3" id="0Wy-ki-ps8"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="HUW-0C-r1z" secondAttribute="bottom" constant="3" id="55B-io-fQk"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="KCa-oS-ocW" secondAttribute="bottom" constant="3" id="NFQ-7p-bCR"/>
+                                        <constraint firstItem="HUW-0C-r1z" firstAttribute="top" secondItem="onh-85-weN" secondAttribute="topMargin" constant="3" id="OKL-ng-m5s"/>
+                                        <constraint firstItem="HUW-0C-r1z" firstAttribute="trailing" secondItem="onh-85-weN" secondAttribute="trailingMargin" id="Yc8-iu-jsK"/>
+                                        <constraint firstItem="KCa-oS-ocW" firstAttribute="leading" secondItem="onh-85-weN" secondAttribute="leadingMargin" id="zgb-BQ-aow"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="subviews">
-                                            <exclude reference="Bc7-zV-vFz"/>
-                                        </mask>
-                                        <mask key="constraints">
-                                            <exclude reference="8oE-f4-Gr5"/>
-                                            <exclude reference="coE-7O-5Ax"/>
-                                            <exclude reference="kuy-4C-v3L"/>
-                                            <exclude reference="o6O-Ah-6bU"/>
-                                        </mask>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <mask key="subviews">
-                                            <include reference="Bc7-zV-vFz"/>
-                                        </mask>
-                                        <mask key="constraints">
-                                            <include reference="8oE-f4-Gr5"/>
-                                            <include reference="coE-7O-5Ax"/>
-                                            <include reference="kuy-4C-v3L"/>
-                                            <include reference="o6O-Ah-6bU"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="name" destination="Bc7-zV-vFz" id="HfD-Ae-nSL"/>
+                                    <outlet property="duration" destination="HUW-0C-r1z" id="PZr-nF-r5h"/>
+                                    <outlet property="name" destination="KCa-oS-ocW" id="jhu-y9-a7h"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

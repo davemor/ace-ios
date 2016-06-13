@@ -11,6 +11,7 @@ import UIKit
 class ExerciseCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var duration: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

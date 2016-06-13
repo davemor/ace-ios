@@ -46,7 +46,9 @@ class ExercisesViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! ExerciseCell
 
         // Configure the cell...
-        cell.name.text = Exercise.all[indexPath.row].title
+        let exercise = Exercise.all[indexPath.row]
+        cell.name.text = exercise.title
+        cell.duration.text = exercise.duration
 
         return cell
     }

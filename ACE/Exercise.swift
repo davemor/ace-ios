@@ -27,6 +27,7 @@ struct Exercise {
     let title: String
     let description: String
     let audioFile: String
+    let duration: String
     
     static var all:[Exercise] = loadExercises()
 }
@@ -45,7 +46,8 @@ func loadExercises() -> [Exercise] {
                             let title = dict.read("title", alt: "")
                             let description = dict.read("description", alt: "")
                             let audioFile = dict.read("audio-file", alt: "")
-                            let exercise = Exercise(title: title, description: description, audioFile: audioFile)
+                            let duration = dict.read("duration", alt: "")
+                            let exercise = Exercise(title: title, description: description, audioFile: audioFile, duration: duration)
                             rtn.append(exercise)
                         }
                     }
