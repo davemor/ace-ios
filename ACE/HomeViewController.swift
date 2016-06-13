@@ -71,8 +71,7 @@ class HomeViewController: UIViewController {
     @IBAction func sendFeedback(sender: AnyObject) {
         // log with analytics
         Mixpanel.sharedInstance().track("Tapped on Feedback Icon")
-        
-        let url = NSURL(string: "mailto:david.williams@edinburgh.gov.uk?subject=Feedback%20from%20iOS%20App")!
+        let url = NSURL(string: "mailto:eadp@edinburgh.gov.uk?subject=Feedback%20from%20iOS%20App&cc=addicationrecoverycompanion@gmail.com")!
         UIApplication.sharedApplication().openURL(url)
     }
     
