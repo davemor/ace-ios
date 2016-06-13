@@ -117,17 +117,22 @@ class DiaryEntryDetailsViewController: UIViewController, UITextViewDelegate {
     // MARK: - Actions
     
     @IBAction func deleteEntryTapped(sender: AnyObject) {
-        
-        do {
-            let realm = try Realm()
-            try realm.write {
-                self.entry.text = self.textLabel.text
-                realm.delete(self.entry)
-                self.navigationController?.popViewControllerAnimated(true)
-
+        let alert = UIAlertController(title: "Delete Diary Entry", message: "Are you sure you want to delete this diary entry?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction: UIAlertAction) -> Void in
+            // perform the action
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    self.entry.text = self.textLabel.text
+                    realm.delete(self.entry)
+                    self.navigationController?.popViewControllerAnimated(true)
+                    
+                }
+            } catch {
+                print("Error deleting diary entry.")
             }
-        } catch {
-            print("Error deleting diary entry.")
-        }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
