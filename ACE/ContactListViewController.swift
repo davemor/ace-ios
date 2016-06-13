@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import AddressBook
-import AddressBookUI
+import ContactsUI
 import RealmSwift
 
-class ContactListViewController: UITableViewController, ABPeoplePickerNavigationControllerDelegate {
+class ContactListViewController: UITableViewController, CNContactPickerDelegate {
 
     // setup realm with a notification for changes
     var contacts: Results<Contact>!
@@ -68,17 +67,54 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
     // MARK: - Actions
     
     @IBAction func add(sender: AnyObject) {
-        let picker = ABPeoplePickerNavigationController()
-        picker.peoplePickerDelegate = self
         
-        if picker.respondsToSelector(Selector("predicateForEnablingPerson")) {
-            picker.predicateForEnablingPerson = NSPredicate(format: "%K.@count > 0", ABPersonPhoneNumbersProperty)
-        }
-        
-        presentViewController(picker, animated: true, completion: nil)
+        let controller = CNContactPickerViewController()
+        controller.delegate = self
+        controller.predicateForEnablingContact =
+            NSPredicate(format:"phoneNumbers.@count > 0", argumentArray: nil)
+        navigationController?.presentViewController(controller, animated: true, completion: nil)
     }
     
+    func contactPickerDidCancel(picker: CNContactPickerViewController) {
+        print("Cancelled picking a contact")
+    }
     
+    func contactPicker(picker: CNContactPickerViewController,
+                       didSelectContact contact: CNContact) {
+        
+        print("Selected a contact")
+        
+        if contact.isKeyAvailable(CNContactPhoneNumbersKey){
+            //this is an extension I've written on CNContact
+            // contact.printPhoneNumbers()
+
+            let name = "\(contact.givenName) \(contact.familyName)"
+            let mobile = contact.phoneNumbers[0].value as! CNPhoneNumber // TODO: consider adding a picker when there is more than one phone number.
+            
+            // create a new contact
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    let newContact = Contact()
+                    newContact.name = name
+                    // print(mobile.stringValue)
+                    newContact.phone = mobile.stringValue
+                    realm.add(newContact, update: true)
+                }
+            } catch {
+                print("Error writting new contact to Realm in peoplePickerNavigationController.")
+            }
+            
+            // segue to the new screen
+            performSegueWithIdentifier("contactDetailsSegue", sender: name)
+        
+        } else {
+            print("No phone numbers are available")
+        }
+        
+    }
+    
+    /*
     
     // MARK: - People picker delegate
     
@@ -142,6 +178,8 @@ class ContactListViewController: UITableViewController, ABPeoplePickerNavigation
         peoplePicker.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    */
+ 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
