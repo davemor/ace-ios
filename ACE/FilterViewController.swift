@@ -123,6 +123,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
         cell.textLabel?.text = category
         let switchControl = UISwitch()
         let isOn = activeCategories.contains(category)
+        switchControl.onTintColor = getColorForGroup(category)
         switchControl.setOn(isOn, animated: false)
         switchControl.tag = indexPath.row
         switchControl.addTarget(self, action: #selector(FilterViewController.stateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
