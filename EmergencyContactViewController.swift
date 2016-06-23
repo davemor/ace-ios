@@ -35,6 +35,20 @@ class EmergencyContactViewController: UIViewController, UITableViewDelegate, UIT
         // set up the table view
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // add a message when there are no emergency contacts
+        if contacts.count == 0 {
+            let label = UILabel(frame:CGRectMake(0, 0,
+                self.tableView.bounds.size.width,
+                self.tableView.bounds.size.height))
+            label.text = "There are no emergency contacts yet.";
+            label.textAlignment = NSTextAlignment.Center
+            label.sizeToFit()
+            self.tableView.backgroundView = label;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
+        } else {
+            tableView.backgroundView = nil
+        }
     }
 
     override func didReceiveMemoryWarning() {
