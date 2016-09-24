@@ -134,7 +134,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate {
         let fab = KCFloatingActionButton()
         fab.buttonColor = UIColor(netHex: 0xFF3E1C)
         fab.plusColor = UIColor.whiteColor()
-        fab.addItem("Add Appointment", icon: UIImage(named: "clock")!, handler: { item in
+        fab.addItem("Add Appointment", icon: UIImage(named: "Clock")!, handler: { item in
             // print("Appointment button pressed.")
             // self.performSegueWithIdentifier("newAppointment", sender: self)
             let destination = self.storyboard?.instantiateViewControllerWithIdentifier("NewAppointment")
