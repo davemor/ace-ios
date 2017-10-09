@@ -1,10 +1,10 @@
 PODS:
   - Dollar (5.0.0)
-  - Eureka (1.5.0)
+  - Eureka (1.7.0)
   - KCFloatingActionButton (1.3.3)
-  - Mixpanel (2.9.9):
-    - Mixpanel/Mixpanel (= 2.9.9)
-  - Mixpanel/Mixpanel (2.9.9)
+  - Mixpanel (3.0.3):
+    - Mixpanel/Mixpanel (= 3.0.3)
+  - Mixpanel/Mixpanel (3.0.3)
   - Realm (0.102.1):
     - Realm/Headers (= 0.102.1)
   - Realm/Headers (0.102.1)
@@ -12,20 +12,30 @@ PODS:
     - Realm (= 0.102.1)
 
 DEPENDENCIES:
-  - Dollar
-  - Eureka (~> 1.5)
-  - KCFloatingActionButton
+  - Dollar (= 5.0.0)
+  - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `Swift2`)
+  - KCFloatingActionButton (= 1.3.3)
   - Mixpanel
-  - RealmSwift
+  - RealmSwift (= 0.102.1)
+
+EXTERNAL SOURCES:
+  Eureka:
+    :branch: Swift2
+    :git: https://github.com/xmartlabs/Eureka.git
+
+CHECKOUT OPTIONS:
+  Eureka:
+    :commit: b788de94370d1878390557fcc63a93f760b12095
+    :git: https://github.com/xmartlabs/Eureka.git
 
 SPEC CHECKSUMS:
   Dollar: 310893dd6b3799b9b155e3deb61a0492987e4d03
-  Eureka: 2fb37bb50569c62ee3284689d5b7aca694b040e0
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
   KCFloatingActionButton: 53606bb0a2c5f011ffe16039ddb63658c514bc99
-  Mixpanel: 818d1940c2d9402453b349545022a86968097f57
+  Mixpanel: 45867daeaa3c60f88072a3cb1b44e0b6c5cec009
   Realm: 5254be610db3e5024879684717bf038990bb59ec
   RealmSwift: 3e24e6bcf56d98ccc134f4909e00839b81a659af
 
-PODFILE CHECKSUM: 96d13aebe84dcd0958716070c1ea480f3ae6042b
+PODFILE CHECKSUM: bfd5bf90e2d26a3e3b991000f6125fc4b0f38e1f
 
 COCOAPODS: 1.0.1

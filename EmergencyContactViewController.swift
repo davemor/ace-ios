@@ -77,13 +77,11 @@ class EmergencyContactViewController: UIViewController, UITableViewDelegate, UIT
     // MARK: - Message controller delegate
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        switch result.rawValue {
-        case MessageComposeResultCancelled.rawValue: break // showSimpleAlert("Text cancelled.")
-        case MFMailComposeResultSaved.rawValue:  break // showSimpleAlert("Text saved.")
-        case MFMailComposeResultSent.rawValue: showSimpleAlert("Text sent.")
-        case MFMailComposeResultFailed.rawValue: showSimpleAlert("Failed to send text.")
-        default:
-            break;
+        switch result {
+            case .Sent: showSimpleAlert("Text sent.")
+            case .Failed: showSimpleAlert("Failed to send text.")
+            default:
+                break;
         }
     }
     

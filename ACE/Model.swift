@@ -26,7 +26,8 @@ class Model {
     // let serverBaseUrl = NSURL(string: "https://protected-mountain-5807.herokuapp.com/api/")!
     // let serverBaseUrl = NSURL(string: "http://localhost:3000/api/")!
     // let serverBaseUrl = NSURL(string: "http://arc.cechosting.org/api/")!
-    let serverBaseUrl = NSURL(string: "http://edinburgharcapp.co.uk/api")!
+    // let serverBaseUrl = NSURL(string: "http://edinburgharcapp.co.uk/api")!
+    let serverBaseUrl = NSURL(string: "http://edinburgh.arcapp.co.uk/api")!
     
     let communityCalendarUrl = NSURL(string: "https://recoverycommunitycalendar.hasacalendar.co.uk/api1/events.json")!
     
